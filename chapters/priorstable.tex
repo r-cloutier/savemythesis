@@ -1,0 +1,34 @@
+\begin{threeparttable}
+\caption{Adopted Quasi-Periodic GP plus Keplarian Model Parameter Priors}
+\label{table:priors}
+\begin{tabular}{cc}
+  \hline
+  \hline
+  \textbf{Parameter} & \textbf{Prior} \\
+  \hline
+  & \\
+  \multicolumn{2}{c}{\textbf{GP Hyperparameters}} \\
+  \hline
+  $a$ & Uniform \\
+  $\lambda$ & Jeffreys \\
+  $\Gamma$ & Jeffreys \\
+  $P$ & Uniform \\
+  $s$ & Jeffreys \\
+  \hline
+  & \\
+  \multicolumn{2}{c}{\textbf{Keplarian Model Parameters}} \\
+  \hline
+  $P$ & Jeffreys/Gaussian\tnote{a} \\
+  T0 & Uniform \\
+  $V_0$ & Uniform \\
+  $K$ & Modified Jeffreys \\
+  $C_k$ & Uniform \\
+  $S_k$ & Uniform \\
+  \hline
+  \end{tabular}
+\begin{tablenotes}
+\item[a] Jeffreys when searching for orbital periods `blindly' and 
+Gaussian when the orbital period is known from, say, the planets 
+transit light curve.
+\end{tablenotes}
+\end{threeparttable}

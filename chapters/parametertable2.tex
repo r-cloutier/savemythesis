@@ -1,0 +1,41 @@
+\begin{table*}
+\caption{Definitions of Reoccurring Parameters cont.}
+\label{table:paramdefs2}
+\begin{tabular}{ccc}
+  \hline
+  \hline
+  \textbf{Parameter Name} & \textbf{Definition} & \textbf{Units} \\
+  & & (most frequently used) \\
+  \hline
+  && \\
+  & \textbf{Observables} & \\
+  \hline
+  $\lambda$ & Observed Wavelength & microns ($\mu$m) \\
+  $t$ & Time & BJD \\
+  RV($t$) & Radial velocity timeseries & \mps{} \\
+  $\sigma_{\mathrm{RV}}$ & RV measurement uncertainty & \mps{} \\
+  CCF & Spectral cross-correlation function & flux \\ 
+  FWHM($t$) & Full width at half maximum of the CCF & \mps{} \\
+  BIS($t$) & Bisector inverse slope of the CCF & \mps{} \\
+  $\Psi(t)$ & Relative flux & - \\
+  $F(t)$ & Fractional active region coverage & - \\
+  \hline
+  && \\
+  & \textbf{Gaussian Process Parameters} & \\
+  \hline
+  $y(t)$ & Observable timeseries & \mps{} \\
+  $\mu(t)$ & Mean function & units of $y$ \\
+  $r(t)$ & Residuals $\equiv y(t)-\mu(t)$ & units of $y$ \\ 
+  $k(t)$ & Covariance function & units of $y^2$ \\
+  $\mathbf{K}$ & Covariance matrix & units of $y^2$ \\
+  $a$ & Covariance amplitude & units of $y$ \\
+  $\lambda$ & Exponential covariance timescale & units of $t$ \\
+  $\Gamma$ & Periodic coherence & - \\
+  $P$ & Covariance period & units of $t$ \\
+  $s$ & Additive observable error & units of $y$ \\
+  $\mathbf{\Theta}$ & Set of model parameters & - \\
+  $\mathcal{M}$ & Model label & - \\
+  $\mathcal{L}$ & Likelihood function & - \\ 
+  \end{tabular}
+\end{table*}
+

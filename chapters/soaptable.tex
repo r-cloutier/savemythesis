@@ -1,0 +1,37 @@
+\begin{threeparttable}
+\caption{\texttt{SOAP 2.0} Parameter Definitions}
+\label{table:soap}
+\begin{tabular}{ccc}
+  \hline
+  \hline
+  \textbf{Parameter Name} & \textbf{Definition} & \textbf{Units} \\
+  \hline
+  && \\
+  \textbf{Stellar Parameters} & & \\
+  \hline
+  $R_s$ & Stellar radius & R$_{\odot}$ \\
+  $P_{\mathrm{rot}}$ & Rotation period & days \\
+  $i_s$ & Inclination of the stellar spin-axis & deg \\
+  $T_{\mathrm{eff}}$ & Effective temperature & K \\
+  $u_1$ & Linear limb-darkening coefficient & - \\
+  $u_2$ & Quadratic limb-darkening coefficient & - \\
+  \hline
+  && \\
+  \textbf{Active Region Parameters} && \\
+  \hline
+  $\Delta T$ & $|T_{\mathrm{eff}}$ - active region temperature$|$ & K \\ 
+  $\phi$ & Latitude & deg \\
+  $\lambda$ & Longitude & deg \\
+  $R_{\mathrm{ar}}$ & Active region radius\tnote{a} & R$_{\odot}$ \\
+  \hline
+  && \\
+  \textbf{Code Parameters} && \\
+  \hline
+  $N$ & Grid size ($N \times N$) & integer \\ 
+  dphase & Time step & $\in [0,1]$ 
+  \end{tabular}
+\begin{tablenotes}
+\item[a] Often written as the fraction of the visible stellar surface covered 
+  by active regions; $S=\pi R_{\mathrm{ar}}^2 / 2\pi R_s^2$.
+\end{tablenotes}
+\end{threeparttable}

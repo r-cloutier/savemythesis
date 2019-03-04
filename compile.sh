@@ -1,5 +1,5 @@
-pdflatex cloutier_thesis.tex
-bibtex cloutier_thesis
-pdflatex cloutier_thesis.tex
-pdflatex cloutier_thesis.tex
-open cloutier_thesis.pdf
+pdflatex Cloutier_Ryan_E_201905_PhD_thesis.tex
+bibtex Cloutier_Ryan_E_201905_PhD_thesis
+pdflatex Cloutier_Ryan_E_201905_PhD_thesis.tex
+pdflatex Cloutier_Ryan_E_201905_PhD_thesis.tex
+open Cloutier_Ryan_E_201905_PhD_thesis.pdf

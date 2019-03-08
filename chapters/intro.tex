@@ -446,8 +446,6 @@ because the conservation of angular momentum requires that $v_s(\tau_{\text{peri
 be greater than elsewhere on the orbit. The corresponding correction 
 factor to Eq.~\ref{eq:K1} is $(1-e^2)^{-1/2}$. \\
 
-not exactly orthogonal to the normal of the  star's orbital plane 
-
 The second effect is that of inclination. When attempting to measure the planetary 
 mass from RVs, the orbital inclination of the planetary orbit\footnote{Orbital 
 inclination is conventionally measured  relative 
@@ -455,10 +453,12 @@ to the plane of the sky; i.e. an edge-on orbit has $i=90^{\circ}$.} is degenerat
 $m_p$ and is entirely unknown unless the planet has a well-defined transit model which is sensitive
 to the orbital inclination. But the majority of planets are not transiting and hence have unknown
 orbital inclinations. For these planets RV measurements 
-are only sensitive to a mass lower limit $m_p\sin{i}$ rather than to the absolute planet mass. \\
+are only sensitive to a mass lower limit $m_p\sin{i}$ rather than to the absolute planet mass.
+The $\sin{i}$ correction factor also illustrates that an RV signal is only non-zero when
+the observer's orientation is not exactly orthogonal to the normal of the star's orbital plane;
+i.e. face-on orientations with $i=0$. \\
 
-The inclusion of these correction factors gives us 
-a more complete description of the RV semi-amplitude: 
+The inclusion of these correction factors gives a more complete description of the RV semi-amplitude: 
 
 \begin{equation}
 K = \left( \frac{2\pi G}{M_s^2 P} \right)^{1/3} \frac{m_p \sin{i}}{\sqrt{1-e^2}}. 
@@ -466,22 +466,25 @@ K = \left( \frac{2\pi G}{M_s^2 P} \right)^{1/3} \frac{m_p \sin{i}}{\sqrt{1-e^2}}
 \end{equation}
 
 \section{Measuring Radial Velocities} \label{sect:spectrograph}
+\subsection{Stellar spectroscopy}
 Radial velocity variations induced by planetary companions cause the star to become 
 periodically Doppler shifted. These wavelength shifts can be detected using hi-resolution 
-spectroscopy as absorption features in the stellar photosphere are shifted from their 
-rest wavelength $\lambda_{\mathrm{rest}}$ as the star's velocity changes along the line-of-sight 
+spectroscopy as spectral features in the stellar photosphere are shifted from their 
+rest wavelength $\lambda_{\text{rest}}$ as the star's velocity changes along the line-of-sight 
 according to 
 
 \begin{equation}
-\frac{\Delta \lambda}{\lambda_{\mathrm{rest}}} = \frac{v}{c}.
+\frac{\Delta \lambda}{\lambda_{\text{rest}}} = \frac{V_r}{c},
 \end{equation}
 
-\noindent In practise, the velocity shift is measured from the cross-correlation function of 
-the observed stellar spectrum with a template spectrum of the same spectral type. The highest 
-precision is achieved when the results from many lines can be averaged. This makes the radial 
-velocity method rather tractable for M-dwarfs in particular which exhibit a plethora of 
-spectral lines, particularly oxide molecular lines including titanium oxide (TiO) and vandium 
-oxide (VO) for ultracool dwarfs. A sample of infrared spectra of early-to-late M-dwarfs 
+\noindent where $\Delta \lambda = \lambda_{\text{obs}}-\lambda_{\text{rest}}$ and
+$\lambda_{\text{obs}}$ is the observed wavelength. 
+In practice, velocity shifts are often measured from the cross-correlation of 
+the observed stellar spectrum with a model or empirical template spectrum \citep{astudillodefru15}.
+The highest precision is achieved when the results from many lines can be averaged. This makes
+the RV method rather tractable for M dwarfs in particular which exhibit a plethora of 
+spectral lines which become more abundant towards later type stars.
+A sample of infrared spectra of early-to-late M-dwarfs 
 are shown in Fig.~\ref{fig:spectra} to demonstrate the wealth of absorption features. 
 These spectra from \cite{rayner09} were obtained 
 with SpeX at NASA's Infrared Telescope Facility at a resolving power of 
@@ -489,15 +492,17 @@ $R=\lambda / \Delta \lambda \sim 2000$. \\
 
 \begin{figure}
 \centering
-%\includegraphics[scale=0.7]{figures/Mdwarf_spectra.png}
+\includegraphics[scale=0.7]{figures/Mdwarf_spectra.png}
 \caption{Infrared spectra of four M-dwarfs in the J band (\emph{top}), H band 
 (\emph{middle}), and K band (\emph{bottom}). \label{fig:spectra}}
 \end{figure}
 
-The spectroscopic measurements are made with a spectrograph containing a grating which 
-diffracts the incoming source light into spectral orders which are subsequently 
-cross-dispersed spatially. The dispersed spectral orders are projected onto a detector 
-to create the observed stellar spectrum. The spectrum is then cross-correlated with a  
+The spectroscopic measurements are made with a spectrograph which contains a grating to 
+diffract the incoming source light into its various colour components. Echelle spectrographs
+in particular include an additional high order grating which separates the light into
+spectral orders which are subsequently cross-dispersed spatially onto the detector. The dispersed
+spectral orders create the observed stellar spectrum (Fig.~\ref{fig:harps}).
+The spectrum is then cross-correlated with a  
 template rest frame spectrum from the lab. The cross-correlation of prominent lines 
 are averaged to create the cross-correlation function (CCF) of the star at the epoch of 
 observation. The CCF is typically fit with a Gaussian line profile whose best-fit mean 
@@ -508,6 +513,44 @@ causing the line profile to be exhibit non-Gaussianities.
 As we shall see in Sects.~\ref{sect:fwhm} and \ref{sect:bis}, these distortions can 
 be used to model the stellar activity which can then be subtracted to possibly reveal 
 any present planetary signals in radial velocity.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{figures/20140904_harps-lasercomb.jpg}
+  \caption{A colourized image of the HARPS detector showing a subset of its 72 spectral orders.
+    Each row pair contains the stellar spectrum (solid spectrum) over a portion of the HARPS wavelength
+    domain and the corresponding wavelength reference from its laser frequency comb (dotted spectrum).
+    Accurate wavelength calibration enables monitoring of stellar absorption features over time which
+    may reveal periodic Doppler shifts possibly indicative of a planetary companion.
+    Image courtesy: \emph{European Southern Observatory}.}
+  \label{fig:harps}
+\end{figure}
+
+\subsection{Radial Velocity Error Budget Overview}
+Numerous sources of uncertainty hinder an observer's ability to measure infinitesimally precise
+RVs from an observed spectrum \citep{halverson16}. Many of these issues are intrinsic to the experimental
+hardware. A non-exhaustive list of prominent issues with RV spectrographs includes
+
+\begin{itemize}
+\item thermal stability
+\item pressure stability
+  
+\end{itemize}
+
+In addition to errors arising from the instrumentation, there are also physical sources of RV
+uncertainty that need to be accounted for in the post-processing software. Namely the effect of
+telluric contamination of the observed spectrum by spectral features origining from Earth's
+atmosphere. Because all high precision RV experiments are executed from the ground, the incoming
+starlight must traverse the much of the Earth's atmosphere at which time telluric features become
+imprinted on the incoming spectrum. This effect is much more prominent in the infrared where
+the atmosphere becomes much more opaque in large part due to absoprtion by atmospheric water vapour
+(Fig.~\ref{fig:transmission}).
+
+systematic
+photon noise: RV information content (resolution, \# lines, logg, metallicity, vsini)
+activity
+tellurics
+
 
 \section{Point-form Thesis: Introduction}
 \begin{itemize}

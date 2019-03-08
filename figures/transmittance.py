@@ -8,7 +8,7 @@ def plot_transmittance(wl, trans, pltt=True, label=False):
     ax.plot(wl, trans, 'k-', lw=.5)
    
     # plot bands
-    bands = ['U','B','V','R','I','Y','J','H','K']
+    bands = ['U','B','V','R','I','Y','J','H','K$_{S}$']
     wlcen = [0.3531,0.4430,0.5537,0.6940,0.8781,1.0259,1.2545,1.6310,2.1498]
     wlwidth = [0.0657,0.0973,0.0890,0.2070,0.2316,0.1084,0.1548,0.2886,0.3209]
     cols = ['0D0217','3501E1','00BA09','F52002','AE0800','9A0701','7B0601','5A0401','2C0201']
@@ -35,7 +35,7 @@ def plot_transmittance(wl, trans, pltt=True, label=False):
 
 if __name__ == '__main__':
     # get transmittance data
-    #wl, trans = np.loadtxt('/Users/ryancloutier/Research/RVInformation/RVFollowupCalculator/InputData/tapas_000001.ipac', skiprows=24).T
-    #wl *= 1e-3   # nm -> microns
-    #plot_transmittance(wl, trans)
+    wl, trans = np.loadtxt('/Users/ryancloutier/Research/RVInformation/RVFollowupCalculator/InputData/tapas_000001.ipac', skiprows=24).T
+    wl *= 1e-3   # nm -> microns
+    plot_transmittance(wl, trans, label=1)
     print ''

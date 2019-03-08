@@ -1,66 +1,132 @@
-\section{Exoplanets} \label{sect:exoplanets}
+\chapter{Introduction}
+
+%\section{Exoplanets} \label{sect:exoplanets}
 Since the first detection of an exo-solar planet around a main sequence star 
-\citep{mayor95}, 
+\citep{mayor95},
 the quest to find and study additional planets outside of our own solar system 
 has been met with much enthusiasm and success. In recent years, numerous 
-purpose-built instruments (e.g. \emph{HARPS}, 
-%\cite{mayor03}, 
-\emph{Kepler}, \& \emph{GPI}) 
-%\cite{macintosh14} 
-have been designed 
-to detect these exoplanets using a variety of methods, each with their own 
-unique advantages and biases. 
-For instance, the radial velocity (RV) method, which uses stellar spectra to 
-detect periodic Doppler 
-shifts in spectral features thus indicating the presence of 
-a companion, possibly planetary mass, is most sensitive to massive planets 
-with short orbital periods.  \\
+purpose-built instruments
+%(e.g. \emph{HARPS}, \cite{mayor03}, 
+%\emph{Kepler}, \& \emph{GPI} %\cite{macintosh14}) 
+have been designed to detect exoplanets using a variety of methods, each with
+their own unique sensitivities and biases. 
+%For instance, the radial velocity (RV) method, which uses stellar spectra to 
+%detect periodic Doppler 
+%shifts in spectral features thus indicating the presence of 
+%a companion, possibly planetary mass, is most sensitive to massive planets 
+%with short orbital periods.  \\
+Combining the results of multiple observational methods provides a global overview
+of the planet population and thus provides insight into
+the dominant pathways of planet formation and towards an understanding of how
+common the conditions for life like our own are within our galaxy.
 
-\emph{The results from many such dedicated exoplanet missions have been 
-astounding.} Presently there are 2933 confirmed 
-exoplanets\footnote{\url{http://exoplanets.org/}; accessed on June 28, 2016} 
+The results from many such dedicated exoplanet missions have been 
+astounding. At the time of writing there are 3917 confirmed 
+exoplanets\footnote{\url{https://exoplanets.nasa.gov/}; accessed on March 4, 2019.} 
 with many thousands more planetary candidates. Furthermore, there 
 exists a large diversity among planetary systems including the existence 
-of certain exotic subsamples of exoplanets which do not contain an analog in 
+of certain exotic subsamples of exoplanets for which analogs do not exist within 
 our own solar system. Some of these extreme systems include i) the so-called hot 
-Jupiters (e.g. 51 Pegasi b; \cite{mayor95}, HD 189733b; \cite{bouchy05}, 
-\& HD 209458b; \cite{mazeh99, charbonneau00}); 
-gas giant planets with masses comparable to or exceeding the mass of Jupiter, 
-but with orbital periods of $\lesssim 20$ days, ii) circumbinary planets (e.g. 
-Kepler-16b; \cite{doyle11}); 
-planets which orbit stellar binaries, or iii) the most common type of 
-planet in the local universe \parencite{petigura13}, 
-namely super-Earths; planets with masses of 
-$\sim 2-10$ M$_{\oplus}$ with a range of orbital separations (e.g. 
-Gliese 581c,d; \cite{udry07} \& GJ 1214b; \cite{charbonneau09}).
+Jupiters (e.g. 51 Pegasi b; \citealt{mayor95}, HD 189733b; \citealt{bouchy05}, 
+\& HD 209458b; \citealt{mazeh99, charbonneau00}): 
+gas giant planets with masses comparable to or exceeding the mass of Jupiter  
+but with orbital periods of $\lesssim 10$ days, ii) circumbinary planets (e.g. 
+Kepler-16b; \citealt{doyle11}): 
+planets which orbit stellar binaries, and iii) the most common planet types
+in the local universe \citep{petigura13}, namely super-Earths and sub-Neptunes:
+planets with radii between $\sim 1.5-4$ R$_{\oplus}$ with a range of orbital separations
+(e.g. GJ 1214b; \citealt{charbonneau09}, Kepler 440b \citealt{torres15}, \&
+K2-18b \citealt{foremanmackey15,montet15}).
+
 
 \section{Methods of Detecting Exoplanets} \label{sect:detection}
-I should probably talk about these a little bit but I don't think that it's 
-important for the proposal. See Fig.~\ref{fig:detection}.
-\begin{itemize}
-\item Radial Velocity
-\item Photometric Transit
-\item Transit Timing/Duration Variation
-\item Direct Imaging
-\item Gravitational Microlensing
-\item Astrometry
-\end{itemize}
+Numerous methods for the direct or indirect detection of exoplanets
+have been successfully demonstrated or proposed. All such methods provide complementary
+access to the planetary parameter space thus enabling a unique view of the exoplanet
+population. A non-exhaustive list of prominent exoplanet discovery methods follows.
+
+%\begin{itemize}
+%\item Radial Velocities,
+%\item Photometric Transits,
+%\item Direct Imaging,
+%\item Transit Timing Variations (i.e. TTVs),
+%\item Gravitational Microlensing, 
+%\item Astrometry.
+%\end{itemize}
+
+%\noindent See Fig.~\ref{fig:detection} for a depiction of the corresponding
+%observables.
+\emph{Radial velocities}: measuring periodic variations in the doppler shift of star
+around the barycenter of its planetary system due to the gravitational influence of
+its planetary-mass companions. This method is used to measure the orbital separation of a
+star and planet and place a lower limit on the planet's mass. The radial velocity
+method favours the detection of massive short-period planets around inactive stars
+(see Sect.~\ref{sect:rv} for more details).
+
+\emph{Photometric transits}: monitoring the brightness of a star over time and
+searching for periodically space brightness dips due to the occultation of the star
+by an orbiting planet. This method is highly complementary to the radial velocity method
+as it measures the planet's radius and orbital inclination where the latter can be
+used to break the mass-inclination degenerancy suffered by radial velocity planet
+detections. The recovery of radial velocity masses and transit radii together provide
+views of planetary bulk densities which can be used to distinguish predominently
+rocky planets from planets with significant size fractions of gaseous envelopes.
+The transit method is the most successful planet detection as a single
+wide-field camera can be used to montior many stars simulatenously and continuously.
+However this method requries planets to have nearly edge-on orbits relative to the observer
+and thus favours giant planets on close-in orbits.
+
+\emph{Direct imaging}: spatially resolves planets from their host stars and thus
+directly detects photons originating from the planet. The resulting planetary luminosity
+measurements can be compared to forward models of planetary
+evolution to infer planetary masses and possible formation pathways \citep{marley07}.
+Multi-epoch observations can also reveal the properties on planetary orbits \citep{wang18}.
+Due to the extremely small planet/star contrasts, direct imaging favours the detection
+of young massive planets on wide orbits.
+
+
+\emph{Transit timing variations}: or TTVs represent deviations in the expected transit
+times of a transiting planet under the assumption of a linear ephemeris. Such deviations
+may be attributed to an unseen planetary companion whose graviational influence on the
+transiting planet is observable either through close encounters or mean motion resonances.
+The amplitude and periodicity of a transiting planet's TTVs can be used to constrain the mass
+and orbital period of the perturbing planet.
+
+\emph{Gravitational microlensing}:
+offers a unique method for probing the planet population out to large distances
+within the Milky Way as the detected photons do not originate from the planetary system itself
+but rather from a distant bright source. As the gravitational field of a
+foreground star (i.e. the lens) occults a distant bright source, the source appears to
+brighten as a result of the lensing effect. In the case for which the len's gravitational
+potential deviates significantly from radially symmetric as the result of an anomalous gravity
+well, from say a planetary companion, that inhomogenity will distrupt the smoothness of the
+len causing an anomalous brightening that reveals the presence of a co-moving companion with
+a measurable mass. One drawback of this method is that observations of the same planetary
+system are not repeatable.
+
+\emph{Astrometry}: similarly to the radial velocity method wherein a planetary-mass companion
+causes its host star to periodically wobble. The astrometry method is unique to the radial velocity
+method as the observed variations occur in position space, rather than in velocity space, and
+occur in the plane of the sky. This method is used to measure the orbital separation of a
+star and planet and measure the planet's mass. Because the variation in the star's position
+needs to be resolved, the astrometry method favours nearby planetary systems with massive
+planets on wide-orbits.
+
 
 \begin{figure}
-\centering
-\includegraphics[scale=.2]{figures/51pegRV.png}
-\includegraphics[scale=.2]{figures/gj1214transit.png}
-\includegraphics[scale=.2]{figures/hr8799nirc2.png}
-\includegraphics[scale=.22]{figures/kepler19bTTV.png}
-\includegraphics[scale=.2]{figures/ogle.png}
-\includegraphics[scale=.24]{figures/de082349astrometry.png}
-\caption{Examples of exoplanet detections with (\emph{clockwise from the 
-top-left}) radial velocities \parencite{mayor95}, transits 
-\parencite{charbonneau09}, TTVs \parencite{ballard11}, astrometry 
-\parencite{sahlmann13}, gravitational microlensing \parencite{beaulieu06}, and 
-direct imaging \parencite{currie14}. \label{fig:detection}}
+  \centering
+  \includegraphics[width=\textwidth]{figures/detection_methods.png}
+  \caption{Examples of observables for exoplanet detections using A)
+    the radial velocity method \citep{mayor95}, B) planetary transits
+    \citep{charbonneau09}, C) direct imaging \citep{currie14},
+    D) transit timing variations \citep{ballard11},
+    E) graviational microlensing \citep{beaulieu06}, and
+    F) astrometry \citep{sahlmann13}.}
+  \label{fig:detection}
 \end{figure}
 
+
+\iffalse
 \section{Potentially Habitable Planets} \label{sect:HZ}
 One highly sought after result arising from the endeavour of exoplanet hunting 
 is the detection of potentially habitable Earth-like planets. 
@@ -68,7 +134,7 @@ Broadly speaking, a potentially habitable Earth-like planet refers to
 an exoplanet whose bulk composition is known to be rocky and whose 
 orbital period places the planet within a range of distances from its host star 
 where we expect water on the planetary surface to exist in its liquid phase; 
-the habitable zone (HZ) \parencite{dole64, hart79}. Granted, this HZ 
+the habitable zone (HZ) \citep{dole64, hart79}. Granted, this HZ 
 definition is 
 informed by our understanding of surface-based life on Earth and disregards 
 the potential for additional, exotic forms of life such as water-based life 
@@ -82,14 +148,14 @@ Some of these factors include
 
 \begin{enumerate}
 \item the presence of atmospheric greenhouse (GH) gases 
-\parencite{kasting93, kopparapu13} which 
+\citep{kasting93, kopparapu13} which 
 absorb thermal radiation from the planetary surface and re-emit roughly as a 
 blackbody thus heating the planetary surface to temperatures exceeding the 
 radiative equilibrium temperature expected in the absence of an atmosphere. 
-\item The presence of clouds \parencite{selsis07, yang13} which increases the 
+\item The presence of clouds \citep{selsis07, yang13} which increases the 
 albedo thus causing the planet to be cooler than what is predicted by cloud-free 
 models.
-\item The planet mass \parencite{kopparapu14}. Assuming an atmospheric composition 
+\item The planet mass \citep{kopparapu14}. Assuming an atmospheric composition 
 that is dominated by greenhouse gases (i.e. H$_2$O and/or CO$_2$) and that the 
 amount of atmospheric volatiles scales with the planet mass, the surface pressure 
 can be written in terms of the atmospheric column density $N$ and planet's 
@@ -101,7 +167,7 @@ surface gravity $g$ as
 \end{equation}
 
 \noindent Adopting an empirically derived mass-radius relation for planets with 
-$m_p < 5$ M$_{\oplus}$, e.g. $m_p \propto r_p^{3.2}$ \parencite{kopparapu14}, 
+$m_p < 5$ M$_{\oplus}$, e.g. $m_p \propto r_p^{3.2}$ \citep{kopparapu14}, 
 the surface pressure increases with planetary mass as 
 
 \begin{equation}
@@ -110,12 +176,12 @@ P_{\mathrm{s}} \propto m_p^{3/4},
 
 \noindent suggesting that more massive planets have thicker atmospheres.
 \item Planetary rotation as the global atmospheric circulation dictates the 
-spatial distribution of clouds. For instance, \parencite{yang14} showed that 
+spatial distribution of clouds. For instance, \citep{yang14} showed that 
 slowly rotating planets can maintain hospitable climates over longer timescales than 
 rapid rotators.
 \item Relevant system geometries such as planet obliquity 
-\parencite{williams97, spiegel08, spiegel09} and orbital eccentricity 
-\parencite{dressing10, cowan12}. 
+\citep{williams97, spiegel08, spiegel09} and orbital eccentricity 
+\citep{dressing10, cowan12}. 
 \end{enumerate}
 
 This list of effects on planetary habitability represents a subset of the 
@@ -127,19 +193,19 @@ for factors 1,2) above,
 the presence of particular chemical species and clouds/hazes 
 in a exoplanetary atmosphere 
 can be detected via variations in the apparent size of the planet as a function 
-of wavelength; transmission spectroscopy \parencite{seager00}, 3) the planet 
+of wavelength; transmission spectroscopy \citep{seager00}, 3) the planet 
 mass can be measured from radial velocities and/or transit timing variations 
-\parencite{holman05}, 4) the planetary rotation rate can be measured if the 
+\citep{holman05}, 4) the planetary rotation rate can be measured if the 
 planetary spectrum can be distinguished from that of its host star and if the 
 rotation rate is sufficiently large such that the rotational line broadening 
-is detectable \parencite[e.g.][]{snellen14, schwarz16}, and 5) the planetary obliquity or 
+is detectable \citep[e.g.][]{snellen14, schwarz16}, and 5) the planetary obliquity or 
 spin--orbit misalignment can be measured for transiting planets using 
-spectroscopy \parencite{rossiter24, mclaughlin24, queloz00} and their orbital 
+spectroscopy \citep{rossiter24, mclaughlin24, queloz00} and their orbital 
 eccentricities measured from radial velocities or secondary eclipse observations of 
 transiting planets. \\
 
 To date, a number of potentially habitable, Earth-like candidates have already 
-been detected \parencite[e.g. Kepler-438b, 442b;][]{torres15}). Although, these 
+been detected \citep[e.g. Kepler-438b, 442b;][]{torres15}). Although, these 
 inferences of habitability are based on a limited number of arguments for the 
 planet's size, mass,\footnote{Therefore its bulk density 
 ($\rho \propto m_p/r_p^3$) and surface gravity ($g \propto m_p/r_p^2$).} and 
@@ -150,11 +216,11 @@ characterization is possible through techniques such as transmission and/or
 emission spectroscopy of transiting planets and near edge-on planets 
 respectively. These methods have been successfully performed for a small 
 sample of \emph{non-rocky} exoplanets only 
-\parencite[e.g.][]{bean13, crouzet14, kreidberg14, mccullough14}. 
+\citep[e.g.][]{bean13, crouzet14, kreidberg14, mccullough14}. 
 
 \subsection{Adopted HZ Definition}
 We opt to restrict our focus of HZ planets to the commonly used definition 
-\parencite{kasting93} and parametric model of \cite{kopparapu13}. 
+\citep{kasting93} and parametric model of \cite{kopparapu13}. 
 In this definition the inner edge of the HZ 
 is defined by the `moist GH' or `water-loss' limit wherein a slight increase 
 in flux results in the 
@@ -164,7 +230,7 @@ addition of CO$_2$ into the atmosphere results in a net cooling effect as the
 increased Rayleigh scattering (increased albedo) begins to dominate over the 
 added GH effect resulting in a net cooling. \\
 
-The parametric model \parencite{kopparapu13} relates the orbital separations 
+The parametric model \citep{kopparapu13} relates the orbital separations 
 $a$ of the inner and outer edges of the HZ to the insolation received by planets 
 at those distances. To compute the HZ edges for a given star requires its 
 luminosity $L$ and effective temperature $T_{\mathrm{eff}}$ 
@@ -193,7 +259,7 @@ orbital period $P$ using Kepler's third law:
 P^2 \sim \frac{4 \pi^2}{G M_s} a^3.
 \label{eq:keplersthird}
 \end{equation}
-
+\fi
 
 \iffalse
 Atmospheric transmission and emission spectroscopic techniques require 
@@ -216,35 +282,39 @@ currently being built and tested
 goal; finding the closest potentially habitable world. 
 \fi
 
-\section{Exoplanet detection via Stellar Radial Velocity} \label{sect:RV}
+\section{Exoplanet detection via Stellar Radial Velocity} \label{sect:rv}
 \subsection{Radial velocity curves}
-The radial velocity (RV) method of detecting exoplanets represents a simple 
+The radial velocity (RV) method of detecting and characterizing exoplanets is largely
+the focus of the work presented herein and so I provide an overview of its formalism . 
+
+The RV method represents a simple 
 application of Newton's third law: `for every action, there is an equal 
-and opposite reaction'. In our case, the presence of planetary companions to a 
-host star displaces the centre-of-mass of the system from the centre of the star 
-itself. Because of this, a star with a single companions 
-executes an orbit about the system's centre-of-mass 
-with an approximate velocity 
+and opposite reaction'. In this case, the presence of a planetary companion to a 
+host star displaces the barycenter of the two-body system (i.e. the centre-of-mass) from the
+centre of the star  itself. Because of this, a star with a sole companion 
+will execute a keplerian orbit about the system's barycenter. The radial velocity of such a star
+%as seen by any observer whose line of sight is not exactly orthogonal to the star's
+%orbit normal,
+is
 
 \begin{equation}
-v(t) = V_0 + K[\cos{(\nu(t,P,\mathrm{T}0) + \omega)} + e\cos{\omega})],
+V_r(t) = \gamma_0 + K[\cos{(\nu(t,P,T_0) + \omega)} + e\cos{\omega})],
 \label{eq:rv}
 \end{equation}
 
-\noindent where $V_0$ is the systemic velocity offset, 
-$t$ is the independent time coordinate, $P$ is the orbital period of the star/planet, 
-T0 is the reference epoch or time of mid-transit\footnote{More generally, T0 is the 
-epoch at which the planet is closest to the observer in its orbit.}, 
-and $K$ is the semi-amplitude of the velocity variation 
-which is dependent on system body masses and orbit 
-(see Sect.~\ref{sect:K}). Eq.~\ref{eq:rv} is known as the keplarian orbital 
-solution. The orbital elements $e$ and $\omega$ are the orbital 
-eccentricity and argument of periastron respectively. Note that $\omega$ is only 
-defined for non-zero eccentricities. 
-The true anomaly $\nu(t)$ then defines the position of the star on its orbit 
-relative to the argument of periastron in the direction of motion and is derived 
-from another angular parameter, namely the eccentric anomaly $E$. The eccentric 
-anomaly $E$ can be solved for using the mean anomaly $M$ according to 
+\noindent where $t$ is the independent time coordinate, $\gamma_0$ is the systemic velocity of
+the star relative to the observer, $K$ is the semi-amplitude of the RV variation,
+$P$ is the orbital period of the star and planet, 
+$T_0$ is the reference epoch or time of inferior conjunction, and
+the orbital elements $e$ and $\omega$ are the orbital eccentricity and argument of
+periastron respectively. Note that $\omega$ is undefined for circular orbits with
+$e=0$ and is assigned the conventional value of $\pi/2$ in such a scenario.
+
+Eq.~\ref{eq:rv} is known as the keplarian orbital solution.
+The true anomaly $\nu(t,P,T_0)$ defines the position of the star on its orbit 
+relative to the argument of periastron and in the direction of motion. It is derived 
+from another angular parameter, namely the eccentric anomaly $E(t)$. The eccentric 
+anomaly can be solved for using the mean anomaly $M(t)$ according to 
 Kepler's equation
 
 \begin{equation}
@@ -258,125 +328,137 @@ M(t) = E(t)-e\sin{E(t)},
 M(t) = \frac{2\pi}{P} (t-\tau_{\mathrm{peri}}), 
 \end{equation}
 
-\noindent and $P$ is the orbital period and $\tau_{\mathrm{peri}}$ is the time of 
+\noindent and $\tau_{\mathrm{peri}}$ is the epoch of 
 pericenter passage. Because Eq.~\ref{eq:kepler} does not have a closed-form 
-solution, it must be solved using iterative numerical techniques. 
+solution, in practice it is solved using iterative numerical techniques. 
 Examples of keplarian orbits from Eq.~\ref{eq:rv} are shown in Fig.~\ref{fig:rv} 
-for two 
-Earth-mass planets each with an orbital period of 10 days around a 0.1 M$_{\odot}$ 
-M-dwarf. The first planet is on a perfectly circular orbit and therefore 
-has a purely sinusoidal 
-velocity while the second planet's eccentricity is 0.5 and whose velocity 
-clearly differs from purely sinusoidal with the addition of the second 
-cosine term in Eq.~\ref{eq:rv}. \\
+for two 5 Earth mass planets each with an orbital period of 2 days around a 0.2 M$_{\odot}$ 
+star. The first planet is on a perfectly circular orbit and therefore induces a purely
+sinusoidal stellar RV curve while the second planet's eccentricity is 0.3 and exhibits a
+RV curve that clearly differs from sinusoidal with the addition of the second cosine term in
+Eq.~\ref{eq:rv}. \\
 
-\begin{figure}
-\centering
-\includegraphics[scale=0.6]{figures/rvcurve_example.png}
-\caption{Keplarian orbital solutions for two planets each with an orbital period of 10 days 
-and one Earth mass orbiting a 0.1 M$_{\odot}$ star. The \emph{blue} planet is on a 
-perfectly circular orbit ($e=0$) while the \emph{green} planet's orbit has a significant 
-eccentricity ($e=0.5$). Note the deviation of the latter from a pure sinusoid. \label{fig:rv}}
-\end{figure}
+
+\begin{tabular}{c}
+  \animategraphics[width=\textwidth,controls,loop]{150}{figures/RVcurve-}{0}{1} \\
+  Figure 1.2.1: An animation of the orbits of two (non-interacting) planets of equal
+  mass and on \\
+  2 day orbits around a 0.2 Solar mass star. One planet has a circular keplerian orbit 
+  ($e=0$) \\
+  while the orbit of the other exhibits some ellipticity with $e=0.3$. The lower
+  panel depicts the \\
+  corresponding RV variation induced on the host star by each planet. 
+  \label{fig:rv}
+\end{tabular}
+
 
 The keplarian orbital solution is valid in the absence of dynamical 
-perturbations to the 2-body system. In this case only the true anomaly varies with 
-time. However if additional bodies are present in the system such as in binary star 
+perturbations to the two-body system. In this case only the true anomaly varies with 
+time. However, if additional bodies are present in the system such as in binary star 
 systems or in compact high multiplicity planetary systems, then the parameters in 
 Eq.~\ref{eq:rv} need not be fixed and we instead refer to the measured orbit as the 
 osculating orbit which may vary between orbital cycles. Note that if the timescale 
 for perturbations to the stellar orbital solution is comparable to or less than the 
 time interval over which radial velocity observations are taken, then the keplarian 
-orbital solution is insufficient and one must consider a more complicated treatment 
-of the dynamics typically in the form of N-body simulations.
+orbital solution in Eq~\ref{eq:rv} is insufficient and one must consider a more
+complicated treatment of the dynamics typically in the form of N-body simulations.
 
-\subsection{Measurements from the radial velocity method} \label{sect:K}
-If we consider the simplest planetary system, we have a star and planet each 
-orbiting their common centre-of-mass (COM) with position vector
+
+\subsection{Fundamental planet parameters from the radial velocity method} \label{sect:K}
+If we consider the simplest planetary system containing a star and a planet, each will 
+orbit the system's barycenter or their common centre-of-mass (COM) whose position vector
+is
 
 \begin{equation}
-\mathbf{r}_{\mathrm{COM}} = \frac{M_s \mathbf{r}_s + m_p \mathbf{r}_p}{M_s + m_p}.
+\mathbf{r}_{\mathrm{COM}} = \frac{M_s \mathbf{r}_s + m_p \mathbf{r}_p}{M_s + m_p},
 \end{equation}
 
-\noindent To simplify the configuration further let us assume that the star is 
-much more massive than its planetary companion ($M_s \gg m_p$) and that the 
-COM coordinate is located at the origin ($|\mathbf{r}_{\mathrm{COM}}|=0$). Working 
-in absolute scalar terms, the orbital distances of the star and planet are then 
+\noindent where $M_s$ and $m_p$ are the stellar and planetary masses respectively and
+$\mathbf{r}_s$ and $\mathbf{r}_p$ are their position vectors. 
+Let us now take a barycentric view of this two-body system such that the 
+COM coordinate is located at the origin ($|\mathbf{r}_{\mathrm{COM}}|=0$). Further
+assuming circular orbits (i.e. $e=0$) and working 
+in absolute scalar terms, the orbital distances of the star and planet are  
 related via 
 
 \begin{equation}
-a_s = a \left( \frac{m_p}{M_s} \right)
+a_s M_s = a_p m_p,
 \label{eq:com}
 \end{equation}
   
-\noindent where we have changed notation by writing $|\mathbf{r}_s|$ as $a_s$ and 
-$|\mathbf{r}_p|$ as $a$. For a perfectly circular orbit ($e=0$), the constant 
-velocity of the star around the COM is 
+\noindent where we have written $|\mathbf{r}_s|$ as $a_s$ and 
+$|\mathbf{r}_p|$ as $a_p$. For a circular orbit, the stellar velocity around the COM has
+the constant value
 
 \begin{equation}
-v = \frac{2\pi a_s}{P}.
+v_s = \frac{2\pi a_s}{P}.
 \label{eq:velocity}
 \end{equation}
 
-\noindent As the star orbits the COM as a result of the gravitational influence its 
-planetary companion, the maximum observed radial velocity of the star is realized 
-when the radial component of the star's 3D 
-velocity is maximized. At these points in the orbit $v$ equals the semi-amplitude 
+\noindent As the star orbits the COM the maximum observed radial velocity of the star
+is realized when the magnitude of the star's radial velocity vector
+equals its velocity $v_s$. At these points in the orbit, $V_r(t)=v_s$ equals the semi-amplitude 
 of the radial velocity curve $K$. Because the radial velocity 
-curve and hence $K$, is observable, 
+curve, and hence $K$, is observable, 
 we can relate $K$ to the masses of the star and planet by combining the velocity 
-equation (Eq.~\ref{eq:velocity}) with Kepler's third law and the COM equation 
-(Eqs.~\ref{eq:keplersthird} \& \ref{eq:com} respectively):
+equation (Eq.~\ref{eq:velocity}) with the COM equation (Eq.~\ref{eq:com})
+and Kepler's third law:
 
 \begin{align}
-\mathrm{max}(v(t)) = K &= \frac{2\pi a_s}{P}, \\
-&= \frac{2\pi}{P} \left( \frac{m_p}{M_s} \right) a, \\
+\mathrm{max}(V_r(t)) = K &= \frac{2\pi a_s}{P}, \\
+&= \frac{2\pi}{P} \left( \frac{m_p}{M_s} \right) a_p, \\
 &= \frac{2\pi}{P} \left( \frac{m_p}{M_s} \right) \left( \frac{GM_s}{4\pi^2} \right)^{1/3} P^{2/3}, \\
 &= \left( \frac{2\pi G}{M_s^2 P} \right)^{1/3} m_p. \label{eq:K1}
 \end{align}
 
-Eq.~\ref{eq:K1} contains two observables directly from the RV timeseries: the orbital 
-period $P$ and semi-amplitude $K$. Typically an observer will use the stellar spectra 
-from which the radial velocity measurements are computed, in tandem with spectral 
-templates to infer the spectral type and stellar mass of the host star. This allows 
-us to infer the mass of the planetary companion from the RV timeseries. The uncertainties 
-in the planet mass 
-measurement are typically dominated by the noise in dataset and uncertainties in 
-the best-fit stellar mass from spectral fitting. \\
+Eq.~\ref{eq:K1} contains two quantities which are directly observable from the RV timeseries.
+Namely, the orbital period $P$ and semi-amplitude $K$. Observers will often seek an independent
+constraint on the stellar mass $M_s$ from say the comparison of the stellar spectrum to
+spectral templates of known spectral type and stellar mass from stellar evolution models
+\citep[e.g.][]{muirhead12} or from
+empirical relations between optical or near-IR stellar luminosities and dynamically
+measured stellar masses \citep[e.g.][]{benedict16,mann19}. Prior knowledge of the
+stellar mass enables the mass of the planetary companion to be inferred from the RV timeseries.
+The uncertainties in the planet mass 
+measurement are typically dominated by the noise in dataset which directly affects the
+$P$ and $K$ measurement precisions but further uncertainties in $m_p$ are introduced by
+uncertainties in $M_s$. \\
 
 Looking more closely at Eq.~\ref{eq:K1} we can see that the RV semi-amplitude scales 
 linearly with planet mass but has a negative scaling with stellar mass and orbital 
-period. This makes sense because the radial velocity effect is gravitational in 
-nature. A larger perturbing mass ($m_p$) will result in a larger perturbation to the 
+period. This makes sense because the RV effect is a manifestiation of a gravitational effect.
+A larger perturbing mass (i.e. $m_p$) will result in a larger perturbation to the 
 central body which itself becomes more difficult to perturb if more massive. Also the 
-effect weakens when the distance between the bodies is increased (larger $P$). The 
-radial velocity method therefore has a natural observational bias towards massive, 
-close-in planets around small stars. This explains why the first planets to be 
+effect weakens when the distance between the bodies is increased (i.e. larger $P$). The 
+RV method therefore has a natural observational bias towards massive, 
+close-in planets around low mass stars. This explains why the first planets to be 
 detected with the radial velocity method were hot Jupiters 
-\parencite[e.g.][]{mayor95}. For reference, the RV semi-amplitude that the Earth 
-induces on the Sun is $\sim 9$ cm s$^{-1}$ whereas the more massive Jupiter induces a 
-$\sim 12$ \mps{} effect despite having a much wider orbit.
+\citep[e.g.][]{mayor95}. For reference, the RV semi-amplitude that the Earth 
+induces on the Sun is $\sim 9$ cm s$^{-1}$ whereas the $\sim 300$ times more massive Jupiter
+induces a $\sim 12$ \mps{} effect despite having a factor of $\sim 5$ wider orbit.
 
 \subsection{Caveats to Eq.~\ref{eq:K1}}
 In the derivation of the RV semi-amplitude (Eq.~\ref{eq:K1}) we have neglected two 
 important geometric effects. The first is that of eccentricity which, if non-zero, 
-causes the stellar radial velocity to vary throughout the orbit; $K \ne v$. Instead 
-$K = \mathrm{max}(v(t))$ and increases because the conservation of angular momentum 
-requires that $v(\tau_{\mathrm{peri}})$ 
+causes the stellar velocity to vary throughout the orbit such that
+$\text{d}v_s/\text{d}t \ne 0$. Instead $\mathrm{max}(V_r(t)) > 2\pi a_s/P$ must increase
+because the conservation of angular momentum requires that $v_s(\tau_{\text{peri}})$ 
 be greater than elsewhere on the orbit. The corresponding correction 
 factor to Eq.~\ref{eq:K1} is $(1-e^2)^{-1/2}$. \\
 
-The second effect is that of inclination. When attempting to measure the planetary 
-mass from radial velocities the orbital inclination of the planetary orbit\footnote{Orbital 
-inclination is conventionally measured  relative 
-to the plane of the sky; i.e. an edge-on orbit has $i=90^{\circ}$.} is entirely unknown 
-unless the planet has a well-defined transit model which is sensitive to the orbital 
-inclination. But for the majority of planets which are not transiting, the orbital inclination 
-is unknown and degenerate with $m_p$. Therefore for most planets, radial velocity measurements 
-are only sensitive to a mass lower limit $m_p\sin{i}$ rather than the absolute planet mass. \\
+not exactly orthogonal to the normal of the  star's orbital plane 
 
-Compared to Eq.~\ref{eq:K1}, 
-a more complete description of the RV semi-amplitude is therefore 
+The second effect is that of inclination. When attempting to measure the planetary 
+mass from RVs, the orbital inclination of the planetary orbit\footnote{Orbital 
+inclination is conventionally measured  relative 
+to the plane of the sky; i.e. an edge-on orbit has $i=90^{\circ}$.} is degenerate with
+$m_p$ and is entirely unknown unless the planet has a well-defined transit model which is sensitive
+to the orbital inclination. But the majority of planets are not transiting and hence have unknown
+orbital inclinations. For these planets RV measurements 
+are only sensitive to a mass lower limit $m_p\sin{i}$ rather than to the absolute planet mass. \\
+
+The inclusion of these correction factors gives us 
+a more complete description of the RV semi-amplitude: 
 
 \begin{equation}
 K = \left( \frac{2\pi G}{M_s^2 P} \right)^{1/3} \frac{m_p \sin{i}}{\sqrt{1-e^2}}. 
@@ -407,7 +489,7 @@ $R=\lambda / \Delta \lambda \sim 2000$. \\
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.7]{figures/Mdwarf_spectra.png}
+%\includegraphics[scale=0.7]{figures/Mdwarf_spectra.png}
 \caption{Infrared spectra of four M-dwarfs in the J band (\emph{top}), H band 
 (\emph{middle}), and K band (\emph{bottom}). \label{fig:spectra}}
 \end{figure}
@@ -419,7 +501,7 @@ to create the observed stellar spectrum. The spectrum is then cross-correlated w
 template rest frame spectrum from the lab. The cross-correlation of prominent lines 
 are averaged to create the cross-correlation function (CCF) of the star at the epoch of 
 observation. The CCF is typically fit with a Gaussian line profile whose best-fit mean 
-is equal to the measured radial velocity \parencite{pepe02}. 
+is equal to the measured radial velocity \citep{pepe02}. 
 Active regions on the stellar surface arising 
 from the presence of magnetic fields can have additional effects on the observed CCF 
 causing the line profile to be exhibit non-Gaussianities. 

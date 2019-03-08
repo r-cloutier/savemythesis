@@ -1,7 +1,14 @@
 \documentclass{ut-thesis}
-\usepackage[bookmarks,bookmarksopen,colorlinks,linkcolor={black},citecolor={blue},urlcolor={blue}]{hyperref}
-\usepackage{natbib}
+\usepackage[bookmarks,bookmarksopen,colorlinks,linkcolor={black},citecolor={blue},urlcolor={blue}]{hyperref}  %% to color the citations
+\usepackage{natbib}   %% for the ApJ bibliography to work
+\usepackage{amsmath,amssymb}  %% for things like lesssim
+\usepackage{graphicx}   %% to includegraphics
+\usepackage{animate}    %% to embed gifs
 
+%% new commands
+\newcommand{\mps}[1]{m s$^{-1}$#1}
+
+%% header
 \degree{Doctor of Philosophy}
 \department{Astronomy \& Astrophysics}
 \gradyear{2019}
@@ -46,11 +53,12 @@ and characterization of distant worlds around small stars}
 \end{preliminary}
 
 %% Chapter Files %%
-%\input{chapters/intro}
+\input{chapters/parametertable}
+\input{chapters/intro}
 %\input{chapters/GP}
 %\input{chapters/spirou_pred} %Predictions of Radial Velocity Planet Detections}
 %\input{chapters/transit_pred} %
-\include{chapters/k218}
+%\include{chapters/k218}
 %\input{chapters/orion}
 
 

@@ -1,6 +1,6 @@
 \chapter{Introduction}
 
-%\section{Exoplanets} \label{sect:exoplanets}
+\section{Exoplanets}  \label{sect:exoplanets}
 Since the first detection of an exo-solar planet around a main sequence star 
 \citep{mayor95},
 the quest to find and study additional planets outside of our own solar system 
@@ -115,7 +115,7 @@ planets on wide-orbits.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{figures/detection_methods.png}
+  %\includegraphics[width=\textwidth]{figures/detection_methods.png}
   \caption{Examples of observables for exoplanet detections using A)
     the radial velocity method \citep{mayor95}, B) planetary transits
     \citep{charbonneau09}, C) direct imaging \citep{currie14},
@@ -249,7 +249,7 @@ S_{\mathrm{eff}} = S_{\mathrm{eff},\odot} + AT_* + BT_*^2 + CT_*^3 + DT_*^4,
 \noindent where $T_* \equiv T_{\mathrm{eff}}-5780$ K and the coefficients 
 $S_{\mathrm{eff},\odot},A,B,C,D$ are computed for the `moist-GH' and `maximum-GH' 
 limits (reported in \cite{kopparapu13}). This model is applicable to all 
-early-to-mid M-dwarfs and down to ultracool dwarfs with $T_{\mathrm{eff}}$ as 
+early-to-mid M dwarfs and down to ultracool dwarfs with $T_{\mathrm{eff}}$ as 
 low as 2600 K. \\
 
 Finally we relate the orbital separations of the HZ edges to the observable 
@@ -270,7 +270,7 @@ instrumentation \citep[e.g. \emph{NIRISS} aboard \emph{JWST};][]{doyon12} we
 must first detect this population of nearby rocky exoplanets. To date, the 
 highest priority terrestrial planet for atmospheric characterization is 
 GJ 1132b \citep{berta15} at just 12 pc. Using the occurrence rates of small 
-planets around M-dwarfs from \cite{dressing15a}, they estimated that the 
+planets around M dwarfs from \cite{dressing15a}, they estimated that the 
 nearest 
 \emph{transiting} potentially habitable rocky planet is within 14.6 pc at 95\% 
 confidence. GJ 1132b may therefore represent this planet. Integrating over 
@@ -339,21 +339,9 @@ RV curve that clearly differs from sinusoidal with the addition of the second co
 Eq.~\ref{eq:rv}. \\
 
 
-%\begin{tabular}{c}
-%  \animategraphics[width=\textwidth,controls,loop]{150}{figures/RVcurve-}{0}{1} \\
-%  Figure 1.2.1: An animation of the orbits of two (non-interacting) planets of equal
-%  mass and on \\
-%  2 day orbits around a 0.2 Solar mass star. One planet has a circular keplerian orbit 
-%  ($e=0$) \\
-%  while the orbit of the other exhibits some ellipticity with $e=0.3$. The lower
-%  panel depicts the \\
-%  corresponding RV variation induced on the host star by each planet. 
-%  \label{fig:rv}
-%\end{tabular}
-
 \begin{figure}
   \centering
-  \animategraphics[width=\textwidth,controls,loop]{150}{figures/RVcurve-}{0}{1}
+  %\animategraphics[width=\textwidth,controls,loop]{150}{figures/RVcurve-}{0}{1}
   \caption{An animation of the orbits of two (non-interacting) planets of equal
     mass and on 2-day orbits around a 0.2 Solar mass star. One planet has a circular
     keplerian orbit ($e=0$) while the orbit of the other exhibits some ellipticity with
@@ -451,7 +439,7 @@ induces a $\sim 12$ \mps{} effect despite having a factor of $\sim 5$ wider orbi
 In the derivation of the RV semi-amplitude (Eq.~\ref{eq:K1}) we have neglected two 
 important geometric effects. The first is that of eccentricity which, if non-zero, 
 causes the stellar velocity to vary throughout the orbit such that
-$\text{d}v_s/\text{d}t \ne 0$. Instead $\mathrm{max}(V_r(t)) > 2\pi a_s/P$ must increase
+$\text{d}v_s/\text{d}t \ne 0$. Instead $\mathrm{max}(V_r(t)) > 2\pi a_s/P$ 
 because the conservation of angular momentum requires that $v_s(\tau_{\text{peri}})$ 
 be greater than elsewhere on the orbit. The corresponding correction 
 factor to Eq.~\ref{eq:K1} is $(1-e^2)^{-1/2}$. \\
@@ -494,7 +482,7 @@ the observed stellar spectrum with a model or empirical template spectrum \citep
 The highest precision is achieved when the results from many lines can be averaged. This makes
 the RV method rather tractable for M dwarfs in particular which exhibit a plethora of 
 spectral lines which become more abundant towards later type stars.
-A sample of infrared spectra of early-to-late M-dwarfs 
+A sample of infrared spectra of early-to-late M dwarfs 
 are shown in Fig.~\ref{fig:spectra} to demonstrate the wealth of absorption features. 
 These spectra from \cite{rayner09} were obtained 
 with SpeX at NASA's Infrared Telescope Facility at a resolving power of 
@@ -502,9 +490,10 @@ $R=\lambda / \Delta \lambda \sim 2000$. \\
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.7]{figures/Mdwarf_spectra.png}
-\caption{Infrared spectra of four M-dwarfs in the J band (\emph{top}), H band 
-(\emph{middle}), and K band (\emph{bottom}). \label{fig:spectra}}
+%\includegraphics[scale=0.7]{figures/Mdwarf_spectra.png}
+\caption{Medium resolution spectra of four early-to-mid M dwarfs in the J band (\emph{top}),
+  H band (\emph{middle}), and K$_{\text{S}}$ band (\emph{bottom}) from the SpeX spectrograph
+  at NASA's Infrared Telescope Facility. \label{fig:spectra}}
 \end{figure}
 
 The spectroscopic measurements are made with a spectrograph which contains a grating to 
@@ -526,7 +515,7 @@ any present planetary signals in radial velocity.
 
 \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{figures/20140904_harps-lasercomb.jpg}
+  %\includegraphics[scale=0.5]{figures/20140904_harps-lasercomb.jpg}
   \caption{A colourized image of the HARPS detector showing a subset of its 72 spectral orders.
     Each row pair contains the stellar spectrum (solid spectrum) over a portion of the HARPS wavelength
     domain and the corresponding wavelength reference from its laser frequency comb (dotted spectrum).
@@ -560,7 +549,7 @@ hardware. A non-exhaustive list of prominent issues with RV spectrographs includ
 instrument and telescope. As such, their mitigation is set by the specifications of the instrument
 and cannot be improved by any post processing. 
 
-\subsubsection{Photon noise limited RVs}
+\subsubsection{Photon noise limit}
 The photon noise limit represents the fundamental limit to the RV measurement precision that can
 be obtained from a stellar spectrum $A_i$. Here $i$ is the index over wavelength elements.
 The photon noise limited RV precision from \cite{bouchy01} is
@@ -596,7 +585,7 @@ bands $UBVRIYJHK_{\text{S}}$.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{figures/sigRV_grid.png}
+  %\includegraphics[width=\textwidth]{figures/sigRV_grid.png}
   \caption{Distributions of the photon noise limited RV precision in the $UBVRIYJHK_{\text{S}}$
     bands and as a function of spectral resolution, $\log{g}$, metallicity, \vsini{,}
     and stellar effective temperature. The distribution shown in each subpanel is marginized
@@ -604,7 +593,7 @@ bands $UBVRIYJHK_{\text{S}}$.
   \label{fig:sigrv}
 \end{figure}
 
-\subsubsection{Physical sources of RV noise}
+\subsubsection{Telluric contamination}
 In addition to errors arising from the instrumentation, there are also physical sources of RV
 uncertainty that need to be accounted for in the post-processing software. One example is the effect
 of telluric contamination of the observed spectrum by spectral features origining from Earth's
@@ -621,7 +610,7 @@ methods of telluric spectrum extraction \citep[e.g.][]{artigau14,bedell19}.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{figures/transmittance.png}
+  %\includegraphics[width=\textwidth]{figures/transmittance.png}
   \caption{A \texttt{TAPAS} model of the radiative transmittance through the Earth's atmosphere
     as seen from MaunaKea at an airmass of unity \citep{bertaux14}. It is clear that the atmosphere
     becomes increasingly opaque towards infrared wavelengths with small observing windows at the
@@ -629,11 +618,9 @@ methods of telluric spectrum extraction \citep[e.g.][]{artigau14,bedell19}.
   \label{fig:transmission}
 \end{figure}
 
-photon noise: RV information content (resolution, \# lines, logg, metallicity, vsini)
-activity
-tellurics
+\subsubsection{Stellar activity}
+\input{chapters/activitytablev2}
 
-\subsubsection{Other Software Challenges}
 
 
 \section{Point-form Thesis: Introduction}
@@ -642,16 +629,13 @@ tellurics
 \item~\ref{sect:exoplanets} \textbf{Exoplanets}: in the local universe exoplanets are 
 extremely abundant and quite diverse compared to the planets in our own solar system.
 \item~\ref{sect:detection} \textbf{Methods of Detecting Exoplanets}: there exists a 
-number of methods of detecting exoplanets each with their own sensitivity to particular 
-planetary systems.
-\item~\ref{sect:HZ} \textbf{Potentially Habitable Planets}: rocky planets which lie in 
-their host star's nominal habitable zone are interesting targets which are flagged as 
-potentially habitable. The habitable zone is defined by planetary surface temperatures 
-where liquid water can be sustained.  
-\item~\ref{sect:RV} \textbf{Exoplanet Detection via Stellar Radial Velocity}: the 
-periodic gravitational influence of planetary companions on their host star can be 
-detected thus measuring a lower limit on the planetary mass and the planet's orbit.
+number of methods of detecting exoplanets each with their own sensitivities and biases.
+\item~\ref{sect:rv} \textbf{Exoplanet Detection via Stellar Radial Velocity}: the 
+  gravitational influence of planetary companions on their host star induces a periodically
+  varying Doppler shift that may be detectable and used to measure a exoplanet's minimum mass
+  and orbital properties.
 \item~\ref{sect:spectrograph} \textbf{Measuring Radial Velocities}: hi-resolution 
-spectrographs are used to measure the Doppler shift of stellar absorption features; 
-the star's radial velocity.
+  spectrographs are used to measure the Doppler shift of stellar absorption features.
+  The precision of such measurements is often impeded by sources of error from the
+  instrumentation, counting statistics, telluric contamination, and stellar activity.
 \end{itemize}

@@ -18,7 +18,7 @@ their own unique sensitivities and biases.
 Combining the results of multiple observational methods provides a global overview
 of the planet population and thus provides insight into
 the dominant pathways of planet formation and towards an understanding of how
-common the conditions for life like our own are within our galaxy.
+common the conditions for life like our own are within our galaxy. \\
 
 The results from many such dedicated exoplanet missions have been 
 astounding. At the time of writing there are 3917 confirmed 
@@ -274,7 +274,7 @@ goal; finding the closest potentially habitable world.
 \section{Exoplanet detection via Stellar Radial Velocity} \label{sect:rv}
 \subsection{Radial velocity curves}
 The radial velocity (RV) method of detecting and characterizing exoplanets is largely
-the focus of the work presented herein and so I provide an overview of its formalism . 
+the focus of the work presented herein and so I provide an overview of its formalism. \\ 
 
 The RV method represents a simple 
 application of Newton's third law: `for every action, there is an equal 
@@ -297,7 +297,7 @@ $P$ is the orbital period of the star and planet,
 $T_0$ is the reference epoch or time of inferior conjunction, and
 the orbital elements $e$ and $\omega$ are the orbital eccentricity and argument of
 periastron respectively. Note that $\omega$ is undefined for circular orbits with
-$e=0$ and is assigned the conventional value of $\pi/2$ in such a scenario.
+$e=0$ and is assigned the conventional value of $\pi/2$ in such a scenario. \\
 
 Eq.~\ref{eq:rv} is known as the keplarian orbital solution.
 The true anomaly $\nu(t,P,T_0)$ defines the position of the star on its orbit 
@@ -610,7 +610,9 @@ methods of telluric spectrum extraction \citep[e.g.][]{artigau14,bedell19}.
 \subsubsection{Stellar activity}
 There exists a variety of physical processes in the photospheres and chromospheres of stars that
 can lead to temporally correlated RV signals which are collectively
-referred as \emph{stellar activity}. Especially in RV, stellar activity
+referred as \emph{stellar activity}. Alternatively, activity sources that act on short timescales
+(i.e. seconds to minutes) are sometimes referred to as stellar jitter.
+Particularly in RV planet studies, stellar activity
 signals are the bane of observers because their signals can mask and
 in certain instances even mimic the planetary signals that we are searching for. \\
 
@@ -622,11 +624,11 @@ planetary companions. Ancillary time-series to RV measurements
 derived from any of the aforementioned observations can therefore be used to
 disentangle stellar activity from achromatic Doppler shifts induced by a companion.
 Examples of sources of stellar activity are summarized in the subsequent paragraphs
-while a brief summary is given in Table~\ref{table:activity}.
+while a brief summary is given in Table~\ref{table:activity}. \\
 
 \input{chapters/activitytable}
 
-\emph{Flares}: Magnetically active stars can undergo energetic flares or coronal mass
+\emph{Flares}: magnetically active stars can undergo energetic flares or coronal mass
 ejections originating from the stellar atmosphere. The exact flare physics
 in M dwarfs is still uncertain but clearly requires strong magnetic fields
 which can be sustained by turbulent convective motions and rotation
@@ -639,7 +641,7 @@ line intensity spike over short time scales, such measurements are commonly
 removed from planet searches \citep{reiners09}. \\
 
 \emph{Stellar Oscillations}:
-Small scale mechanical perturbations to the internal stellar structure
+small scale mechanical perturbations to the internal stellar structure
 can give rise to oscillation modes. If not damped, these oscillations
 can propagate through the stellar interior before rebounding at the surface
 of the star thus creating observable pulses in brightness and in the RVs of a
@@ -648,12 +650,156 @@ This phenomenon is predominantly observed in Sun-like and post main sequence sta
 Due to the short timescale of
 pulsation variations in radial velocity measurements of pulsating stars, the
 jitter is mitigated through the use of sufficiently long exposure times
-\citep{lovis05, dumusque11}. \\
+\citep{lovis05, dumusque11a}. \\
 
 
 \emph{Granulation}:
+stars with outer convection zones like the Sun and M dwarfs, exhibit granulation
+at their surface. The granulation pattern is the result
+of convection cells penetrating the surface; hot fluid parcels rising to the surface before
+cooling and descending back into the stellar interior (see Fig.~\ref{fig:granulation}).
+These patches of hot rising fluid are brighter than the regions of cold descending fluid.
+Furthermore, the relative fractional coverage of a star's surface by rising fluid parcels is
+in general greater than that of descending ones as evidenced in Fig.~\ref{fig:granulation}.
+Along the line-of-sight, the RV component of photons emitted by the rising parcels at the
+photospheric boundary will be blueshifted whereas the receding fluid within the
+`intergranular lanes' will be redshifted. The domination of the stellar
+surface area by hot parcels results in a granulated star having a net \emph{convective
+  blueshift}. \\
+
+\begin{figure}
+  \centering
+  %\includegraphics[width=0.8\textwidth]{figures/solargranulation.jpg}
+  \caption{An image of a patch of the solar surface taken with NASA's Hinode Optical
+    Telescope. The bright regions are the result of rising hot fluid parcels whereas the cooler,
+    `intergranular lanes' reveal where the gas has cooled and descends back into the solar
+    interior. (Image credit: Hinode JAXA/NASA/PPARC)}
+  \label{fig:granulation}
+\end{figure}
 
 
+The short lifetimes of \emph{typical} granules
+\citep[$\sim 10$ minutes;][]{hall08,gilliland11}) implies that brightness variability of the
+surface varies on a similar timescale.
+%Such variations have been measured using high cadence photometry
+%\citep[e.g.][]{gilliland11}.
+The corresponding RV jitter is dependent on the relative velocity of convective
+cells across the stellar surface. Noting that the relative sizes of granules varies over time, so
+too does the resulting RV jitter whose \emph{net} effect (hot and cold regions partially
+cancel each other) is typically at the level of a few \mps{} \citep{lindegren03}. \\
+%This level of radial
+%velocity jitter has been observed on both the Sun \parencite{kuhn83} and on $\alpha$ Cen A
+%\parencite{kjeldsen99}. \\
+
+\emph{Active Regions}:
+like the Sun, the photospheres of active late-type stars are often littered with active regions such
+as dark star spots and/or hot faculae or plages in the chromosphere. These localized regions of either
+hot or cold gas relative to the surrounding photosphere become trapped by magnetic field loops reconnecting
+with the stellar surface. Active regions create a temporally evolving
+RV signal and spectral line profile distortion due to their unique emitting temperatures and their orientation
+as they rotate in and out of view (see Fig.~\ref{fig:starspot}). In the Sun, these structures
+have long been known to be associated with strong local magnetic fields as evidenced by the observed
+Zeeman splitting (see Sect.~\ref{sect:zeeman}) of lines emitted from these active regions
+\citep{hale08}. \\
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=.8]{figures/starspot.png}
+  \caption{An snapshot example of a spotted stellar photosphere and its effect on the disk-integrated
+    spectral line profile. The cool spots disrupt the symmetry of the
+    line profile according to the temperature difference between the spot and
+    unspotted photosphere at its position on the stellar disk.
+    \citep[Image credit:][]{kochukhov16}}
+  \label{fig:starspot}
+\end{figure}
+
+The activity timescale from active regions is modulated by the stellar rotation. The stellar rotation
+period \prot{} can often be measured for active stars with non-zero
+inclination from the quasi-periodicity of its photometric variability.
+The spectroscopic method of measuring a star's rotation state is by measuring the projected
+stellar rotation velocity \vsini{\footnote{Slowly rotating stars with correspondingly small \vsini{}
+    values may not be detectable with insufficient spectral resolution. In such cases, only an upper
+    limit on \vsini{} can be measured.}} via the rotation broadening
+of spectral features \citep{gray08}.
+Because active regions are associated with magnetic activity and stellar
+magnetic fields require rotation in order to be sustained over long timescales, rapidly rotating
+late-type stars tend to be more magnetically active.
+Fig.~\ref{fig:activity} demonstrates that the fraction of active M dwarfs is sustained at slower
+rotation states in later M dwarfs than in early M dwarfs and that the activity fraction in general 
+decreases as the stars spin-down via magnetized braking from stellar winds
+\citep{skumanich72}. Therefore, a measure of stellar rotation can be used as a first-order
+indicator of an M dwarf's activity level. \\
+
+\begin{figure}
+  \centering
+  %\includegraphics[width=.8\textwidth]{figures/mdwarfactivity.png}
+  \caption{The fraction of active M dwarfs as a function of stellar rotation period
+    for early-to-mid (\emph{left panel}) and mid-to-late (\emph{right panel}) M
+    dwarfs. An individual star's activity flag is based on H$\alpha$ emission observations.
+    The activity fraction of stars decreases as rotation slows although mid-to-late M
+    dwarfs can maintain a higher activity fraction than early-to-mid M dwarfs within a given
+    \prot{} bin. \citep[Image credit:][]{west15}}
+  \label{fig:activity}
+\end{figure}
+
+Fig.~\ref{fig:rotation} depicts the rotation period
+distribution of M dwarfs in the solar neighbourhood \citep{newton16a} and in the Kepler
+field up to just $P_{\mathrm{rot}} < 70$ days \citep{mcquillan13a}.
+Two distinct populations exist, namely a rapidly
+rotating population (\prot{} $\lesssim 3$ days) and a slowly rotating population
+(\prot{} $\gtrsim 50$ days). It has been proposed that these two populations
+have a distinct range of ages with
+the slow rotators belonging to an older stellar population based on their galactic
+kinematics \citep{irwin11} and resulting from magnetic-braking over time.
+Indeed, a fairly robust relation exists for GK and early M dwarf stars between stellar
+mass, age, and rotation \citep[gyrochronology;][]{barnes03}. \\
+
+\begin{figure}
+  \centering
+  %\includegraphics[width=.8\textwidth]{figures/mdwarfrotation.png}
+  \caption{Rotation period versus stellar mass for solar neighbourhood and Kepler field
+    M dwarfs. Periods of the Kepler stars are intentionally capped at \prot{} $=70$ days.
+    The distribution of \prot{} appears to be bi-modal featuring a
+    population of fast (\prot{} $\lesssim 3$ days) and slowly (\prot{} $\gtrsim 50$ days)
+    rotating M dwarfs with a dearth of stars at intermediate \prot{.} These features are
+    thought to be indicative of two differently aged populations. 
+    \citep[Image credit:][]{newton16a}}
+\label{fig:rotation}
+\end{figure}
+
+Another important point regarding active regions is that their lifetimes are comparable
+to the stellar rotation timescale. This means that the associated stellar activity can vary
+between rotation cycles. As seen in Fig.~\ref{fig:rotation},
+the lifetimes can range from days to months \citep{schrijver02}. Active region
+lifetimes are primarily determined by their sizes \citep{berdyugina05} as they
+diffuse into the photosphere; larger volume/surface ratios results in longer lifetimes
+\citep{petrovay97}.
+
+
+\emph{Magnetic Cycles}:
+the Sun undergoes a long-term magnetic cycle with an 11 year period as measured by the
+fractional coverage or number of sunspots and faculae visible on its surface \citep{hathaway10}.
+At solar maximum, the 
+peak in magnetic activity over the solar cycle, the Sun i) experiences strong prominences
+and coronal mass ejections and ii) contains a large number of active regions which contribute
+to a higher level of activity in RV time-series as well as in other observables
+\citep{maunder04}. Long-term magnetic activity cycles have been observed in long-baseline
+spectroscopic monitoring programs. From solar observations, the flux in the \caii{}
+H and K lines are known to correlate with the number of sunspots. Numerous results from
+similar surveys have
+demonstrated that the majority of Sun-like stars do exhibit magnetic activity cycles
+with a range of periods from $\sim 7-30$ years \citep{duncan91, lockwood97, balinunas98}. \\
+
+As it pertains to RV planet searches, full activity cycles have yet
+to be observed and precisely characterized. Subsections of the cyclic trends have been seen in
+certain mature RV surveys to be correlated with
+the $\log{R'_{\mathrm{HK}}}$ spectroscopic activity indicator \citep[e.g.][]{lovis11}.
+A common tactic to correct for such long-term activity trends in RV time-series is to use a linear
+relation between the RVs and the contemporaneous $\log{R'_{\mathrm{HK}}}$ time-series
+\citep{dumusque12}. The corresponding RV signal from magnetic cycles can reach tens of \mps{.}
+Luckily, when searching for
+planets whose orbital timescales are much less than the period of the star's magnetic cycle, the
+corresponding activity is not of much concern. \\
 
 
 \section{Point-form Thesis: Introduction}

@@ -45,17 +45,6 @@ have been successfully demonstrated or proposed. All such methods provide comple
 access to the planetary parameter space thus enabling a unique view of the exoplanet
 population. A non-exhaustive list of prominent exoplanet discovery methods follows.
 
-%\begin{itemize}
-%\item Radial Velocities,
-%\item Photometric Transits,
-%\item Direct Imaging,
-%\item Transit Timing Variations (i.e. TTVs),
-%\item Gravitational Microlensing, 
-%\item Astrometry.
-%\end{itemize}
-
-%\noindent See Fig.~\ref{fig:detection} for a depiction of the corresponding
-%observables.
 \emph{Radial velocities}: measuring periodic variations in the doppler shift of star
 around the barycenter of its planetary system due to the gravitational influence of
 its planetary-mass companions. This method is used to measure the orbital separation of a
@@ -87,7 +76,7 @@ of young massive planets on wide orbits.
 
 \emph{Transit timing variations}: or TTVs represent deviations in the expected transit
 times of a transiting planet under the assumption of a linear ephemeris. Such deviations
-may be attributed to an unseen planetary companion whose graviational influence on the
+may be attributed to an unseen planetary companion whose gravitational influence on the
 transiting planet is observable either through close encounters or mean motion resonances.
 The amplitude and periodicity of a transiting planet's TTVs can be used to constrain the mass
 and orbital period of the perturbing planet.
@@ -120,7 +109,7 @@ planets on wide-orbits.
     the radial velocity method \citep{mayor95}, B) planetary transits
     \citep{charbonneau09}, C) direct imaging \citep{currie14},
     D) transit timing variations \citep{ballard11},
-    E) graviational microlensing \citep{beaulieu06}, and
+    E) gravitational microlensing \citep{beaulieu06}, and
     F) astrometry \citep{sahlmann13}.}
   \label{fig:detection}
 \end{figure}
@@ -619,17 +608,61 @@ methods of telluric spectrum extraction \citep[e.g.][]{artigau14,bedell19}.
 \end{figure}
 
 \subsubsection{Stellar activity}
-\input{chapters/activitytablev2}
+There exists a variety of physical processes in the photospheres and chromospheres of stars that
+can lead to temporally correlated RV signals which are collectively
+referred as \emph{stellar activity}. Especially in RV, stellar activity
+signals are the bane of observers because their signals can mask and
+in certain instances even mimic the planetary signals that we are searching for. \\
+
+Depending on the exact physical process these
+signals can have widely differing timescales and manifestations in
+spectroscopic, photometric, and polarimetry observations. In general, activity
+signals are also wavelength dependent unlike Doppler variations induced by
+planetary companions. Ancillary time-series to RV measurements
+derived from any of the aforementioned observations can therefore be used to
+disentangle stellar activity from achromatic Doppler shifts induced by a companion.
+Examples of sources of stellar activity are summarized in the subsequent paragraphs
+while a brief summary is given in Table~\ref{table:activity}.
+
+\input{chapters/activitytable}
+
+\emph{Flares}: Magnetically active stars can undergo energetic flares or coronal mass
+ejections originating from the stellar atmosphere. The exact flare physics
+in M dwarfs is still uncertain but clearly requires strong magnetic fields
+which can be sustained by turbulent convective motions and rotation
+\citep{browning08}. Flare events are easily identifiable as they
+exhibit a characteristically rapid increase in brightness (or in the intensity
+of certain emission lines; e.g. Ca II, He I, H$\alpha$, etc. \citealt{schmidt12})
+followed by an exponential decay over hours. Because RV
+measurements affected by flares can be easily identified by the characteristic
+line intensity spike over short time scales, such measurements are commonly
+removed from planet searches \citep{reiners09}. \\
+
+\emph{Stellar Oscillations}:
+Small scale mechanical perturbations to the internal stellar structure
+can give rise to oscillation modes. If not damped, these oscillations
+can propagate through the stellar interior before rebounding at the surface
+of the star thus creating observable pulses in brightness and in the RVs of a
+few \mps{} on a time scale of a few to tens of minutes \citep{bedding01}. 
+This phenomenon is predominantly observed in Sun-like and post main sequence stars.
+Due to the short timescale of
+pulsation variations in radial velocity measurements of pulsating stars, the
+jitter is mitigated through the use of sufficiently long exposure times
+\citep{lovis05, dumusque11}. \\
+
+
+\emph{Granulation}:
+
 
 
 
 \section{Point-form Thesis: Introduction}
 \begin{itemize}
 \renewcommand\labelitemi{--}
-\item~\ref{sect:exoplanets} \textbf{Exoplanets}: in the local universe exoplanets are 
+\item~\ref{sect:exoplanets} \textbf{Exoplanets}: exoplanet sin the local universe are 
 extremely abundant and quite diverse compared to the planets in our own solar system.
 \item~\ref{sect:detection} \textbf{Methods of Detecting Exoplanets}: there exists a 
-number of methods of detecting exoplanets each with their own sensitivities and biases.
+number of methods of detecting exoplanets, each with its own sensitivities and biases.
 \item~\ref{sect:rv} \textbf{Exoplanet Detection via Stellar Radial Velocity}: the 
   gravitational influence of planetary companions on their host star induces a periodically
   varying Doppler shift that may be detectable and used to measure a exoplanet's minimum mass

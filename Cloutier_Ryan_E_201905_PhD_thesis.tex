@@ -4,6 +4,8 @@
 \usepackage{amsmath,amssymb}  %% for things like lesssim
 \usepackage{graphicx}   %% to includegraphics
 \usepackage{animate}    %% to embed gifs
+\usepackage[x11names]{xcolor}   %% to color interactive figures
+
 
 %% new commands
 \newcommand{\mps}[1]{m s$^{-1}$#1}
@@ -13,6 +15,60 @@
 \newcommand{\hei}[1]{He \footnotesize I \normalsize#1}
 \newcommand{\nai}[1]{Na \footnotesize I \normalsize#1}
 \newcommand{\vspan}[1]{$V_{\text{span}}$#1}
+\newcommand{\prob}{\mathrm{P}}
+\newcommand{\nobs}[1]{$n_{\text{obs}}$#1}
+\newcommand{\msini}[1]{$m_p\sin{i}$#1}
+
+
+%% define interactive figure commands
+\newcommand{\cdbox}[1]{%
+  \colorlet{currentcolor}{.}%
+  {\color{Blue1}%
+    \dbox{\color{currentcolor}#1}}%
+}
+\usepackage{dashbox,framed,color,ocg-p}
+\fboxsep=1pt
+\fboxrule=1pt
+\newcommand{\ToggleLayer}[2]{%
+  % #1: layer name,
+  % #2: link text
+  \leavevmode
+  \pdfstartlink user {
+    /Subtype /Link
+    /Border [0 0 0]%
+    /A <<
+      /S/JavaScript
+      /JS (
+         var aOCGs = this.getOCGs(), Layer;
+         var Layers = "#1".split(","), Active = -1, i, l;
+         for (l=0; l<Layers.length; l++) {
+           Layer = Layers[l];
+           for (i=0; aOCGs && i<aOCGs.length; i++) {
+             if (aOCGs[i].state && aOCGs[i].name == Layer) {
+               Active = l;
+               aOCGs[i].state = false;
+             }
+           }
+           if (Active >= 0) break;
+         }
+         if (Active == -1) {
+           for (l=0; l<Layers.length; l++) {
+             if (Layers[l] == "") Active = l;
+           }
+         }
+         Active = Active + 1;
+         if (Active == Layers.length) Active = 0;
+         Layer = Layers[Active];
+         for (i=0; aOCGs && i<aOCGs.length; i++) {
+           if (aOCGs[i].name == Layer) aOCGs[i].state = true;
+         }
+      )
+    >>
+  }#2%
+  \pdfendlink
+}
+
+
 
 %% header
 \degree{Doctor of Philosophy}
@@ -61,8 +117,8 @@ and characterization of distant worlds around small stars}
 %% Chapter Files %%
 %\input{chapters/parametertable}
 %\input{chapters/intro}  % 20-pages
-\input{chapters/GP}
-%\input{chapters/spirou_pred} %Predictions of Radial Velocity Planet Detections}
+%\input{chapters/GP}
+\input{chapters/blindsurveypaper} %Predictions of Radial Velocity Planet Detections}
 %\input{chapters/transit_pred} %
 %\include{chapters/k218}
 %\input{chapters/orion}

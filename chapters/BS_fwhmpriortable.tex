@@ -1,0 +1,15 @@
+\begin{deluxetable*}{cc}
+\tabletypesize{\scriptsize}
+\tablecaption{Gaussian Process Hyperparameter Priors Used in Training\label{BStable:gppriors}}
+\tablewidth{0pt}
+\tablehead{Hyperparameter & Prior}
+\startdata
+Covariance amplitude, $a$ [\mps{]} & $\mathcal{J}(10^{-2}, 10^2) \cdot \max{|FWHM-\langle FWHM \rangle|})$ \\
+Exponential decay timescale, $\lambda$ [days] & $\mathcal{J}(1, 10\cdot (\max{\mathbf{t}}-\min{\mathbf{t}}))$  \\
+Coherence scale, $\Gamma$ & $\mathcal{J}(10^{-2}, 10^2)$ \\
+Periodic timescale, $P_{\text{GP}}$ [days] & $\mathcal{J}(0.1,300)$\tablenotemark{a} \\
+& $\mathcal{U}(0.9, 1.1) \cdot P_{\text{rot}}$\tablenotemark{b}
+\enddata
+\tablenotetext{a}{If \prot{} \emph{is not} detected in the FWHM time-series.}
+\tablenotetext{b}{If \prot{} \emph{is} detected in the FWHM time-series.}
+\end{deluxetable*}

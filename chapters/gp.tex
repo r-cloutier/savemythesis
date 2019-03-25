@@ -225,6 +225,7 @@ that these variables are indeed uncorrelated. The corresponding covariance matri
     0.15 & 0.00 \\
     0.00 & 0.98
   \end{bmatrix}
+  \label{eq:Kuncorr}
 \end{equation}
 
 \noindent calculated using Eq.~\ref{eq:correq} is diagonal and confirms that
@@ -242,7 +243,7 @@ $X_2$ when the corresponding value of $X_1$ is known. \\
   \caption{The one and two dimensional distributions of the Gaussian random
     variables $GAA$ and draws from the standard normal disribution. The solid
     lines overlaid on their joint distribution represent the 1, 2, and 3$\sigma$
-    contours. The covariance matrix (Eq.~\ref{eq:Kuncorr})  has off-diagonal
+    contours. The covariance matrix (Eq.~\ref{eq:Kuncorr}) has off-diagonal
     elements equal to zero indiciating that the two variables are uncorrelated;
     a property which is largely discernable from their joint distribution.}
   \label{fig:uncorr2d}
@@ -267,24 +268,48 @@ goaltenders over the past five seasons is
     0.1496 & -0.0037 \\
     -0.0037 & 0.0001
   \end{bmatrix}
+  \label{eq:Kcorr}
 \end{equation}
 
 \noindent and has non-zero off-diagonal elements. Furthermore, the off-diagonal
 elements are negative which is indicative of the anti-correlation between the
 $GAA$ and the $SV$\%. This strong correlation is easily visualized in their joint
-distribution in Fig.~\ref{fig:corr2d}.
+distribution in Fig.~\ref{fig:corr2d}. \\
+
+The fact that the two variables are
+correlated implies that knowledge of one variable's value provide some information
+regarding the value of the second. This demonstrated in Fig.~\ref{fig:corr2d}
+wherein we measure the value of the $GAA$ of the Toronto Maple Leafs goaltender
+this year to be 2.57 goals per game. Not bad. Not great, but not bad. By measuring
+this value we can establish a posterior distribution on Freddie's corresponding
+$SV$\% given his $GAA$: $p(SV\%|GAA=2.57)$. Because the variables are dependent
+on each other according to Eq.~\ref{eq:Kcorr}, this posterior distribution is
+narrower (i.e. more precise) than the full $SV$\% distribution. Indeed this is
+evidenced in the lower right panel of Fig.~\ref{fig:Kcorr} which compares the
+two $SV$\% distributions and reveals that the dispersion in $p(SV\%|GAA=2.57)$
+has approximately half of the dispersion as the full $SV$\% distribution. \\
 
 \begin{figure}
   \centering
-  %\includegraphics[width=.9\textwidth]{figures/uncorr_2d.png}
+  %\includegraphics[width=.9\textwidth]{figures/corr_2D_HARTpost.png}
   \caption{The one and two dimensional distributions of the Gaussian random
-    variables $GAA$ and draws from the standard normal disribution. The solid
-    lines overlaid on their joint distribution represent the 1, 2, and 3$\sigma$
-    contours. The covariance matrix (Eq.~\ref{eq:Kuncorr})  has off-diagonal
-    elements equal to zero indiciating that the two variables are uncorrelated;
-    a property which is largely discernable from their joint distribution.}
+    variables $GAA$ and $SV$\%.
+    The covariance matrix (Eq.~\ref{eq:Kcorr}) has negative off-diagonal
+    elements describing the degree of anti-correlation between the two
+    variables; a property which is largely discernable from their joint
+    distribution as high values of the $SV$\% tend to correspond to a lower
+    $GAA$. The correlation can be used to inform the value of $SV$\% given a
+    measured value of $GAA$. This is demonstrated as the measured $GAA$ 
+    for the Toronto Maple Leaf's goaltender (vertical dashed line) provides some
+    additional information on the correpsonding $SV$\% whose posterior given the
+    measured $GAA$ is more tightly constrained than the $SV$\% distribution for
+    the entire NHL.}
   \label{fig:corr2d}
 \end{figure}
+
+The notion that the value of an unseen variable can be informed by the measurement
+of another, if those variables are correlated, can have huge implications for
+predictive models.
 
 
 \section{Point-form Thesis: Stellar Activity Modelling in Radial Velocity

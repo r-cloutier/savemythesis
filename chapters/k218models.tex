@@ -1,0 +1,66 @@
+\begin{table}
+\tiny
+\renewcommand{\arraystretch}{0.7}
+\centering
+\caption[]{Summary of RV Models and Adopted Priors}
+%\cprotect\caption{Model parameters}
+%. Maximum a posteriori and 68.3\% confidence intervals.}
+\label{table:models}
+\begin{tabular}{lc}
+\hline \\ [-1ex]
+Parameter & Prior \smallskip \\
+\hline \\ [-1ex]
+\multicolumn{2}{c}{Model 1} \\
+\multicolumn{2}{c}{(2 planets + GP trained on $\mathbf{y}=$ K2 photometry)} \smallskip \\
+\emph{GP hyperparameters} & \\
+Covariance amplitude, $a$ [\mps{]} & $\mathcal{J}(0.1,30)^{\bullet}$ \\
+Exponential timescale, $\lambda$ [days] & $p(\lambda|\mathbf{y})$ \\
+Coherence, $\Gamma$ &  $p(\Gamma|\mathbf{y})$ \\
+Periodic timescale, $P_{\text{GP}}$ [days] &  $p(P_{\text{GP}}|\mathbf{y})$ \\
+Additive jitter, $s$ [\mps{]} & $\mathcal{J}(10^{-2},10)$ \smallskip \\ 
+\emph{Keplerian parameters} & \\
+$\gamma_0$ [\mps{]} & $\mathcal{U}(620,670)$ \\
+$P_b$ [days] & $\mathcal{N}(32.939614,10^{-4})^{\circ}$ \\
+$T_{0,b}$ [BJD-2,450,000] & $\mathcal{N}(7264.39144,6.3 \times 10^{-4})^{\circ}$ \\
+$K_b$ [\mps{]} & $\text{\emph{mod}}\mathcal{J}(1,20)^{\ast}$ \\
+$h_b = \sqrt{e_b}\cos{\omega_b}$ & $\mathcal{U}(-1,1)^{\dagger}$ \\
+$k_b = \sqrt{e_b}\sin{\omega_b}$ & $\mathcal{U}(-1,1)^{\dagger}$ \\
+$P_c$ [days] & $\mathcal{U}(8,10)$ \\
+$T_{0,c}$ [BJD-2,450,000] & $\mathcal{U}(7259,7269)$ \\
+$K_c$ [\mps{]} & $\text{\emph{mod}}\mathcal{J}(1,20)$ \\
+$h_c = \sqrt{e_c}\cos{\omega_c}$ & $\mathcal{U}(-1,1)^{\dagger}$ \\
+$k_c = \sqrt{e_c}\sin{\omega_c}$ & $\mathcal{U}(-1,1)^{\dagger}$ \medskip \\
+
+\multicolumn{2}{c}{Model 2} \\
+\multicolumn{2}{c}{(2 planets + GP trained on $\mathbf{y}=$ BIS)} \smallskip \\
+see Model 1 & \\
+
+\multicolumn{2}{c}{Model 3} \\
+\multicolumn{2}{c}{(2 planets + untrained GP)} \smallskip \\
+see Model 1  with the & \\
+following modifications: & \\
+ln Exponential timescale, $\ln{\lambda}$ [days] & $\mathcal{U}(-10,10)$ \\
+ln Coherence, $\ln{\Gamma}$ &  $\mathcal{U}(-3,3)$ \\
+ln Periodic timescale, $\ln{P_{\text{GP}}}$ [days] &  $\mathcal{U}(3.2,4)$ \medskip \\
+
+\multicolumn{2}{c}{Model 4} \\
+\multicolumn{2}{c}{(2 planets)} \smallskip \\
+see keplerian parameters in Model 1 & \\
+
+\hline
+\end{tabular}
+\begin{list}{}{}
+\item {\bf{Notes.}} $^{(\bullet)} \mathcal{J}$ refers to a non-informative Jeffreys prior
+  which is scale invariant; equal probability per decade which is necessary to sample
+  multiple orders of magnitude \citep{gregory05}. \\
+  $^{(\circ)}$ based on the transit light curve measurements from \citetalias{benneke17}. \\
+  $^{(\ast)}$ $\text{\emph{mod}}\mathcal{J}(k,l)$ \mps{} 
+  refers to a modified Jefferys prior on a parameter $A$ which behaves like a uniform
+  prior for $A \ll$ the knee at k \mps{} and
+  behaves like a Jeffreys prior at $A \gg k$ up to $l$. We use a modified Jeffreys prior on 
+  the RV semi-amplitudes $K$ to sample multiple decades as a Jeffreys prior but also include
+  $K=0$ \mps{} which a Jeffreys prior does not \citep{gregory05}. \\
+  $^{(\dagger)}$ We further insist
+  that $e = h^2 + k^2 < 1$.
+\end{list}
+\end{table}

@@ -1,0 +1,77 @@
+\clearpage
+\begin{landscape}
+\begin{table*}
+\footnotesize
+%\small
+\centering
+\renewcommand{\arraystretch}{0.6}
+\caption[]{Model parameters of the K2-18 planetary system}
+%. Maximum a posteriori and 68.3\% confidence intervals.}
+\label{k218table:k2184}
+\begin{tabular}{lcccc}
+\hline \\ [-1ex]
+Parameter & \multicolumn{4}{c}{Maximum a-posteriori values with $16^{\text{th}}$ and $84^{\text{th}}$ percentiles} \\
+\hline \\ [-1ex]
+\emph{Stellar Parameters} & & & & \\
+2MASS Photometry & \multicolumn{4}{c}{$J$=9.763$\pm$0.028, $H$=9.135$\pm$0.026, $K_s$=8.899$\pm$0.019} \\
+Stellar mass, $M_s$ [M$_{\odot}$]  &  \multicolumn{4}{c}{0.359 $\pm$ 0.047}   \\
+Stellar radius, $R_s$ [R$_{\odot}$]   &  \multicolumn{4}{c}{0.411 $\pm$ 0.038}   \\
+Effective temperature, $T_{\text{eff}}$ [K]  & \multicolumn{4}{c}{3457 $\pm$ 39} \\
+Distance, $d$ [pc] & \multicolumn{4}{c}{$34 \pm 4$} \\
+Rotation period, $P_{\text{rot}}$ [days] & \multicolumn{4}{c}{$38.6^{+0.6}_{-0.4}$} \\
+Systemic velocity, $\gamma_0$ [m s$^{-1}$] & \multicolumn{4}{c}{$653.7 \pm 0.9^{\bullet}$} \medskip \\
+
+& \emph{Model 1} & \emph{Model 2} & \emph{Model 3} & \emph{Model 4} \\
+\emph{GP hyperparameters} & & & & \\
+Covariance amplitude, $a$ [\mps{]} & $2.8^{+2.1}_{-1.6}$ & N.S.$^{\circ}$ & N.S. & $-$ \\
+Exponential timescale, $\lambda$ [days] &  $59.1^{+19.1}_{-11.2}$ & N.S. & N.S. & $-$\\
+Coherence, $\Gamma$ & $1.2^{+0.6}_{-0.3}$ & N.S. & N.S. & $-$ \\
+Periodic timescale, $P_{\text{GP}}$ [days] & $38.6^{+1.1}_{-0.4}$ & N.S. & N.S. & $-$ \\
+Additive jitter, $s$ [\mps{]} & $0.25^{+0.97}_{-0.06}$ & $0.45^{+0.85}_{-0.23}$ & $0.22^{+1.09}_{-0.04}$ & $-$ \medskip \\
+
+\emph{K2-18c} & & & & \\
+Period, $P_c$ [days] & $8.962 \pm 0.008$ & $8.964 \pm 0.010$ & $8.965 \pm 0.010$ & $8.966^{+0.005}_{-0.010}$ \\
+Time of inferior conjunction, $T_{0,c}$ [BJD-2,450,000] & 7264.55 $\pm$ 0.46 & $7264.55 \pm 0.51$ & $7264.49^{+0.58}_{-0.45}$ & $7264.48^{+0.61}_{-0.31}$ \\
+Radial velocity semi-amplitude, $K_c$ [\mps{]} & $4.63 \pm 0.72$ & $4.74^{+0.71}_{-0.98}$ & $4.52 \pm 0.82$ & $4.63^{+0.82}_{-0.58}$  \\
+$h_c =\sqrt{e_c}\cos{\omega_c}$ & $-0.37^{+0.41}_{-0.13}$ & $-0.46^{+0.45}_{-0.09}$ & $-0.39^{+0.51}_{-0.10}$ & $-0.51^{+0.57}_{-0.05}$ \\
+$k_c =\sqrt{e_c}\sin{\omega_c}$ & $0.05^{+0.28}_{-0.21}$ & $-0.04^{+0.35}_{-0.13}$ & $0.00^{+0.35}_{-0.17}$ & $0.01^{+0.32}_{-0.17}$ \medskip \\
+Semi-major axis, $a_c$ [AU] & $0.060 \pm 0.003$  & $0.060 \pm 0.003$ & $0.060 \pm 0.003$ & $0.060 \pm 0.003$ \\
+Eccentricity, $e_c$   & $< 0.47^{\ast}$ & - & - & - \\
+Minimum planet mass, $m_{p,c} \sin{i_c}$ [M$_{\oplus}$] & $7.51 \pm 1.33$ & $7.68^{+1.33}_{-1.72}$ & $7.33 \pm 1.48$ & $7.51^{+1.48}_{-1.15}$  \\
+Equilibrium temperature, $T_{\text{eq},c}$ [K] & \\
+\hspace{2pt} Bond albedo of 0.3 & 363 $\pm$ 14 & 363 $\pm$ 14 & 363 $\pm$ 14 & 363 $\pm$ 14  \medskip \\
+
+\emph{K2-18b} & & & \\
+Period, $P_b$ [days] & $32.93963 \pm 1.0 \times 10^{-4}$ & $32.93962 \pm 1.1 \times 10^{-4}$ & $32.93961 \pm 1.0 \times 10^{-4}$ & $32.93960 \pm 9.3 \times 10^{-5}$ \\
+Time of inferior conjunction, $T_{0,b}$ [BJD-2,450,000] & $7264.39157 \pm 5.9 \times 10^{-4}$ & $7264.39133 \pm 6.4 \times 10^{-4}$ & $7264.39155^{+0.0006}_{-0.0008}$ & $7264.39135^{+0.0007}_{-0.0005}$ \\
+Radial velocity semi-amplitude, $K_b$ [\mps{]} & $3.18 \pm 0.71$ & $3.29^{+0.71}_{-0.64}$ & $3.26^{+0.63}_{-0.85}$ & $3.25^{+0.60}_{-0.41}$  \\
+$h_b =\sqrt{e_b}\cos{\omega_b}$ & $0.33^{+0.08}_{-0.28}$ & $0.33^{+0.06}_{-0.30}$ & $0.31^{+0.07}_{-0.37}$ & $0.32^{+0.06}_{-0.27}$ \\
+$k_b =\sqrt{e_b}\sin{\omega_b}$ & $-0.16^{+0.42}_{-0.21}$ & $-0.16^{+0.42}_{-0.19}$ & $-0.10^{+0.41}_{-0.25}$ & $-0.11^{+0.31}_{-0.22}$ \medskip \\
+Semi-major axis, $a_b$ [AU] & $0.143 \pm 0.006$  & $0.143 \pm 0.006$ & $0.143 \pm 0.006$ & $0.143 \pm 0.006$ \\
+Eccentricity, $e_b$   & $< 0.43^{\ast}$ & - & - & - \\
+Planet mass, $m_{p,b}$ [M$_{\oplus}$]$^{\dagger}$ & $7.96 \pm 1.91$ & $8.23^{+1.92}_{-1.76}$ & $8.16^{+1.73}_{-2.24}$ & $8.13^{+1.66}_{-1.25}$  \\
+Planet density, $\rho_{p,b}$ [$\mathrm{g\;cm^{-3}}$]$^{\ddagger}$ & $3.3 \pm 1.2$ & $3.4^{+1.2}_{-1.2}$ & $3.4^{+1.2}_{-1.3}$ & $3.3^{+1.2}_{-1.0}$ \\
+Surface gravity, $g$ [$\mathrm{m\;s^{-2}}$]$^{\ddagger}$  & $14.0 \pm 4.3$ & $14.5^{+4.3}_{-4.1}$ & $14.4^{+4.1}_{-4.8}$ & $14.3^{+4.0}_{-3.5}$  \\
+Escape velocity, $v_{\text{esc},b}$ [$\mathrm{km\;s^{-1}}$]$^{\ddagger}$ & $20.6 \pm 2.7$ & $20.9^{+2.6}_{-2.4}$ & $20.9^{+2.4}_{-3.0}$ & $20.8^{+2.3}_{-1.9}$  \\
+Equilibrium temperature, $T_{\text{eq},b}$ [K] & \\
+\hspace{2pt} Bond albedo of 0.3 & 235 $\pm$ 9 & 235 $\pm$ 9 & 235 $\pm$ 9 & 235 $\pm$ 9 \medskip \\
+
+\emph{Model diagnostics} & & & \\
+Median $\ln{\mathcal{L}}$ from Cross-Validation & $-1.462 \pm 0.013$ & $-1.574 \pm 0.017$ & $-1.600 \pm 0.018$ & $-1.548 \pm 0.017$ \\
+$\ln{\mathcal{L}_1} - \ln{\mathcal{L}_i}$ & 0 & $0.112 \pm 0.021$ & $0.138 \pm 0.022$ & $0.086 \pm 0.021$ \\
+\end{tabular}
+\begin{list}{}{}
+\item {\bf{Notes.}} $^{(\bullet)}$ from the Model 1 RV modelling. \\
+  $^{(\circ)}$ N.S. stands for `no solution' and occurs when the parameter's marginalized posterior 
+  PDF is unconstrained by the data. \\
+  $^{(\ast)}$ upper limit based on the 99\% confidence interval from the RV data analysis and 
+  conditioned on the dynamical stability constraints from Sect.~\ref{k218sect:dynam}. \\
+  $^{(\dagger)}$ assuming the measured orbital inclination of K2-18b from \citetalias{benneke17};
+  $i_b = 89.5785^{+0.0079}_{-0.0088}$ degrees. \\
+  $^{(\ddagger)}$ assuming the measured radius of K2-18b from \citetalias{benneke17};
+  $r_{p,b} = 2.38 \pm 0.22$ R$_{\oplus}$. \\
+  M$_{\odot} = 1.988499 \times 10^{30}$ kg, R$_{\odot} = 6.955 \times 10^{8}$ m, M$_{\oplus} = 6.045898 \times 10^{24}$ kg, R$_{\oplus} = 6.378137 \times 10^{6}$ m.
+\end{list}
+\end{table*}
+\clearpage
+\end{landscape}

@@ -206,7 +206,8 @@ a range of distances spanning $\sim 1.8-11$ pc.
     \includegraphics[width=0.8\hsize]{figures/stellarpop_stars.png}%
   \end{ocg}
   \hspace{-0.8\hsize}%
-  \caption{\small Scatter plots and histograms depicting the distribution of SPIRou input catalog
+  \caption[Stellar parameters of sources targetted in the simulated \emph{SPIRou Legacy Survey-Planet Search}.]
+      {\small Scatter plots and histograms depicting the distribution of SPIRou input catalog
     $J$ band magnitudes, stellar masses, distances, and effective temperatures for our fiducial 
     version of the \emph{SPIRou Legacy Survey-Planet Search}. Histograms are
     in linear units. Nearby M dwarf planetary systems with at least one known HZ planet
@@ -291,7 +292,8 @@ $1-0.25/0.6 \approx 0.58$.
     \includegraphics[width=0.8\hsize]{figures/ProtCDF_4.png}%
   \end{ocg}
   \hspace{-0.8\hsize}%
-  \caption{\small Cumulative distribution functions of the 
+  \caption[M dwarf rotation period distributions.]
+      {\small Cumulative distribution functions of the 
     \ToggleLayer{fig:1on,fig:1off}{\protect\cdbox{empirical distribution}} of M dwarf rotation periods
     from \cite{newton16a}, the modified empirical distribution of SPIRou stars with a 
     \ToggleLayer{fig:3on,fig:3off}{\protect\cdbox{\vsini{} upper limit}} measured, the
@@ -504,7 +506,8 @@ small \prot{} will be required to precisely characterize the correlation between
     \includegraphics[width=0.6\hsize]{figures/rmsactivityProt_HARPS.png}%
   \end{ocg}
   \hspace{-0.6\hsize}%
-  \caption{\small The RV activity rms as a function of stellar rotation period for stars in the simulated SLS-PS compared
+  \caption[RV activity rms versus stellar rotation period.]
+      {\small The RV activity rms as a function of stellar rotation period for stars in the simulated SLS-PS compared
     to a population of \ToggleLayer{fig:Hon,fig:Hoff}{\protect\cdbox{M dwarfs}} observed with the HARPS
     spectrograph. The \ToggleLayer{fig:curveon,fig:curveoff}{\protect\cdbox{\emph{dashed white curve}}} depicts the mean
     RV activity rms in each \prot{} bin.}
@@ -621,7 +624,8 @@ Sect.~\ref{BSsect:sensitivity}.
     \includegraphics[width=0.8\hsize]{figures/WF_faps.png}%
   \end{ocg}
   \hspace{-0.8\hsize}%
-  \caption{\small Lomb-Scargle periodogram of an example window function from the simulated SLS-PS.
+  \caption[Lomb-Scargle periodogram of an expected SPIRou window function during the SLS-PS.]
+    {\small Lomb-Scargle periodogram of an example window function from the simulated SLS-PS.
     The periodogram exhibits strong aliases from our time sampling at the periodicities
     highlighted by the 
     \ToggleLayer{fig:Pon,fig:Poff}{\protect\cdbox{\emph{vertical lines}}}. The power
@@ -728,8 +732,9 @@ due to the increased number of available spectral features and corresponding inc
 \begin{figure}
   \centering
   \includegraphics[width=0.6\hsize]{figures/sigmaRV.png}%
-  \caption{\small The median RV measurement uncertainty in each simulated RV time-series $\sigma_{\text{RV}}$
-    as a function of the star's $J$ band magnitude and projected stellar rotation velocity \vsini{.} A noise floor is
+  \caption[RV measurement uncertainty versus $J$-band magnitude and \vsini{.}]
+      {\small The median RV measurement uncertainty in each simulated RV time-series $\sigma_{\text{RV}}$
+    as a function of the star's $J$-band magnitude and projected stellar rotation velocity \vsini{.} A noise floor is
     imposed at 1 \mps{.} The histogram shown in the right panel is in linear units.}
   \label{BSfig:sigmaRV}
 \end{figure}
@@ -852,7 +857,8 @@ relation \citep{weiss14}.
     \includegraphics[width=0.6\hsize]{figures/MRscatter_scatter.png}%
   \end{ocg}
   \hspace{-0.6\hsize}%
-  \caption{\small 2D histogram depicting the masses and radii of the sampled
+  \caption[Masses and radii of synthetic planets in the simulated SLS-PS.]
+    {\small 2D histogram depicting the masses and radii of the sampled
     small planet population with $r_p \leq 4$ R$_{\oplus}$. Planetary radii are drawn from the
     planet occurrence rates derived from Kepler and are mapped to 
     planetary masses using the mass-radius relation and Gaussian
@@ -965,7 +971,8 @@ masses using Eqs.~\ref{BSeq:mr} and~\ref{BSeq:mrscat}.
     \includegraphics[width=0.8\hsize]{figures/mpoccurrence_4.png}%
   \end{ocg}
   \hspace{-0.8\hsize}%
-  \caption{\small \emph{Top}: histograms of the injected small planet population in the simulated SLS-PS
+  \caption[Input planet occurrence rates in the simulated SLS-PS.]
+          {\small \emph{Top}: histograms of the injected small planet population in the simulated SLS-PS
     as a function of orbital period and planetary radius from \cite{dressing15a}. \emph{Bottom}:
     the same planet population as above converted to planetary mass using Eqs.~\ref{BSeq:mr}
     and~\ref{BSeq:mrscat}. For clarity each $r_p$ bin, and the approximately corresponding
@@ -992,7 +999,8 @@ with $P \in [0.5,200]$ days and $r_p \in [0.5,4]$ R$_{\oplus}$ (see Sect.~\ref{B
 \begin{figure}
   \centering
   \includegraphics[width=0.6\hsize]{figures/multhist.png}%
-  \caption{\small The probability density function of planet multiplicities in the simulated SLS-PS.
+  \caption[Histogram of planetary system multiplicities in the simulated SLS-PS.]
+      {\small The probability density function of planet multiplicities in the simulated SLS-PS.
     The fraction of simulated systems with a given multiplicity---in percentage---is annotated for
     each integer multiplicity. We find an average planet multiplicity of $\sim 2.4$ which is highlighted by the
     \emph{vertical dashed line} and is slightly less than the cumulative injected multiplicity of 2.5 planets
@@ -1154,7 +1162,8 @@ Fig.~\ref{BSfig:GPexample}.
     \includegraphics[width=\hsize]{figures/GPexample_GP.png}%
   \end{ocg}
   \hspace{-\hsize}%
-  \caption{\small Examples of our GP formalism used to mitigate RV activity and detect underlying planetary signals for two
+  \caption[Examples of GP activity models in simulated SPIRou timeseries.]
+      {\small Examples of our GP formalism used to mitigate RV activity and detect underlying planetary signals for two
     simulated systems with either a rapidly (\prot{} $=2.8$ days; \emph{left column}) or slowly (\prot{} $=83.1$ days;
     \emph{right column}) rotating host star. \emph{Top panels}: the FWHM time-series used for training along with the
     \ToggleLayer{fig:GPon,fig:GPoff}{\protect\cdbox{mean GP regression model and its $1\sigma$ confidence interval}}
@@ -1225,7 +1234,8 @@ for a future study (Cloutier et al. in prep).
    \includegraphics[width=0.6\hsize]{figures/compareGPres_nondet.png}%
   \end{ocg}
   \hspace{-0.6\hsize}%
-  \caption{\small Comparison of the rms of the \emph{injected} RV activity to the rms of the \emph{residual} RV activity following
+  \caption[GP activity model performance in simulated SPIRou RV timeseries.]
+    {\small Comparison of the rms of the \emph{injected} RV activity to the rms of the \emph{residual} RV activity following
     the removal of the mean GP activity model which is
     computed in the absence of planets. Each rms value is normalized by the
     RV measurement uncertainty $\sigma_{\text{RV}}$ of its time-series. The \emph{dashed line} $y=x$ is indicative of cases
@@ -1295,7 +1305,8 @@ in which \prot{} is detected and is subsequently used in our RV modelling (see S
     \includegraphics[width=0.8\hsize]{figures/periodograms_FAP.png}%
   \end{ocg}
   \hspace{-0.8\hsize}%
-  \caption{\small \emph{Top to bottom}: Lomb-Scargle periodograms of the full width at half maximum (FWHM)
+  \caption[Illustrating the iterative planet search with Lomb-Scargle periodograms.]
+      {\small \emph{Top to bottom}: Lomb-Scargle periodograms of the full width at half maximum (FWHM)
     of the cross-correlation function, raw radial velocities (RVs), RVs corrected for activity (RVs-GP),
     RVs corrected for activity and a planet (RVs-GP-b), and the RVs corrected for activity and two planets
     (RVs-GP-b-c). Periodicities equal to the stellar rotation period, its first harmonic, and the
@@ -1490,7 +1501,8 @@ population).
     \includegraphics[width=0.6\hsize]{figures/detectedpopulations_3.png}%
   \end{ocg}
   \hspace{-0.6\hsize}%
-  \caption{\small The number of planets detected as a function of \msini{} after each of the three steps in
+  \caption[SPIRou planet yields versus \msini{} throughout the vetting process.]
+      {\small The number of planets detected as a function of \msini{} after each of the three steps in
     our automated planet detection algorithm. The number of detected planets in each
     \msini{} bin is annotated above the bin to help quantify the decrease in planet detections
     following each step. The distribution of detected planet minimum masses
@@ -1582,7 +1594,8 @@ statistics and therefore benefit from a large number of simulated planetary syst
     \includegraphics[width=0.5\hsize]{figures/yieldFMpsini_HZ.png}%
   \end{ocg}
   \hspace{-\hsize}%
-  \caption{\small Binned maps of the detection sensitivity of the full SPIRou input catalog derived using our
+  \caption[Detection sensitivity maps in the SLS-PS.]
+      {\small Binned maps of the detection sensitivity of the full SPIRou input catalog derived using our
     automated planet detection algorithm as a function of minimum planet mass and orbital period 
     (\emph{left}) or insolation (\emph{right}). The \emph{dashed vertical lines} in the
     insolation panel indicate the approximate `water-loss' and `maximum-greenhouse' insolation
@@ -1703,7 +1716,8 @@ bin.
     \includegraphics[width=0.5\hsize]{figures/yieldFMpsini_HZ.png}%
   \end{ocg}
   \hspace{-\hsize}%
-  \caption{\small Coarsely binned maps of the predicted planet yield from 
+  \caption[Planet yield maps from the SLS-PS.]
+    {\small Coarsely binned maps of the predicted planet yield from 
     the SLS-PS as a function of minimum planet mass and orbital period 
     (\emph{left}) or insolation (\emph{right}). The \emph{dashed vertical lines} in the
     insolation panel indicate the approximate `water-loss' and `maximum-greenhouse' insolation
@@ -1757,7 +1771,8 @@ shown in Fig.~\ref{BSfig:spiroudet} only depicts 4 Earth-like planet detections.
 \begin{figure*}
   \centering
   \includegraphics[width=0.8\hsize]{figures/SPIRoudet_Fmpsini.png}%
-  \caption{\small A random subset of the simulated SPIRou planets representative of the underlying planet
+  \caption[One realization of targetted and detected planets in the SLS-PS versus insolation and \msini{.}]
+      {\small A random subset of the simulated SPIRou planets representative of the underlying planet
     population investigated in the SLS-PS in the insolation/minimum planet mass plane.
     SPIRou planet detections are marked by
     \emph{solid circles} whereas \emph{open circles} represent injected planets that remain undetected by SPIRou.
@@ -1867,7 +1882,8 @@ planet occurrence rates.
     \includegraphics[width=0.6\hsize]{figures/2occ_opt_2.png}%
   \end{ocg}
   \hspace{-0.6\hsize}%
-  \caption{\small \emph{Top}: the detection sensitivity as a function of minimum planet mass
+  \caption[Planet yield results in the SLS-PS with modified input occurrence rates.]
+      {\small \emph{Top}: the detection sensitivity as a function of minimum planet mass
     for the nominal fiducial version of the SLS-PS containing 
     \ToggleLayer{fig:1on,fig:1off}{\protect\cdbox{2.39 planets per star}} and for a
     modified version of the SLS-PS that is nearly identical except for the increased cumulative
@@ -1996,7 +2012,8 @@ detection sensitivity when assigning planet detections, we are maximizing the li
     \includegraphics[width=0.5\hsize]{figures/occurrenceFMpsini_HZ.png}%
   \end{ocg}
   \hspace{-\hsize}%
-  \caption{\small Coarsely binned maps of the RV planet frequency derived from the  
+  \caption[Planet occurrence rate maps derived from the resuls of the SLS-PS.]
+      {\small Coarsely binned maps of the RV planet frequency derived from the  
     SLS-PS as a function of minimum planet mass and orbital period 
     (\emph{left}) and insolation (\emph{right}). The \emph{dashed vertical lines} in the
     insolation panel indicate the approximate `water-loss' and `maximum-greenhouse' insolation limits
@@ -2059,7 +2076,8 @@ Fig.~\ref{BSfig:etaEarth}.
 \begin{figure}
   \centering
   \includegraphics[width=0.6\hsize]{figures/etaEarth.png}
-  \caption{\small The probability density function of the RV value of $\eta_{\oplus}$ derived from
+  \caption[Expected measurement of $\eta_{\oplus}$ from the SLS-PS.]
+      {\small The probability density function of the RV value of $\eta_{\oplus}$ derived from
     the simulated SLS-PS. Here Earth-like HZ planets are defined according to the `water-loss'
     and 'maximum-greenhouse' HZ limits defined in \citealt{kopparapu13} (K13) and have absolute planet
     masses $\leq 5$ M$_{\oplus}$. The \emph{inner shaded} region corresponds to $16^{\text{th}}$ and
@@ -2186,7 +2204,8 @@ will represent the best potential targets for imaging of small HZ exoplanets wit
    \includegraphics[width=0.8\hsize]{figures/SPIRoudet_contrast_curve2.png}%
   \end{ocg}
   \hspace{-0.8\hsize}%
-  \caption{\small The same random subset of the simulated SPIRou planets from Fig.~\ref{BSfig:spiroudet}
+  \caption[One realization of targetted and detected planets in the SLS-PS versus angular separation and reflected light contrast.]
+      {\small The same random subset of the simulated SPIRou planets from Fig.~\ref{BSfig:spiroudet}
     in the projected angular separation/reflected light contrast plane. The geometric albedo $A$ is set
     to 0.3 for all planets. 
     \emph{Yellow circles} highlight detected Earth-like planets ($m_p \in [1,5]$ M$_{\oplus}$), \emph{orange circles}

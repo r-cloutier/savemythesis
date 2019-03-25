@@ -1,0 +1,49 @@
+\begin{table*}
+\small
+\renewcommand{\arraystretch}{0.7}
+\centering
+\caption[]{Marginal likelihood estimations and Bayes factors for various RV datasets and models}
+\label{k2182table:perrakis}
+\begin{tabular}{ccccc}
+\hline \\ [-1ex]
+Dataset & $N_{\text{RV}}$ & Model & $\ln$ Model evidence$^{(\bullet)}$ & Bayes factor: 2 to 1 planets$^{(\ast)}$ \\
+$D$ & & $\mathcal{M}_i$ & $\ln{\text{p}(D|\mathcal{M}_i)}$ & $\text{p}(\mathcal{M}_2|D)/ \text{p}(\mathcal{M}_1|D)$ \smallskip \\
+\hline \\ [-1ex]
+HARPS & 106 & 1 planet + GP & -338.5 & - \\
+- & - & 2 planets + GP & -325.5 & $3\times 10^5$ \\
+CARMENES & 58 & 1 planet + GP & -180.6 & - \\
+- & - & 2 planets + GP & -178.1 & 7 \\
+reduced CARMENES & 55 & 1 planet + GP & -169.5 & - \\
+- & - & 2 planets + GP & -164.1 & 143 \\
+HARPS + reduced CARMENES & 161 & 1 planet + GP & -489.6 & - \\
+- & - & 2 planets + GP & -475.8 & $6\times 10^5$ \\
+\hline \\ [-1ex]
+blue HARPS & 106 & 1 planet + GP & -375.5 & - \\
+- & - & 2 planets + GP & -369.2 & 336 \\
+red HARPS & 106 & 1 planet + GP & -375.5 & - \\
+- & - & 2 planets + GP & -359.4 & $6\times 10^6$ \\
+blue CARMENES & 55 & 1 planet + GP & -186.8 & - \\
+- & - & 2 planets + GP & -183.0 & 28 \\
+red CARMENES & 55 & 1 planet + GP & -174.0 & - \\
+- & - & 2 planets + GP & -159.1 & $2\times 10^6$ \\
+%\hline \\
+%new HARPS & 27 & 1 planet + GP & -99.7 & - \\
+%- & - & 2 planets + GP & -96.0 & 23 \\
+\hline \\ [-1ex]
+HARPS (Feb-Jun 2017) & 35 & 1 planet + GP & -121.0 & - \\
+- & - & 2 planets + GP & -113.6 & 1018 \\
+CARMENES (Feb-Jun 2017) & 49 & 1 planet + GP & -151.7 & - \\
+- & - & 2 planets + GP & -146.0 & 181 \\
+HARPS + CARMENES (Feb-Jun 2017) & 84 & 1 planet + GP & -256.5 & - \\
+- & - & 2 planets + GP & -249.6 & 613 \\
+\hline
+\end{tabular}
+\begin{list}{}{}
+\item {\bf{Notes.}}
+      $^{(\bullet)}$ Estimates of the model evidence are calculated using the \cite{perrakis13} estimator and the
+  marginalized posterior probability density functions from our MCMC runs. \\
+  $^{(\ast)}$ Bayes factors, or evidence ratios, are written as
+  $\frac{\text{p}(\mathcal{M}_2|D)}{\text{p}(\mathcal{M}_1|D)} = \frac{\text{p}(D|\mathcal{M}_2)}{\text{p}(D|\mathcal{M}_1)} \frac{\text{p}(\mathcal{M}_2)}{\text{p}(\mathcal{M}_1)}$, where each model prior is $\text{p}(\mathcal{M}_i) = \alpha^i$ for
+  $\alpha = (\sqrt{5}-1)/2 \approx 0.618$ such that $\sum_{i=1}^{2} \text{p}(\mathcal{M}_i) = 1$.
+\end{list}
+\end{table*}

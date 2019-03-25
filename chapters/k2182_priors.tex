@@ -1,0 +1,46 @@
+\begin{table*}
+\small
+\renewcommand{\arraystretch}{0.7}
+\centering
+\caption[]{Summary of the RV model parameter priors used for all models throughout this study}
+\label{k2182table:priors}
+\begin{tabular}{lc}
+\hline \\ [-1ex]
+Parameter & Prior \smallskip \\
+\hline \\ [-1ex]
+Systemic velocity, $\gamma$ [m/s] & $\mathcal{U}(\bar{\mathbf{RV}}-10, \bar{\mathbf{RV}}+10)$ \smallskip \\
+\emph{GP hyperparameters} & \\
+Covariance amplitude, & \\
+$\ln{(a/}$(m/s)) & $\mathcal{U}(-3,3)$ \\
+Exponential timescale, & \\
+$\ln{(\lambda/}$days) & $\text{p}(\ln{\lambda}|\text{K2 photometry})$ \\
+Coherence, $\ln{(\Gamma)}$ & $\text{p}(\ln{\Gamma}|\text{K2 photometry})$ \\
+Periodic timescale, & \\
+$\ln{(P_{\text{GP}}/}$days) & $\text{p}(\ln{P_{\text{GP}}}|\text{K2 photometry})$  \\
+Additive jitter, $s$ [\mps{]} & $\mathcal{U}(0,10)$ \smallskip \\
+\emph{Keplerian parameters} & \\
+$P_b$ [days] & $\mathcal{N}(32.93961,10^{-4})^{(\bullet)}$ \\
+$T_{0,b}$ [BJD-2,450,000] & $\mathcal{N}(7264.3914,6.3 \times 10^{-4})^{(\bullet)}$ \\
+$K_b$ [\mps{]} & $\text{\emph{mod}}\mathcal{J}(1,20)^{(\ast)}$ \\
+$h_b = \sqrt{e_b}\cos{\omega_b}$ & $\mathcal{U}(-1,1)^{(\dagger)}$ \\
+$k_b = \sqrt{e_b}\sin{\omega_b}$ & $\mathcal{U}(-1,1)^{(\dagger)}$ \\
+$P_c$ [days] & $\mathcal{U}(8,10)$ \\
+$T_{0,c}$ [BJD-2,450,000] & $\mathcal{U}(7259,7269)$ \\
+$K_c$ [\mps{]} & $\text{\emph{mod}}\mathcal{J}(1,10)^{(\ast)}$ \\
+$h_c = \sqrt{e_c}\cos{\omega_c}$ & $\mathcal{U}(-1,1)^{(\dagger)}$ \\
+$k_c = \sqrt{e_c}\sin{\omega_c}$ & $\mathcal{U}(-1,1)^{(\dagger)}$ \medskip \\
+\hline
+\end{tabular}
+\begin{list}{}{}
+\item {\bf{Notes.}} 
+  $^{(\bullet)}$ based on the transit light curve measurements from \cite{benneke17}. \\
+  $^{(\ast)}$ $\text{\emph{mod}}\mathcal{J}(k,l)$ \mps{}
+  refers to a modified Jeffreys prior on a parameter $A,$ which behaves like a uniform
+  prior for $A \ll$ the knee at k \mps{} and
+   like a Jeffreys prior at $A \gg k$ up to $l$. We use a modified Jeffreys prior on
+  the RV semi-amplitudes $K$ to sample multiple decades as a Jeffreys prior but also include
+  $K=0$ \mps{} which a Jeffreys prior does not \citep{gregory05}. \\
+  $^{(\dagger)}$ We further insist
+  that $e = h^2 + k^2 < 1$.
+\end{list}
+\end{table*}

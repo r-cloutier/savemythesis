@@ -1,18 +1,24 @@
-\begin{deluxetable}{cccc}
-\tabletypesize{\scriptsize}
-\tablecaption{Adopted Spectral Bands \label{table:bands}}
-\tablewidth{0pt}
-\tablehead{Spectral & Central & Effective & Zero-point \\ Band & Wavelength & Band Width & Flux Density \\ & [\micron{]} &  [\micron{]} & [erg/s/cm$^2$/\micron{]}}
-\startdata
-$U$ & 0.3531 & 0.0657 & $3.678 \times 10^{-5}$ \\
-$B$ & 0.4430 & 0.0973 & $6.293 \times 10^{-5}$ \\  
-$V$ & 0.5537 & 0.0890 & $3.575 \times 10^{-5}$ \\
-$R$ & 0.6940 & 0.2070 & $1.882 \times 10^{-5}$ \\
-$I$ & 0.8781 & 0.2316 & $9.329 \times 10^{-6}$ \\
-$Y$ & 1.0259 & 0.1084 & $5.949 \times 10^{-6}$ \\
-$J$ & 1.2545 & 0.1548 & $2.985 \times 10^{-6}$ \\
-$H$ & 1.6310 & 0.2886 & $1.199 \times 10^{-6}$ \\
-$K$ & 2.1498 & 0.3209 & $4.442 \times 10^{-7}$
-\enddata
-\tablecomments{Values presented here were obtained from the \href{http://svo2.cab.inta-csic.es/theory/fps3/index.php?mode=browse}{SVO Filter Profile Service}. Explicitly, values pertaining to any of the $UBVRI$ bands were obtained from the Generic/Johnson filter set whereas the $YJHK$ bands were obtained from the CFHT/Wircam filter set.}
-\end{deluxetable}
+\begin{table*}
+  \small
+  \renewcommand{\arraystretch}{0.7}
+  \caption{Adopted Spectral Bands}
+  \label{RVFCtable:bands}
+  \begin{tabular}{cccc}
+    \hline \\ [-1ex]
+    Spectral & Central & Effective & Zero-point \\ Band & Wavelength & Band Width & Flux Density \\ & [\micron{]} &  [\micron{]} & [erg/s/cm$^2$/\micron{]} \\
+    \hline
+    $U$ & 0.3531 & 0.0657 & $3.678 \times 10^{-5}$ \\
+    $B$ & 0.4430 & 0.0973 & $6.293 \times 10^{-5}$ \\  
+    $V$ & 0.5537 & 0.0890 & $3.575 \times 10^{-5}$ \\
+    $R$ & 0.6940 & 0.2070 & $1.882 \times 10^{-5}$ \\
+    $I$ & 0.8781 & 0.2316 & $9.329 \times 10^{-6}$ \\
+    $Y$ & 1.0259 & 0.1084 & $5.949 \times 10^{-6}$ \\
+    $J$ & 1.2545 & 0.1548 & $2.985 \times 10^{-6}$ \\
+    $H$ & 1.6310 & 0.2886 & $1.199 \times 10^{-6}$ \\
+    $K$ & 2.1498 & 0.3209 & $4.442 \times 10^{-7}$
+  \end{tabular}
+  \begin{list}{}{}
+  \item {\bf{Notes.}}
+  \item Values presented here were obtained from the \href{http://svo2.cab.inta-csic.es/theory/fps3/index.php?mode=browse}{SVO Filter Profile Service}. Explicitly, values pertaining to any of the $UBVRI$ bands were obtained from the Generic/Johnson filter set whereas the $YJHK$ bands were obtained from the CFHT/Wircam filter set.
+  \end{list}
+\end{table*}

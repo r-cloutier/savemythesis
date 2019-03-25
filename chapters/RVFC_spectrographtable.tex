@@ -1,14 +1,20 @@
-\begin{deluxetable}{ccc}
-\tabletypesize{\scriptsize}
-\tablecaption{Fiducial Spectrograph Specifications \label{table:spectrographs}}
-\tablewidth{0pt}
-\tablehead{ & Optical & Near-IR}
-\startdata
-Spectral bands & $BVR$ & $YJH$ \\
-Spectral resolution, $R$ & 115,000 & 100,000\tablenotemark{a} \\
-Telescope aperture, $D$ [m] & 3.6 & 3.6 \\
-RV noise floor, $\sigma_{\text{floor}}$ [\mps{]} & 0.5 & 1.0 \\
-Throughput, $\epsilon$ & 0.05 & 0.05
-\enddata
-\tablenotetext{a}{We consider the higher resolution achievable in the NIRPS High Accuracy Mode relative to its High Efficiency Mode at $R = 75,000$.}
-\end{deluxetable}
+\begin{table*}
+  \small
+  \renewcommand{\arraystretch}{0.7}
+  \caption{Fiducial Spectrograph Specifications}
+  \label{RVFCtable:specrographs}
+  \begin{tabular}{ccc}
+    \hline \\ [-1ex]
+    & Optical & Near-IR \\
+    \hline
+    Spectral bands & $BVR$ & $YJH$ \\
+    Spectral resolution, $R$ & 115,000 & 100,000$^{\text{a}}$ \\
+    Telescope aperture, $D$ [m] & 3.6 & 3.6 \\
+    RV noise floor, $\sigma_{\text{floor}}$ [\mps{]} & 0.5 & 1.0 \\
+    Throughput, $\epsilon$ & 0.05 & 0.05
+  \end{tabular}
+  \begin{list}{}{}
+    \item {\bf{Notes.}}
+    \item $^{\text{a}}$ We consider the higher resolution achievable in the NIRPS High Accuracy Mode relative to its High Efficiency Mode at $R = 75,000$.
+  \end{list}
+\end{table*}

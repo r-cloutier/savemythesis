@@ -1,10 +1,14 @@
 \clearpage
-\begin{turnpage}
-\begin{deluxetable}{cccccccccccccccccc}
-\tabletypesize{\scriptsize}
-\tablecaption{Stellar parameters from the \citetalias{sullivan15} synthetic catalog \label{table:stars}}
-\tablewidth{0pt}
-\tablehead{TOI & $\alpha$ & $\delta$ & $P$ & $m_p$ & $K$ & $S$ & $M_s$ & $T_{\text{eff}}$ & Distance & $B$ & $V$ & $R$ & $Y$ & $J$ & $H$ & $\text{med}(v\sin{i_s})$ & \\ & $[$deg$]$ & $[$deg$]$ & $[$days$]$ & $[\text{M}_{\oplus}]$ & $[$m s$^{-1}]$ & $[\text{S}_{\oplus}]$ & $[\text{M}_{\odot}]$ & $[$K$]$ & $[$pc$]$ & & & & & & & $[$km s$^{-1}]$}
+\begin{landscape}
+\begin{table*}
+  \small
+  \renewcommand{\arraystretch}{0.7}
+  \caption{Stellar parameters from the \citetalias{sullivan15} synthetic catalog}
+  \label{RVFCtable:stars}
+  \begin{tabular}{cccccccccccccccccc}
+    \hline \\ [-1ex]
+    TOI & $\alpha$ & $\delta$ & $P$ & $m_p$ & $K$ & $S$ & $M_s$ & $T_{\text{eff}}$ & Distance & $B$ & $V$ & $R$ & $Y$ & $J$ & $H$ & $\text{med}(v\sin{i_s})$ & \\ & $[$deg$]$ & $[$deg$]$ & $[$days$]$ & $[\text{M}_{\oplus}]$ & $[$m s$^{-1}]$ & $[\text{S}_{\oplus}]$ & $[\text{M}_{\odot}]$ & $[$K$]$ & $[$pc$]$ & & & & & & & $[$km s$^{-1}]$ \\
+\hline
 0000 & 0.44 & 45.22 & 9.135 & 8.19 & 2.03 & 361.7 & 1.40 & 6531 & 100.0 & 8.87 & 8.47 & 8.24 & 7.80 & 7.63 & 7.46 & 2.17 \\ 
 0001 & 0.48 & -66.20 & 14.200 & 5.57 & 3.11 & 2.1 & 0.33 & 3426 & 60.3 & 16.52 & 15.08 & 14.17 & 12.05 & 11.56 & 10.96 & 0.23 \\ 
 0002 & 0.65 & 42.94 & 4.957 & 4.51 & 1.66 & 235.0 & 1.05 & 5546 & 97.7 & 10.86 & 10.12 & 9.72 & 9.09 & 8.81 & 8.46 & 3.24 \\ 
@@ -1989,8 +1993,11 @@
 %1981 & 359.10 & -16.81 & 3.196 & 5.44 & 5.50 & 11.7 & 0.29 & 3376 & 69.2 & 17.29 & 15.84 & 14.90 & 12.71 & 12.22 & 11.65 & 0.15 \\ 
 %1982 & 359.60 & -15.61 & 12.120 & 9.09 & 3.00 & 29.2 & 0.79 & 4911 & 112.2 & 12.90 & 11.90 & 11.32 & 10.51 & 10.13 & 9.60 & 2.97 \\ 
 %1983 & 359.80 & 22.45 & 3.246 & 7.25 & 7.19 & 12.2 & 0.29 & 3386 & 64.6 & 17.03 & 15.58 & 14.64 & 12.47 & 11.98 & 11.41 & 0.17 \\ \enddata
-\tablecomments{Only a portion of this table is shown here to demonstrate its form and content. A machine-readable version of the full table is available.}
-\end{deluxetable}
-\end{turnpage}
+\end{tabular}
+\begin{list}{}{}
+\item {\bf{Notes.}}
+\item Only a portion of this table is shown here to demonstrate its form and content. A machine-readable version of the full table is available in the publishedversion of the manuscript.
+\end{list}
+\end{table*}
 \clearpage
-\global\pdfpageattr\expandafter{\the\pdfpageattr/Rotate 90}
+\end{landscape}

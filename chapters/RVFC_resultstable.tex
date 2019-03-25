@@ -1,10 +1,14 @@
 \clearpage
-\begin{turnpage}
-\begin{deluxetable}{ccccccccccc}
-\tabletypesize{\scriptsize}
-\tablecaption{Median radial velocity noise sources and follow-up calculations for $3\sigma$ planet mass detections of the \citetalias{sullivan15} synthetic catalog \label{table:results}}
-\tablewidth{0pt}
-\tablehead{TOI & $ \sigma_{\text{RV},\text{opt}} $ & $ \sigma_{\text{RV},\text{nIR}} $ & $ \sigma_{\text{act}} $ & $ \sigma_{\text{planets}} $ & $ \sigma_{\text{eff,opt}} $ & $ \sigma_{\text{eff,nIR}} $ & $ N_{\text{RV,opt}} $ & $ N_{\text{RV,nIR}} $ & $ t_{\text{obs,opt}} $ & $ t_{\text{obs,nIR}} $ \\ & $[$m s$^{-1}]$ & $[$m s$^{-1}]$ & $[$m s$^{-1}]$ & $[$m s$^{-1}]$ & $[$m s$^{-1}]$ & $[$m s$^{-1}]$ & & & [nights] & [nights]}
+\begin{landscape}
+\begin{table*}
+  \small
+  \renewcommand{\arraystretch}{0.7}
+  \caption{Median radial velocity noise sources and follow-up calculations for $3\sigma$ planet mass detections of the \citetalias{sullivan15} synthetic catalog}
+  \label{RVFCtable:results}
+  \begin{tabular}{ccccccccccc}
+    \hline \\ [-1ex]
+    TOI & $ \sigma_{\text{RV},\text{opt}} $ & $ \sigma_{\text{RV},\text{nIR}} $ & $ \sigma_{\text{act}} $ & $ \sigma_{\text{planets}} $ & $ \sigma_{\text{eff,opt}} $ & $ \sigma_{\text{eff,nIR}} $ & $ N_{\text{RV,opt}} $ & $ N_{\text{RV,nIR}} $ & $ t_{\text{obs,opt}} $ & $ t_{\text{obs,nIR}} $ \\ & $[$m s$^{-1}]$ & $[$m s$^{-1}]$ & $[$m s$^{-1}]$ & $[$m s$^{-1}]$ & $[$m s$^{-1}]$ & $[$m s$^{-1}]$ & & & [nights] & [nights] \\
+    \hline
 0000 & 1.02 & 3.14 & 1.25 & 0.00 & 1.61 & 3.59 & 14.8 & 67.6 & 0.4 & 1.6 \\ 
 0001 & 10.18 & 8.21 & 7.84 & 2.00 & 13.06 & 11.62 & 294.1 & 159.1 & 42.0 & 3.8 \\ 
 0002 & 2.30 & 3.74 & 0.97 & 0.00 & 2.41 & 3.96 & 57.8 & 155.7 & 1.4 & 3.7 \\ 
@@ -1989,8 +1993,11 @@
 %1981 & 16.19 & 8.18 & 7.50 & 0.00 & 17.85 & 11.10 & 186.6 & 63.1 & 26.7 & 2.3 \\ 
 %1982 & 5.73 & 5.59 & 2.30 & 0.00 & 5.91 & 5.79 & 113.9 & 141.0 & 2.7 & 3.4 \\ 
 %1983 & 13.67 & 10.11 & 8.03 & 2.20 & 16.23 & 13.24 & 88.9 & 36.7 & 12.7 & 0.9 \\ \enddata
-\tablecomments{The resulting number of RV measurements and total observing times reported here are computed in the general case of RVs in the presence of correlated noise (see Sect.~\ref{sect:fisherGP}). Only a portion of this table is shown here to demonstrate its form and content. A machine-readable version of the full table is available.}
-\end{deluxetable}
-\end{turnpage}
+\end{tabular}
+\begin{list}{}{}
+\item {\bf{Notes.}}
+\item The resulting number of RV measurements and total observing times reported here are computed in the general case of RVs in the presence of correlated noise (see Sect.~\ref{RVFCsect:fisherGP}). Only a portion of this table is shown here to demonstrate its form and content. A machine-readable version of the full table is available.
+\end{list}
+\end{table*}
 \clearpage
-\global\pdfpageattr\expandafter{\the\pdfpageattr/Rotate 90}
+\end{landscape}

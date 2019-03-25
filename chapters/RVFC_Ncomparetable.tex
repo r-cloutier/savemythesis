@@ -1,41 +1,47 @@
-\begin{deluxetable}{cccccc}
-\tabletypesize{\scriptsize}
-\tablecaption{Summary of RV Observations for Known Transiting Planets with White RV noise\label{table:compare_white}}
-\tablewidth{0pt}
-\tablehead{Planetary & \sigeff{} & \sigK{} & Actual & Calculated & Ref. \\ System & [\mps{]} & [\mps{]} & \nrv{} & \nrv{}}
-\startdata
-GJ 1132 & 3.38 & 0.92 & 25 & 27.0 & 1 \\
-GJ 1214 & 4.96 & 1.60 & 21 & 19.2 & 2 \\
-HAT-P-4 & 10.20 & 3.00 & 23 & 23.1 & 3 \\
-HAT-P-8 & 10.23 & 4.20 & 16 & 11.9 & 3 \\
-HAT-P-10 & 6.56 & 2.70 & 13 & 11.8 & 3 \\
-HAT-P-12 & 5.05 & 1.60 & 23 & 19.9 & 3 \\
-HAT-P-18 & 20.30 & 5.20 & 31 & 30.5 & 3 \\
-HAT-P-22 & 9.70 & 3.20 & 18 & 18.4 & 3 \\
-HAT-P-24 & 13.00 & 3.60 & 24 & 26.1 & 3 \\
-HAT-P-26 & 3.60 & 0.98 & 26 & 27.0 & 3 \\
-HAT-P-29 & 11.20 & 4.60 & 11 & 11.9 & 3 \\
-HAT-P-33 & 66.00 & 17.50 & 26 & 28.4 & 3 \\
-HD 97658 & 2.78 & 0.39 & 96 & 101.6 & 4 \\
-HD 149026 & 6.18 & 1.40 & 42 & 39.0 & 3 \\
-HD 189733 & 15.00 & 6.00 & 12 & 12.5 & 5 \\
-HIP 116454 & 2.01 & 0.50 & 33 & 32.3 & 6 \\
-Kepler-10 & 3.55 & 0.34 & 220 & 218.0 & 7 \\
-Kepler-78 & 2.60 & 0.40 & 79 & 84.5 & 8 \\
-Kepler-93\tablenotemark{a} & 1.86 & 0.27 & 86 & 94.9 & 9 \\
-TrES-2 & 18.10 & 5.70 & 19 & 20.2 & 3 \\
-TrES-4 & 16.90 & 10.00 & 6 & 5.7 & 3 \\
-WASP-1 & 7.00 & 3.20 & 10 & 9.6 & 3 \\
-WASP-3 & 17.60 & 5.90 & 15 & 17.8 & 3 \\
-WASP-4 & 3.25 & 2.30 & 5 & 4.0 & 3 \\
-WASP-16 & 2.62 & 1.60 & 4 & 5.36 & 3 \\
-WASP-18 & 8.77 & 6.20 & 6 & 4.0 & 3 \\
-WASP-19 & 20.35 & 5.00 & 34 & 33.1 & 3 \\
-WASP-24 & 4.62 & 3.20 & 4 & 4.2 & 3 \\
-WASP-34 & 3.60 & 1.70 & 8 & 9.0 & 3 \\
-XO-2N & 19.00 & 8.00 & 10 & 11.3 & 10 \\
-XO-5 & 11.20 & 3.00 & 24 & 27.9 & 3
-\enddata
-\tablenotetext{a}{HARPS-N measurements only.}
-\tablecomments{\textbf{References}: (1) \cite{berta15}, (2) \cite{charbonneau09}, (3) \cite{knutson14}, (4) \cite{howard11}, (5) \cite{bouchy05}, (6) \cite{vanderburg15}, (7) \cite{weiss16}, (8) \cite{howard13}, (9) \cite{dressing15b}, (10) \cite{burke07}}
-\end{deluxetable}
+\begin{table*}
+  \small
+  \renewcommand{\arraystretch}{0.7}
+  \caption{Summary of RV Observations for Known Transiting Planets with White RV noise}
+  \label{RVFCtable:compare_white}
+  \begin{tabular}{cccccc}
+    \hline \\ [-1ex]
+    Planetary & \sigeff{} & \sigK{} & Actual & Calculated & Ref. \\ System & [\mps{]} & [\mps{]} & \nrv{} & \nrv{} \\
+    \hline
+    GJ 1132 & 3.38 & 0.92 & 25 & 27.0 & 1 \\
+    GJ 1214 & 4.96 & 1.60 & 21 & 19.2 & 2 \\
+    HAT-P-4 & 10.20 & 3.00 & 23 & 23.1 & 3 \\
+    HAT-P-8 & 10.23 & 4.20 & 16 & 11.9 & 3 \\
+    HAT-P-10 & 6.56 & 2.70 & 13 & 11.8 & 3 \\
+    HAT-P-12 & 5.05 & 1.60 & 23 & 19.9 & 3 \\
+    HAT-P-18 & 20.30 & 5.20 & 31 & 30.5 & 3 \\
+    HAT-P-22 & 9.70 & 3.20 & 18 & 18.4 & 3 \\
+    HAT-P-24 & 13.00 & 3.60 & 24 & 26.1 & 3 \\
+    HAT-P-26 & 3.60 & 0.98 & 26 & 27.0 & 3 \\
+    HAT-P-29 & 11.20 & 4.60 & 11 & 11.9 & 3 \\
+    HAT-P-33 & 66.00 & 17.50 & 26 & 28.4 & 3 \\
+    HD 97658 & 2.78 & 0.39 & 96 & 101.6 & 4 \\
+    HD 149026 & 6.18 & 1.40 & 42 & 39.0 & 3 \\
+    HD 189733 & 15.00 & 6.00 & 12 & 12.5 & 5 \\
+    HIP 116454 & 2.01 & 0.50 & 33 & 32.3 & 6 \\
+    Kepler-10 & 3.55 & 0.34 & 220 & 218.0 & 7 \\
+    Kepler-78 & 2.60 & 0.40 & 79 & 84.5 & 8 \\
+    Kepler-93$^{\text{a}}$ & 1.86 & 0.27 & 86 & 94.9 & 9 \\
+    TrES-2 & 18.10 & 5.70 & 19 & 20.2 & 3 \\
+    TrES-4 & 16.90 & 10.00 & 6 & 5.7 & 3 \\
+    WASP-1 & 7.00 & 3.20 & 10 & 9.6 & 3 \\
+    WASP-3 & 17.60 & 5.90 & 15 & 17.8 & 3 \\
+    WASP-4 & 3.25 & 2.30 & 5 & 4.0 & 3 \\
+    WASP-16 & 2.62 & 1.60 & 4 & 5.36 & 3 \\
+    WASP-18 & 8.77 & 6.20 & 6 & 4.0 & 3 \\
+    WASP-19 & 20.35 & 5.00 & 34 & 33.1 & 3 \\
+    WASP-24 & 4.62 & 3.20 & 4 & 4.2 & 3 \\
+    WASP-34 & 3.60 & 1.70 & 8 & 9.0 & 3 \\
+    XO-2N & 19.00 & 8.00 & 10 & 11.3 & 10 \\
+    XO-5 & 11.20 & 3.00 & 24 & 27.9 & 3
+  \end{tabular}
+  \begin{list}{}{}
+  \item {\bf {Notes.}}
+    \item$^{\text{a}}$ HARPS-N measurements only.
+    \item (1) \cite{berta15}, (2) \cite{charbonneau09}, (3) \cite{knutson14}, (4) \cite{howard11}, (5) \cite{bouchy05}, (6) \cite{vanderburg15}, (7) \cite{weiss16}, (8) \cite{howard13}, (9) \cite{dressing15b}, (10) \cite{burke07}.
+  \end{list}
+\end{table*}

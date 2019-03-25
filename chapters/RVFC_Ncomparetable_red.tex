@@ -1,15 +1,21 @@
-\begin{deluxetable*}{cccccccccccc}
-\tabletypesize{\scriptsize}
-\tablecaption{Summary of RV Observations for Known Transiting Planets with Red RV noise\label{table:compare_red}}
-\tablewidth{0pt}
-\tablehead{Planetary & $K$ & $a$ & $\lambda$ & $\Gamma$ & $P_{\text{GP}}$ & $\sigma_{\text{jitter}}$ & $\sigma_{\text{eff}}$ & $\sigma_{\text{K}} $ & Actual & Median & Ref. \\
-  System & [\mps{]} & [\mps{]} & [days] & & [days] & [\mps{]} & [\mps{]} & [\mps{]} & \nrv{} & Calculated \nrv{}}
-\startdata
-CoRoT-7 & 3.42 & 7.0 & 20.6 & 1.0 & 23.8 & 3.44 & 3.93 & 0.66 & 71 & $61.4 \pm 2.7$ & 1 \\
-K2-18 & 3.18 & 2.8 & 59.1 & 1.2 & 38.6 & 0.25 & 4.59 & 0.75 & 75 & $80.3 \pm 43.7$ & 2 \\
-Kepler-21 & 2.12 & 6.7 & 17.0 & 2.4 & 12.6 & 1.98 & 4.22 & 0.66 & 82 & $106.7 \pm 20.8$ & 3\\
-Kepler-78 & 1.86 & 5.6 & 18.5 & 2.5 & 13.3 & 1.10 & 1.85 & 0.25 & 109 & $119.4 \pm 15.0$ & 4\\
-LHS 1140 & 5.3 & 9.0 & 277.9 & 2.0 & 134.0 & 3.0 & 9.33 & 1.1 & 144 & $265.5 \pm 64.4$ & 5
-\enddata
-\tablecomments{\textbf{References}: (1) \cite{haywood14}, (2) \cite{cloutier17b}, (3) \cite{lopezmorales16}, (4) \cite{grunblatt15}, (5) \cite{dittmann17}}
-\end{deluxetable*}
+\begin{table*}
+  \small
+  \renewcommand{\arraystretch}{0.7}
+  \caption{Summary of RV Observations for Known Transiting Planets with Red RV noise}
+  \label{RVFCtable:compare_red}
+  \begin{tabular}{cccccccccccc}
+    \hline \\ [-1ex]
+    Planetary & $K$ & $a$ & $\lambda$ & $\Gamma$ & $P_{\text{GP}}$ & $\sigma_{\text{jitter}}$ & $\sigma_{\text{eff}}$ & $\sigma_{\text{K}} $ & Actual & Median & Ref. \\
+    System & [\mps{]} & [\mps{]} & [days] & & [days] & [\mps{]} & [\mps{]} & [\mps{]} & \nrv{} & Calculated \nrv{} \\
+    \hline
+    CoRoT-7 & 3.42 & 7.0 & 20.6 & 1.0 & 23.8 & 3.44 & 3.93 & 0.66 & 71 & $61.4 \pm 2.7$ & 1 \\
+    K2-18 & 3.18 & 2.8 & 59.1 & 1.2 & 38.6 & 0.25 & 4.59 & 0.75 & 75 & $80.3 \pm 43.7$ & 2 \\
+    Kepler-21 & 2.12 & 6.7 & 17.0 & 2.4 & 12.6 & 1.98 & 4.22 & 0.66 & 82 & $106.7 \pm 20.8$ & 3\\
+    Kepler-78 & 1.86 & 5.6 & 18.5 & 2.5 & 13.3 & 1.10 & 1.85 & 0.25 & 109 & $119.4 \pm 15.0$ & 4\\
+    LHS 1140 & 5.3 & 9.0 & 277.9 & 2.0 & 134.0 & 3.0 & 9.33 & 1.1 & 144 & $265.5 \pm 64.4$ & 5
+  \end{tabular}
+  \begin{list}{}{}
+  \item {\bf{Notes.}}
+  \item (1) \cite{haywood14}, (2) \cite{cloutier17b}, (3) \cite{lopezmorales16}, (4) \cite{grunblatt15}, (5) \cite{dittmann17}
+  \end{list}  
+\end{table*}

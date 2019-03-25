@@ -1,0 +1,46 @@
+\begin{deluxetable*}{lcccc}
+\tabletypesize{\scriptsize}
+\tablecaption{Descriptions of \texttt{RVFC} Input Parameters \label{table:rvfc}}
+\tablewidth{0pt}
+\tablehead{Parameter & Units & Required for & Usage & Notes \\ & & \texttt{RVFC} Option(s) & &}
+\startdata
+\emph{Spectrograph parameters} & & & \\
+Minimum spectrograph wavelength & nm & 1 & Interpolating \sigRV{.} & \\
+Maximum spectrograph wavelength & nm & 1 & Interpolating \sigRV{.} & \\
+Spectral resolution, $R$ & $\lambda / \Delta \lambda$ & 1 & Interpolating \& calculating \sigRV{.} & \\
+Telescope aperture & m & 1 & Calculating \sigRV{.} & \\
+Throughput & [0-1] & 1 & Calculating \sigRV{.} & \\
+%Telluric absorption upper limit & [0-1] & 1 & Calculating \sigRV{.} & E.g. set to 0.02 to only accept \\ &&&& wavelengths with $>0.98$\% telluric \\ &&&& transmission. \\ 
+RV noise floor, $\sigma_{\text{floor}}$ & \mps{} & 1 & Contributes to RV rms. & \\
+\hline \smallskip
+
+\emph{Planet parameters} & & & \\
+Orbital period, $P$ & days & 1,2 & Calculating the expected $K$ and & \\ & & & sampling unseen planets. & \\
+Planetary radius, $r_p$ & R$_{\oplus}$ & 1,2 & Estimating $m_p$ from Eq.~\ref{eq:MR} and & \\ &&& sampling unseen planets. & \\ 
+Planetary mass, $m_p$ & M$_{\oplus}$ & 1,2 & Calculating the expected $K$. & If unspecified, $m_p$ is estimated from \\ &&&& $r_p$ and the mass-radius relation (Eq.~\ref{eq:MR}). \\
+\hline \smallskip
+
+\emph{Stellar parameters} & & & \\
+Apparent magnitude, $V$ or $J$ & - & 1 & Calculating \sigRV{.} & The spectral coverage of the \\ &&&& spectrograph must span either $V$ or $J$. \\
+Stellar mass, $M_s$ & M$_{\odot}$ & 1,2 & Calculating the expected $K$, & \\ &&& $\log{g}$ for \sigRV{,} & \\ &&& sampling stellar activity, and & \\ &&& sampling unseen planets. & \\
+Stellar radius, $R_s$ & R$_{\odot}$ & 1,2 & Calculating $\log{g}$ for \sigRV{.} & \\ 
+Effective temperature, $T_{\text{eff}}$ & K & 1,2 & Interpolating \sigRV{,} & \\ &&& estimating stellar colors, & \\ &&& sampling stellar activity, and & \\ &&& sampling unseen planets. & \\ 
+Metallicity, $Z$ & [Fe/H] & 1,2 & Interpolating \sigRV{.} & \\
+Projected rotation velocity, \vsini{} & km s$^{-1}$ & 1 & Interpolating \sigRV{.} & \\
+Rotation period, \prot{} & days & 1,2 & Calculating \sigRV{} and & If unspecified, \prot{} is estimated from \\ &&& sampling stellar activity & $R_s$ and \vsini{} assuming $\sin{i_s}=1$. \\
+\hline \smallskip
+
+\emph{RV noise sources} & & & \\
+Photon-noise limited RV precision, \sigRV{} & \mps{} & 2 & Contributes to RV rms. & \\
+RV activity rms, \sigact{} & \mps{} & 1,2 & Contributes to RV rms. & Can be set to zero or is sampled \\ &&&& if left unspecified. \\
+RV rms from unseen planets, \sigplan{} & \mps{} & 1,2 & Contributes to RV rms. & Can be set to zero or is sampled \\ &&&& if left unspecified. \\
+Effective RV rms, \sigeff{} & \mps{} & 2 & Calculating \nrv{.} & If unspecified, \sigeff{} is computed \\ &&&& from above contributing noise sources. \\
+\hline \smallskip
+
+\emph{Simulation parameters} & & & \\
+Exposure time, $t_{\text{exp}}$ & minutes & 1,2 & Calculating S/N and the & \\ &&& total observing time. & \\
+Overhead time & minutes & 1,2 & Calculating \sigRV{.} & \\
+Desired $K$ detection significance, $K/\sigma_{\text{K}}$ & - & 1,2 & Calculating \nrv{.} & \\
+Number of GP trials, $N_{\text{GP}}$ & - & 1,2 & Calculating \nrv{} in the & If zero, only do the white noise \\ &&& presence of red noise. & calculation. If $N_{\text{GP}}>0$ then we \\ &&&& recommend setting $N_{\text{GP}} \gtrsim 10$ for \\ &&&& decent sampling. Value returned \\ &&&& is the median of all trials if $N_{\text{GP}}\geq 2$.
+\enddata
+\end{deluxetable*}

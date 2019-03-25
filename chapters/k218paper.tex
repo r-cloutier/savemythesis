@@ -192,7 +192,8 @@ light curve (see Sect.~\ref{k218sect:gp} for an explanation of the fit).
   \begin{ocg}{fig:gpon}{fig:gpon}{1}%
     \includegraphics[width=\hsize]{figures/k2phot_gp.png}%
   \end{ocg}%
-  \caption{K2 photometric light curve after the removal of known unphysical spurious signals.
+  \caption[K2 photometric light curve of K2-18.]
+    {\small K2 photometric light curve after the removal of known unphysical spurious signals.
     The two \ToggleLayer{fig:tickson,fig:ticksoff}{\protect\cdbox{transits}} of K2-18b are highlighted by the
     ong blue ticks with the expected times of
     mid-transit for K2-18c highlighted with short green ticks (see Sect.~\ref{k218sect:results}).
@@ -226,7 +227,8 @@ and individually normalize each periodogram's power by its standard deviation.
     \includegraphics[width=0.8\hsize]{figures/periodograms_Ps.png}%
   \end{ocg}
   \hspace{-0.8\hsize}%
-  \caption{Left column (top to bottom):
+  \caption[Lomb-Scargle periodograms of the HARPS timeseries and K2 photometry.]
+  {\small Left column (top to bottom):
   Lomb-Scargle periodograms of the raw radial velocities (RV), the K2 photometry (Phot), the HARPS window
   function (WF), S index, H$\alpha$, full width half maximum (FWHM), and bi-sector inverse slope (BIS)
   time series. The orbital periods of K2-18b, K2-18c, the stellar rotation
@@ -391,7 +393,8 @@ PDF of $P_{\text{GP}}$ we measured a stellar rotation period of \prot{} $= 38.6^
 \begin{figure}
 \centering
 \includegraphics[width=0.8\hsize]{figures/cornerphot_K218.png}
-\caption{Marginalized and joint posterior PDFs of the logarithmic GP hyperparameters
+\caption[Posterior PDF of the GP hyperparameters of the K2 photometry.]
+  {\small Marginalized and joint posterior PDFs of the logarithmic GP hyperparameters
   used to model the K2 photometry shown in Fig.~\ref{k218fig:k2phot}.
   Kernel density estimations of each model parameter's posterior are overlaid on the
   histograms with solid green lines. \label{k218fig:cornerGP}}
@@ -469,7 +472,8 @@ stellar activity. The quiet nature of K2-18 is highlighted by its low measured v
 \begin{figure*}
 \centering
 \includegraphics[width=\hsize]{figures/cornerRC_K218.png}
-\caption{The marginalized and joint posterior PDFs of the model parameters from Model 1 of
+\caption[Posterior PDF of the model parameters of the HARPS RVs.]
+  {\small The marginalized and joint posterior PDFs of the model parameters from Model 1 of
   the observed RVs. Model 1 of the observed RVs models the two planets with Keplerian orbital
   solutions and the residual RV activity signal with a GP regression model trained on the K2 photometry in
   Fig.~\ref{k218fig:k2phot}. Kernel density estimations of the trained posteriors are shown in the
@@ -523,7 +527,8 @@ also less than the median photon noise limit suggesting that the GP regression m
 \begin{figure}
   \centering
   \includegraphics[width=0.8\hsize]{figures/fullRVs.png}%
-  \caption{Panel a: Raw RVs less the systemic velocity of
+  \caption[Various HARPS RV components modelled for K2-18.]
+    {\small Panel a: Raw RVs less the systemic velocity of
     K2-18. Panel b: RV contribution from stellar activity; raw RVs
     corrected by the MAP Keplerian orbital solutions for each detected planet.
     Panel c: RV contribution from K2-18b; raw RVs corrected for
@@ -555,7 +560,8 @@ on the K2 photometry and assuming a mean model equal to the superposition of the
    \includegraphics[width=0.8\hsize]{figures/phasedRVs_curves.png}%
   \end{ocg}
   \hspace{-0.8\hsize}%
-  \caption{Phase-folded RVs for each planet in the K2-18
+  \caption[Phase-folded HARPS RVs depicting the planetary signals from K2-18b and c.]
+      {\small Phase-folded RVs for each planet in the K2-18
   planetary system (top: K2-18c and bottom: K2-18b). The RVs have
   been corrected for stellar activity with a quasi-periodic GP
   model trained on the K2 photometry.
@@ -643,7 +649,8 @@ the 10$\sigma$ level in the K2 photometry \citep{montet15}.
   \begin{ocg}{fig:4on}{fig:4on}{1}%
     \includegraphics[width=0.8\hsize]{figures/transits_4.png}%
   \end{ocg}%
-  \caption{K2 light curve of K2-18 phase-folded to the maximum a-posteriori orbital period
+  \caption[Search for transits of the RV planet K2-18c in the K2 photometry.]
+      {\small K2 light curve of K2-18 phase-folded to the maximum a-posteriori orbital period
     and time of mid-transit of K2-18c from Model 1. Four transit light curve models are over-plotted
     for various illustrative values of the assumed size of K2-18c: the 99\% upper limit on $r_{p,c}$   
     \ToggleLayer{fig:1on,fig:1off}{\protect\cdbox{(0.52 R$_{\oplus}$)}}, 
@@ -729,7 +736,8 @@ Fig.~\ref{k218fig:dynam}.
 \begin{figure}
 \centering
 \includegraphics[width=0.6\hsize]{figures/ecc_stability.png}
-\caption{Smoothed 2D map depicting the fraction of stable systems as a function of each planet's
+\caption[Stability fraction versus the injected orbital eccentricities of K2-18b and c.]
+  {\small Smoothed 2D map depicting the fraction of stable systems as a function of each planet's
   eccentricity based on a suite of dynamical integrations.
   The dashed black curve depicts the analytic condition for Hill stability from
   \cite{gladman93} assuming the MAP masses and semi-major axes from Model 1 in
@@ -822,7 +830,8 @@ thus making them more suitable to extraterrestrial life.
 \begin{figure}
 \centering
 \includegraphics[width=0.6\hsize]{figures/MRdiagram.png}
-\caption{K2-18b along with a sample of other small exoplanets in the planetary mass
+\caption[Planetary mass-radius space for sub-Neptune-sized planets including K2-18b.]
+    {\small K2-18b along with a sample of other small exoplanets in the planetary mass
   and radius space. Overlaid curves are two-component interior structure models of
   fully-differentiated solid planets with mass fractions annotated for each curve.
   \label{k218fig:mr}}

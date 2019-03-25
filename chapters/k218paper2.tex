@@ -26,7 +26,7 @@
   a much weaker signal at 9 days, which also appeared to vary chromatically and temporally,
   leading to the conclusion that the origin of the 9-day signal was more likely  related to
   stellar activity than to a planetary presence. Here we conduct a detailed re-analysis of all available
-  RV time-series---including a set of 31 previously unpublished HARPS measurements---to investigate
+  RV timeseries---including a set of 31 previously unpublished HARPS measurements---to investigate
   the effects of time-sampling and of simultaneous modelling of
   planetary plus activity signals on the existence and origin of the curious 9-day signal. We conclude
   that the 9-day signal is real and was initially seen to be suppressed in the CARMENES data
@@ -57,7 +57,7 @@ wavelength domain. Specifically, \cite{cloutier17b} (hereafter \citetalias{clout
 first reported the mass of K2-18b to be
 $8.0\pm 1.9$ M$_{\oplus}$ based on 75 measurements taken with the HARPS spectrograph on the ESO 3.6m
 telescope at La Silla  \citep{mayor03}. 
-Their RV time-series also exhibited a strong additional signal
+Their RV timeseries also exhibited a strong additional signal
 at $\sim 9$ days which was not seen in any other contemporaneous activity indicators\footnote{For example,  the
   S-index, H$\alpha$ index, full width at half maximum, and the bi-sector inverse slope of the spectral
   cross-correlation function} or in the window function.
@@ -66,7 +66,7 @@ planetary nature of the 9-day signal by simultaneously modelling both planetary 
 and the correlated RV residuals using a trained quasi-periodic Gaussian process (GP).
 Correlated RV residuals, after the removal of planetary signals, are expected to arise from
 stellar activity whose components can be seen in various activity indicators such as
-photometry and the aforementioned spectroscopic indicators. All of these ancillary time-series were used
+photometry and the aforementioned spectroscopic indicators. All of these ancillary timeseries were used
 for training in the multiple analyses presented in \citetalias{cloutier17b}.
 Stellar activity on M dwarfs is largely modulated by stellar rotation \citep{boisse11}
 and thus produces a quasi-periodic structure in the RVs that is physically motivated.
@@ -96,7 +96,7 @@ Based on the strong evidence for the detection of K2-18c with HARPS\footnote{A s
 low significance of its periodic signal being seen with CARMENES, here we conduct a systematic re-analysis of all 
 available RV data to confirm or disprove the existence of a stable periodic signal at $\sim 9$ days in the K2-18
 system and ultimately to determine the nature of that signal as planetary or otherwise. In this study we
-independently analyse the  HARPS and CARMENES RV time-series and their joint time-series.
+independently analyse the  HARPS and CARMENES RV timeseries and their joint timeseries.
 We include 31 previously unpublished HARPS RVs that aid in the interpretation
 of the 9-day signal and improve the measurement precision of the planetary parameters.
 In Sect.~\ref{k2182sect:sampling} we present a detailed analysis investigating the effects of
@@ -122,22 +122,22 @@ expected to significantly enhance or suppress the 9-day signal as investigated b
 Specifically, the periodogram of the HARPS WF showed no excess
 power at 9 days \citepalias[see Fig. 2][]{cloutier17b} such that the signal is unlikely to originate from
 sub-optimal HARPS sampling. Similarly,
-\citetalias{sarkis18} created a synthetic RV time-series with the maximum a posteriori (MAP) solution for
+\citetalias{sarkis18} created a synthetic RV timeseries with the maximum a posteriori (MAP) solution for
 K2-18c from \citetalias{cloutier17b}, plus white noise, and sampled the Keplerian  curve with synthetic RVs using
 the CARMENES WF. They reported that the $\sim$ 9-day signal was seen in the periodogram
 and thus was not suppressed by the CARMENES WF. Here we extend these analyses to establish
 definitively whether  either published WF is responsible for the ambiguity of the $\sim$ 9-day signal.
 
-\subsection{Detecting the 9-day signal in synthetic RV time-series}
+\subsection{Detecting the 9-day signal in synthetic RV timeseries}
 Here we aim to establish the ease with which the
 K2-18c signal at $\sim 9$ days can be detected in any of the published HARPS,
 CARMENES, or joint WFs. Firstly, for each of the three WFs we construct a set of synthetic RV
-time-series containing a variety of injected physical signals,
+timeseries containing a variety of injected physical signals,
 plus a white noise term with standard deviation equal to the mean
-RV measurement precision of that time-series.\footnote{ 3.60, 3.08, and 3.37 \mps{} for HARPS, CARMENES, and
-  their joint time-series respectively.} We consider four flavours of injected physical signals of increasing
+RV measurement precision of that timeseries.\footnote{ 3.60, 3.08, and 3.37 \mps{} for HARPS, CARMENES, and
+  their joint timeseries respectively.} We consider four flavours of injected physical signals of increasing
 complexity: i) K2-18c only, ii) K2-18b and c, iii) both planets plus correlated noise
-due to stellar activity, and iv) K2-18b and stellar activity. The last time-series, which does not contain an injected
+due to stellar activity, and iv) K2-18b and stellar activity. The last timeseries, which does not contain an injected
 K2-18c signal, is included to test the hypothesis that the $P_c$ signal could arise from sampling or stellar activity,
 without K2-18c existing at $P_c$, as posited by \citetalias{sarkis18}.
 The test with K2-18b and c only using the CARMENES WF corresponds
@@ -154,67 +154,69 @@ an effective means of describing quasi-periodic stellar activity signals in both
 hyperparameters describe the covariance structure of the stellar activity signal as seen in the star's K2 photometry
 and the HARPS RVs.
 
-For each synthetic RV time-series we compute the Bayesian generalized Lomb-Scargle periodogram
+For each synthetic RV timeseries we compute the Bayesian generalized Lomb-Scargle periodogram
 \citep[GLSP;][]{mortier15} from which we isolate the probability of a sinusoidal function with the period of
-K2-18c ($P_c=8.962$ days) being present in our synthetic time-series; p($P_c|$RV).
+K2-18c ($P_c=8.962$ days) being present in our synthetic timeseries; p($P_c|$RV).
 The left column of Fig.~\ref{k2182fig:9vKcNrv} depicts p($P_c|$RV) as a function of the injected K2-18c semi-amplitude for
 three out of the four RV models. 
-The synthetic time-series containing K2-18b and stellar activity are not included in Fig.~\ref{k2182fig:9vKcNrv} as
+The synthetic timeseries containing K2-18b and stellar activity are not included in Fig.~\ref{k2182fig:9vKcNrv} as
 they were consistently seen to result in p($P_c|$RV)$\ll 1$\%, thus indicating that the $P_c$ did not arise with any
-significance when not explicitly added to the time-series. The ordinate values in
-Fig.~\ref{k2182fig:9vKcNrv} are the median probabilities derived from a set of 50 synthetic time-series realizations
+significance when not explicitly added to the timeseries. The ordinate values in
+Fig.~\ref{k2182fig:9vKcNrv} are the median probabilities derived from a set of 50 synthetic timeseries realizations
 per value of the injected $K_c$. In this way, we marginalize over the exact form of the injected white and correlated
 noise sources which are sampled randomly in each of the 50 iterations.
-As expected, because the $P_c$ periodic signal is injected into each synthetic time-series,
+As expected, because the $P_c$ periodic signal is injected into each synthetic timeseries,
 the probability of that signal existing within the data increases with the $K_c$ from  zero probability
 when $K_c\sim 1$ \mps{} towards p($P_c|$RV) $= 100$\% as $K_c \to 10$ \mps{} for any of the three types of synthetic
-time-series. It is true that as the complexity of the synthetic time-series
+timeseries. It is true that as the complexity of the synthetic timeseries
 increases (i.e. as more signals are added) the semi-amplitude $K_c$ needs to be larger in order to be
 detected with high probability. It is also clear that detecting the injected $P_c$ signal is easier with either
 the HARPS or joint WFs as their probability curves tend to increase more rapidly with $K_c$
 and they approach 100\% probability at a lower $K_c$ than with the CARMENES WF alone. This is
 particularly true at the MAP value of $K_c=4.63$ \mps{} \citepalias{cloutier17b} wherein
 p($P_c|$RV) is $\sim 40$\% larger with the HARPS WF than with CARMENES for any of the synthetic
-time-series. This shows that with the CARMENES time-sampling 
+timeseries. This shows that with the CARMENES time-sampling 
 the strength of the $P_c$ periodic signal is less prominent in the GLSP than with the HARPS or
-joint time-sampling. With any of the three types of synthetic time-series, the strength
+joint time-sampling. With any of the three types of synthetic timeseries, the strength
 of $P_c$ is typically lower with CARMENES until $K_c\sim 10$ \mps{} wherein the probability
 of $P_c$ with CARMENES becomes consistent with 100\%. However, an injected value of $K_c=10$ \mps{} is
 inconsistent with the \citetalias{cloutier17b} measured value at $\gtrsim 7\sigma$.
 
 \begin{figure*}
   %\sidecaption
-  %\includegraphics[width=0.65\hsize]{9vKcNrv_bkgd.png}%
-  \hspace{-0.65\hsize}%
+  \centering
+  %\includegraphics[width=0.8\hsize]{figures/9vKcNrv_bkgd.png}%
+  \hspace{-0.8\hsize}%
   \begin{ocg}{fig:Hoff}{fig:Hoff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:Hon}{fig:Hon}{1}%
-  %\includegraphics[width=0.65\hsize]{9vKcNrv_harps.png}%
+  %\includegraphics[width=0.8\hsize]{figures/9vKcNrv_harps.png}%
   \end{ocg}
-  \hspace{-0.65\hsize}%
+  \hspace{-0.8\hsize}%
   \begin{ocg}{fig:Coff}{fig:Coff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:Con}{fig:Con}{1}%
-  %\includegraphics[width=0.65\hsize]{9vKcNrv_carmenes.png}%
+  %\includegraphics[width=0.8\hsize]{figures/9vKcNrv_carmenes.png}%
   \end{ocg}
-  \hspace{-0.65\hsize}%
+  \hspace{-0.8\hsize}%
   \begin{ocg}{fig:joff}{fig:joff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:jon}{fig:jon}{1}%
-  %\includegraphics[width=0.65\hsize]{9vKcNrv_joint.png}%
+  %\includegraphics[width=0.8\hsize]{figures/9vKcNrv_joint.png}%
   \end{ocg}
-  \hspace{-0.65\hsize}%
-  \caption{\emph{Left column}: Probability of the injected periodic signal at $P_c=8.962$ days existing 
-    in synthetic RV time-series, as a function of the injected semi-amplitude $K_c$ with time-sampling
+  \hspace{-0.8\hsize}%
+  \caption[The effect of sampling on the probability of the periodic signal at $P_c=8.962$ days in synthetic RV timeseries.]{\small
+    \emph{Left column}: Probability of the injected periodic signal at $P_c=8.962$ days existing 
+    in synthetic RV timeseries, as a function of the injected semi-amplitude $K_c$ with time-sampling
     identical to the published \ToggleLayer{fig:Hon,fig:Hoff}{\protect\cdbox{HARPS WF}} \citepalias{cloutier17b},
     the published \ToggleLayer{fig:Con,fig:Coff}{\protect\cdbox{CARMENES WF}} \citepalias{sarkis18}, or their
     \ToggleLayer{fig:jon,fig:joff}{\protect\cdbox{joint WF}}. Three sets of synthetic
-    RV time-series are considered and contain K2-18c only (\emph{top row}), K2-18b and c (\emph{middle row}),
+    RV timeseries are considered and contain K2-18c only (\emph{top row}), K2-18b and c (\emph{middle row}),
     or both planets plus a GP correlated noise model of stellar activity (\emph{bottom row}). The
     \emph{shaded vertical region} highlights the MAP and $1\sigma$ measured value of $K_c=4.63 \pm 0.72$ \mps{}
     from \citetalias{cloutier17b}.
     \emph{Right column}: Probability of the injected periodic signal at $P_c$ existing
-    in synthetic RV time-series, with fixed $K_c=4.63$ \mps{,} as a function of the number of RV measurements.}
+    in synthetic RV timeseries, with fixed $K_c=4.63$ \mps{,} as a function of the number of RV measurements.}
   \label{k2182fig:9vKcNrv}
 \end{figure*}
 
@@ -222,25 +224,25 @@ The systematically lower $P_c$ probability with CARMENES may be due to sampling,
 that the CARMENES WF contains fewer RVs: 58 compared to 75
 with HARPS. The smaller WF affects the sampling of periodic signals and $P_c$ may not be strongly
 detectable with only 58 RVs.
-To investigate this possibility, we again compute p($P_c|$RV) in our synthetic RV time-series, but for
-random subsets  of each time-series and with an increasing number of RV measurements 
+To investigate this possibility, we again compute p($P_c|$RV) in our synthetic RV timeseries, but for
+random subsets  of each timeseries and with an increasing number of RV measurements 
 $N_{\text{RV}} \in [10,N_f]$ where $N_f$ is the full size
-of each RV time-series.\footnote{$N_f =$ 75, 58, and 133 for HARPS, CARMENES, and their joint time-series,
+of each RV timeseries.\footnote{$N_f =$ 75, 58, and 133 for HARPS, CARMENES, and their joint timeseries,
   respectively.} When creating these synthetic times-series, $K_c$ is fixed to its MAP value of 4.63 \mps{.}
-The smoothed probability curves for each synthetic time-series and each WF are shown in the right
+The smoothed probability curves for each synthetic timeseries and each WF are shown in the right
 column of Fig.~\ref{k2182fig:9vKcNrv}. The curves are smoothed to remove the  high-frequency noise and make the trends in the
 curves easier to parse visually. As can be seen in the probability of $P_c$ as a function of $K_c$, when $K_c$ equals
 its MAP value, the $P_c$ signal is detected at a higher probability with the HARPS or HARPS+CARMENES
-WFs than with CARMENES alone. Here we focus on the probability of $P_c$ when the HARPS and CARMENES time-series
+WFs than with CARMENES alone. Here we focus on the probability of $P_c$ when the HARPS and CARMENES timeseries
 contain the same number of measurements.
-When both time-series are equal to the size of the full CARMENES WF (i.e. $N_{\text{RV}}=58$), the
+When both timeseries are equal to the size of the full CARMENES WF (i.e. $N_{\text{RV}}=58$), the
 probability of detecting $P_c$ is always lowest with the CARMENES WF than with any subset of 58 measurements with
 either the HARPS or joint WFs. For the most realistic set of synthetic RVs featuring two planets + a stellar activity
 model, the discrepancy in p($P_c$|RV) is modest with HARPS being $\sim 29$\% greater than with CARMENES and
 their joint WF being $\sim 63$\% greater.
 
-Overall we see that the probability of the $P_c$ periodic signal existing in time-series with the sampling of HARPS,
-CARMENES, or their joint time-series, is systematically lowest with CARMENES. By the nature of this experiment we
+Overall we see that the probability of the $P_c$ periodic signal existing in timeseries with the sampling of HARPS,
+CARMENES, or their joint timeseries, is systematically lowest with CARMENES. By the nature of this experiment we
 conclude that the sole reason for the  lower CARMENES probability is due to its WF. Although this discrepancy hints
 at why  $P_c$ may not have been detected in the GLSP of the CARMENES RVs, the relative values of p($P_c$|RV) to
 surrounding periodicities in these synthetic RVs is considered high and is certainly sufficient to detect $P_c$.
@@ -249,7 +251,7 @@ of the $P_c$ periodic signal in the GLSP.
 
 \subsection{Identifying anomalous CARMENES observations} \label{k2182sect:anomalous}
 We recall that the periodic signal from the proposed planet K2-18c at $P_c=8.962$ days was not seen with a low
-false alarm probability in the GLSP of the full CARMENES time-series \citepalias{sarkis18}. This is confirmed in the
+false alarm probability in the GLSP of the full CARMENES timeseries \citepalias{sarkis18}. This is confirmed in the
 first panel of Fig.~\ref{k2182fig:glsp} although a small (albeit non-significant) hint of the $\sim$ 9-day signal is visible.
 In computing the GLSP the CARMENES RVs are weighted by the inverse square of their respective measurement
 uncertainties. As a brief experiment, we considered what the effect of adopting a uniform weighting on each RV (i.e.
@@ -263,22 +265,24 @@ GLSP.
 
 \begin{figure*}
   \centering
-  %\includegraphics[width=\hsize]{periodograms1_bkgd.png}%
+  %\includegraphics[width=\hsize]{figures/periodograms1_bkgd.png}%
   \hspace{-\hsize}%
   \begin{ocg}{fig:linesoff}{fig:linesoff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:lineson}{fig:lineson}{1}%
-  %\includegraphics[width=\hsize]{periodograms1_lines.png}%
+  %\includegraphics[width=\hsize]{figures/periodograms1_lines.png}%
   \end{ocg}
   \hspace{-\hsize}%
-  \caption{Bayesian generalized Lomb-Scargle periodograms for various subsets of the published CARMENES and HARPS RVs 
-    with one of a pair of possible weighting schemes. The details of the time-series shown in each panel are
+  \caption[The sensitivity of the probability of the periodic signal $P_c=8.962$ days with different weighting
+  schemes in HARPS and CARMENES.]
+    {\small Bayesian generalized Lomb-Scargle periodograms for various subsets of the published CARMENES and HARPS RVs 
+    with one of a pair of possible weighting schemes. The details of the timeseries shown in each panel are
     annotated above the panel. The three
     \ToggleLayer{fig:lineson,fig:linesoff}{\protect\cdbox{\emph{dashed vertical lines}}} depict the orbital
     period of the proposed non-transiting planet K2-18c ($P_c=8.962$ days), the orbital period of the known
     transiting planet K2-18b ($P_b=32.93963$ days), and the photometric stellar rotation period
     ($P_{\text{rot}}=38.6$ days). The $P_c$ signal posited to be due to a second, non-transiting planet
-    is seen at high relative probability in all but the full CARMENES RV time-series from \citetalias{sarkis18}
+    is seen at high relative probability in all but the full CARMENES RV timeseries from \citetalias{sarkis18}
     with a $1/\sigma_{\text{RV}}^2$ weighting.}
   \label{k2182fig:glsp}
 \end{figure*}
@@ -289,7 +293,7 @@ to the extent that it becomes buried in the noise of the full CARMENES GLSP. If 
 anomalous measurements is small compared to the full size of the dataset, then we can justify the removal of those
 measurements to measure the 9-day signal with CARMENES given our strong prior evidence for the signal from HARPS
 \citepalias{cloutier17b}.
-We proceed by calculating the probability of $P_c$ existing within various subsets of the full CARMENES time-series
+We proceed by calculating the probability of $P_c$ existing within various subsets of the full CARMENES timeseries
 via leave-one-out cross-validation.
 In each of the 58 considered subsets, we omit a single unique measurement, compute the
 GLSP of the remaining 57 RVs, and isolate the probability of $P_c$ existing within the data using an identical method
@@ -298,8 +302,9 @@ omitted measurement are shown in Fig.~\ref{k2182fig:prob9}.
 
 \begin{figure}
   \centering
-  %\includegraphics[width=\hsize]{probs9.png}
-  \caption{Probability of the proposed K2-18c periodic signal $P_c=8.962$ days existing within the
+  %\includegraphics[width=0.6\hsize]{figures/probs9.png}
+  \caption[Leave-one-out cross-validation on the CARMENES RV timeseries.]
+    {\small Probability of the proposed K2-18c periodic signal $P_c=8.962$ days existing within the
     CARMENES RV dataset from \citetalias{sarkis18} but with a single measurement omitted via leave-one-out
     cross-validation. The abscissa depicts
     the observation epoch of each omitted RV measurement. The \emph{solid horizontal line} depicts the $1\sigma$
@@ -322,9 +327,9 @@ The 9-day periodic signal is now clearly seen at high probability. Clearly the s
 existence of the proposed planet K2-18c at $\sim 9$ days from the GLSP of the remaining 55 CARMENES RVs.
 
 %\LEt{ the authors' names should be spelled out at the beginning of a paragraph}
-\citetalias{sarkis18} provided their contemporaneous spectroscopic time-series of the CARMENES `full', 
-blue, and red RVs, as well as time-series of the chromospheric  H$\alpha$ index and the three Ca$_{\text{II}}$ infrared
-triplet line indices. Inspection of these time-series does not reveal any obvious reason for why the three
+\citetalias{sarkis18} provided their contemporaneous spectroscopic timeseries of the CARMENES `full', 
+blue, and red RVs, as well as timeseries of the chromospheric  H$\alpha$ index and the three Ca$_{\text{II}}$ infrared
+triplet line indices. Inspection of these timeseries does not reveal any obvious reason for why the three
 measurements identified in Fig.~\ref{k2182fig:prob9} significantly suppress the 9-day signal.
 We shared this result among the CARMENES team
 members who were also unable to identify any potential causes of the anomalous nature of these measurements
@@ -390,19 +395,20 @@ residual power close to \prot{.} This further supports the planetary interpretat
 
 \begin{figure}
   \centering
-  %\includegraphics[width=\hsize]{glsp_bluereddiff_bkgd.png}%
-  \hspace{-\hsize}%
+  %\includegraphics[width=0.6\hsize]{figures/glsp_bluereddiff_bkgd.png}%
+  \hspace{-0.6\hsize}%
   \begin{ocg}{fig:linesoff}{fig:linesoff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:lineson}{fig:lineson}{1}%
-  %\includegraphics[width=\hsize]{glsp_bluereddiff_lines.png}%
+  %\includegraphics[width=0.6\hsize]{figures/glsp_bluereddiff_lines.png}%
   \end{ocg}
-  \hspace{-\hsize}%
-  \caption{Bayesian generalized Lomb-Scargle periodograms of the blue (\emph{top}), red (\emph{middle}), and 
+  \hspace{-0.6\hsize}%
+  \caption[Bayesian Lomb-Scargle periodograms of the chromatic HARPS RVs.]
+    {\small Bayesian generalized Lomb-Scargle periodograms of the blue (\emph{top}), red (\emph{middle}), and 
     HARPS RVs and their difference (\emph{bottom}). The three
     \ToggleLayer{fig:lineson,fig:linesoff}{\protect\cdbox{\emph{dashed vertical lines}}} depict the orbital
     period of the planets K2-18b and c ($P_c\sim 9$ days), and the photometric stellar rotation period.
-    The 9-day signal is seen in the first two time-series, but at a lower probability in the blue likely due to the
+    The 9-day signal is seen in the first two timeseries, but at a lower probability in the blue likely due to the
     higher levels of stellar activity in that wavelength regime.
     The 9-day signal is suppressed in the GLSP of the RV difference, while some residual probability close to \prot{}
     continues to persist due to the incomplete removal of stellar activity.}
@@ -428,7 +434,7 @@ These new spectra extend the full HARPS baseline from April 2015 (BJD=2457117.5)
 (BJD=2458307.5). The method used to derive the stellar RVs at each observation epoch is detailed
 in Sect. 2.1 of \citetalias{cloutier17b}. The full set of 106 HARPS RVs are provided in Table~\ref{k2182table:data}.
 
-The full HARPS time-series is spanned by three separate observing seasons
+The full HARPS timeseries is spanned by three separate observing seasons
 containing $N_{\text{RV}} \geq 22$. The GLSPs of the HARPS RVs in each observing season are shown in
 Fig.~\ref{k2182fig:temporal}. Although the 9-day signal is visible in each GLSP, its probability relative to the
 surrounding continuum is seen to increase with time from early 2016 to mid-2018.
@@ -436,7 +442,7 @@ If the 9-day signal is planetary in nature rather than
 due to stellar activity, then we would expect the K2-18 activity level to decrease with time thus enhancing the 9-day signal in the GLSP as the activity level subsides. Next we  show that this is indeed the case.
 
 To characterize the temporal variability of the K2-18 activity level we compute the strength of the sodium doublet
-activity index (Na D) in all HARPS spectra following \cite{astudillodefru17b}. The Na D time-series is shown in the lower
+activity index (Na D) in all HARPS spectra following \cite{astudillodefru17b}. The Na D timeseries is shown in the lower
 panel of Fig.~\ref{k2182fig:temporal}. In particular we focus on the peak-to-peak amplitude $A$ and rms of the Na D measurements in each
 observing season. In doing so we see that the amplitude of
 the variation in the Na D activity index and its rms both decrease across subsequent observing seasons. Specifically, we find that
@@ -444,30 +450,32 @@ $A=0.0117$ in the first observing season and drops to 0.0023 after $\sim 26$ mon
 to 0.0006 over the same time interval. These diagnostics indicate that 
 the level of stellar activity is indeed decreasing with time and thus supports the planetary interpretation of the 9-day signal.
 A similar trend of increasing activity is also observed when considering other activity
-indicators such as the H$\alpha$ index, although its time-series is not depicted in Fig.~\ref{k2182fig:temporal}.
+indicators such as the H$\alpha$ index, although its timeseries is not depicted in Fig.~\ref{k2182fig:temporal}.
 
 \begin{figure*}
   \centering
-  %\includegraphics[width=\hsize]{temporal_bkgd.png}%
+  %\includegraphics[width=\hsize]{figures/temporal_bkgd.png}%
   \hspace{-\hsize}%
   \begin{ocg}{fig:vertoff}{fig:vertoff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:verton}{fig:verton}{1}%
-  %\includegraphics[width=\hsize]{temporal_vert.png}%
+  %\includegraphics[width=\hsize]{figures/temporal_vert.png}%
   \end{ocg}
   \hspace{-\hsize}%
   \begin{ocg}{fig:textoff}{fig:textoff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:texton}{fig:texton}{1}%
-  %\includegraphics[width=\hsize]{temporal_text.png}%
+  %\includegraphics[width=\hsize]{figures/temporal_text.png}%
   \end{ocg}
   \hspace{-\hsize}%
-  \caption{\emph{Top row}: Bayesian generalized Lomb-Scargle periodograms of the HARPS RVs in the three observing
+  \caption[Temporal variations in the probability of the periodic signal at $P_c=8.962$ days and HARPS Na D timeseries
+    over three observing seasons.]
+    {\small \emph{Top row}: Bayesian generalized Lomb-Scargle periodograms of the HARPS RVs in the three observing
     seasons annotated above each panel. The
     \ToggleLayer{fig:verton,fig:vertoff}{\protect\cdbox{\emph{vertical dashed lines}}} depict
     the orbital period of the proposed non-transiting planet K2-18c ($P_c = 8.962$ days), the orbital period
     of the known transiting planet K2-18b ($P_b = 32.93963$ days), and the photometric stellar rotation period (\prot{}
-    $= 38.6$ days). \emph{Bottom row}: Sodium doublet time-series as measured by HARPS. The coloured regions/markers
+    $= 38.6$ days). \emph{Bottom row}: Sodium doublet timeseries as measured by HARPS. The coloured regions/markers
     are indicative of the epochs used to compute each RV GLSP in the upper row. The 
     \ToggleLayer{fig:texton,fig:textoff}{\protect\cdbox{\emph{annotation group}}} adjacent to each observing season
     depicts the Na D peak-to-peak amplitude $A$, the Na D rms, and the number of measurements within that observing season.
@@ -489,7 +497,7 @@ and sine wave fitting such as that used in \citetalias{sarkis18}. The main issue
 the rotationally modulated activity in photometry and in RVs
 is not strictly periodic as the finite lifetimes of active regions, along with
 their variable sizes, contrasts, and spatial distributions will introduce a quasi-periodic component. This is
-especially true when RV time-series span many stellar rotation cycles.
+especially true when RV timeseries span many stellar rotation cycles.
 Incomplete models can result in the miscalculation of planetary parameters and the marginalization of coherent
 signals (e.g. additional planets) that are required to properly interpret the observed RV variations. When modelling RVs
 it is therefore crucial to include a flexible model that can account for stochastic variations in stellar
@@ -498,7 +506,7 @@ planetary models (i.e. Keplerians), thus ensuring self-consistent solutions betw
 Furthermore, GP modelling fits within a Bayesian formalism as a single GP, which describe the temporal covariance between RV
 measurements with a single set of hyperparameters, is itself a prior distribution of functions whose mean represents
 the `best-fit' activity model \citep{haywood14,faria16,cloutier17a}.
-Here we analyse a variety of RV time-series from either the HARPS
+Here we analyse a variety of RV timeseries from either the HARPS
 \citepalias{cloutier17b} or CARMENES \citepalias{sarkis18} spectrographs using a model that includes one or two
 planets plus a correlated noise component from stellar activity in the form of a GP regression model.
 
@@ -510,7 +518,7 @@ HARPS and CARMENES, we treat their activity models as separate GPs \citep[e.g.][
 owing to their unique systematics, the chromatic dependence of stellar activity, and each spectrograph's distinct
 wavelength coverage. In this case,
 all GP hyperparameters are common between the two GP models with the exception of the additive jitter and the covariance
-amplitude. When modelling the joint HARPS+CARMENES time-series we therefore have 19 model parameters.
+amplitude. When modelling the joint HARPS+CARMENES timeseries we therefore have 19 model parameters.
 
 The GP regression models of stellar activity are trained on the star's precision K2 photometry. The
 apparent photometric variability, from which the photometric stellar rotation period was measured
@@ -522,7 +530,7 @@ use the K2 photometry to train our GP stellar activity models to ensure that the
 mean GP model from the simultaneous planet + activity modelling is representative of stellar
 activity and does not settle into a solution that describes other temporally correlated signals (e.g.
 non-transiting planets) by restricting the $P_{\text{GP}}$ to \prot{} or one of its low-order
-harmonics. By training our GP on ancillary time-series we empirically constrain the covariance structure of the
+harmonics. By training our GP on ancillary timeseries we empirically constrain the covariance structure of the
 activity signal and use the posterior probability density functions (PDFs)
 of the GP hyperparameters from training as priors during
 the RV modelling stage (see Table~\ref{k2182table:priors}).
@@ -536,7 +544,7 @@ of the RV model parameters given an input dataset via Markov chain Monte Carlo (
 All simulations are run using the affine-invariant MCMC ensemble sampler
 \texttt{emcee} \citep{foremanmackey13}. All model parameters are initialized around their MAP values
 with $1\sigma$ dispersions from \citetalias{cloutier17b}. The adopted model parameters are consistent
-between the various time-series considered and are summarized in Table~\ref{k2182table:priors}. In each
+between the various timeseries considered and are summarized in Table~\ref{k2182table:priors}. In each
 MCMC simulation we manually monitor the acceptance fraction and ensure that it always lies between
 20\%\ and 50\% for both the burn-in phase and throughout the actual posterior PDF sampling.
 
@@ -583,7 +591,7 @@ in the system.
 In Sect.~\ref{k2182sect:temporal} we presented 31 new HARPS RVs to investigate the temporal variability of the
 9-day signal. Hence the full HARPS WF has been extended to over a year past the previously most recent
 published HARPS measurement for this system \citepalias{cloutier17b} and now contains 106 RV measurements.
-Here we model the full HARPS time-series in the same way  as was done for the CARMENES RVs in
+Here we model the full HARPS timeseries in the same way  as was done for the CARMENES RVs in
 Sect.~\ref{k2182sect:analysisC}. The RVs and GLSPs are plotted in Fig.~\ref{k2182fig:analysisH106}.
 
 In the one-planet model the GP activity model has a covariance amplitude of 2.3 \mps{,} comparable to the
@@ -605,11 +613,11 @@ two-planet model (Fig.~\ref{k2182fig:analysisC}), is visible but only at the lev
 
 
 \subsection{Joint HARPS+CARMENES RVs}
-Here we model the joint RV time-series of the 106 HARPS plus the 55 CARMENES RVs.
+Here we model the joint RV timeseries of the 106 HARPS plus the 55 CARMENES RVs.
 The RVs and GLSPs are plotted in Fig.~\ref{k2182fig:analysisHC}. In the one-planet model the
 covariance amplitude of the HARPS and CARMENES stellar activity models are 1.5 and 5.5 \mps{}, respectively.
 These values are each slightly smaller than the covariance amplitudes measured when considering each
-spectrograph's time-series individually but their ratio is nearly preserved.
+spectrograph's timeseries individually but their ratio is nearly preserved.
 %Although this may be attributed to the apparent decreasing long-term trend in the activity model over the
 %$\sim 2.2$ year-long baseline.
 Similarly to either spectrograph's individual RV analysis in the presence of a one-planet
@@ -642,7 +650,7 @@ were left with 49 CARMENES RVs. The RVs and GLSPs are plotted in Fig.~\ref{k2182
 
 In the one-planet model the covariance amplitudes are equivalent with
 each spectrograph (i.e. 2.0 \mps{)} and are notably small compared to the previously
-analysed time-series. This may be due to the lack of a long-term near-linear trend in the stellar activity
+analysed timeseries. This may be due to the lack of a long-term near-linear trend in the stellar activity
 over the short time span considered here.
 The corresponding activity model appears close to flat indicating that the RV activity
 has only weak structure over this relatively short time span. The low activity amplitude also results in
@@ -666,7 +674,7 @@ likelihoods (i.e. the evidence) of competing models (i.e. one versus two planets
 In this formalism, a planet is said to be detected if the evidence for the ($n+1$)-planet model is significantly larger
 than the evidence for a model containing $n$ planets. Here we calculate the model evidence for the purpose of model
 comparison and use the resulting values to determine whether  the putative RV planet K2-18c is favoured by
-the various time-series considered.
+the various timeseries considered.
 
 Each model's Bayesian evidence is approximated using the estimator from \cite{perrakis13} and the marginalized
 posterior PDFs from our MCMC analyses as importance samplers. The \cite{perrakis13} estimator is known to result in
@@ -674,12 +682,12 @@ quantitatively similar results to other more robust but computationally expensiv
 \citep[e.g. nested samplers;][]{nelson18}. Model comparison requires that all common model parameters
 between competing models be drawn from identical prior distributions, which are  listed in
 Table~\ref{k2182table:priors}. Our Bayesian evidence estimates are reported in Table~\ref{k2182table:perrakis} for both the one-
-and two-planet models and for all input time-series considered.
+and two-planet models and for all input timeseries considered.
 
 Also included in Table~\ref{k2182table:priors} are the 2-1 Bayes factors (i.e. evidence ratios) of the
 two-planet model relative to the one-planet to determine whether the second planet K2-18c is favoured or disfavoured by the
-corresponding time-series. Overall, we find that the explicit values of the Bayesian
-evidence favour the two-planet model for {all} the time-series considered. However, the dispersion in calculated
+corresponding timeseries. Overall, we find that the explicit values of the Bayesian
+evidence favour the two-planet model for {all} the timeseries considered. However, the dispersion in calculated
 evidence values when using various methods of calculation are known to vary by factors of $\gtrsim 10^2$
 depending on the complexity of the model (i.e. the number of planets; \citealt{nelson18}). We recall that the
 simplest model considered in this study is not the zero-planet model as we know from the transit light curves
@@ -703,20 +711,20 @@ the correspondingly low data likelihoods.
 \input{chapters/k2182_modelcomparison}
 
 
-We recall the $\sim$ 5.5-day signal seen in the K2-18c and residual GLSPs of the RV time-series containing
+We recall the $\sim$ 5.5-day signal seen in the K2-18c and residual GLSPs of the RV timeseries containing
 CARMENES data in Figs.~\ref{k2182fig:analysisC},~\ref{k2182fig:analysisHC}, and~\ref{k2182fig:analysisHCoverlap}. 
 As a test of the potential planetary origin of this signal we first ran an MCMC on the CARMENES RVs as it is
 there that the residual 5.5-day signal exhibited the highest probability in the GLSP following the removal of K2-18b,
 c, and stellar activity. As we did for the one- and two-planet models,
 we then estimate the evidence of this three-planet model using the estimator from \cite{perrakis13} and compare it to the
-two-planet model for the same input time-series. For the third planet
+two-planet model for the same input timeseries. For the third planet
 we adopt identical priors to that of K2-18c (see Table~\ref{k2182table:priors})
 with the exception of the planet's orbital period and time of mid-conjunction which are modified to
 $\mathcal{U}(4.5,6.5)$ days and $\mathcal{U}(7259,7265.5)$ BJD-2,450,000, respectively.
 The resulting $\ln$ evidence for the two- and three-planet models are
 -165.0 and -162.4, respectively. The corresponding 3-2 Bayes factor is $\sim 7$, implying that the three-planet model
 including a planet at $\sim 5.5$ days is not significantly favoured over the two-planet model. By a similar exercise,
-using the full joint HARPS+CARMENES time-series yields a 3-2 Bayes factor of $\sim 0.8$. Therefore, by the effective
+using the full joint HARPS+CARMENES timeseries yields a 3-2 Bayes factor of $\sim 0.8$. Therefore, by the effective
 accounting of the 5.5-day periodic signal by our K2-18c models in Figs.~\ref{k2182fig:analysisH106},~\ref{k2182fig:analysisHC},
 and~\ref{k2182fig:analysisHCoverlap}, and the disfavourability of the three-planet model compared to the model containing
 just two planets, we conclude
@@ -740,7 +748,7 @@ planet parameters. Our main conclusions are the following:
   three anomalous CARMENES measurements; when they are removed  the existence of the 9-day signal is revealed in the GLSP
   of the remaining 55 RVs.
 \item We computed two sets chromatic HARPS RVs. The 9-day
-  signal is seen in both time-series and at a significantly higher probability in the red HARPS RVs where stellar
+  signal is seen in both timeseries and at a significantly higher probability in the red HARPS RVs where stellar
   activity is weaker. This supports the planetary interpretation of the 9-day signal.
 \item The 9-day signal is retrieved with HARPS in each of its three observing seasons separated by $\sim 1$ year.
   The probability of the 9-day signal increases with time simultaneously with a decrease in the level of stellar
@@ -754,13 +762,13 @@ planet parameters. Our main conclusions are the following:
 \end{enumerate}
 
 By the points listed above, we have obtained compelling evidence for the planetary nature of the 9-day signal seen in HARPS and
-in the reduced CARMENES RV time-series. It is important to highlight the importance of basing RV planet
+in the reduced CARMENES RV timeseries. It is important to highlight the importance of basing RV planet
 detections on robust Bayesian model comparison tests rather than basing those detections
 solely on  periodogram false alarm probabilities (FAPs) which can vary stochastically and are highly sensitive to variations
-in the input time-series (e.g. weighting schemes). Although significant peaks in a GLSP are useful for the initial
-identification of periodic signals in unevenly sampled time-series, conclusions regarding their actual existence and origin
+in the input timeseries (e.g. weighting schemes). Although significant peaks in a GLSP are useful for the initial
+identification of periodic signals in unevenly sampled timeseries, conclusions regarding their actual existence and origin
 should not be made solely based on their FAP. Accurate and simultaneous modelling of all signals present in a
-time-series is required to determine accurate model parameters of planets and activity. Furthermore,
+timeseries is required to determine accurate model parameters of planets and activity. Furthermore,
 Bayes factors---or the ratio of the competing models' fully
 marginalized likelihoods---are robust model comparison tools which marginalize over all prior information about
 models with competing numbers of planets and penalize overly complicated models. In this way they are optimally
@@ -771,41 +779,42 @@ orbit. By including all available RV observations of the K2-18 system (excluding
 we have obtained the most precise planetary solutions for K2-18 to date.
 The point estimates of the two-planet model parameters resulting
 from this analysis are presented in Table~\ref{k2182table:k218}. As a sanity check we can compare the resulting marginalized
-posterior PDFs for parameters of interest between the individual HARPS, CARMENES, and their joint RV time-series. In this way
-we can ensure that the planetary solutions from the time-series of the two spectrographs  are consistent with each other 
-and with their joint time-series. For instance, we compare the resulting marginalized poster PDFs of $K_b$ and
-$K_c$ obtained with each time-series in Fig.~\ref{k2182fig:postK}. It is evident that the MAP $K_b$ solutions are nearly
-equivalent when measured with any of the three time-series. Similarly, MAP $K_c$ values are consistent at the $1\sigma$
+posterior PDFs for parameters of interest between the individual HARPS, CARMENES, and their joint RV timeseries. In this way
+we can ensure that the planetary solutions from the timeseries of the two spectrographs  are consistent with each other 
+and with their joint timeseries. For instance, we compare the resulting marginalized poster PDFs of $K_b$ and
+$K_c$ obtained with each timeseries in Fig.~\ref{k2182fig:postK}. It is evident that the MAP $K_b$ solutions are nearly
+equivalent when measured with any of the three timeseries. Similarly, MAP $K_c$ values are consistent at the $1\sigma$
 level, albeit with more dispersion than the $K_b$ PDFs given the comparatively large uncertainties in the K2-18c
 ephemeris.
 
 \begin{figure}
   \centering
-  %\includegraphics[width=\hsize]{Kpdf_bkgd.png}%
-  \hspace{-\hsize}%
+  %\includegraphics[width=0.6\hsize]{figures/Kpdf_bkgd.png}%
+  \hspace{-0.6\hsize}%
   \begin{ocg}{fig:HKoff}{fig:HKoff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:HKon}{fig:HKon}{1}%
-  %\includegraphics[width=\hsize]{Kpdf_H.png}%
+  %\includegraphics[width=0.6\hsize]{figures/Kpdf_H.png}%
   \end{ocg}
-  \hspace{-\hsize}%
+  \hspace{-0.6\hsize}%
   \begin{ocg}{fig:CKoff}{fig:CKoff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:CKon}{fig:CKon}{1}%
-  %\includegraphics[width=\hsize]{Kpdf_C.png}%
+  %\includegraphics[width=0.6\hsize]{figures/Kpdf_C.png}%
   \end{ocg}
-  \hspace{-\hsize}%
+  \hspace{-0.6\hsize}%
   \begin{ocg}{fig:jKoff}{fig:jKoff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:jKon}{fig:jKon}{1}%
-  %\includegraphics[width=\hsize]{Kpdf_j.png}%
+  %\includegraphics[width=0.6\hsize]{figures/Kpdf_j.png}%
   \end{ocg}
-  \hspace{-\hsize}%
-  \caption{The 1D marginalized posterior PDFs of the K2-18b and c semi-amplitudes from analyses
+  \hspace{-0.6\hsize}%
+  \caption[Marginalized posterior PDFs of $K_b$ and $K_c$ with HARPS and CARMENES.]
+    {\small The 1D marginalized posterior PDFs of the K2-18b and c semi-amplitudes from analyses
     of the
     \ToggleLayer{fig:HKon,fig:HKoff}{\protect\cdbox{full HARPS (\emph{blue})}}, the
     \ToggleLayer{fig:CKon,fig:CKoff}{\protect\cdbox{reduced CARMENES (\emph{red})}}, and their
-    \ToggleLayer{fig:jKon,fig:jKoff}{\protect\cdbox{joint (\emph{black})}} RV time-series. The
+    \ToggleLayer{fig:jKon,fig:jKoff}{\protect\cdbox{joint (\emph{black})}} RV timeseries. The
     \emph{dashed vertical lines} and \emph{shaded regions} depict the maximum a posteriori values
     and $1\sigma$ confidence intervals respectively. 
     All $K_b$ and $K_c$ values are consistent at the $1\sigma$ level which is approximated by each
@@ -871,7 +880,7 @@ as the James Webb Space Telescope and ARIEL.
 
 
 \appendix
-\section{Iterative radial velocity time-series and GLSP figures from Sect.~\ref{k2182sect:correlated}}
+\section{Iterative radial velocity timeseries and GLSP figures from Sect.~\ref{k2182sect:correlated}}
 In Sect.~\ref{k2182sect:correlated} we considered a variety of RV datasets and models which included either
 one or two planets along with a GP regression model of stellar activity that had been trained on the star's
 K2 photometry. The following figures depict the iterative RVs and GLSPs for each dataset and model. In
@@ -881,22 +890,23 @@ periodicities persist for which additional model components may be required.
 
 \begin{figure*} % DONE
   \centering
-  %\includegraphics[width=0.77\hsize]{analysisC_bkgd.png}%
-  \hspace{-0.77\hsize}%
+  %\includegraphics[width=0.8\hsize]{figures/analysisC_bkgd.png}%
+  \hspace{-0.8\hsize}%
   \begin{ocg}{fig:MCoff}{fig:MCoff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:MCon}{fig:MCon}{1}%
-  %\includegraphics[width=0.77\hsize]{analysisC_models.png}%
+  %\includegraphics[width=0.8\hsize]{figures/analysisC_models.png}%
   \end{ocg}
-  \hspace{-0.77\hsize}%
+  \hspace{-0.8\hsize}%
   \begin{ocg}{fig:LCoff}{fig:LCoff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:LCon}{fig:LCon}{1}%
-  %\includegraphics[width=0.77\hsize]{analysisC_lines.png}%
+  %\includegraphics[width=0.8\hsize]{figures/analysisC_lines.png}%
   \end{ocg}
-  \hspace{-0.77\hsize}%
-  \caption{Results of our RV analysis of the 55 CARMENES RVs that are known not to significantly
-    suppress the apparent 9-day signal seen with HARPS. The RV time-series and their corresponding GLSP
+  \hspace{-0.8\hsize}%
+  \caption[RV timeseries and models from analysis of the K2-18 CARMENES RVs.]
+    {\small Results of our RV analysis of the 55 CARMENES RVs that are known not to significantly
+    suppress the apparent 9-day signal seen with HARPS. The RV timeseries and their corresponding GLSP
     are plotted in common rows for each coherent RV signal modelled (i.e. planets and stellar
     activity) in either a one- or two-planet model. The overplotted
     \ToggleLayer{fig:MCon,fig:MCoff}{\protect\cdbox{RV models}} are computed using
@@ -914,22 +924,23 @@ periodicities persist for which additional model components may be required.
 
 \begin{figure*} % DONE
   \centering
-  %\includegraphics[width=0.77\hsize]{analysisH106_bkgd.png}%
-  \hspace{-0.77\hsize}%
+  %\includegraphics[width=0.8\hsize]{figures/analysisH106_bkgd.png}%
+  \hspace{-0.8\hsize}%
   \begin{ocg}{fig:MH106off}{fig:MH106off}{0}%
   \end{ocg}%
   \begin{ocg}{fig:MH106on}{fig:MH106on}{1}%
-  %\includegraphics[width=0.77\hsize]{analysisH106_models.png}%
+  %\includegraphics[width=0.8\hsize]{figures/analysisH106_models.png}%
   \end{ocg}
-  \hspace{-0.77\hsize}%
+  \hspace{-0.8\hsize}%
   \begin{ocg}{fig:LH106off}{fig:LH106off}{0}%
   \end{ocg}%
   \begin{ocg}{fig:LH106on}{fig:LH106on}{1}%
-  %\includegraphics[width=0.77\hsize]{analysisH106_lines.png}%
+  %\includegraphics[width=0.8\hsize]{figures/analysisH106_lines.png}%
   \end{ocg}
-  \hspace{-0.77\hsize}%
-  \caption{Similar to Fig.~\ref{k2182fig:analysisC}, but for the full HARPS WF containing 106 RVs.
-    The rms of the residual time-series assuming a one- and two-planet model are
+  \hspace{-0.8\hsize}%
+  \caption[RV timeseries and models from analysis of the K2-18 HARPS RVs.]
+    {\small Similar to Fig.~\ref{k2182fig:analysisC}, but for the full HARPS WF containing 106 RVs.
+    The rms of the residual timeseries assuming a one- and two-planet model are
     4.68 and 3.93 \mps{}, respectively.
     \ToggleLayer{fig:MH106on,fig:MH106off}{\protect\cdbox{MAP RV models}}.
     \ToggleLayer{fig:LH106on,fig:LH106off}{\protect\cdbox{GLSP periodicities}}.}
@@ -939,24 +950,25 @@ periodicities persist for which additional model components may be required.
 
 \begin{figure*} %DONE
   \centering
-  %\includegraphics[width=0.77\hsize]{analysisHC161_bkgd.png}%
-  \hspace{-0.77\hsize}%
+  %\includegraphics[width=0.8\hsize]{figures/analysisHC161_bkgd.png}%
+  \hspace{-0.8\hsize}%
   \begin{ocg}{fig:MHCoff}{fig:MHCoff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:MHCon}{fig:MHCon}{1}%
-  %\includegraphics[width=0.77\hsize]{analysisHC161_models.png}%
+  %\includegraphics[width=0.8\hsize]{figures/analysisHC161_models.png}%
   \end{ocg}
-  \hspace{-0.77\hsize}%
+  \hspace{-0.8\hsize}%
   \begin{ocg}{fig:LHCoff}{fig:LHCoff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:LHCon}{fig:LHCon}{1}%
-  %\includegraphics[width=0.77\hsize]{analysisHC161_lines.png}%
+  %\includegraphics[width=0.8\hsize]{figures/analysisHC161_lines.png}%
   \end{ocg}
-  \hspace{-0.77\hsize}%
-  \caption{Similar to Fig.~\ref{k2182fig:analysisC}, but for the 161 joint HARPS+CARMENES RVs.
+  \hspace{-0.8\hsize}%
+  \caption[RV timeseries and models from analysis of the joint K2-18 RVs from HARPS and CARMENES.]
+    {\small Similar to Fig.~\ref{k2182fig:analysisC}, but for the 161 joint HARPS+CARMENES RVs.
     The HARPS and CARMENES RVs are plotted as \emph{blue} and \emph{red} markers, respectively.
     The phase-folded RVs depicting planetary signals are binned for clarity.
-    The rms of the residual time-series assuming a one- and two-planet model are
+    The rms of the residual timeseries assuming a one- and two-planet model are
     4.51 and 3.82 \mps{}, respectively.
     \ToggleLayer{fig:MHCon,fig:MHCoff}{\protect\cdbox{MAP RV models}}.
     \ToggleLayer{fig:LHCon,fig:LHCoff}{\protect\cdbox{GLSP periodicities}}.}
@@ -966,25 +978,26 @@ periodicities persist for which additional model components may be required.
 
 \begin{figure*} % DONE
   \centering
-  %\includegraphics[width=0.77\hsize]{analysisHCoverlap_bkgd.png}%
-  \hspace{-0.77\hsize}%
+  %\includegraphics[width=0.8\hsize]{figures/analysisHCoverlap_bkgd.png}%
+  \hspace{-0.8\hsize}%
   \begin{ocg}{fig:MHCOoff}{fig:MHCOoff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:MHCOon}{fig:MHCOon}{1}%
-  %\includegraphics[width=0.77\hsize]{analysisHCoverlap_models.png}%
+  %\includegraphics[width=0.8\hsize]{figures/analysisHCoverlap_models.png}%
   \end{ocg}
-  \hspace{-0.77\hsize}%
+  \hspace{-0.8\hsize}%
   \begin{ocg}{fig:LHCOoff}{fig:LHCOoff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:LHCOon}{fig:LHCOon}{1}%
-  %\includegraphics[width=0.77\hsize]{analysisHCoverlap_lines.png}%
+  %\includegraphics[width=0.8\hsize]{figures/analysisHCoverlap_lines.png}%
   \end{ocg}
-  \hspace{-0.77\hsize}%
-  \caption{Similar to Fig.~\ref{k2182fig:analysisC}, but for the 84 joint HARPS+CARMENES RVs
-     obtained during the time interval in which the two spectrograph WFs overlap (February-June 2017).
+  \hspace{-0.8\hsize}%
+  \caption[RV timeseries and models from analysis of the joint K2-18 RVs from HARPS and CARMENES during their overlap between February and June 2017.]
+    {\small Similar to Fig.~\ref{k2182fig:analysisC}, but for the 84 joint HARPS+CARMENES RVs
+    obtained during the time interval in which the two spectrograph WFs overlap (February-June 2017).
     The HARPS and CARMENES RVs are plotted as \emph{blue} and \emph{red} markers, respectively.
     The phase-folded RVs depicting planetary signals are binned for clarity.
-    The rms of the residual time-series assuming a one- and two-planet model are
+    The rms of the residual timeseries assuming a one- and two-planet model are
     4.26 and 3.62 \mps{}, respectively.
     \ToggleLayer{fig:MHCOon,fig:MHCOoff}{\protect\cdbox{MAP RV models}}.
     \ToggleLayer{fig:LHCOon,fig:LHCOoff}{\protect\cdbox{GLSP periodicities}}.}

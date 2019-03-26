@@ -1,4 +1,4 @@
-\chapter{Introduction}
+\chapter{Introduction: radial velocity studies of planets around small stars}
 
 \section{Exoplanets}  \label{sect:exoplanets}
 Since the first detection of an exo-solar planet around a main sequence star 
@@ -39,6 +39,30 @@ radii span $\sim 1.5-4$ R$_{\oplus}$ and over a wide range of orbital separation
 K2-18b \citealt{foremanmackey15,montet15}).
 
 
+\section{M dwarf stars} \label{sect:Mdwarfs}
+The majority of the work presented throughout this thesis focuses on planetary systems
+around M dwarf stars. M dwarfs embody the low mass end of the main sequence
+phase of stellar evolution and dominate the stellar initial mass function
+\citep{kroupa01} which, when
+coupled with their extended main sequence lifetimes, causes M dwarfs to dominate the
+distribution of spectral types throughout the galaxy while outnumbering Sun-like stars
+4:1 in the solar neighbourhood \citep{winters15}. In addition to being plentiful
+within the nearby Universe, M dwarf stars are known to frequently host multi-planet
+systems of Earth to Neptune-sized planets \citep{dressing15a,gaidos16} which
+are more easily detectable in radial velocity compared to Sun-like stars due to the
+their reduced masses (see Sect.~\ref{sect:K}). Furthermore, the habitable zone
+around M dwarfs \citep{kasting93,kopparapu13}, where the probablilty of hosting potentially
+habitable planets is maximized due to the planetary equilibrium temperatures there,
+exists at much smaller orbital separations than around Sun-like stars thus making the
+characterization of temperate M dwarf planets a much more tractable problem observationally. \\
+
+A critical caveat to the aforementioned benefits of focusing on planet searches around M dwarfs
+is that many of these stars tend to be active (see Sect.~\ref{sect:activity}). This fact not only
+deters the prospect of finding signs of life like us on M dwarf planets, it also inhibits
+our ability to obtain accurate and precise empirical parameters of their planetary systems.
+Overcoming this problem is one of the primary topics of this thesis.
+
+  
 \section{Methods of Detecting Exoplanets} \label{sect:detection}
 Numerous methods for the direct or indirect detection of exoplanets
 have been successfully demonstrated or proposed. All such methods provide complementary
@@ -511,7 +535,8 @@ Active regions on the stellar surface arising
 from the presence of magnetic fields can have additional effects on the observed CCF 
 causing the line profile to be exhibit additional and localized non-Gaussianities. 
 These distortions can in principle be used to model stellar activity in cases for which the distortions
-can be detected at high S/N and that their origin dominates the astrophysical RV budget (as opposed to
+can be detected at high signal-to-noise ratio
+and that their origin dominates the astrophysical RV budget (as opposed to
 being due to systematic effects). \\
 
 \begin{figure}
@@ -527,33 +552,47 @@ being due to systematic effects). \\
   \label{fig:harps}
 \end{figure}
 
+
 \subsection{Radial Velocity Error Budget Overview} \label{sect:error}
+The complete error budget when conducting precision RV measurements features many contributing factors.
+Among these are instrument/facility limitations, the fundamental photon noise limit, imperfect corrections
+for telluric contamination, and astrophysical noise. Here we review the radial velocity error budget
+with a particular focus on stellar activity as it pertains to the work presented in this thesis.
+
 \subsubsection{Instrumentation Challenges}
-Numerous sources of uncertainty hinder an observer's ability to measure infinitesimally precise
-RVs from an observed spectrum \citep{podgorski14,halverson16}.
-Many of these issues are intrinsic to the experimental
-hardware. A non-exhaustive list of prominent issues with RV spectrographs includes
+RV spectrographs have an inherent RV precision which is set by a multitude of individual error sources
+that hinder a user's ability to measure infinitesimally precise
+RVs \citep{podgorski14,halverson16}.
+These issues are intrinsic to the experimental hardware and their relative contributions
+vary significantly between instruments with often not a single source of error dominating the instrumental
+error budget. \\
+
+A non-exhaustive list of prominent issues with RV spectrographs includes 
 
 \begin{itemize}
 \item thermal stability,
 \item pressure stability,
 \item wavelength calibration,
 \item vibration control,
+\item drift control,
 \item detector imperfections (i.e. readout noise, intrapixel quantum efficiencies, etc),
 \item scattered light,
 \item fiber modal noise,
 \item tracking errors,
-\item focus errors, and
-\item atmospheric dispersion.
+\item focus errors,
+\item etc.
 \end{itemize}
 
-\noindent The aforementioned sources of error arise from the design and operation of the
-instrument and telescope. As such, their mitigation is set by the specifications of the instrument
-and cannot be improved by any post processing. 
+\noindent The aforementioned RV error sources arise from the design and operation of the
+instrument and telescope facility. As such, their mitigation is set by the hardware specifications
+and cannot be significantly improved by post processing. These challenges associcated with building
+state-of-the-art RV instrumentation are not the focus of
+this thesis but it is important to note their contributions to the overall RV error budget as together
+they set a limit to the highest possible RV precision attainable with a given instrument.
 
 \subsubsection{Photon noise limit}
 The photon noise limit represents the fundamental limit to the RV measurement precision that can
-be obtained from a stellar spectrum $A_i$. Here $i$ is the index over wavelength elements.
+be obtained from a stellar spectrum $A_i$ where $i$ is the index over wavelength elements.
 The photon noise limited RV precision from \cite{bouchy01} is
 
 \begin{equation}
@@ -576,40 +615,48 @@ in the spectrum $A_i$ measured in photoelectrons. The weighting function is give
 \end{equation}
 
 By the dependance of $\sigma_{\gamma}$ on the first spectral derivative of the observed spectrum
-(Eq.~\ref{eq:weight}), high S/N spectra with a high density of sharp features will provide the
+(Eq.~\ref{eq:weight}), it is clear that
+high S/N spectra with a high density of sharp features provide the
 best possible RV precision. Because the sharpness of the lines is important, obtaining high
-resolution spectral has a direct benefit on minimizing $\sigma_{\gamma}$. Similarly stars
+resolution spectra has a direct benefit on minimizing $\sigma_{\gamma}$. Similarly, stars
 with low levels of collisonal and rotational broadening (i.e. low $\log{g}$ and \vsini{)} are
 favourable targets for minimizing $\sigma_{\gamma}$. Also because line density is important, cooler stars
-with a high metallicity are favourable as they exhibit more molecular and metal features.
-Fig.~\ref{fig:sigrv} demonstrates these dependancies over the spectral
+with a high metallicity are favourable as they exhibit more molecular and metal features over which
+counting errors can be minimized. Fig.~\ref{fig:sigrv} demonstrates these dependancies over the spectral
 bands $UBVRIYJHK_{\text{S}}$.
 
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{figures/sigRV_grid.png}
   \caption[Doppler information content over spectral band passes and stellar properties.]
-      {Distributions of the photon-noise limited RV precision in the $UBVRIYJHK_{\text{S}}$
+      {Distributions of the photon noise limited RV precision in the $UBVRIYJHK_{\text{S}}$
     bands and as a function of spectral resolution, $\log{g}$, metallicity, \vsini{,}
     and stellar effective temperature. The distribution shown in each subpanel is marginized
-    over all parameters not depicted on either of the panel's axes.}
+    over all parameters not depicted on either of the panel's axes and is therefore not
+    representative of true $\sigma_{\gamma}$ values particualy in the near-IR bands
+    in which telluric contamination is not properly treated.}
   \label{fig:sigrv}
 \end{figure}
 
 \subsubsection{Telluric contamination}
-In addition to errors arising from the instrumentation, there are also physical sources of RV
-uncertainty that need to be accounted for in the post-processing software. One example is the effect
-of telluric contamination of the observed spectrum by spectral features origining from Earth's
-atmosphere. Because all high precision RV experiments are executed from the ground the incoming
-starlight must traverse much of the Earth's atmosphere at which time telluric features become
+In addition to error floors arising from the instrumentation and the photon noise limit,
+other physical sources of RV errors exist that need to be accounted for in the post-processing
+software. One example is the effect
+of telluric contamination of the stellar spectrum by spectral features origining from Earth's
+atmosphere. Because all high precision RV experiments to-date are executed from the ground,
+the incoming starlight must traverse much of the Earth's atmosphere at which time telluric
+absorption and emission features become
 imprinted on the incident spectrum. This effect is much more prominent in the infrared where
-the atmosphere becomes much more opaque than in the visible in large part due to absorption by
-atmospheric water vapour (Fig.~\ref{fig:transmission}). In the visible, small regions
+the atmosphere becomes more opaque over wider spectral bands than in the visible due
+in large part to absorption bands by various greenhouse gases such as H$_2$O
+(Fig.~\ref{fig:transmission}). In the visible, small regions
 in wavelength space that are known to be contaminated by tellurics can be simply masked without
-significant loss of RV content. Whereas this method if applied to near-IR spectrographs would
-eliminate so much RV information that it would negate any benefits of developing near-IR RV
-spectrographs at all. Instead, near-IR RVs will need to rely on more sophisticated data-driven
-methods of telluric spectrum extraction \citep[e.g.][]{artigau14,bedell19}.
+significant loss of RV content. Whereas this method if applied to near-IR spectrographs 
+eliminates such a large fraction of the available RV information that it negates the benefits
+of developing near-IR RV spectrographs at all.
+Instead, near-IR RVs are relying on more sophisticated methods of telluric spectrum extraction and
+removal including atmospheric transmission models \citep[e.g.][]{vacca03,bertaux14}
+and/or data-driven methods \citep[e.g.][]{artigau14,bedell19}.
 
 \begin{figure}
   \centering
@@ -617,7 +664,7 @@ methods of telluric spectrum extraction \citep[e.g.][]{artigau14,bedell19}.
   \caption[Atmospheric transmission from 0.3-5 $\mu$m.]
           {A model of telluric absorption from 0.3-5 \micron{} calculated using the LBLRTM radiative transfer
             code \citep{clough05}. The atmosphere becomes inceasingly opqaue towards infrared wavelengths with
-            short observing windows at the $YJHK_{\text{S}}$ bands. Telluric absorption in the optical is
+            short observing windows at the $YJHK_{\text{S}}LL'$ bands. Telluric absorption in the optical is
             dominated by O$_2$, O$_3$, and H$_2$O while the near-IR wavelengths feature strong H$_2$O absorption
             bands in addition to other strong absorbers such as CO, CO$_2$, CH$_4$, OCS, and N$_2$O.
             \citep[Image credit:][]{smette15}}
@@ -630,22 +677,29 @@ methods of telluric spectrum extraction \citep[e.g.][]{artigau14,bedell19}.
 
 \subsubsection{Stellar activity} \label{sect:activity}
 There exists a variety of physical processes in the photospheres and chromospheres of stars that
-can lead to temporally correlated RV signals which are collectively
+can lead to temporally correlated RV signals which can be collectively
 referred as \emph{stellar activity}. Alternatively, activity sources that act on short timescales
 (i.e. seconds to minutes) are sometimes referred to as stellar jitter.
 Particularly in RV planet studies, stellar activity
-signals are the bane of observers because their signals can mask and
-in certain instances even mimic the planetary signals that we are searching for. \\
+signals are the bane of observers searching for sub-Neptune-sized planets because activity signals
+can mask and in certain instances even mimic the planetary signals of interest. \\
 
-Depending on the exact physical process these
+Depending on the exact physical process, these
 signals can have widely differing timescales and manifestations in
 spectroscopic, photometric, and polarimetry observations. In general, activity
 signals are also wavelength dependent unlike Doppler variations induced by
-planetary companions. Ancillary time series to RV measurements
-derived from any of the aforementioned observations can therefore be used to
+planetary companions \citep{tal-or18}. Ancillary time series to RV measurements
+derived from any of the aforementioned observations may therefore be used to
 disentangle stellar activity from achromatic Doppler shifts induced by a companion.
-Examples of sources of stellar activity are summarized in the subsequent paragraphs
-while a brief summary is given in Table~\ref{table:activity}. \\
+Such obervables include spectroscopic activity indicators such as the $H\alpha$ and
+\caii{} H+K indices which are magnetically sensitive features origining from the hot stellar
+chromosphere, line deformation diagnostics (e.g. CCF shape parameters; \citealt{boisse11},
+line-by-line analyzes \citealt{dumusque18}), plus Doppler imaging of the stellar surface
+\citep{hebrard16}. Some observables as they pertain to specific studies presented herein will
+be discussed in further detail as required.
+
+Examples of sources of stellar activity are summarized below
+while brief summaries are given in Table~\ref{table:activity}. \\
 
 \input{chapters/activitytable}
 
@@ -831,7 +885,10 @@ corresponding activity is not of much concern. \\
 \begin{itemize}
 \renewcommand\labelitemi{--}
 \item~\ref{sect:exoplanets} \textbf{Exoplanets}: exoplanets in the local universe are 
-extremely abundant and quite diverse compared to the planets in our own solar system.
+  extremely abundant and quite diverse compared to the planets in our own solar system.
+\item~\ref{sect:Mdwarfs} \textbf{M dwarf stars}: M dwarfs represent superlative opportunities
+  to characterize planetary systems in detail if we can mitigate their prominent stellar activity
+  signatures.
 \item~\ref{sect:detection} \textbf{Methods of Detecting Exoplanets}: there exists a 
 number of methods of detecting exoplanets, each with its own sensitivities and biases.
 \item~\ref{sect:rv} \textbf{Exoplanet Detection via Stellar Radial Velocity}: the 

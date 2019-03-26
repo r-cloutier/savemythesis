@@ -1,4 +1,4 @@
-\chapter{Introduction: radial velocity studies of planets around small stars}
+\chapter[Introduction]{Introduction: radial velocity studies of planets around small stars}
 
 \section{Exoplanets}  \label{sect:exoplanets}
 Since the first detection of an exo-solar planet around a main sequence star 
@@ -51,7 +51,7 @@ within the nearby Universe, M dwarf stars are known to frequently host multi-pla
 systems of Earth to Neptune-sized planets \citep{dressing15a,gaidos16} which
 are more easily detectable in radial velocity compared to Sun-like stars due to the
 their reduced masses (see Sect.~\ref{sect:K}). Furthermore, the habitable zone
-around M dwarfs \citep{kasting93,kopparapu13}, where the probablilty of hosting potentially
+around M dwarfs \citep{kasting93,kopparapu13}, where the probability of hosting potentially
 habitable planets is maximized due to the planetary equilibrium temperatures there,
 exists at much smaller orbital separations than around Sun-like stars thus making the
 characterization of temperate M dwarf planets a much more tractable problem observationally. \\
@@ -81,13 +81,13 @@ method favours the detection of massive, short-period planets around inactive st
 searching for periodically reoccurring brightness dips due to the occultation of the star
 by an orbiting planet. This method is highly complementary to the radial velocity method
 as it measures the planet's radius and orbital inclination where the latter can be
-used to break the mass-inclination degenerancy suffered by radial velocity planet
+used to break the mass-inclination degeneracy suffered by radial velocity planet
 detections. The recovery of radial velocity masses and transit radii together provide
-views of planetary bulk densities which can be used to distinguish predominently
+views of planetary bulk densities which can be used to distinguish predominantly
 rocky planets from planets with significant fractions of their sizes in gaseous envelopes.
 The transit method is the most successful planet detection method as a single
-wide-field camera can be used to monitor many stars simulatenously and continuously.
-However, this method requries planets to have nearly edge-on orbits relative to the observer
+wide-field camera can be used to monitor many stars simultaneously and continuously.
+However, this method requires planets to have nearly edge-on orbits relative to the observer
 and thus favours the detection of close-in giant planets orbiting small stars. \\
 
 \emph{Direct imaging}: the spatial resolution of planets from their host stars and thus the
@@ -103,7 +103,7 @@ times of a transiting planet under the assumption of a linear ephemeris. Such de
 may be attributed to an unseen planetary companion whose gravitational influence on the
 transiting planet is observable either through close encounters or mean motion resonances.
 The amplitude and periodicity of a transiting planet's TTVs can be used to constrain the mass
-and orbital period of the perturbing planet although a mass-eccentricity degenaracy exists
+and orbital period of the perturbing planet although a mass-eccentricity degeneracy exists
 planet pairs close to mean motion resonances \citep{lithwick12}. \\
 
 \emph{Gravitational microlensing}:
@@ -111,9 +111,9 @@ offers a unique method for probing the planet population out to large distances
 within the Milky Way as the detected photons do not originate from the planetary system itself
 but rather from a distant bright source. As the gravitational field of a
 foreground star (i.e. the lens) occults a distant bright source, the source appears to
-brighten as a result of the gravitational lensing effect. In the case for which the len's gravitational
-potential deviates significantly from radial symmetry because of an graviational anomaly from a
-planetary companion, that inhomogenity in the gravitational field of the lens will distrupt the smoothness
+brighten as a result of the gravitational lensing effect. In the case for which the lens' gravitational
+potential deviates significantly from radial symmetry because of an gravitational anomaly from a
+planetary companion, that inhomogeneity in the gravitational field of the lens will disrupt the smoothness
 of the field and cause an anomalous brightening that reveals the presence of a co-moving companion with
 a measurable mass. One drawback of this method however is that observations of the same planetary
 system are not repeatable due to the very precise alignment of the source and lens that is required. \\
@@ -356,7 +356,7 @@ cosine term in Eq.~\ref{eq:rv}. \\
   \centering
   %\animategraphics[width=\textwidth,controls,loop]{150}{figures/RVcurve-}{0}{1}
   \caption[Animation of observed radial velocities for different orbital configurations.]
-      {An animation of the orbits of two (non-interacting) planets of equal
+      {??An animation of the orbits of two (non-interacting) planets of equal
     mass and on 2-day orbits around a 0.2 solar mass star. The first planet has a circular
     keplerian orbit ($e=0$) while the orbit of the second exhibits some ellipticity with
     $e=0.3$. The lower panel depicts the corresponding RV variation induced on the host star
@@ -439,7 +439,7 @@ fundamental stellar parameters to enable precise exoplanet measurements. \\
 
 Looking more closely at Eq.~\ref{eq:K1} we can see that the RV semi-amplitude scales 
 linearly with planet mass but has a negative scaling with stellar mass and orbital 
-period. This makes sense because the RV effect is a manifestiation of a gravitational effect.
+period. This makes sense because the RV effect is a manifestation of a gravitational effect.
 An increased perturbing mass (i.e. $m_p$) will result in an increased perturbation to the 
 central body which itself becomes more difficult to perturb if more massive. Also, the 
 effect weakens as the distance between the two bodies is increased (i.e. larger $P$). The 
@@ -530,7 +530,7 @@ are averaged to create the cross-correlation function (CCF) of the star at the e
 observation. Traditionally, the CCF is typically fit with a Gaussian line profile whose best-fit mean 
 is equal to the measured radial velocity \citep{pepe02}. It should be noted however that the net
 convective blueshift in stellar photospheres causes the native CCF to be asymmetric rather
-than purely Gaussian even in the absense of surface inhomogenities \citep{cegla16}.
+than purely Gaussian even in the absence of surface inhomogeneities \citep{cegla16}.
 Active regions on the stellar surface arising 
 from the presence of magnetic fields can have additional effects on the observed CCF 
 causing the line profile to be exhibit additional and localized non-Gaussianities. 
@@ -569,23 +569,25 @@ error budget. \\
 
 A non-exhaustive list of prominent issues with RV spectrographs includes 
 
-\begin{itemize}
-\item thermal stability,
-\item pressure stability,
-\item wavelength calibration,
-\item vibration control,
-\item drift control,
-\item detector imperfections (i.e. readout noise, intrapixel quantum efficiencies, etc),
-\item scattered light,
-\item fiber modal noise,
-\item tracking errors,
-\item focus errors,
-\item etc.
-\end{itemize}
-
+\begin{multicols}{2}
+  \begin{itemize}
+  \item thermal stability,
+  \item pressure stability,
+  \item wavelength calibration,
+  \item vibration control,
+  \item drift control,
+  \item detector imperfections (i.e. readout noise, intrapixel quantum efficiencies, etc),
+  \item scattered light,
+  \item fibre modal noise,
+  \item tracking errors,
+  \item focus errors,
+  \item etc.
+  \end{itemize}
+\end{multicols}
+  
 \noindent The aforementioned RV error sources arise from the design and operation of the
 instrument and telescope facility. As such, their mitigation is set by the hardware specifications
-and cannot be significantly improved by post processing. These challenges associcated with building
+and cannot be significantly improved by post processing. These challenges associated with building
 state-of-the-art RV instrumentation are not the focus of
 this thesis but it is important to note their contributions to the overall RV error budget as together
 they set a limit to the highest possible RV precision attainable with a given instrument.
@@ -614,15 +616,15 @@ in the spectrum $A_i$ measured in photoelectrons. The weighting function is give
   \label{eq:weight}
 \end{equation}
 
-By the dependance of $\sigma_{\gamma}$ on the first spectral derivative of the observed spectrum
+By the dependence of $\sigma_{\gamma}$ on the first spectral derivative of the observed spectrum
 (Eq.~\ref{eq:weight}), it is clear that
 high S/N spectra with a high density of sharp features provide the
 best possible RV precision. Because the sharpness of the lines is important, obtaining high
 resolution spectra has a direct benefit on minimizing $\sigma_{\gamma}$. Similarly, stars
-with low levels of collisonal and rotational broadening (i.e. low $\log{g}$ and \vsini{)} are
+with low levels of collisional and rotational broadening (i.e. low $\log{g}$ and \vsini{)} are
 favourable targets for minimizing $\sigma_{\gamma}$. Also because line density is important, cooler stars
 with a high metallicity are favourable as they exhibit more molecular and metal features over which
-counting errors can be minimized. Fig.~\ref{fig:sigrv} demonstrates these dependancies over the spectral
+counting errors can be minimized. Fig.~\ref{fig:sigrv} demonstrates these dependencies over the spectral
 bands $UBVRIYJHK_{\text{S}}$.
 
 \begin{figure}
@@ -631,9 +633,9 @@ bands $UBVRIYJHK_{\text{S}}$.
   \caption[Doppler information content over spectral band passes and stellar properties.]
       {Distributions of the photon noise limited RV precision in the $UBVRIYJHK_{\text{S}}$
     bands and as a function of spectral resolution, $\log{g}$, metallicity, \vsini{,}
-    and stellar effective temperature. The distribution shown in each subpanel is marginized
+    and stellar effective temperature. The distribution shown in each subpanel is marginalized
     over all parameters not depicted on either of the panel's axes and is therefore not
-    representative of true $\sigma_{\gamma}$ values particualy in the near-IR bands
+    representative of true $\sigma_{\gamma}$ values particularly in the near-IR bands
     in which telluric contamination is not properly treated.}
   \label{fig:sigrv}
 \end{figure}
@@ -642,7 +644,7 @@ bands $UBVRIYJHK_{\text{S}}$.
 In addition to error floors arising from the instrumentation and the photon noise limit,
 other physical sources of RV errors exist that need to be accounted for in the post-processing
 software. One example is the effect
-of telluric contamination of the stellar spectrum by spectral features origining from Earth's
+of telluric contamination of the stellar spectrum by spectral features originating from Earth's
 atmosphere. Because all high precision RV experiments to-date are executed from the ground,
 the incoming starlight must traverse much of the Earth's atmosphere at which time telluric
 absorption and emission features become
@@ -663,7 +665,7 @@ and/or data-driven methods \citep[e.g.][]{artigau14,bedell19}.
   \includegraphics[width=0.8\hsize]{figures/transmittancev2.png}
   \caption[Atmospheric transmission from 0.3-5 $\mu$m.]
           {A model of telluric absorption from 0.3-5 \micron{} calculated using the LBLRTM radiative transfer
-            code \citep{clough05}. The atmosphere becomes inceasingly opqaue towards infrared wavelengths with
+            code \citep{clough05}. The atmosphere becomes increasingly opaque towards infrared wavelengths with
             short observing windows at the $YJHK_{\text{S}}LL'$ bands. Telluric absorption in the optical is
             dominated by O$_2$, O$_3$, and H$_2$O while the near-IR wavelengths feature strong H$_2$O absorption
             bands in addition to other strong absorbers such as CO, CO$_2$, CH$_4$, OCS, and N$_2$O.
@@ -691,12 +693,12 @@ signals are also wavelength dependent unlike Doppler variations induced by
 planetary companions \citep{tal-or18}. Ancillary time series to RV measurements
 derived from any of the aforementioned observations may therefore be used to
 disentangle stellar activity from achromatic Doppler shifts induced by a companion.
-Such obervables include spectroscopic activity indicators such as the $H\alpha$ and
-\caii{} H+K indices which are magnetically sensitive features origining from the hot stellar
+Such observables include spectroscopic activity indicators such as the $H\alpha$ and
+\caii{} H+K indices which are magnetically sensitive features originating from the hot stellar
 chromosphere, line deformation diagnostics (e.g. CCF shape parameters; \citealt{boisse11},
-line-by-line analyzes \citealt{dumusque18}), plus Doppler imaging of the stellar surface
+line-by-line analyses \citealt{davis17,dumusque18}), plus Doppler imaging of the stellar surface
 \citep{hebrard16}. Some observables as they pertain to specific studies presented herein will
-be discussed in further detail as required.
+be discussed in further detail as required. \\
 
 Examples of sources of stellar activity are summarized below
 while brief summaries are given in Table~\ref{table:activity}. \\
@@ -705,14 +707,14 @@ while brief summaries are given in Table~\ref{table:activity}. \\
 
 \emph{Flares}: magnetically active stars can undergo energetic flares or coronal mass
 ejections originating from the stellar atmosphere. The exact flare physics
-in M dwarfs is still uncertain but clearly requires strong magnetic fields
+in M dwarfs remains uncertain but clearly requires strong magnetic fields
 which can be sustained by turbulent convective motions and rotation
 \citep{browning08}. Flare events are easily identifiable as they
 exhibit a characteristically rapid increase in brightness (or in the intensity
 of certain emission lines; e.g. Ca II, He I, H$\alpha$, etc. \citealt{schmidt12})
 followed by an exponential decay over hours. Because RV
 measurements affected by flares can be easily identified by the characteristic
-line intensity spike over short time scales, such measurements are commonly
+line intensity spike over short timescales, such measurements are commonly
 removed from planet searches \citep{reiners09}. \\
 
 \emph{Stellar Oscillations}:
@@ -720,31 +722,34 @@ small scale mechanical perturbations to the internal stellar structure
 can give rise to oscillation modes. If not damped, these oscillations
 can propagate through the stellar interior before rebounding at the surface
 of the star thus creating observable pulses in brightness and in the RVs of a
-few \mps{} on a time scale of a few to tens of minutes \citep{bedding01}. 
+few \mps{} on timescales of a few to tens of minutes \citep{bedding01}. 
 This phenomenon is predominantly observed in Sun-like and post main sequence stars.
 Due to the short timescale of
-pulsation variations in radial velocity measurements of pulsating stars, the
-jitter is mitigated through the use of sufficiently long exposure times
+pulsation variations in RV measurements of pulsating stars, the corresponding
+jitter is often mitigated with sufficiently long exposure times
 \citep{lovis05, dumusque11a}. \\
 
 
 \emph{Granulation}:
-stars with outer convection zones like the Sun and M dwarfs, exhibit granulation
-at their surface. The granulation pattern is the result
+stars with outer convection zones like the Sun and M dwarfs exhibit granulation patterns
+at their surfaces. The granulation pattern is the result
 of convection cells penetrating the surface; hot fluid parcels rising to the surface before
 cooling and descending back into the stellar interior (see Fig.~\ref{fig:granulation}).
-These patches of hot rising fluid are brighter than the regions of cold descending fluid.
-Furthermore, the relative fractional coverage of a star's surface by rising fluid parcels is
-in general greater than that of descending ones as evidenced in Fig.~\ref{fig:granulation}.
+These patches of hot rising fluid are therefore brighter than the surrounding regions of cold
+descending fluid. Furthermore, the relative fractional coverage of a star's surface by rising
+fluid parcels is in general greater than that of descending ones as evidenced in
+Fig.~\ref{fig:granulation}.
 Along the line-of-sight, the RV component of photons emitted by the rising parcels at the
 photospheric boundary will be blueshifted whereas the receding fluid within the
 `intergranular lanes' will be redshifted. The domination of the stellar
 surface area by hot parcels results in a granulated star having a net \emph{convective
-  blueshift}. \\
+  blueshift} which in turn creates an asymmetry in the disk-integrated spectral line profile
+with additional power at blueshifted velocities. The effect of granulation is also known
+to decrease towards cool M dwarf stars \citep{dumusque11a,meunier17}. \\
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.8\textwidth]{figures/solargranulation.jpg}
+  \includegraphics[width=0.7\textwidth]{figures/solargranulation.jpg}
   \caption[Close-in view of the convection cells on the solar surface.]
       {An image of a patch of the solar surface taken with NASA's Hinode Optical
     Telescope. The bright regions are the result of rising hot fluid parcels whereas the cooler,
@@ -756,7 +761,8 @@ surface area by hot parcels results in a granulated star having a net \emph{conv
 
 The short lifetimes of \emph{typical} granules
 \citep[$\sim 10$ minutes;][]{hall08,gilliland11}) implies that brightness variability of the
-surface varies on a similar timescale.
+surface varies on a similar timescale. However, supergranules may also persist over longer timescales
+albeit with smaller RV contributions \citep[$\lesssim 1$ \mps{;}][]{rincon17}
 %Such variations have been measured using high cadence photometry
 %\citep[e.g.][]{gilliland11}.
 The corresponding RV jitter is dependent on the relative velocity of convective
@@ -768,22 +774,23 @@ cancel each other) is typically at the level of a few \mps{} \citep{lindegren03}
 %\parencite{kjeldsen99}. \\
 
 \emph{Active Regions}:
-like the Sun, the photospheres of active late-type stars are often littered with active regions such
-as dark star spots and/or hot faculae or plages in the chromosphere. These localized regions of either
+like the Sun, the photospheres of active M dwarfs are often littered with active regions such
+as dark star spots and/or hot faculae or plages in the chromosphere. Indeed,
+the activity signals from active regions appear to dominate the RV activity budget on M dwarfs
+\citep{lindegren03}. These localized regions of either
 hot or cold gas relative to the surrounding photosphere become trapped by magnetic field loops reconnecting
 with the stellar surface. Active regions create a temporally evolving
 RV signal and spectral line profile distortion due to their unique emitting temperatures and their orientation
 as they rotate in and out of view (see Fig.~\ref{fig:starspot}). In the Sun, these structures
 have long been known to be associated with strong local magnetic fields as evidenced by the observed
-Zeeman splitting (see Sect.~\ref{sect:zeeman}) of lines emitted from these active regions
-\citep{hale08}. \\
+Zeeman splitting of lines emitted from these active regions \citep{hale08}. \\
 
 \begin{figure}
   \centering
   \includegraphics[scale=.8]{figures/starspot.png}
   \caption[Illustration of the effect of active regions on the integrated stellar line profile.]
       {An snapshot example of a spotted stellar photosphere and its effect on the disk-integrated
-    spectral line profile. The cool spots disrupt the symmetry of the
+    spectral line profile. The cool spots depicted here disrupt the symmetry of the
     line profile according to the temperature difference between the spot and
     unspotted photosphere at its position on the stellar disk.
     \citep[Image credit:][]{kochukhov16}}
@@ -792,20 +799,20 @@ Zeeman splitting (see Sect.~\ref{sect:zeeman}) of lines emitted from these activ
 
 The activity timescale from active regions is modulated by the stellar rotation. The stellar rotation
 period \prot{} can often be measured for active stars with non-zero
-inclination from the quasi-periodicity of its photometric variability.
-The spectroscopic method of measuring a star's rotation state is by measuring the projected
+inclination from the quasi-periodicity of their photometric variability.
+The spectroscopic method of measuring a star's rotation state is done by measuring the projected
 stellar rotation velocity \vsini{\footnote{Slowly rotating stars with correspondingly small \vsini{}
     values may not be detectable with insufficient spectral resolution. In such cases, only an upper
-    limit on \vsini{} can be measured.}} via the rotation broadening
-of spectral features \citep{gray08}.
+    limit on \vsini{} can be measured.}} via the rotational broadening
+of its spectral features \citep{gray08}.
 Because active regions are associated with magnetic activity and stellar
 magnetic fields require rotation in order to be sustained over long timescales, rapidly rotating
 late-type stars tend to be more magnetically active.
 Fig.~\ref{fig:activity} demonstrates that the fraction of active M dwarfs is sustained at slower
 rotation states in later M dwarfs than in early M dwarfs and that the activity fraction in general 
 decreases as the stars spin-down via magnetized braking from stellar winds
-\citep{skumanich72}. Therefore, a measure of stellar rotation can be used as a first-order
-indicator of an M dwarf's activity level. \\
+\citep{skumanich72}. A measure of stellar rotation can therefore be used as a first-order
+indicator of a star's activity level. \\
 
 \begin{figure}
   \centering
@@ -813,8 +820,9 @@ indicator of an M dwarf's activity level. \\
   \caption[M dwarf activity fraction versus spectral type and stellar rotation.]
       {The fraction of active M dwarfs as a function of stellar rotation period
     for early-to-mid (\emph{left panel}) and mid-to-late (\emph{right panel}) M
-    dwarfs. An individual star's activity flag is based on H$\alpha$ emission observations.
-    The activity fraction of stars decreases as rotation slows although mid-to-late M
+    dwarfs. An individual star's activity flag is based on the ratio of its H$\alpha$ emission
+    luminosity to its bolometric luminosity.
+    The activity fraction of stars is seen to decrease as rotation slows although mid-to-late M
     dwarfs can maintain a higher activity fraction than early-to-mid M dwarfs within a given
     \prot{} bin. \citep[Image credit:][]{west15}}
   \label{fig:activity}
@@ -822,7 +830,7 @@ indicator of an M dwarf's activity level. \\
 
 Fig.~\ref{fig:rotation} depicts the rotation period
 distribution of M dwarfs in the solar neighbourhood \citep{newton16a} and in the Kepler
-field up to just $P_{\mathrm{rot}} < 70$ days \citep{mcquillan13a}.
+field up to \prot{} $< 70$ days \citep{mcquillan13a}.
 Two distinct populations exist, namely a rapidly
 rotating population (\prot{} $\lesssim 3$ days) and a slowly rotating population
 (\prot{} $\gtrsim 50$ days). It has been proposed that these two populations
@@ -847,12 +855,26 @@ mass, age, and rotation \citep[gyrochronology;][]{barnes03}. \\
 \end{figure}
 
 Another important point regarding active regions is that their lifetimes are comparable
-to the stellar rotation timescale. This means that the associated stellar activity can vary
-between rotation cycles. As seen in Fig.~\ref{fig:rotation},
-the lifetimes can range from days to months \citep{schrijver02}. Active region
-lifetimes are primarily determined by their sizes \citep{berdyugina05} as they
-diffuse into the photosphere; larger volume/surface ratios results in longer lifetimes
-\citep{petrovay97}.
+to one to a few stellar rotation timescales with those timescales being extended for later
+type stars \citep{giles17}. That is that active regions on M dwarfs appear to be long-lived
+compared to around Sun-like stars.
+The evolution of active regions over rotation cycles implies that the associated
+stellar activity can on similar timescales. As seen in Fig.~\ref{fig:rotation},
+the lifetimes can range from days to months and given that active region
+lifetimes are primarily determined by their sizes as they
+diffuse into the photosphere \citep{berdyugina05}, larger volume/surface ratios results in
+longer lifetimes \citep{petrovay97,giles17}. The lifetimes of M dwarf active regions will
+have important implications when attempting to model stellar activity in RV time series in
+subsequent chapters. \\
+
+\emph{Gravitational redshift}:
+the contraction and expansion of stars throughout their evolution will introduce an RV activity
+signal. Even small variations at the level of hundredths of a percent will have manifestations
+at the 10 cm s$^{-1}$ level which is sufficient to mask a Earth-like planet around a Sun-like star
+\citep{lindegren03}. In low mass stars, the suppression of surface convection by strong magnetic fields
+may result in stellar radius fluctuations and consequently an activity signal due to gravitational
+redshift that varies on the timescale of variations in the star's magnetic field strength
+\citep{cegla11}.
 
 
 \emph{Magnetic Cycles}:
@@ -863,22 +885,22 @@ peak in magnetic activity over the solar cycle, the Sun i) experiences strong pr
 and coronal mass ejections and ii) contains a large number of active regions which contribute
 to a higher level of activity in RV time series as well as in other observables
 \citep{maunder04}. Long-term magnetic activity cycles have been observed in long-baseline
-spectroscopic monitoring programs. From solar observations, the flux in the \caii{}
-H and K lines are known to correlate with the number of sunspots. Numerous results from
-similar surveys have
+spectroscopic monitoring programs \citep{santos10}. From solar observations, the flux in the
+\caii{} H+K lines are known to correlate with the number of sunspots. Numerous results from
+similar surveys have 
 demonstrated that the majority of Sun-like stars do exhibit magnetic activity cycles
-with a range of periods from $\sim 7-30$ years \citep{duncan91, lockwood97, balinunas98}. \\
+with a range of periods from $\sim 7-30$ years \citep{duncan91,lockwood97,balinunas98}. \\
 
 As it pertains to RV planet searches, full activity cycles have yet
 to be observed and precisely characterized. Subsections of the cyclic trends have been seen in
 certain mature RV surveys to be correlated with
-the $\log{R'_{\mathrm{HK}}}$ spectroscopic activity indicator \citep[e.g.][]{lovis11}.
+the \Rhk{} spectroscopic activity indicator \citep[e.g.][]{lovis11}.
 A common tactic to correct for such long-term activity trends in RV time series is to use a linear
-relation between the RVs and the contemporaneous $\log{R'_{\mathrm{HK}}}$ time series
-\citep{dumusque12}. The corresponding RV signal from magnetic cycles can reach tens of \mps{.}
-Luckily, when searching for
+relation between the RVs and the contemporaneous \Rkh{} time series although residual jitter
+often persists \citep{dumusque12}. The corresponding RV signal from magnetic cycles can reach tens of
+\mps{.} Luckily, when searching for
 planets whose orbital timescales are much less than the period of the star's magnetic cycle, the
-corresponding activity is not of much concern. \\
+corresponding activity is not often a major concern. \\
 
 
 \section{Point-form Thesis: Introduction}

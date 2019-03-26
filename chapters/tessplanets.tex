@@ -141,8 +141,9 @@ one or both of TESS sectors 1 and 2 and are depicted in Fig.~\ref{fig:stars}.
 
 \begin{figure}
   \centering
-  %\includegraphics[scale=.9]{stellar_corner.png}
-  \caption{Distributions of TESS apparent magnitudes $T$, effective temperatures,
+  \includegraphics[width=0.6\hsize]{figures/stellar_corner.png}
+  \caption[Stellar parameters for M dwarf TICs in TESS sectors 1 and 2.]
+    {Distributions of TESS apparent magnitudes $T$, effective temperatures,
     stellar radii, and stellar masses for our initial (translucent orange markers) and final
     (dark red markers) stellar samples. Our initial sample contains 2849 low mass stars observed in
     sectors 1 and/or 2 and identified by their stellar parameters from the TIC-7. Our final sample contains
@@ -282,8 +283,9 @@ GAIA-derived stellar radii is $\sim 3$\%.
 
 \begin{figure}
   \centering
-  %\includegraphics{stellarradii.png}
-  \caption{A 2-dimensional histogram comparing the stellar radii in our sample of 1599 low mass stars,
+  \includegraphics[width=0.6\hsize]{figures/stellarradii.png}
+  \caption[Comparison of stellar radii derived from GAIA parallaxes to values in the TIC-7.]
+      {A 2-dimensional histogram comparing the stellar radii in our sample of 1599 low mass stars,
     derived from GAIA parallaxes and the M dwarf radius-luminosity relation from \cite{mann15}, to those
     from the TESS Input Catalog (TIC-7) which are compiled from a variety of sources. The subpanel compares the
     distributions of fractional stellar radius uncertainties in each catalog. The refined stellar radii 
@@ -486,9 +488,10 @@ Sect.~\ref{sect:gaiafps}.
 
 \begin{figure*}
   \centering
-  %\includegraphics[scale=.96]{GPdetrend_235037759.png}
-  %\includegraphics[scale=.96]{GPdetrend_262530407.png}
-  \caption{Two demonstrations of the \pipeline{} initial de-trending stage for TIC 235037759 and 262530407.
+  \includegraphics[width=0.9\hsize]{figures/GPdetrend_235037759.png}
+  \includegraphics[width=0.9\hsize]{figures/GPdetrend_262530407.png}
+  \caption[Examples of GP detrending of TESS light curves.]
+      {Two demonstrations of the \pipeline{} initial de-trending stage for TIC 235037759 and 262530407.
     \emph{Large panels}: the 2 minute raw and binned TESS light curves with temporal
     binning chosen to sample eight GP periodic timescales (40.1 and 78.9 minute bins for TIC 235037759
     and 262530407 respectively). Solid red curves and their surrounding shaded regions
@@ -595,8 +598,9 @@ interpretability.
 
 \begin{figure}
   \centering
-  %\includegraphics[scale=.92]{linearsearch_234994474.png}
-  \caption{The linear search S/N spectrum versus transit times for TIC 234994474.
+  \includegraphics[width=0.8\hsize]{figures/linearsearch_234994474.png}
+  \caption[Results of the linear search for repeating transit-like events around TIC 234994474.]
+      {The linear search S/N spectrum versus transit times for TIC 234994474.
     The linear search S/N is calculated from the $\ln$ likelihood of the de-trended light
     curve in 30 minute bins under a box model centered at each transit time and with a fixed
     transit duration of 1.2 hours in this example. Mid-transit times of the PC candidate
@@ -642,8 +646,9 @@ or $\sim 27$ days for the majority of TICs.
 
 \begin{figure*}
   \centering
-  %\includegraphics[scale=1]{periodicsearch_234994474.png}
-  \caption{The results of the periodic search for repeating transit-like events in the
+  \includegraphics[width=0.8\hsize]{figures/periodicsearch_234994474.png}
+  \caption[Results of the periodic search for repeating transit-like events around TIC 234994474.]
+      {The results of the periodic search for repeating transit-like events in the
     light curve of TIC 234994474 which hosts TOI-134.01 at 1.40131 days.
     \emph{Left panel}: the $n_{\text{T}} \times n_{\text{T}}$ P matrix of
     possible periods of repeating transit-like events from the $n_{\text{T}}=6$ high S/N transit
@@ -803,8 +808,9 @@ The eight automated vetting criteria are defined as follows:
 
 \begin{figure}
   \centering
-  %\includegraphics[scale=.92]{flareLC_25200252.png}
-  \caption{The de-trended light curve of the flare star TIC 25200252. Measurements initially flagged
+  \includegraphics[width=0.8\hsize]{figures/flareLC_25200252.png}
+  \caption[Examples of flares detected in the TIC 25200252 light curve.]
+      {The de-trended light curve of the flare star TIC 25200252. Measurements initially flagged
     as being potentially associated with a flare event are highlighted by the
     large orange markers in the light curve. Only windows containing at least two successive
     bright measurements above this threshold are flagged as flares. TIC 25200252 is found to shows nine flares
@@ -916,8 +922,9 @@ by HARPS and PFS RVs \citep{astudillodefru19}.
 
 \begin{figure*}
   \centering
-  %\includegraphics[scale=.88]{planetcandidatesummary_1_234994474.png}
-  \caption{The summary image output from running \pipeline{} on TIC 234994474 and the resulting
+  \includegraphics[width=0.8\hsize]{figures/planetcandidatesummary_1_234994474.png}
+  \caption[Summary output for TIC 234994474 from \texttt{ORION}.]
+      {The summary image output from running \pipeline{} on TIC 234994474 and the resulting
     detection of OI 234994474.01 which is consistent with the known TOI-134.01. The TESS
     magnitude $T$ and GAIA-derived physical stellar parameters 
     are annotated at the top. \emph{Top panel}: the 2 minute extracted light curve from
@@ -979,8 +986,9 @@ here for any interested parties.
 
 \begin{figure}
   \centering
-  %\includegraphics{wtfLCs.png}
-  \caption{The raw (i.e. pre-de-trended)
+  \includegraphics[width=0.6\hsize]{figures/wtfLCs.png}
+  \caption[The exotic light curves of TICs 63037741 and 434105091.]
+      {The raw (i.e. pre-de-trended)
     light curves of the TICs 63037741 and 434105091 which exhibit peculiar
     photometric features. \emph{Upper panel}: the full TIC 63037741 light curve
     showing two anomalous features at 1340.5 and 1353 BJD - 2,457,000 respectively. \emph{Panels a and b}:
@@ -1126,8 +1134,9 @@ in diameter.
 
 \begin{figure*}
   \centering
-  %\includegraphics{GAIAFPs.png}
-  \caption{Star maps containing sources from the GAIA DR2 in the vicinity of each TIC identified
+  \includegraphics[width=0.8\hsize]{figures/GAIAFPs.png}
+  \caption[GAIA sources around TICs with \texttt{ORION} planet candidates.]
+      {Star maps containing sources from the GAIA DR2 in the vicinity of each TIC identified
     as hosting an object of interest during the manual vetting stage. The panels are ordered by the
     dispositions which are annotated in the upper right of each panel (see Sect.~\ref{sect:vespa} for
     definitions). The fitted FWHM of each targeted TIC's PSF is annotated in the upper left
@@ -1176,8 +1185,9 @@ OI 10010300.01 from a PC to a pPC.
 
 \begin{figure}
   \centering
-  %\includegraphics{TIC300_LC.png}
-  \caption{The de-trended light curves of TICs 100103200 (top) and 100103201 (bottom).
+  \includegraphics[width=0.8\hsize]{figures/TIC300_LC.png}
+  \caption[Example of scattered light within the common aperture of nearby TICs.]
+      {The de-trended light curves of TICs 100103200 (top) and 100103201 (bottom).
     The in-transit points for the three
     OIs in these systems are highlighted by the colored points with each OI having a unique color.
     The OI identifications and periods are annotated next to one of its transit-like events.
@@ -1198,8 +1208,9 @@ the transit models computed using the MAP parameter values from Table~\ref{table
 
 \begin{figure*}
   \centering
-  %\includegraphics[scale=1]{transitLC_PCs.png}
-  \caption{Phase-folded transit light curves for our set of 16 planet candidates. The temporal binning and axes
+  \includegraphics[width=0.8\hsize]{figures/transitLC_PCs.png}
+  \caption[Phase-folded transit light curves of the \texttt{ORION} planet candidate sample.]
+      {Phase-folded transit light curves for our set of 16 planet candidates. The temporal binning and axes
     ranges for each candidate are chosen to optimize visual clarity. The marker colors for each candidate's binned
     light curve is indicative of its disposition which also is annotated in the upper
     right of its panel. Candidates detected by \pipeline{} which are also TESS Objects of Interest 
@@ -1221,8 +1232,9 @@ TESS baselines of just 27 days.
 
 \begin{figure*}
   \centering
-  %\includegraphics[scale=1]{planetsample.png}
-  \caption{The resulting planet candidates from running \pipeline{} on the 2 minute extracted light curves
+  \includegraphics[width=0.9\hsize]{figures/planetsample.png}
+  \caption[Planetary parameters for the \texttt{ORION} planet candidate sample.]
+      {The resulting planet candidates from running \pipeline{} on the 2 minute extracted light curves
     from the first two TESS sectors in the period/radius and insolation/radius parameter spaces.
     The legend labels are planet candidates (PC), putative planet candidates (pPC), 
     single transit events (ST), and putative single transit events (pST).
@@ -1263,8 +1275,9 @@ within our sample at \teff{} $\sim 3550$ K (see Fig.~\ref{fig:stars}).
 
 \begin{figure*}
   \centering
-  %\includegraphics[scale=1]{planetsample_star.png}
-  \caption{The planetary radii of our 16 \pipeline{} candidates as functions of their host stellar
+  \includegraphics[width=0.9\hsize]{figures/planetsample_star.png}
+  \caption[Stellar parameters for the \texttt{ORION} planet candidate sample host stars.]
+      {The planetary radii of our 16 \pipeline{} candidates as functions of their host stellar
     effective temperatures, $J$-band magnitudes, and GAIA distances. Our candidates
     are compared to the population of confirmed transiting planets around cool stars (\teff{} $<4200$
     K) from the NASA Exoplanet Archive which are depicted with small black circles.
@@ -1447,39 +1460,6 @@ the expected S/N$_{\text{transit}}$ is $\sim 7.2$ which would still be insuffici
 a single TESS sector. We are further discouraged by the prospect of lowering the linear search S/N
 threshold as this would drastically increase the number of FPs purely from the noise.
 
-%\subsubsection{New PCs detected by \pipeline{} in existing TOI systems}
-%\emph{TIC 415969908} TOI-233.01 has an orbital period of 11.7 days. This signal is recovered
-%by \pipeline{} along with two additional signals at 7.2 and 15.8 days respectively. The TIC
-%415969908 light curve is depicted in Fig.~\ref{fig:tic415969908} along with the transits times
-%of each PC. Notably,
-%the orbital phases of the new PCs overlap with themselves at $\sim 1381$ BJD-2,4570,000.
-%This indicates that although one signal may be due a transiting planet, it is highly unlikely that 
-%they both are. The maximum likelihood scenario from the \pipeline{} fits is that the 15.8 day
-%PC is favored over the PC at 7.2 days. Consequently, we discard the latter PC as a false
-%positive at retain the former PC which should have two transits over the TESS sector 2
-%baseline. However, it is clear that one of those transits overlaps with a transit of TOI-233.01
-%at $\sim 1365.3$ BJD-2,457,000 such that the 15.8 day orbital period is likely misidentified.
-%Knowning that the 15.8 day period is likely underestimated and the prominence of the transit-like
-%event at $\sim 1381$ BJD-2,4570,000 that is not associated with TOI-233.01, we postulate that
-%an second PC exists around TIC 415969908 and whose orbital period is greater than the 27.4 day
-%baseline. This nature of this potential single transit event will require additional photometric
-%and/or RV follow-up for a more accurate interpretation of its origin.
-
-% refit transit with just the one event because at 15.8 days it mixes the wrong transit event
-%P = 15.808056 +- 5e-3 days
-%Rs^3/Ms =  2.2735132897e-5 +- 2.0655451970e-6 m3/kg
-%a/Rs = 55.3434292 + 3.60904 - 10.62048
-%_,_,samp_aRs = get_samples_from_percentiles(val, ehi, elo, Nsamp=1e3, add_p5_p95=True)
-%estimate P from R3/M and a/R 
-
-%\begin{figure}
-%  \centering
-%  %\includegraphics{TIC415969908_tmp.png}
-%  \caption{The de-trended light curve of TIC 415969908 from TESS sector 2. The vertical
-%    ticks indicate the transit times of the TOI-233.01 and the additional ST event identified by
-%    \pipeline{} at 1381 BJD - 2,457,000. Both signals show low FPPs.}
-%  \label{fig:415969908}
-%\end{figure}
 
 \subsection{Prospects for follow-up observations}
 \subsubsection{Mass characterization via precision radial velocities} \label{sect:rv}
@@ -1508,8 +1488,9 @@ sensitivity limit and are reported in Table~\ref{table:followup}.
 
 \begin{figure}
   \centering
-  %\includegraphics{planetsample_followup.png}
-  \caption{Expected values of the RV semi-amplitude (upper panel), transmission spectroscopy metric (middle panel),
+  \includegraphics[width=0.6\hsize]{figures/planetsample_followup.png}
+  \caption[Follow-up diagnostics for the \texttt{ORION} planet candidate sample.]
+      {Expected values of the RV semi-amplitude (upper panel), transmission spectroscopy metric (middle panel),
     and emission spectroscopy metric (lower panel) for our set of 16 candidates as a function of $J$-band
     magnitude. The marker legend for our candidates is identical to those in Figs.~\ref{fig:planets}
     and~\ref{fig:planetstar} and are not included here for visual clarity. Candidate planets

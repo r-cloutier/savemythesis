@@ -10,23 +10,27 @@ stellar activity in RV time series.
 \label{sect:methods}
 
 \subsection{Stellar Activity as a Scalar Parameter}
-Back in the day when the first giant exoplanets where being discovered with RVs,
-typically treatment of stellar activity was implemented. The reason for this being
+Back when the first giant exoplanets where being discovered with RVs,
+typically a treatment of stellar activity was not implemented. The reason being
 that the quality of the datasets at that time were insufficient to resolve the
 temporal structure of RV activity for any but the most active stars. Many
 observers however did report the root-mean-square (rms) of their RV residuals
 following the removal of their best-fit planet model
 \citep[e.g.][]{mayor95,butler96}. In
-many cases, the residual rms was seen to exceed the characteristic RV measurement
-uncertainty of the dataset and thus alluded to the presence of an additional
-jitter signal which may or may not vary significantly with time. \\
+many cases this revealed residaul rms values which exceeded the characteristic RV
+measurement uncertainty and thus alluded to the presence of additional
+jitter signals which may or may not vary significantly with time. \\
 
-In many of the following RV planet searches, the apparent jitter was characterized
+In many of the following RV planet searches the apparent jitter was characterized
 by an additive scalar $s$. The free parameter $s$ was used to characterize the
 level of RV jitter as it was added in quadrature to the RV measurement
 uncertainties when evaluating the objective function during any analysis
-equivalent or analogous to a $\chi^2$-minimization routine. 
-
+equivalent or analogous to a $\chi^2$-minimization routine. The nature of this
+method assumes a fixed level of dispersion due to jitter that is constant in time.
+As such, the resulting
+measurement of $s$ does little more than inform us of the jitter amplitude as
+any temporal evolution of activity, due to finite active region lifetimes or magnetic
+cycles, will remain unresolved.
 
 \subsection{Correlations with Activity Indicators}
 Stellar RV observations are known to be affected by both planetary companions as
@@ -35,14 +39,15 @@ therefore benefits significantly from ancillary time series which are sensitive
 to stellar activity only \citep{boisse09}.
 The classical implementation of de-correlation by
 an activity indicator is to derive time series of one or many spectroscopic
-activity indicators whose sampling is contemporaneous with the RVs and then
-fitting an often linear relation between those datasets (Fig.~\ref{fig:corr}).
+activity indicators whose sampling is simultaneous with the RVs and then
+fitting an often linear relation between those datasets (Fig.~\ref{fig:corr}) to
+account for the temporal evolution of activity over the observational baseline.
 The relation, when fitted simultaneously with planetary solutions, allows the RVs
 to be de-correlated jointly with the measurement of the planetary parameters.
 This technique has been shown to be effective when the stellar rotation period
 \prot{} is well constrained, the planetary orbital period is distinct from
 \prot{,} the amplitude of the planetary signal exceeds that of the activity signal
-by $\sim 30$\%, and the stellar rotation period is well sampled over multiple
+by $\gtrsim 30$\%, and the stellar rotation period is well sampled over multiple
 cycles \citep{boisse11}. \\
 
 \begin{figure}
@@ -57,37 +62,105 @@ cycles \citep{boisse11}. \\
 \end{figure}
 
 There exists a number of activity indicators which can be derived from the stellar
-spectra. There definitions and physical motivations are summarized below.
+spectra. There definitions and physical motivations are summarized below. \\
 
-\caii{} H \& K lines: 
+\emph{log R$'_{HK}$}:
+the \caii{} H and K resonance lines are excited by non-thermal heating 
+and act as a sensitive indicator of chromospheric structure and particularly of
+the presence of bright chromospheric plages. 
 For optical spectra with access to the \caii{} H and K lines
 centered on 3968.47 \AA{} and 3933.66 \AA{,} the Mt. Wilson S-index is defined as
 
 \begin{equation}
-  \text{S-index} = \frac{\Psi_H + \Psi_K}{\Psi_B + \Psi_V}
+  \text{S-index} \propto \frac{\Psi_H + \Psi_K}{\Psi_B + \Psi_V}
 \end{equation}
 
 \noindent where $\Psi_H$ and $\Psi_K$ represent the narrowband
 ($\sim 1.1$ \AA{} wide) fluxes in the cores of the H and K lines of the \caii{}
 doublet. The index is normalized by total flux in the $B$ and $V$ continuum bands
 which are 20 \AA{} wide broad bands centered on 3900 and 4000 \AA{} respectively.
+From this the \Rhk{} indicator is derived using a variety of formulations which are
+all $\propto$ S-index and attempt to isolate the chromospheric component of
+$\Psi_H$ and $\Psi_K$ from the photospheric component using normalization factors
+which are dependent on \teff{} and level of stellar activity \citep{lovis11}. The
+\Rhk{} indicator has been well characterized as a sensitive probe of activity on
+both Sun-like stars and M dwarfs
+\citep[e.g.][]{wright04,lovis11,astudillodefru17b}. \\
 
-H$\alpha$: ...
-Similar emission line features may also be used as activity indicators depending
-on the accessible wavelengths of the spectrograph (e.g. \hei{,} \nai{,} etc).
+$H\alpha$: 
+similarly to the \Rhk{} index, H$\alpha$ photons ($\lambda = 6562.81$ \AA{)} are emitted by
+hot plages and thus act as a tracer of stellar activity originating from the chromosphere.
+H$\alpha$ may act as a more suitable spectroscopic activity indicator for cool M dwarfs
+which of lack significant flux in the \caii{} H and K lines \citep{robertson14}.
+In practical terms,  
+similar spectral features tracing a star's chromospheric structure may alternatively be used
+as activity indicators depending on the accessible wavelengths of the employed spectrograph
+(e.g. \hei{,} \nai{,} etc). \\
 
-Vspan:
-\citep{queloz01}
 
-FWHM:
+\emph{CCF shape parameters}:
+the cross-correlation function (CCF) of a stellar spectrum represents its average line profile
+at typically a high S/N.
+As illustrated in Fig.~\ref{fig:starspot}, the presence of active regions distorts
+the Gaussianity of the CCF thus alluding to the presence and nature of those active regions.
+A number of shape parameters to the fitted CCF may be used to characterize stellar activity
+using the same CCF from which the stellar RVs themselves are derived. However, these
+spectroscopic diagnostics are only useful when they are robustly derived from high S/N
+spectra of active stars where their effects on the CCF are clearly discernable \citep{desort07}.
+Examples of three
+shape parameters are visualized in Fig.~\ref{fig:ccf} and described below. \\
 
-BIS:
+\begin{figure}
+  \centering
+  %\includegraphics[width=\hsize]{figures/ccf.png}
+  \caption[Illustrations of CCF shape parameters.]
+          {Illustrations of measurements of the CCF width, asymmetry, and contrast via the full
+            width half maximum (FWHM), bisector (BIS), and contrast shape parameters. The FWHM
+            characterizes broadening of the CCF due to active regions at unique velocities on the
+            stellar disk. The
+            BIS characterizes the asymmetry of the line profile by computing the difference in
+            average velocity in the upper and lower portions of the CCF (green circles in the
+            middle panel). The contrast characterizes the depth of the CCF by taking the average
+            of the CCF in the contiuum (diamonds) and its difference with the CCF flux at the
+            stellar velocity $V_0$.}
+  \label{fig:ccf}
+\end{figure}
+
+\emph{FWHM}:
+the full width half maximum (FWHM) of the CCF is commonly used as a measure of CCF
+width. As an active region transverses the rotating stellar disk across the differentially
+Doppler-shifted limbs, its temperature contrast with the stellar photosphere adds additional
+power to the CCF in the velocity direction opposite the occulted limb. This results in a
+broadening of the CCF on one side of its mean velocity $V_0$. As illustrated in
+the first panel in Fig.~\ref{fig:ccf},
+the FWHM can be measured from the width of the CCF at a specified location. \\
+
+\emph{BIS}:
+recall that the broadening of the CCF due to a single active region is asymmetric about $V_0$.
+A common shape parameter to characterize the resulting asymmetry is the bisector
+\citep[BIS;][]{queloz01}.
+Similar parameters have also been proposed as measures of CCF asymmetry such as the curvature of
+the bisector line \citep{hatzes96}, the velocity span \citep{boisse11}, and the BIS inverse
+slope \citep{queloz01}. Their definitions are closely related and rely on computing the weighted
+velocity in the upper and lower portions of the CCF (see middle panel of Fig.~\ref{fig:ccf})
+and computing their difference. A symmetric line profile will therefore have a BIS$=0$ whereas
+asymmetric profiles affected by active regions will be non-zero and whose exact value and units
+will depend on the defintion of the asymmetry parameter used. \\
+
+\emph{Contrast}:
+\citep{boisse09} noted that increasingly active stars, based on their fractional coverage by dark
+star spots, tend to have shallower line profiles. This is the direct result of such stars featuring
+greater contributions to their average line profiles from cool and therefore dimmer regions.
+This effect is often characterized by the CCF contrast which is equal to the difference between the
+average baseline of the CCF in the continuum (located many standard deviations away from $V_0$ in
+the CCF wings) and the flux at the stellar velocity $V_0$.
 
 
-\citep{boisse09,boisse11}
+\subsection{Photometric Modelling: the FF' Method}
+An alternative to using simultaneous spectroscopic activity indiciators to temproally de-correlated
+RV measurements for the effects of stellar activity, \citep{aigrain12} present the FF' formalism
+which uses contemporaneous photometry to model two distinct RV activity components. 
 
-\subsection{Photometric Modelling: the FF' Method }
-\citep{aigrain12}
 
 \subsection{Pre-whitening}
 \citep{queloz09}
@@ -96,7 +169,7 @@ BIS:
 \citep{dumusque14}
 
 \subsection{Deterministic Model Fitting}
-\citep{sarkis18}
+\citep{boisse11,sarkis18}
 
 \subsection{Spectral Feature Decomposition}
 \citep{davis17}
@@ -239,7 +312,7 @@ $X_2$ when the corresponding value of $X_1$ is known. \\
 
 \begin{figure}
   \centering
-  \includegraphics[width=.9\textwidth]{figures/uncorr_2d.png}
+  %\includegraphics[width=.9\textwidth]{figures/uncorr_2d.png}
   \caption{The one and two dimensional distributions of the Gaussian random
     variables $GAA$ and draws from the standard normal disribution. The solid
     lines overlaid on their joint distribution represent the 1, 2, and 3$\sigma$

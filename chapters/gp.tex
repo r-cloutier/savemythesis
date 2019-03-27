@@ -156,14 +156,65 @@ average baseline of the CCF in the continuum (located many standard deviations a
 the CCF wings) and the flux at the stellar velocity $V_0$.
 
 
-\subsection{Photometric Modelling: the FF' Method}
+\subsection{Photometric Modelling: the \textbf{\emph{FF}}$'$ Method}
 An alternative to using simultaneous spectroscopic activity indiciators to temproally de-correlated
-RV measurements for the effects of stellar activity, \citep{aigrain12} present the FF' formalism
-which uses contemporaneous photometry to model two distinct RV activity components. 
+RV measurements for the effects of stellar activity, \citep{aigrain12} present the $FF'$ formalism
+which uses contemporaneous photometry to model two distinct RV activity components. \cite{aigrain12}
+argue that in the limit of small active regions with non-complex configurations, the fractional
+coverage of the stellar disk by active regions (i.e. spots) $F(t)$ is related to the photometric flux
+$\Psi(t)$ via
 
+\begin{equation}
+  \Psi(t) = 1 - F(t).
+  \label{eq:ffp}
+\end{equation}
+
+\noindent Eq.~\ref{eq:ffp} reads that the fractional spot coverage is just one minus the observed
+stellar flux in normalized units such that the star's brightness equals unity in the absence of spots.
+The corresponding RV signals from a active regions giving rise to the photometric variations are known
+as the rotation or flux effect $\Delta \text{RV}_{\text{rot}}$ and the convection blueshift effect
+$\Delta \text{RV}_{\text{conv}}$. The former arises from active regions occulting the differentially
+Doppler-shifted stellar limbs and thereby suppressing the flux of photons with a particular
+Doppler-shift. Because the rotation effect affects the RVs in proportion to the spot coverage and
+exhibits a sign change as the spot crosses from the blueshifted limb to the redshifted limb over a single
+rotation cycle, the rotation effect is
+
+\begin{equation}
+  \Delta \text{RV}_{\text{rot}}(t) \propto F(t) \dot{F}(t)
+\end{equation}
+
+\indent where the first time derivative of the fractional active region coverage is
+$\dot{F}(t) = -\dot{\Psi}(t)$ from Eq.~\ref{eq:ffp}. As such, the rotation effect tends to dominate
+on rapidly rotating stars wherein $\dot{F}(t)$ is large. Conversely, the convective blueshift effect
+operates by active regions disrupting the homogeneity of the stellar disk on which convective
+blueshift is on-going everywhere. This disruption scales with the fractional spot coverage and
+the angle between the spot normal and the line-of-sight which results in
+
+\begin{equation}
+  \Delta \text{RV}_{\text{conv}}(t) \propto F^2(t).
+\end{equation}
+
+\noindent The convective blueshift effect tends to dominate more slowly rotating spotted
+stars such as the Sun \citep{haywood16}. \\
+
+Fig.~\ref{fig:ffp} demonstrates both the rotation and
+convective blueshift effects on the RVs and how they are related to the photometric detriment
+incurred by a single spot over a portion of one stellar rotation cycle.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\hsize]{figures/ffp.png}
+  \caption{The $FF'$ method for deriving the rotation and convective blueshift components
+    of stellar RV activity from contemporaneous photometry. Here the photometric stellar flux
+    is used to infer the fractional spot coverage $F(t)$. The rotation effect scales with
+    $F(t) \dot{F}(t)$ and thus varies with half the period as does the convective blueshift
+    effect which scales as $F^2(t)$. \citep[Image credit:][]{haywood15}.}
+  \label{fig:ffp}
+\end{figure}
 
 \subsection{Pre-whitening}
 \citep{queloz09}
+
 
 \subsection{Physical Models of Active Regions}
 \citep{dumusque14}

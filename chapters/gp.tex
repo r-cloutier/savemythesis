@@ -53,7 +53,8 @@ cycles \citep{boisse11}. \\
 \begin{figure}
   \centering
   %\includegraphics[width=.6\textwidth]{figures/vspan_rv.png}
-  \caption{The correlation of the \vspan{} activity indicator with the RVs for the
+  \caption[Correlation between stellar RVs and the \vspan{} activity indicator.]
+      {The correlation of the \vspan{} activity indicator with the RVs for the
     active Sun-like star HD 17051 from HARPS spectra. The solid line depicts the
     best-fit linear relation from least squares fitting. The fitted relation is
     used to de-correlate the RVs for the effects of stellar activity as probed by
@@ -156,7 +157,7 @@ average baseline of the CCF in the continuum (located many standard deviations a
 the CCF wings) and the flux at the stellar velocity $V_0$.
 
 
-\subsection{Photometric Modelling: the \textbf{\emph{FF}}$'$ Method}
+\subsection{Photometric Modelling: the \textbf{\emph{FF}}$'$ Method} \label{sect:ffp}
 An alternative to using simultaneous spectroscopic activity indiciators to temproally de-correlated
 RV measurements for the effects of stellar activity, \citep{aigrain12} present the $FF'$ formalism
 which uses contemporaneous photometry to model two distinct RV activity components. \cite{aigrain12}
@@ -204,7 +205,8 @@ incurred by a single spot over a portion of one stellar rotation cycle.
 \begin{figure}
   \centering
   \includegraphics[width=0.8\hsize]{figures/ffp.png}
-  \caption{The $FF'$ method for deriving the rotation and convective blueshift components
+  \caption[Illustration of the $FF'$ method.]
+      {The $FF'$ method for deriving the rotation and convective blueshift components
     of stellar RV activity from contemporaneous photometry. Here the photometric stellar flux
     is used to infer the fractional spot coverage $F(t)$. The rotation effect scales with
     $F(t) \dot{F}(t)$ and thus varies with half the period as does the convective blueshift
@@ -212,18 +214,76 @@ incurred by a single spot over a portion of one stellar rotation cycle.
   \label{fig:ffp}
 \end{figure}
 
+
 \subsection{Pre-whitening}
-\citep{queloz09}
-
-
-\subsection{Physical Models of Active Regions}
-\citep{dumusque14}
+This method aims at identifying strong periodicities in the RV time series and removing also
+such signals until only residual Gaussian noise is remaining. This method known as pre-whitening
+is based on analyzes of multi-periodic stellar oscillation modes and works by performing a Fourier
+transform of the data and removing sinusoidal functions from the raw data whose periods and
+identified by the frequency analysis \citep{queloz09}. Pre-whitening assumes that all signals
+are long-lived and sinusoidal which is not always applicable for the stellar activity signals
+that it aims to mitigate. 
 
 \subsection{Deterministic Model Fitting}
-\citep{boisse11,sarkis18}
+RV time series exhibiting strong coherent signals at either \prot{} or its first
+harmonic\footnote{As can be the case for rapidly rotating spotted stars whose RV activity
+  is dominated by the rotation effect (see Sect.~\ref{sect:ffp}).} may be well modelled by
+a deterministic function in the form of a sinusoid at \prot{} or $P_{\text{rot}}/2$
+\citep{boisse11}. In general, such models are incomplete because they neglect any temporal
+evolution of active regions which vary in their sizes, temperatures, and spatial distributions
+over adjacent rotation cycles \citep{giles17}. These nuances are not captured in a 
+deterministic sinusoidal model although this methodology may still be applicable in time series
+with short observational baselines or for stars with long-lived active region groups.
 
-\subsection{Spectral Feature Decomposition}
-\citep{davis17}
+
+%\subsection{Physical Models of Active Regions}
+%\citep{dumusque14}
+
+
+%\subsection{Spectral Feature Decomposition}
+\subsection{Line by line radial velocities}
+Spectral lines are known to be affected differently by stellar activity due to their
+sensitivities to pressure, temperature, embedded magnetic field strength, and fluid
+velocity which are all affected by stellar activity \citep{davis17,wise18}. These
+effects from stellar activity to spectral line shapes are distinct from Doppler-induced
+line shifts which are identical to all lines. \cite{dumusque18} investigated
+the prospect of deriving stellar RVs line by line. The resulting RVs derived from
+individual lines were shown to be
+consistent with the archival RVs derived from the HARPS data reduction software.
+The derivation of RVs in this way is postulated to mitigate anomalous RV signals
+from stellar activity if spectral features that are minimally affected by activity
+are utilized. Intelligent identification of lines that are minimally sensitive to
+activity remains an active area of research. \\
+
+\cite{davis17} also demonstrated the power of analyzing individual spectral lines
+to identify the effect of stellar activity on RVs. Principal component analysis
+is run on sets of idealized spectra from stars containing either an equatorial spot,
+an equatorial facula, or a planetary companion on a circular orbit. As shown in
+Fig.~\ref{fig:pca}, the maximum variance contained in the first principal component
+of the Doppler-shifted spectrum (i.e. with no activity) is maximized where the slope
+of spectral features is greatest and is identical to all spectral features as they
+are each equivalently affected by Doppler shifts. Lines in the remaining synthetic
+spectra that are affected by either a spot or facula or not identically affected due
+to the differential sensitivity of various lines to their physical environments
+which in turn are influenced by the presence of active regions. Fig.~\ref{fig:pca}
+reveals examples of strongly varying lines from Ti \footnotesize I \normalsize and Ni
+\footnotesize I \normalsize at 5009.5 \AA{} and 5010.8 \AA{} respectively.
+\cite{davis17} also quantify the wealth of information contained in the spectra
+as a function of S/N and spectral resolution and argue for the need to obtain
+high resolution spectra to finely resolve line profiles and exploit their inherent
+activity information content.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\hsize]{figures/pca.png}
+  \caption[Principal component analysis of idealized spectra containing either spots, faculae, or planets.]
+          {The values of the first principal component for three spectra of a star with either an equatorial
+            spot, an equatorial facula, or a circular keplerian orbit. The maximum variance (with either sign)
+            in the Doppler-shifted spectrum is dominated by regions with the greatest slope and is the same
+            for all spectral features. Variance in the active spectra and not equal within each line as not all
+            lines respond identically to in the presence of active regions. \citep[Image credit:][]{davis17}}
+  \label{fig:pca}
+\end{figure}
 
 
 \section{Gaussian Process Regression for Non-Parametric Activity Modelling} \label{sect:gp}
@@ -289,7 +349,8 @@ against per game. Hence my favourite Gaussian random variable. \\
 \begin{figure}
   \centering
   %\includegraphics[width=.8\textwidth]{figures/GAA1D.png}
-  \caption{The distribution of $GAA$ for NHL goaltenders over the past five
+  \caption[Gaussian random variable in one dimension.]
+      {The distribution of $GAA$ for NHL goaltenders over the past five
     seasons as an example of a Gaussian random variable. The solid line depicts
     the Gaussian probability density function with mean and standard
     deviation 2.64 and 0.40 goals against per game.}
@@ -355,7 +416,7 @@ that these variables are indeed uncorrelated. The corresponding covariance matri
 \noindent calculated using Eq.~\ref{eq:correq} is diagonal and confirms that
 $X_1$ and $X_2$ are uncorrelated. This fact can be seen in the joint $X_1X_2$
 distribution in Fig.~\ref{fig:uncorr2d}.
-Because the varaibles $X_1$ and $X_2$ are uncorrelated in this example, the
+Because the variables $X_1$ and $X_2$ are uncorrelated in this example, the
 measurement of a value of $X_1$ does nothing to inform us of its corresponding
 $X_2$ value. That is that the prior distribution
 $p(\mathbf{X}|\boldsymbol{\mu},\mathbf{K})$ is uninformative with regards to
@@ -364,7 +425,8 @@ $X_2$ when the corresponding value of $X_1$ is known. \\
 \begin{figure}
   \centering
   %\includegraphics[width=.9\textwidth]{figures/uncorr_2d.png}
-  \caption{The one and two dimensional distributions of the Gaussian random
+  \caption[Uncorrelated Gaussian random variables in two dimensions.]
+      {The one and two dimensional distributions of the Gaussian random
     variables $GAA$ and draws from the standard normal disribution. The solid
     lines overlaid on their joint distribution represent the 1, 2, and 3$\sigma$
     contours. The covariance matrix (Eq.~\ref{eq:Kuncorr}) has off-diagonal
@@ -416,7 +478,8 @@ has approximately half of the dispersion as the full $SV$\% distribution. \\
 \begin{figure}
   \centering
   %\includegraphics[width=.9\textwidth]{figures/corr_2D_HARTpost.png}
-  \caption{The one and two dimensional distributions of the Gaussian random
+  \caption[Correlated Gaussian random variables in two dimensions.]
+      {The one and two dimensional distributions of the Gaussian random
     variables $GAA$ and $SV$\%.
     The covariance matrix (Eq.~\ref{eq:Kcorr}) has negative off-diagonal
     elements describing the degree of anti-correlation between the two

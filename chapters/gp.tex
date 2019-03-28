@@ -433,11 +433,11 @@ $X_2$ in a sample for which the corresponding value of $X_1$ is known. \\
   %\includegraphics[width=.9\textwidth]{figures/uncorr_2d.png}
   \caption[Uncorrelated Gaussian random variables in two dimensions.]
       {The one and two dimensional distributions of the Gaussian random
-        variables $GAA$ and draws from the standard normal disribution ($\mathcal{N}(0,1)$).
+        variables $GAA$ and draws from the standard normal disribution (i.e. $\mathcal{N}(0,1)$).
         The solid
     lines overlaid on their joint distribution represent the 1, 2, and 3$\sigma$
     contours. The covariance matrix (Eq.~\ref{eq:Kuncorr}) has off-diagonal
-    elements equal to zero indiciating that the two variables are uncorrelated;
+    elements equal to zero indicating that the two variables are uncorrelated;
     a property which is largely discernable from the lack of correlation in their joint
     distribution.}
   \label{fig:uncorr2d}
@@ -468,7 +468,7 @@ goaltenders over the past five seasons is
 
 \noindent and has non-zero off-diagonal elements. Furthermore, the off-diagonal
 elements are negative which is indicative of the anti-correlation between the
-$GAA$ and the $SV$\% that we just postulated. This strong correlation
+$GAA$ and the $SV$\% that was just postulated. This strong correlation
 is easily visualized in their joint distribution in Fig.~\ref{fig:corr2d}. \\
 
 
@@ -489,10 +489,10 @@ is easily visualized in their joint distribution in Fig.~\ref{fig:corr2d}. \\
     elements describing the degree of anti-correlation between the two
     variables; a property which is largely discernable from their joint
     distribution as high values of the $SV$\% tend to correspond to a lower
-    $GAA$. The correlation can be used to inform the value of $SV$\% given a
-    measured value of $GAA$. This is demonstrated as the measured $GAA$ 
-    for the Toronto Maple Leaf's goaltender 
-    \ToggleLayer{fig:logoson,fig:logosoff}{\protect\cdbox{vertical dashed line}}
+    $GAA$. The correlation can be used to inform the value of one variable given a
+    measurement of the other. This is demonstrated as the measured $GAA$ 
+    for the Toronto Maple Leafs' goaltender 
+    \ToggleLayer{fig:logoson,fig:logosoff}{\protect\cdbox{(vertical dashed line)}}
     provides some
     additional information on the correpsonding $SV$\% whose posterior given the
     measured $GAA$ is more tightly constrained than the $SV$\% distribution for
@@ -501,21 +501,24 @@ is easily visualized in their joint distribution in Fig.~\ref{fig:corr2d}. \\
 \end{figure}
 
 The fact that the two variables are
-correlated implies that knowledge of one variable's value provide some information
-regarding the value of the second. This demonstrated in Fig.~\ref{fig:corr2d}
-wherein we measure the value of the $GAA$ of the Toronto Maple Leafs goaltender
-this year to be 2.57 goals per game. Not bad. Not great, but not bad. By measuring
+correlated implies that knowledge of one variable provides some additional constraining
+power on the value of the second. This demonstrated in Fig.~\ref{fig:corr2d}
+wherein we measure the value of the $GAA$ for the Toronto Maple Leafs' goaltender
+to be 2.57 goals per game. Not bad. Not great, but not bad. By measuring
 this value we can establish a posterior distribution on Freddie's corresponding
 $SV$\% given his $GAA$: $p(SV\%|GAA=2.57)$. Because the variables are dependent
 on each other according to Eq.~\ref{eq:Kcorr}, this posterior distribution is
 narrower (i.e. more precise) than the full $SV$\% distribution. Indeed this is
-evidenced in the lower right panel of Fig.~\ref{fig:Kcorr} which compares the
+evidenced in the lower right panel of Fig.~\ref{fig:corr2d} which compares the
 two $SV$\% distributions and reveals that the dispersion in $p(SV\%|GAA=2.57)$
-has approximately half of the dispersion as the full $SV$\% distribution. \\
+has approximately half of the dispersion as the full $SV$\% distribution. The degree
+of improvement in the predictive distribution of $X_2$ given $X_1$ is dependent
+on how strongly correlated the two variables are. \\
 
+\subsection{The $k$-dimensional Gaussian distribution}
 The notion that the value of an unseen variable can be informed by the measurement
-of another, if those variables are correlated, can have huge implications for
-predictive models.
+of another, if those variables are correlated, has major implications for
+predictive models. 
 
 
 \section{Point-form Thesis: Stellar Activity Modelling in Radial Velocity

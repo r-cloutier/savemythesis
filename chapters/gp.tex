@@ -204,7 +204,7 @@ incurred by a single spot over a portion of one stellar rotation cycle.
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.8\hsize]{figures/ffp.png}
+  %\includegraphics[width=0.8\hsize]{figures/ffp.png}
   \caption[Illustration of the $FF'$ method.]
       {The $FF'$ method for deriving the rotation and convective blueshift components
     of stellar RV activity from contemporaneous photometry. Here the photometric stellar flux
@@ -275,7 +275,7 @@ activity information content.
 
 \begin{figure}
   \centering
-  \includegraphics[width=\hsize]{figures/pca.png}
+  %\includegraphics[width=\hsize]{figures/pca.png}
   \caption[Principal component analysis of idealized spectra containing either spots, faculae, or planets.]
           {The values of the first principal component for three spectra of a star with either an equatorial
             spot, an equatorial facula, or a circular keplerian orbit. The maximum variance (with either sign)
@@ -288,22 +288,23 @@ activity information content.
 
 \section{Gaussian Process Regression for Non-Parametric Activity Modelling} \label{sect:gp}
 Many of the shortcomings of the activity mitigation techniques discussed in the
-previous section are based on their incompleteness and their inability to
+previous sections are based on their incompleteness and their inability to
 self-consistently characterize model uncertainties. For example, correlations with
 activity-sensitive time series are often incomplete because the chosen indicator
 is not sensitive to also activity sources present in the RVs and often result in
 large RV residuals after de-correlation. Similarly, deterministic activity models
-lack sensitivity to stochastic changes in activity levels due to variations in
-the configuration of active regions between adjacent rotation cycles or over
+lack sensitivity to stochastic changes in activity levels due to the evolution
+of active regions between adjacent rotation cycles or over
 significant subsets of long-term magnetic cycles. \\
 
 Gaussian process regression models represent one such tool which aims to overcome
 these shortcomings by jointly modelling planets and activity in a self-consistent
 manner. This technique originally pioneered on active Sun-like stars
-\citep{haywood14,rajpaul15} has been shown to reconcile disparate solutions
-between observations from multiple spectrographs \citep{rajpaul17,cloutier18b},
+\citep[e.g.][]{haywood14,grunblatt15,faria16,lopezmorales16}
+has been shown to reconcile disparate solutions
+between observations from multiple spectrographs \citep{rajpaul17,cloutier19},
 to reconcile RV solutions for planetary systems whose favoured models are
-ambiguous \citep{rajpaul17,cloutier18b}, and to disentangle neighbouring periodic
+ambiguous \citep{rajpaul17,cloutier19}, and to disentangle neighbouring periodic
 signals from planets, stellar rotation, and/or from window functions
 \citep{rajpaul16,cloutier17b}.
 In the following sections I will give an overview
@@ -311,18 +312,21 @@ of what Gaussian processes are and how I implement their formalism in the contex
 of modelling stellar activity in RV time series.
 
 \subsection{The one dimensional Gaussian distribution}
-A Gaussian process (GP) is defined as ``a collection of random variables, any
-finite number of which have a joint Gaussian distribution''. In other words,
+A Gaussian process (GP) is defined as \emph{a collection of random variables, any
+finite subset of which has a joint Gaussian distribution}. In other words,
 any random process\footnote{A random process is any collection of random
   variables indexed by an independent variable such as time.} for which all
-finite subsets have a multivariate Gaussian distribution, is a Gaussian process.
+finite subsets have a multivariate Gaussian distribution, is a Gaussian process
+\citep{rasmussen05}. 
+In order to develop a visual intuition of the definition of a Gaussian process,
+let us a first consider a Gaussian random variable in one dimension. \\
 
-In order to develop a visual intuition as to what this means, let us a first
-consider a Gaussian random variable in one dimension. Imagine some random
-process that draws a single value of a random variable $X$ in each realization of
+Imagine some random
+process that draws a single value of a random variable $X$ for each realization of
 an experiment. As an astronomer with a life
 outside of astronomy, and furthermore as an astronomer who spends many of his
-off-work hours being pelted with 170 gram disks of vulcanized rubber, my favourite
+off-work hours being pelted with %170 gram
+disks of vulcanized rubber, my favourite
 Gaussian random variable has to be the `goals against average' statistic:
 
 \begin{equation}
@@ -331,20 +335,20 @@ Gaussian random variable has to be the `goals against average' statistic:
 
 \noindent As a Gaussian random variable, the results of repeated experiments (i.e.
 repeated draws from the empirical $GAA$ distribution for various goaltenders) can
-be expressed as a probability density function of the form
+be expressed by the Gaussian probability density function (PDF) of the form
 
 \begin{equation}
-  \mathcal{N}(X|\mu,\sigma) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp{\left(
+  \mathcal{N}(X|\mu,\sigma^2) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp{\left(
     -\frac{(X-\mu)^2}{2\sigma^2} \right)},
   \label{eq:gauss}
 \end{equation}
 
-\noindent which is parameterized by the mean value of $X$, $\mu$, and the variance
-of $X$, $\sigma^2$. As shown in Fig.~\ref{fig:gaa1d}, the empirical distribution
-of the $GAA$ for goaltenders in
+\noindent which is parameterized by $\mu=\text{mean}(X)$ and $\sigma^2=\text{var}(X)$;
+i.e. the mean and variance of $X$. As shown in Fig.~\ref{fig:gaa1d}, the empirical
+distribution of the $GAA$ for goaltenders in
 the National Hockey League (NHL) over the past five seasons closely follows a
 Gaussian distribution with a mean of 2.64 and a standard deviation of 0.40 goals
-against per game. Hence my favourite Gaussian random variable. \\
+against per game. Hence, my favourite Gaussian random variable. \\
 
 \begin{figure}
   \centering
@@ -358,23 +362,23 @@ against per game. Hence my favourite Gaussian random variable. \\
 \end{figure}
 
 Before a new season begins, we can write down a prior distribution on the $GAA$
-based on our prior knowledge have obtained from previous NHL seasons; i.e.
-$\mathcal{N}(GAA|2.64,0.40)$. This distribution has a unique expection value and
-variance describing our what we expect a given goaltender's $GAA$ to be in an
-up-coming season, and as crucially, how precise that value is.
+based on the prior knowledge we have obtained from previous NHL seasons; i.e.
+$\mathcal{N}(GAA|2.64,0.16)$. This distribution has a unique expection value and
+variance describing what we expect any given goaltender's $GAA$ to be in an
+up-coming season and, as crucially, how precisely that value constrained.
 
 \subsection{The two dimensional Gaussian distribution}
 Of course we can introduce a second Gaussian random variable and extend the 
-concept of the one dimensional Gaussian distribution to two dimensions. We must
-first recast the expression for the Gaussian probability density function in $k$
+concept of the one dimensional Gaussian distribution to two dimensions. This is done
+by recasting the expression for the Gaussian PDF in $k>1$
 dimensions where $k=2$ in this scenario. Rewriting Eq.~\ref{eq:gauss} in $k$
 dimensions is achieved by replacing the scalar mean and variance with a mean
 $k$-vector $\boldsymbol{\mu}$ and a $k \times k$ covariance matrix $\mathbf{K}$
 respectively. The updated expression for the so-called multivariate Gaussian
-distribution is
+distribution in $k$ dimensions is
 
 \begin{equation}
-  p(\mathbf{X}|\boldsymbol{\mu},\mathbf{K}) = \frac{1}{\sqrt{(2\pi)^k
+  \mathcal{N}(\mathbf{X}|\boldsymbol{\mu},\mathbf{K}) = \frac{1}{\sqrt{(2\pi)^k
       |\mathbf{K}|}} \exp{\left( -\frac{1}{2} (\mathbf{X} -
     \boldsymbol{\mu})^{\text{T}} \mathbf{K}^{-1} (\mathbf{X}-\boldsymbol{\mu})
     \right)}.
@@ -383,11 +387,11 @@ distribution is
 \noindent The $k$-vector $\boldsymbol{\mu}$ represents the mean value of each
 random variable in $\mathbf{X}=(X_1,\dots,X_k)^{\text{T}}$.
 The elements of the covariance matrix
-$\mathbf{K}$ represent the covariances of between each pair of random variables
-with the diagonal elements representing the covariance of a random variable
-with itself, or equivalently, the variance of that random variable.
-The covariance between two random variables $X_1$ and $X_2$ is computed in terms
-of their expected values E[$X_1$] and E[$X_2$] via
+$\mathbf{K}$ represent the covariances between each pair of random variables.
+The diagonal elements of $\mathbf{K}$ therefore represent the covariance of each
+random variable with itself, or equivalently the variance of that random variable.
+The covariance between two random variables $X_1$ and $X_2$ can be computed explicitly
+in terms of their expectation values E[$X_1$] and E[$X_2$] via
 
 \begin{align}
   \text{cov}(X_1X_2) &= \text{E}[(X_1-\text{E}[X_1]) - (X_2-\text{E}[X_2])] \\
@@ -395,14 +399,16 @@ of their expected values E[$X_1$] and E[$X_2$] via
   \label{eq:coveq}
 \end{align}
 
-\noindent Note that the expected value of a Gaussian random variable is simply
+\noindent Note that the expectation value of a Gaussian random variable is simply
 its mean. \\
 
-Consider the special case when the two Gaussian random variables under
-consideration $X_1$ and $X_2$ are uncorrelated (i.e. cov$(X_1X_2)=0$). A quick
-example of this is to let $X_1=GAA$ and sample $X_2$ from a Gaussian distribution
-with zero mean and unit variance. The nature of sampling $X_2$ in this way ensures
-that these variables are indeed uncorrelated. The corresponding covariance matrix
+\subsubsection{Uncorrelated variables}
+Consider the special case of when the two Gaussian random variables under
+consideration $X_1$ and $X_2$ are uncorrelated; i.e. cov$(X_1X_2)=0$. A quick
+example of this is to let $X_1=GAA$ and sample $X_2$ from a independent Gaussian
+distribution with zero mean and unit variance.
+The nature of sampling $X_2$ in this way ensures
+that $X_1$ and $X_2$ are indeed uncorrelated. The corresponding covariance matrix
 
 \begin{equation}
   \mathbf{K}(GAA,X_2) =
@@ -413,38 +419,41 @@ that these variables are indeed uncorrelated. The corresponding covariance matri
   \label{eq:Kuncorr}
 \end{equation}
 
-\noindent calculated using Eq.~\ref{eq:correq} is diagonal and confirms that
-$X_1$ and $X_2$ are uncorrelated. This fact can be seen in the joint $X_1X_2$
-distribution in Fig.~\ref{fig:uncorr2d}.
-Because the variables $X_1$ and $X_2$ are uncorrelated in this example, the
+\noindent is calculated using Eq.~\ref{eq:coveq} is diagonal and confirms that
+$X_1$ and $X_2$ are uncorrelated as the off-diagonal elements of $\mathbf{K}$ are zero.
+This fact can also be seen in the joint $X_1X_2$ distribution in Fig.~\ref{fig:uncorr2d}.
+Because the variables $X_1$ and $X_2$ are uncorrelated in this example the
 measurement of a value of $X_1$ does nothing to inform us of its corresponding
 $X_2$ value. That is that the prior distribution
-$p(\mathbf{X}|\boldsymbol{\mu},\mathbf{K})$ is uninformative with regards to
-$X_2$ when the corresponding value of $X_1$ is known. \\
+$\mathcal{N}(\mathbf{X}|\boldsymbol{\mu},\mathbf{K})$ is uninformative with regards to
+$X_2$ in a sample for which the corresponding value of $X_1$ is known. \\
 
 \begin{figure}
   \centering
   %\includegraphics[width=.9\textwidth]{figures/uncorr_2d.png}
   \caption[Uncorrelated Gaussian random variables in two dimensions.]
       {The one and two dimensional distributions of the Gaussian random
-    variables $GAA$ and draws from the standard normal disribution. The solid
+        variables $GAA$ and draws from the standard normal disribution ($\mathcal{N}(0,1)$).
+        The solid
     lines overlaid on their joint distribution represent the 1, 2, and 3$\sigma$
     contours. The covariance matrix (Eq.~\ref{eq:Kuncorr}) has off-diagonal
     elements equal to zero indiciating that the two variables are uncorrelated;
-    a property which is largely discernable from their joint distribution.}
+    a property which is largely discernable from the lack of correlation in their joint
+    distribution.}
   \label{fig:uncorr2d}
 \end{figure}
 
-But what if we consider an alternate Gaussian random variable and set
+\subsubsection{Correlated variables}
+But what if next we consider an alternate Gaussian random variable. Namely
 $X_2 = SV$\% where
 
 \begin{equation}
-  X_2 = SV\% \equiv \frac{\text{total number of save made}}{\text{total number of shots faced}}
+  SV\% \equiv \frac{\text{total number of saves made}}{\text{total number of shots faced}}
 \end{equation}
 
 \noindent is a measure of a goaltender's save percentage. In this scenario one
 might expect the variables $GAA$ and $SV$\% to have some degree of correlation
-as a good goaltender who boasts a low $GAA$ probably does so because of their
+as a ``good'' goaltender who boasts a low $GAA$ probably does so because of their
 high $SV$\%. Indeed the covariance matrix of the $GAA$ and $SV$\% for NHL
 goaltenders over the past five seasons is
 
@@ -459,8 +468,37 @@ goaltenders over the past five seasons is
 
 \noindent and has non-zero off-diagonal elements. Furthermore, the off-diagonal
 elements are negative which is indicative of the anti-correlation between the
-$GAA$ and the $SV$\%. This strong correlation is easily visualized in their joint
-distribution in Fig.~\ref{fig:corr2d}. \\
+$GAA$ and the $SV$\% that we just postulated. This strong correlation
+is easily visualized in their joint distribution in Fig.~\ref{fig:corr2d}. \\
+
+
+% see /Users/ryancloutier/Talks/CEHWcolloquium/GP_examples.ipynb
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\hsize]{figures/corr_2D_HARTpost_logo_bkgd.png}%
+  \hspace{-0.9\hsize}%
+  \begin{ocg}{fig:logosoff}{fig:logosoff}{0}%
+  \end{ocg}%
+  \begin{ocg}{fig:logoson}{fig:logoson}{1}%
+    \includegraphics[width=0.9\hsize]{figures/corr_2D_HARTpost_logo_logos.png}%
+  \end{ocg}
+  \caption[Correlated Gaussian random variables in two dimensions.]
+      {The one and two dimensional distributions of the Gaussian random
+    variables $GAA$ and $SV$\%.
+    The covariance matrix (Eq.~\ref{eq:Kcorr}) has negative off-diagonal
+    elements describing the degree of anti-correlation between the two
+    variables; a property which is largely discernable from their joint
+    distribution as high values of the $SV$\% tend to correspond to a lower
+    $GAA$. The correlation can be used to inform the value of $SV$\% given a
+    measured value of $GAA$. This is demonstrated as the measured $GAA$ 
+    for the Toronto Maple Leaf's goaltender 
+    \ToggleLayer{fig:logoson,fig:logosoff}{\protect\cdbox{vertical dashed line}}
+    provides some
+    additional information on the correpsonding $SV$\% whose posterior given the
+    measured $GAA$ is more tightly constrained than the $SV$\% distribution for
+    the entire NHL.}
+  \label{fig:corr2d}
+\end{figure}
 
 The fact that the two variables are
 correlated implies that knowledge of one variable's value provide some information
@@ -474,25 +512,6 @@ narrower (i.e. more precise) than the full $SV$\% distribution. Indeed this is
 evidenced in the lower right panel of Fig.~\ref{fig:Kcorr} which compares the
 two $SV$\% distributions and reveals that the dispersion in $p(SV\%|GAA=2.57)$
 has approximately half of the dispersion as the full $SV$\% distribution. \\
-
-\begin{figure}
-  \centering
-  %\includegraphics[width=.9\textwidth]{figures/corr_2D_HARTpost.png}
-  \caption[Correlated Gaussian random variables in two dimensions.]
-      {The one and two dimensional distributions of the Gaussian random
-    variables $GAA$ and $SV$\%.
-    The covariance matrix (Eq.~\ref{eq:Kcorr}) has negative off-diagonal
-    elements describing the degree of anti-correlation between the two
-    variables; a property which is largely discernable from their joint
-    distribution as high values of the $SV$\% tend to correspond to a lower
-    $GAA$. The correlation can be used to inform the value of $SV$\% given a
-    measured value of $GAA$. This is demonstrated as the measured $GAA$ 
-    for the Toronto Maple Leaf's goaltender (vertical dashed line) provides some
-    additional information on the correpsonding $SV$\% whose posterior given the
-    measured $GAA$ is more tightly constrained than the $SV$\% distribution for
-    the entire NHL.}
-  \label{fig:corr2d}
-\end{figure}
 
 The notion that the value of an unseen variable can be informed by the measurement
 of another, if those variables are correlated, can have huge implications for

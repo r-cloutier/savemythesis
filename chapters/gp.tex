@@ -475,12 +475,12 @@ is easily visualized in their joint distribution in Fig.~\ref{fig:corr2d}. \\
 % see /Users/ryancloutier/Talks/CEHWcolloquium/GP_examples.ipynb
 \begin{figure}
   \centering
-  \includegraphics[width=0.9\hsize]{figures/corr_2D_HARTpost_logo_bkgd.png}%
+  %\includegraphics[width=0.9\hsize]{figures/corr_2D_HARTpost_logo_bkgd.png}%
   \hspace{-0.9\hsize}%
   \begin{ocg}{fig:logosoff}{fig:logosoff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:logoson}{fig:logoson}{1}%
-    \includegraphics[width=0.9\hsize]{figures/corr_2D_HARTpost_logo_logos.png}%
+   % \includegraphics[width=0.9\hsize]{figures/corr_2D_HARTpost_logo_logos.png}%
   \end{ocg}
   \caption[Correlated Gaussian random variables in two dimensions.]
       {The one and two dimensional distributions of the Gaussian random
@@ -519,6 +519,22 @@ on how strongly correlated the two variables are. \\
 The notion that the value of an unseen variable can be informed by the measurement
 of another, if those variables are correlated, has major implications for
 predictive models. 
+
+
+\subsection{Gaussian process regression modelling}
+
+
+\begin{figure}
+  \centering
+  \animategraphics[width=\textwidth,controls,loop]{5}{figures/GPsample_}{0}{1}
+  \caption[Samples from a quasi-periodic Gaussian process prior distribution.]
+          {Continuous samples from a quasi-periodic Gaussian process prior distribution.
+            A discontinuity in the sampling occurs after 50 frames. This animation was
+            generated using code written by Jo\~ao
+            Faria (\url{https://joaofaria.space/blog/continuous-samples}).}
+  \label{fig:gpsamples}
+\end{figure}
+
 
 
 \section{Point-form Thesis: Stellar Activity Modelling in Radial Velocity

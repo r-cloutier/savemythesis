@@ -544,7 +544,7 @@ mean and uncertainty. \\
 
 \begin{figure}
   \centering
-  \includegraphics[width=\hsize]{figures/linearrep_v1.png}
+  %\includegraphics[width=\hsize]{figures/linearrep_v1.png}
   \caption[Linear representation of Gaussian random varaibles in two dimensions.]
           {Visual comparison of samples from the two-dimensional Gaussian distribution
             depicted in the
@@ -574,7 +574,7 @@ predictive models as we shall see in Sect.~\ref{sect:regression}. \\
 
 \begin{figure}
   \centering
-  \includegraphics[width=\hsize]{figures/linearrep_v2.png}
+  %\includegraphics[width=\hsize]{figures/linearrep_v2.png}
   \caption[Linear representation of Gaussian random varaibles in five dimensions.]
           {The linear representation of samples from a five dimensional Gaussian
             distribution with each sample depicted with a particular colour in each
@@ -608,26 +608,89 @@ variance which represent our model of the correlated observables and its uncerta
 
 \subsubsection{Covariance kernel functions}
 Modelling of temporally correlated stellar activity with a GP regression model first requires
-a parameterization of the data covariance. A number of covariance kernels have been proposed
-for the treatment of stellar RV activity including the squared exponential covariance kernel
-of the form
+a parameterization of the data covariance. This parameterization of an analytical
+covariance kernel through a small set of hyperparameters\footnote{``Small''
+  relative to the number of RV measurements.} is why GP regression models are often referred to
+as semi-parametric. The covariance matrix of the GP is written in terms of the covariance kernel
+function $k(t,t')$ as
 
 \begin{equation}
-  k(t_i,t_j) = \exp{\left( -\frac{(t_i-t_j)^2}{2\lambda^2} \right)}.
+  \mathbf{K}_{ij} = k(t_i,t_j) + \delta_{ij} \sqrt{\sigma_{\text{RV}}^2(t_i) + s^2} 
+\label{eq:Kmat}
 \end{equation}
 
-\noindent The squared expoential 
+\noindent where the indices run up to the number of RV measurements (i.e. $i,j=1,\dots,$\nrv{)}.
+Because of the Dirac delta function $\delta_{ij}$ in Eq.~\ref{eq:Kmat}, the 
+diagonal of the covariance matrix $\mathbf{K}$ includes contributions directly from the
+RV measurement uncertainties \sigRV{} plus an additive scalar jitter $s$ designed to absorb excess
+white noise from systematics or from other temporally independent noise sources. \\
 
+A number of covariance kernels which have been proposed
+for the treatment of stellar RV activity are summarized below. Their corresponding covariance
+matrices are also shown in Fig.~\ref{fig:matrices}. \\
 
-Fortuntately, stellar activity on M dwarfs 
+\begin{figure}
+  \centering
+  \includegraphics[width=\hsize]{figures/gpmatrices.png}
+  \caption[Example of covariance matrices.]
+          {Examples of covariance matrices with a squared exponential covariance kernel (left),
+            a periodic covariance kernel (middle), and a quasi-periodic covariance kernel (right).
+            In this example the exponential timescale exceeds the periodic timescale such that the
+            nearly periodic nature of the covariance is still discernable for points closely separated
+          in time (i.e. near the matrix diagonal).}
+          \label{fig:matrices}
+\end{figure}
+
+\emph{Squared exponential}: 
+
+\begin{equation}
+  k_{\text{SE}}(t_i,t_j) = a^2 \exp{\left[ -\frac{(t_i-t_j)^2}{2\lambda^2} \right]},
+\end{equation}
+
+\noindent has two hyperparameters. Namely, the covariance amplitude $a$ in units of the observable,
+and an exponential timescale $\lambda$ describing how much time is required for measurements to
+effectively forget previous values. With this covariance kernel measurements made closely in time
+are more highly correlated than well separated measurements and the degree of correlation for a
+given time separation will be larger for smaller $\lambda$. \\
+
+\emph{Periodic}:
+
+\begin{equation}
+  k_{\text{P}}(t_i,t_j) = a^2 \exp{\left[ -\Gamma \sin^2{\left( \frac{\pi |t_i-t_j|}{P} \right)} \right]},
+\end{equation}
+
+\noindent has three hyperparameters including the familiar covariance amplitude $a$. The periodic kernel
+also contains a coherence parameter $\Gamma$ and a periodic timescale $P$ within the sinusoidal term.
+With this covariance kernel measurements that are separated by an integer number of $P$ will be highly
+correlated. \\
+
+\emph{Quasi-periodic}:
+
+\begin{equation}
+  k_{\text{QP}}(t_i,t_j) = a^2 \exp{\left[ -\frac{(t_i-t_j)^2}{2\lambda^2} -\Gamma
+      \sin^2{\left( \frac{\pi |t_i-t_j|}{P} \right)} \right]},
+\end{equation}
+
+\noindent is the product of the squared exponential and periodic covariance kernels and therefore
+contains all four unique hyperparameters amongst the two kernels. \\
+
+Stellar activity on M dwarfs
 is dominated by active regions\citep{lindegren03}\footnote{And sometimes flares but those
   occur on short timescales such that they rarely affect low cadence RV osbervations for almost
   all but the most active flare stars.} and the resulting RV signals evolve in a manner that
 is easy to understand qualitatively. Namely, we can expect a periodic component to the
 RV correlations because active regions rotate in and out of view at the stellar rotation period
-although the periodicity of to be correlat
+although the periodicity of the correlations need not be at \prot{} and may instead appear
+at a low order harmonic of \prot{} such as in the case of rapidly rotating spotted stars 
+(see Sect.~\ref{sect:ffp}). But in addition to these periodic variations, we can expect activity
+arising from active regions to not be stricitly periodic because of active region evolution
+in terms of their sizes, temperatures, and spatial distributions. Thus we
+have a physical justification for the adaption of a
+quasi-periodic covairance kernel as it includes the squared exponential term
+whose timescale can be thought of a characterizing active region lifetimes. \\
 
-Thus we have a physical justification for adopting a QP covariance kernel.
+The choice of kernel or the exact value of its hyperparameters often does not matter so much.
+
 
 
 \subsubsection{Hyperparameter estimation}
@@ -655,6 +718,9 @@ Thus we have a physical justification for adopting a QP covariance kernel.
   \caption{Comparison of injected RV activity to the GP activity model}
   \label{fig:GPperformance}
 \end{figure}
+
+
+ribas18: GP can absorb some planet signal
 
 
 GP codes:

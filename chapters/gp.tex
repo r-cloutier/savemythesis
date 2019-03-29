@@ -595,7 +595,45 @@ modelling the correlation between adjacent RV observations could be used to info
 our understanding of the activity signal in a way that is independent of attempting to
 model the physical nature of the signal. \\
 
+Indeed one dimension Gaussian process (GP) regression models are a convenient method to model
+correlations between observations in a semi-parametric way. In particular, GPs provide a
+flexiable framework to perform Bayesian inference on functions. Their flexibility stems from
+their semi-parametric nature which makes them well-suited to modelling stochastic processes
+like stellar activity which lack a determinstic functional form. GP regression works to model
+the covariance between data points simultanously with determinstic components such as planets
+on keplerian orbits. Given a parameterization of the data covariance structure, the GP is
+by definition a multivariate Gaussian distribution with a well-defined mean function and
+variance which represent our model of the correlated observables and its uncertainty
+\citep{rasmussen05}. \\
 
+\subsubsection{Covariance kernel functions}
+Modelling of temporally correlated stellar activity with a GP regression model first requires
+a parameterization of the data covariance. A number of covariance kernels have been proposed
+for the treatment of stellar RV activity including the squared exponential covariance kernel
+of the form
+
+\begin{equation}
+  k(t_i,t_j) = \exp{\left( -\frac{(t_i-t_j)^2}{2\lambda^2} \right)}.
+\end{equation}
+
+\noindent The squared expoential 
+
+
+Fortuntately, stellar activity on M dwarfs 
+is dominated by active regions\citep{lindegren03}\footnote{And sometimes flares but those
+  occur on short timescales such that they rarely affect low cadence RV osbervations for almost
+  all but the most active flare stars.} and the resulting RV signals evolve in a manner that
+is easy to understand qualitatively. Namely, we can expect a periodic component to the
+RV correlations because active regions rotate in and out of view at the stellar rotation period
+although the periodicity of to be correlat
+
+Thus we have a physical justification for adopting a QP covariance kernel.
+
+
+\subsubsection{Hyperparameter estimation}
+
+
+\subsubsection{Model inference}
 
 
 

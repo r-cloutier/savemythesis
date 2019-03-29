@@ -382,6 +382,7 @@ distribution in $k$ dimensions is
       |\mathbf{K}|}} \exp{\left( -\frac{1}{2} (\mathbf{X} -
     \boldsymbol{\mu})^{\text{T}} \mathbf{K}^{-1} (\mathbf{X}-\boldsymbol{\mu})
     \right)}.
+  \label{eq:gauss2d}
 \end{equation}
 
 \noindent The $k$-vector $\boldsymbol{\mu}$ represents the mean value of each
@@ -516,12 +517,56 @@ of improvement in the predictive distribution of $X_2$ given $X_1$ is dependent
 on how strongly correlated the two variables are. \\
 
 \subsection{The $k$-dimensional Gaussian distribution}
+So far we have considered a pair of correlated Gaussian random variables whose
+PDF is given in Eq.~\ref{eq:gauss2d} for $k=2$. Next we want to extend the multivariate
+Gaussian distribution to arbitrarily large $k$ and visualize that distribution which
+cannot be done with the conventional contour-based visualization
+(Figs.~\ref{fig:uncorr2d} \&~\ref{fig:corr2d}) beyond two dimensions. To resolve this
+restriction we now adopt an alternative visualization of a multivariate Gaussian
+dicstribution which I call the linear representation which is depicted in
+Fig.~\ref{fig:linrep} alongside the conventional representation. Fig.~\ref{fig:linrep}
+depicts a finite number of samples from the two dimensional Gaussian distribution shown
+in Fig.~\ref{fig:corr2d} in both representations. \\
+
+Each identically coloured line in the
+linear representation depicts the values of the scaled $GAA$ and the $SV$\%\footnote{Note
+  that the $GAA$ and $SV$\% are scaled to a common unit such that they span roughly
+  the same region of the y-axis in the Fig.~\ref{fig:linrep} linear representation.
+  The scaling is also such that the correlation between the scaled $GAA$ and $SV$\% is
+  now positive (i.e. not anit-correlated).} for a single
+sample from their joint distribution. Furthermore the correlation between the two variables,
+which we now insist be a positive correlation, is qualitatively apparent as a small value
+of the scaled $GAA$ often corresponds to a low value of the scaled $SV$\%. If the two
+variables were weakly correlated then we would expect more corssing of curves in the
+linear representation then is seen in Fig.~\ref{fig:linrep}. What's more is that the
+distribution of values in the vertial direction for each variable is indicative of its
+mean and uncertainty. \\
+
+\begin{figure}
+  \centering
+  %\includegraphics[width=0.8\hsize]{figures/linearrep_v1.png}
+  \caption[Linear representation of Gaussian random varaibles in two dimensions.]
+          {Samples from the two-dimensional Gaussian distribution depicted in the
+            conventional way (left panel) and in the new linear representation (right
+            panel). The $GAA$ and $SV$\%
+            variables are scaled to a common unit and offset for clarity.}
+  \label{fig:linrep}
+\end{figure}
+
+
+The benefit of adopting the new linear representation is that it can be extended to
+arbitrarily large dimensions. Fig.~\ref{fig:linrepv2} depicts the linear representation
+of an $k=5$ dimensional space. 
+
+
 The notion that the value of an unseen variable can be informed by the measurement
 of another, if those variables are correlated, has major implications for
 predictive models. 
 
 
+
 \subsection{Gaussian process regression modelling}
+
 
 
 \begin{figure}
@@ -535,6 +580,20 @@ predictive models.
   \label{fig:gpsamples}
 \end{figure}
 
+
+\begin{figure}
+  \centering
+  %\includegraphics[width=0.8\hsize]{figures/}
+  \caption{Comparison of injected RV activity to the GP activity model}
+  \label{fig:GPperformance}
+\end{figure}
+
+
+GP codes:
+scikit-learn \citep{sklearn},
+george \citep{ambikasaran14,foremanmackey15b},
+celerite \citep{foremanmackey17},
+gpytorch \citep{gardner18,wang19}.
 
 
 \section{Point-form Thesis: Stellar Activity Modelling in Radial Velocity

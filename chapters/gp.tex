@@ -544,34 +544,64 @@ mean and uncertainty. \\
 
 \begin{figure}
   \centering
-  %\includegraphics[width=0.8\hsize]{figures/linearrep_v1.png}
+  \includegraphics[width=\hsize]{figures/linearrep_v1.png}
   \caption[Linear representation of Gaussian random varaibles in two dimensions.]
-          {Samples from the two-dimensional Gaussian distribution depicted in the
+          {Visual comparison of samples from the two-dimensional Gaussian distribution
+            depicted in the
             conventional way (left panel) and in the new linear representation (right
-            panel). The $GAA$ and $SV$\%
-            variables are scaled to a common unit and offset for clarity.}
+            panel). The $GAA$ and $SV$\% variables are scaled to a common unit with a
+            positive correlation and offset for clarity.}
   \label{fig:linrep}
 \end{figure}
 
 
 The benefit of adopting the new linear representation is that it can be extended to
 arbitrarily large dimensions. Fig.~\ref{fig:linrepv2} depicts the linear representation
-of an $k=5$ dimensional space. 
-
-
+of an $k=5$ dimensional space which includes three new Gaussian random variables which
+are defined to be positively correlated with the scaled $GAA$ and $SV$\%. The left panel
+in Fig.~\ref{fig:linrepv2} depicts samples from the five dimensional Gaussian distribution
+as well as each variable's mean and $1\sigma$ dispersion. The right panel of
+Fig.~\ref{fig:linrepv2} illustrates the effect of how the measurement of one of variables
+informs the posteriors of the other variables as a result of their correlation. That is
+that when the third variable in Fig.~\ref{fig:linrepv2} is measured and its uncertainty
+goes to zero, the posterior distributions on the remaining variables are narrowed. As
+more and more variables are measured, constraints on the unmeasured variables would
+similarly increase in a way that is quantified by the correlations between the
+measured and unmeasured variables.
 The notion that the value of an unseen variable can be informed by the measurement
 of another, if those variables are correlated, has major implications for
-predictive models. 
+predictive models as we shall see in Sect.~\ref{sect:regression}. \\
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\hsize]{figures/linearrep_v2.png}
+  \caption[Linear representation of Gaussian random varaibles in five dimensions.]
+          {The linear representation of samples from a five dimensional Gaussian
+            distribution with each sample depicted with a particular colour in each
+            panel. The mean and $1\sigma$ dispersion of each variable is depicted
+            by the offset black markers and error bars. The right panel illustrates
+            how the measurement of the third variable constrains the values of the
+            remaining variables due to their correlations.}
+  \label{fig:linrepv2}
+\end{figure}
 
 
+\subsection{Gaussian process regression modelling} \label{sect:regression}
+Upon inspection of Fig.~\ref{fig:linrepv2}, one might imagine changing the ``variables''
+axis to and independent variable such as time and the ``scaled values'' axis to an
+observable such as stellar RVs. Because RV signals arising from active stars are temporally
+correlated as active regions rotate in and out of view of the observer, it is clear that
+modelling the correlation between adjacent RV observations could be used to inform
+our understanding of the activity signal in a way that is independent of attempting to
+model the physical nature of the signal. \\
 
-\subsection{Gaussian process regression modelling}
+
 
 
 
 \begin{figure}
   \centering
-  \animategraphics[width=\textwidth,controls,loop]{5}{figures/GPsample_}{0}{1}
+  %\animategraphics[width=\textwidth,controls,loop]{5}{figures/GPsample_}{0}{1}
   \caption[Samples from a quasi-periodic Gaussian process prior distribution.]
           {Continuous samples from a quasi-periodic Gaussian process prior distribution.
             A discontinuity in the sampling occurs after 50 frames. This animation was

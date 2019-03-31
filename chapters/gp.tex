@@ -17,7 +17,7 @@ temporal structure of RV activity for any but the most active stars. Many
 observers however did report the root-mean-square (rms) of their RV residuals
 following the removal of their best-fit planet model
 \citep[e.g.][]{mayor95,butler96}. In
-many cases this revealed residaul rms values which exceeded the characteristic RV
+many cases this revealed residual rms values which exceeded the characteristic RV
 measurement uncertainty and thus alluded to the presence of additional
 jitter signals which may or may not vary significantly with time. \\
 
@@ -107,7 +107,7 @@ the Gaussianity of the CCF thus alluding to the presence and nature of those act
 A number of shape parameters to the fitted CCF may be used to characterize stellar activity
 using the same CCF from which the stellar RVs themselves are derived. However, these
 spectroscopic diagnostics are only useful when they are robustly derived from high S/N
-spectra of active stars where their effects on the CCF are clearly discernable \citep{desort07}.
+spectra of active stars where their effects on the CCF are clearly discernible \citep{desort07}.
 Examples of three
 shape parameters are visualized in Fig.~\ref{fig:ccf} and described below. \\
 
@@ -122,7 +122,7 @@ shape parameters are visualized in Fig.~\ref{fig:ccf} and described below. \\
             BIS characterizes the asymmetry of the line profile by computing the difference in
             average velocity in the upper and lower portions of the CCF (green circles in the
             middle panel). The contrast characterizes the depth of the CCF by taking the average
-            of the CCF in the contiuum (diamonds) and its difference with the CCF flux at the
+            of the CCF in the continuum (diamonds) and its difference with the CCF flux at the
             stellar velocity $V_0$.}
   \label{fig:ccf}
 \end{figure}
@@ -146,7 +146,7 @@ slope \citep{queloz01}. Their definitions are closely related and rely on comput
 velocity in the upper and lower portions of the CCF (see middle panel of Fig.~\ref{fig:ccf})
 and computing their difference. A symmetric line profile will therefore have a BIS$=0$ whereas
 asymmetric profiles affected by active regions will be non-zero and whose exact value and units
-will depend on the defintion of the asymmetry parameter used. \\
+will depend on the definition of the asymmetry parameter used. \\
 
 \emph{Contrast}:
 \citep{boisse09} noted that increasingly active stars, based on their fractional coverage by dark
@@ -158,7 +158,7 @@ the CCF wings) and the flux at the stellar velocity $V_0$.
 
 
 \subsection{Photometric Modelling: the \textbf{\emph{FF}}$'$ Method} \label{sect:ffp}
-An alternative to using simultaneous spectroscopic activity indiciators to temproally de-correlated
+An alternative to using simultaneous spectroscopic activity indicators to temporally de-correlated
 RV measurements for the effects of stellar activity, \citep{aigrain12} present the $FF'$ formalism
 which uses contemporaneous photometry to model two distinct RV activity components. \cite{aigrain12}
 argue that in the limit of small active regions with non-complex configurations, the fractional
@@ -286,7 +286,7 @@ activity information content.
 \end{figure}
 
 
-\section{Gaussian Process Regression for Non-Parametric Activity Modelling} \label{sect:gp}
+\section{Gaussian Process Regression for Semi-Parametric Activity Modelling} \label{sect:gp}
 Many of the shortcomings of the activity mitigation techniques discussed in the
 previous sections are based on their incompleteness and their inability to
 self-consistently characterize model uncertainties. For example, correlations with
@@ -363,7 +363,7 @@ against per game. Hence, my favourite Gaussian random variable. \\
 
 Before a new season begins, we can write down a prior distribution on the $GAA$
 based on the prior knowledge we have obtained from previous NHL seasons; i.e.
-$\mathcal{N}(GAA|2.64,0.16)$. This distribution has a unique expection value and
+$\mathcal{N}(GAA|2.64,0.16)$. This distribution has a unique expectation value and
 variance describing what we expect any given goaltender's $GAA$ to be in an
 up-coming season and, as crucially, how precisely that value constrained.
 
@@ -434,12 +434,12 @@ $X_2$ in a sample for which the corresponding value of $X_1$ is known. \\
   %\includegraphics[width=.9\textwidth]{figures/uncorr_2d.png}
   \caption[Uncorrelated Gaussian random variables in two dimensions.]
       {The one and two dimensional distributions of the Gaussian random
-        variables $GAA$ and draws from the standard normal disribution (i.e. $\mathcal{N}(0,1)$).
+        variables $GAA$ and draws from the standard normal distribution (i.e. $\mathcal{N}(0,1)$).
         The solid
     lines overlaid on their joint distribution represent the 1, 2, and 3$\sigma$
     contours. The covariance matrix (Eq.~\ref{eq:Kuncorr}) has off-diagonal
     elements equal to zero indicating that the two variables are uncorrelated;
-    a property which is largely discernable from the lack of correlation in their joint
+    a property which is largely discernible from the lack of correlation in their joint
     distribution.}
   \label{fig:uncorr2d}
 \end{figure}
@@ -488,14 +488,14 @@ is easily visualized in their joint distribution in Fig.~\ref{fig:corr2d}. \\
     variables $GAA$ and $SV$\%.
     The covariance matrix (Eq.~\ref{eq:Kcorr}) has negative off-diagonal
     elements describing the degree of anti-correlation between the two
-    variables; a property which is largely discernable from their joint
+    variables; a property which is largely discernible from their joint
     distribution as high values of the $SV$\% tend to correspond to a lower
     $GAA$. The correlation can be used to inform the value of one variable given a
     measurement of the other. This is demonstrated as the measured $GAA$ 
     for the Toronto Maple Leafs' goaltender 
     \ToggleLayer{fig:logoson,fig:logosoff}{\protect\cdbox{(vertical dashed line)}}
     provides some
-    additional information on the correpsonding $SV$\% whose posterior given the
+    additional information on the corresponding $SV$\% whose posterior given the
     measured $GAA$ is more tightly constrained than the $SV$\% distribution for
     the entire NHL.}
   \label{fig:corr2d}
@@ -523,7 +523,7 @@ Gaussian distribution to arbitrarily large $k$ and visualize that distribution w
 cannot be done with the conventional contour-based visualization
 (Figs.~\ref{fig:uncorr2d} \&~\ref{fig:corr2d}) beyond two dimensions. To resolve this
 restriction we now adopt an alternative visualization of a multivariate Gaussian
-dicstribution which I call the linear representation which is depicted in
+distribution which I call the linear representation which is depicted in
 Fig.~\ref{fig:linrep} alongside the conventional representation. Fig.~\ref{fig:linrep}
 depicts a finite number of samples from the two dimensional Gaussian distribution shown
 in Fig.~\ref{fig:corr2d} in both representations. \\
@@ -533,13 +533,13 @@ linear representation depicts the values of the scaled $GAA$ and the $SV$\%\foot
   that the $GAA$ and $SV$\% are scaled to a common unit such that they span roughly
   the same region of the y-axis in the Fig.~\ref{fig:linrep} linear representation.
   The scaling is also such that the correlation between the scaled $GAA$ and $SV$\% is
-  now positive (i.e. not anit-correlated).} for a single
+  now positive (i.e. not anti-correlated).} for a single
 sample from their joint distribution. Furthermore the correlation between the two variables,
 which we now insist be a positive correlation, is qualitatively apparent as a small value
 of the scaled $GAA$ often corresponds to a low value of the scaled $SV$\%. If the two
-variables were weakly correlated then we would expect more corssing of curves in the
+variables were weakly correlated then we would expect more crossing of curves in the
 linear representation then is seen in Fig.~\ref{fig:linrep}. What's more is that the
-distribution of values in the vertial direction for each variable is indicative of its
+distribution of values in the vertical direction for each variable is indicative of its
 mean and uncertainty. \\
 
 \begin{figure}
@@ -597,10 +597,10 @@ model the physical nature of the signal. \\
 
 Indeed one dimension Gaussian process (GP) regression models are a convenient method to model
 correlations between observations in a semi-parametric way. In particular, GPs provide a
-flexiable framework to perform Bayesian inference on functions. Their flexibility stems from
+flexible framework to perform Bayesian inference on functions. Their flexibility stems from
 their semi-parametric nature which makes them well-suited to modelling stochastic processes
-like stellar activity which lack a determinstic functional form. GP regression works to model
-the covariance between data points simultanously with determinstic components such as planets
+like stellar activity which lack a deterministic functional form. GP regression works to model
+the covariance between data points simultaneously with deterministic components such as planets
 on keplerian orbits. Given a parameterization of the data covariance structure, the GP is
 by definition a multivariate Gaussian distribution with a well-defined mean function and
 variance which represent our model of the correlated observables and its uncertainty
@@ -636,7 +636,7 @@ matrices are also shown in Fig.~\ref{fig:matrices}. \\
           {Examples of covariance matrices with a squared exponential covariance kernel (left),
             a periodic covariance kernel (middle), and a quasi-periodic covariance kernel (right).
             In this example the exponential timescale exceeds the periodic timescale such that the
-            nearly periodic nature of the covariance is still discernable for points closely separated
+            nearly periodic nature of the covariance is still discernible for points closely separated
           in time (i.e. near the matrix diagonal).}
           \label{fig:matrices}
 \end{figure}
@@ -672,24 +672,24 @@ correlated. \\
 \end{equation}
 
 \noindent is the product of the squared exponential and periodic covariance kernels and therefore
-contains all four unique hyperparameters amongst the two kernels. \\
+contains all four unique hyperparameters among the two kernels. \\
 
 Stellar activity on M dwarfs
 is dominated by active regions\citep{lindegren03}\footnote{And sometimes flares but those
-  occur on short timescales such that they rarely affect low cadence RV osbervations for almost
+  occur on short timescales such that they rarely affect low cadence RV observations for almost
   all but the most active flare stars.} and the resulting RV signals evolve in a manner that
 is easy to understand qualitatively. Namely, we can expect a periodic component to the
 RV correlations because active regions rotate in and out of view at the stellar rotation period
 although the periodicity of the correlations need not be at \prot{} and may instead appear
 at a low order harmonic of \prot{} such as in the case of rapidly rotating spotted stars 
 (see Sect.~\ref{sect:ffp}). But in addition to these periodic variations, we can expect activity
-arising from active regions to not be stricitly periodic because of active region evolution
+arising from active regions to not be strictly periodic because of active region evolution
 in terms of their sizes, temperatures, and spatial distributions. Thus we
 have a physical justification for the adaption of a
-quasi-periodic covairance kernel as it includes the squared exponential term
+quasi-periodic covariance kernel as it includes the squared exponential term
 whose timescale can be thought of a characterizing active region lifetimes. \\
 
-The optimiziation of the quasi-periodic covariance kernel over competing kernel functions
+The optimization of the quasi-periodic covariance kernel over competing kernel functions
 was demonstrated by \cite{grunblatt15} on the active Sun-like star Kepler-78. However, it
 should be noted that due to the semi-parametric nature of GP regression models, the exact
 choice of kernel and/or the exact values of its hyperparameters often do not matter as
@@ -700,7 +700,7 @@ Each GP does a qualitatively similar job at modelling the data and with comparab
 uncertainties. \\
 
 Also depicted in Fig.~\ref{fig:exactgp} is the effect of varying the hyperparameters of
-a quasi-periodic GP regression model to the same sythetic data. The first curve depicts
+a quasi-periodic GP regression model to the same synthetic data. The first curve depicts
 the resulting GP model using the approximate optimized hyperparameters with a periodic
 timescale approximately equal to the injected timescale of 50 (arbitrary units). The second
 GP model has the same periodic timescale but whose exponential timescale is greater by nearly
@@ -708,7 +708,7 @@ three orders of magnitude. Despite this the resulting mean GP appears to continu
 fit to the data. The final GP model reverts back to the optimized exponential timescale but
 decreases the periodic timescale from 50 to 20. The effect of a shorter periodic timescale
 is only apparent in the regions between data points as the resulting GP again appears to do
-a qualitatively similar job at modelling the data depsite having widely varying hyperparameters.
+a qualitatively similar job at modelling the data despite having widely varying hyperparameters.
 
 
 \subsubsection{Hyperparameter estimation}
@@ -735,11 +735,12 @@ we sample their joint posterior according to Bayes theorem
   \mathcal{L}(\mathbf{y}|\boldsymbol{\Psi}) =
   -\frac{1}{2} \left( \mathbf{r}^{\text{T}} \mathbf{K}^{-1} \mathbf{r} +
   \ln{\text{det}\mathbf{K}} + N_{\text{RV}} \ln{2\pi} \right)
+  \label{eq:lnlikeGP}
 \end{equation}
 
 \noindent is the logarithmic likelihood function given the set of model parameters
 $\boldsymbol{\Psi}$ and $\Pi(\boldsymbol{\Psi})$ represents our prior on
-the model parameters. When estimating the GP hyperarameters in practice we
+the model parameters. When estimating the GP hyperparameters in practice we
 often sample the logarithmic hyperparameters and adopt broad log uniform priors
 unless otherwise stated. Note that in Eq.~\ref{eq:bayess}
 we have neglected the normalization factor which is not required
@@ -758,7 +759,7 @@ posteriors which in turn are used to define our GP activity model.
 From the set of hyperparameters $\boldsymbol{\Theta}$,
 we define a unique GP prior distribution. From this distribution we can sample
 functions or construct a predictive distribution
-conditioned on the data $\mathbf{y}(\mathbf{t})$ and evaulated at some unseen
+conditioned on the data $\mathbf{y}(\mathbf{t})$ and evaluated at some unseen
 epochs $\mathbf{t}^*$. Function predictions from such a predictive distribution is
 historically known as kriging. The mean function and standard deviation of the
 predictive distribution are
@@ -813,7 +814,7 @@ planet model. \\
 
 \subsection{Demonstrating the effectiveness of a GP activity model: a toy model}
 Here I will provide a quick demonstration of the effectiveness of using a semi-parametric GP
-to model the temporally correlated phyiscal process of stellar RV activity. The forecoming
+to model the temporally correlated physical process of stellar RV activity. The forthcoming
 experiment is not intended to be representative of GP activity modelling in general but is
 useful to demonstrate how a non-physical model  like GPs can help in the accurate modelling
 of RVs planet and activity. \\
@@ -822,7 +823,7 @@ Firstly, I construct
 a set of synthetic RVs containing a planet, stellar activity, and noise and sampled using the
 actual window function of 71 HARPS observations of the M dwarf K2-18 \citep{cloutier17b}.
 The injected planetary
-signal takes the form of a cirular keplerian with $P=22$ days and $K=2$ \mps{.} The stellar
+signal takes the form of a circular keplerian with $P=22$ days and $K=2$ \mps{.} The stellar
 activity signal is derived from a physical spot model from \texttt{SOAP 2.0} \citep{dumusque14}
 which derives time series of the photometric, RV, and line shape parameters resulting from
 spots and/or plages on a rotating star. In this toy model I simulate a single equatorial spot
@@ -837,8 +838,8 @@ approximately a quarter that of the injected activity. \\
 
 \begin{figure}
   \centering
-  \includegraphics[width=\hsize]{figures/RVinjected.png}
-  \includegraphics[width=\hsize]{figures/RVrecovered.png}
+  %\includegraphics[width=\hsize]{figures/RVinjected.png}
+  %\includegraphics[width=\hsize]{figures/RVrecovered.png}
   \caption[Synthetic RV time series used to demonstrate the effectiveness of GP activity modelling.]
           {A synthetic RV time series with injected stellar activity from a \texttt{SOAP 2.0} physical
             model, a keplerian planetary signal, and noise. The RVs are sampled with the real HARPS window
@@ -862,8 +863,8 @@ Fig.~\ref{ig:RVcomparison} compares the recovered activity and planetary signals
 ones. The mean GP model appears to have approximately the same period and phase as the injected activity
 signal as it lies along the one-to-one line in Fig.~\ref{fig:RVcomparison}. The residual RV rms between the
 recovered and injected activity signals is 0.72 \mps{} compared to the injected RV measurement uncertainties
-of 1 \mps{.} A notable exception to the innaccuracy of the GP activity model is in its failure to
-capture the pile up of injected RVs at 0 \mps{} corresponding to when the singla simulated starspot is
+of 1 \mps{.} A notable exception to the inaccuracy of the GP activity model is in its failure to
+capture the pile up of injected RVs at 0 \mps{} corresponding to when the single simulated starspot is
 not visible. Although, the mean GP activity model at those epochs are often consistent with $1\sigma$ of
 0 \mps{.} Similarly the recovered keplerian model is in phase and with the injected period owing to our
 treatment of that signal as one whose ephemeris is well-constrained by some unseen hypothetical data.
@@ -874,7 +875,7 @@ of the line in Fig.~\ref{fig:RVcomparison} comparing the recovered and injected 
 
 \begin{figure}
   \centering
-  \includegraphics[width=\hsize]{figures/RVcomparison.png}
+  %\includegraphics[width=\hsize]{figures/RVcomparison.png}
   \caption[Comparison of injected to recovered RV signals.]
           {Left panel: comparison of the injected RV activity signal to the recovered GP activity model.
             The mean GP model appears to lie along the one-to-one line (black line) with a residual rms
@@ -884,14 +885,14 @@ of the line in Fig.~\ref{fig:RVcomparison} comparing the recovered and injected 
 \end{figure}
 
 
-ribas18: GP can absorb some planet signal
-
-
-GP codes:
-\texttt{scikit-learn} \citep{sklearn},
-\texttt{george} \citep{ambikasaran14,foremanmackey15b},
-\texttt{celerite} \citep{foremanmackey17},
-\texttt{gpytorch} \citep{gardner18,wang19}.
+\subsection{Gaussian process regression packages}
+Note that a number of packages exist for the efficient construction of GP prior distributions, function
+sampling, and matrix algebra required to compute the data likelihoods (see Eq.~\ref{eq:lnlikeGP}).
+Some such packages exist within the astronomy field as well as for implementation in broader contexts.
+Examples of GP packages includes \texttt{scikit-learn} \citep{sklearn},
+\texttt{gpytorch} \citep{gardner18,wang19},
+\texttt{george} \citep{ambikasaran14,foremanmackey15b}, and
+\texttt{celerite} \citep{foremanmackey17}.
 
 
 \section{Point-form Thesis: Stellar Activity Modelling in Radial Velocity
@@ -899,7 +900,10 @@ GP codes:
 \begin{itemize}
 \renewcommand\labelitemi{--}
 \item~\ref{sect:methods} \textbf{An Overview of Techniques for Stellar Activity
-Mitigation}: hi \\
-\item~\ref{sect:gp} \textbf{Gaussian Process Regression for Non-Parametric
-  Activity Modelling}:
+  Mitigation}: a multitude of techniques for the mitigation of stellar activity in RV time series exist
+  but many of them suffer from being incompleteness and/or inaccuracy.
+\item~\ref{sect:gp} \textbf{Gaussian Process Regression for Semi-Parametric
+  Activity Modelling}: Gaussian process regression offers an alternative method to model
+  stochastic activity signals within a semi-parametric Bayesian formalism that ensures consistency
+  with modelled planetary signals.
 \end{itemize}

@@ -631,7 +631,7 @@ matrices are also shown in Fig.~\ref{fig:matrices}. \\
 
 \begin{figure}
   \centering
-  \includegraphics[width=\hsize]{figures/gpmatrices.png}
+  %\includegraphics[width=\hsize]{figures/gpmatrices.png}
   \caption[Example of covariance matrices.]
           {Examples of covariance matrices with a squared exponential covariance kernel (left),
             a periodic covariance kernel (middle), and a quasi-periodic covariance kernel (right).
@@ -739,16 +739,54 @@ we sample their joint posterior according to Bayes theorem
 
 \noindent is the logarithmic likelihood function given the set of model parameters
 $\boldsymbol{\Psi}$ and $\Pi(\boldsymbol{\Psi})$ represents our prior on
-the model parameters. Note that in Eq.~\ref{eq:bayess}
+the model parameters. When estimating the GP hyperarameters in practice we
+often sample the logarithmic hyperparameters and adopt broad log uniform priors
+unless otherwise stated. Note that in Eq.~\ref{eq:bayess}
 we have neglected the normalization factor which is not required
 for the purpose of parameter estimation. \\
 
-
-
+Sampling of the $\boldsymbol{\Psi}$ posteriors is done using MCMC. In this way, our
+uncertainties in the keplerian model parameters $\boldsymbol{\theta}$,
+that are of interest for studying planets, are marginalized over our uncertainties in
+the GP hyperparameters $\boldsymbol{\Theta}$. The exact details of
+our MCMC implementation and strategies are discussed in subsequent chapters
+as necessary. After sampling the $\boldsymbol{\Psi}$ posteriors, the values of the
+hyperparameters are obtained from the maximum a-posteriori point estimates of those
+posteriors which in turn are used to define our GP activity model.
 
 \subsubsection{Model inference}
+From the set of hyperparameters $\boldsymbol{\Theta}$,
+we define a unique GP prior distribution. From this distribution we can sample
+functions or construct a predictive distribution
+conditioned on the data $\mathbf{y}(\mathbf{t})$ and evaulated at some unseen
+epochs $\mathbf{t}^*$. Function predictions from such a predictive distribution is
+historically known as kriging. The mean function and standard deviation of the
+predictive distribution are
 
+\begin{equation}
+  \boldsymbol{\mu}(\mathbf{t}^*) = \mathbf{K}(\mathbf{t}^*,\mathbf{t}) \cdot
+  \mathbf{K}(\mathbf{t},\mathbf{t})^{-1} \cdot \mathbf{y}(\mathbf{t}),
+  \label{eq:gpmu}
+\end{equation}
 
+\noindent and
+
+\begin{equation}
+  \boldsymbol{\sigma}(\mathbf{t}) = \mathbf{K}(\mathbf{t}^*,\mathbf{t}^*) -
+  \mathbf{K}(\mathbf{t}^*,\mathbf{t}) \cdot \mathbf{K}(\mathbf{t},\mathbf{t})^{-1}
+  \cdot \mathbf{K}(\mathbf{t}^*,\mathbf{t})^{\text{T}}.
+  \label{eq:gpsig}
+\end{equation}
+
+Figs.~\ref{fig:gpsamples} and~\ref{fig:gpsamplespred} depict samples from a
+quasi-periodic GP prior and predictive distributions respectively. The latter is
+conditioned on an set of ten synthetic data points and whose mean function and
+standard deviation are computed using Eqs.~\ref{eq:gpmu} and~\ref{eq:gpsig}. When
+modelling RV activity with a GP whose hyperparameters $\boldsymbol{\Theta}$ have
+been derived from MCMC, we take the ``best-fit'' of that multivariate Gaussian, namely
+its mean function, to be our activity model similarly to how maximum a-posteriori
+point estimates of keplerian orbital parameters are used to compute a ``best-fit''
+planet model. \\
 
 \begin{figure}
   \centering
@@ -760,6 +798,21 @@ for the purpose of parameter estimation. \\
             Faria (\url{https://joaofaria.space/blog/continuous-samples}).}
   \label{fig:gpsamples}
 \end{figure}
+
+\begin{figure}
+  \centering
+  %\animategraphics[width=\textwidth,controls,loop]{5}{figures/GPsample_pred_}{0}{49}
+  \caption[Samples from a quasi-periodic Gaussian process predictive distribution.]
+          {Independent samples from a quasi-periodic Gaussian process predictive distribution
+            conditioned on ten synthetic data points. The mean function and
+            $1\sigma$ standard deviation are depicted as the dashed black curve and surrounding
+          shaded region respectively.}
+  \label{fig:gpsamplespred}
+\end{figure}
+
+
+\subsection{Demonstrating the effectiveness of a GP activity model: a toy model}
+
 
 
 \begin{figure}
@@ -774,10 +827,10 @@ ribas18: GP can absorb some planet signal
 
 
 GP codes:
-scikit-learn \citep{sklearn},
-george \citep{ambikasaran14,foremanmackey15b},
-celerite \citep{foremanmackey17},
-gpytorch \citep{gardner18,wang19}.
+\texttt{scikit-learn} \citep{sklearn},
+\texttt{george} \citep{ambikasaran14,foremanmackey15b},
+\texttt{celerite} \citep{foremanmackey17},
+\texttt{gpytorch} \citep{gardner18,wang19}.
 
 
 \section{Point-form Thesis: Stellar Activity Modelling in Radial Velocity

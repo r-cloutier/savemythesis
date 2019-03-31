@@ -545,7 +545,7 @@ mean and uncertainty. \\
 \begin{figure}
   \centering
   %\includegraphics[width=\hsize]{figures/linearrep_v1.png}
-  \caption[Linear representation of Gaussian random varaibles in two dimensions.]
+  \caption[Linear representation of Gaussian random variables in two dimensions.]
           {Visual comparison of samples from the two-dimensional Gaussian distribution
             depicted in the
             conventional way (left panel) and in the new linear representation (right
@@ -575,7 +575,7 @@ predictive models as we shall see in Sect.~\ref{sect:regression}. \\
 \begin{figure}
   \centering
   %\includegraphics[width=\hsize]{figures/linearrep_v2.png}
-  \caption[Linear representation of Gaussian random varaibles in five dimensions.]
+  \caption[Linear representation of Gaussian random variables in five dimensions.]
           {The linear representation of samples from a five dimensional Gaussian
             distribution with each sample depicted with a particular colour in each
             panel. The mean and $1\sigma$ dispersion of each variable is depicted
@@ -812,14 +812,75 @@ planet model. \\
 
 
 \subsection{Demonstrating the effectiveness of a GP activity model: a toy model}
+Here I will provide a quick demonstration of the effectiveness of using a semi-parametric GP
+to model the temporally correlated phyiscal process of stellar RV activity. The forecoming
+experiment is not intended to be representative of GP activity modelling in general but is
+useful to demonstrate how a non-physical model  like GPs can help in the accurate modelling
+of RVs planet and activity. \\
 
-
+Firstly, I construct
+a set of synthetic RVs containing a planet, stellar activity, and noise and sampled using the
+actual window function of 71 HARPS observations of the M dwarf K2-18 \citep{cloutier17b}.
+The injected planetary
+signal takes the form of a cirular keplerian with $P=22$ days and $K=2$ \mps{.} The stellar
+activity signal is derived from a physical spot model from \texttt{SOAP 2.0} \citep{dumusque14}
+which derives time series of the photometric, RV, and line shape parameters resulting from
+spots and/or plages on a rotating star. In this toy model I simulate a single equatorial spot
+with 1\% fractional coverage of the visible stellar disk on a star with \prot{}$=30$ days.
+White noise at the level of 1 \mps{} is also added to the time series.
+The injected time series and the synthetic RVs are shown in the top panel of
+Fig.~\ref{fig:RVsignals}. The injected activity signal is seen to have a peak-to-peak amplitude of
+$\sim 8.5$ \mps{} and is dominated by the suppression of convective blueshift when the simulated
+starspot is present on the visible hemisphere. The RV signal due to activity is equal to zero when
+the starspot is not visible. The amplitude of the injected keplerian signal is seen to be
+approximately a quarter that of the injected activity. \\
 
 \begin{figure}
   \centering
-  %\includegraphics[width=0.8\hsize]{figures/}
-  \caption{Comparison of injected RV activity to the GP activity model}
-  \label{fig:GPperformance}
+  \includegraphics[width=\hsize]{figures/RVinjected.png}
+  \includegraphics[width=\hsize]{figures/RVrecovered.png}
+  \caption[Synthetic RV time series used to demonstrate the effectiveness of GP activity modelling.]
+          {A synthetic RV time series with injected stellar activity from a \texttt{SOAP 2.0} physical
+            model, a keplerian planetary signal, and noise. The RVs are sampled with the real HARPS window
+            function sampling of K2-18.}
+  \label{fig:RVsignals}
+\end{figure}
+
+Next I impose an RV model that includes an activity model in the form of an untrained
+quasi-periodic GP plus a single keplerian model of the planet which I treat as a transiting
+planet such that its linear ephemeris (i.e. $P$ and $T_0$) are well-constrained by its transit
+light curve. We note that untrained GPs can be dangerous as scenarios have been observed in which
+an untrained GP model of RVs absorbs some planetary signal and can thus result in misestimated
+planetary parameters \citep{ribas18}.
+I proceed by deriving the joint posterior of the GP hyperparameters and keplerian
+parameters to compute the `best-fit' GP and keplerian models which can then be compared to their
+injected signal counterparts. The recovered models are shown in the bottom panel of
+Fig.~\ref{fig:RVsignals}. Here the mean GP model is depicted along with its 68\% confidence
+interval. \\
+
+Fig.~\ref{ig:RVcomparison} compares the recovered activity and planetary signals with the injected
+ones. The mean GP model appears to have approximately the same period and phase as the injected activity
+signal as it lies along the one-to-one line in Fig.~\ref{fig:RVcomparison}. The residual RV rms between the
+recovered and injected activity signals is 0.72 \mps{} compared to the injected RV measurement uncertainties
+of 1 \mps{.} A notable exception to the innaccuracy of the GP activity model is in its failure to
+capture the pile up of injected RVs at 0 \mps{} corresponding to when the singla simulated starspot is
+not visible. Although, the mean GP activity model at those epochs are often consistent with $1\sigma$ of
+0 \mps{.} Similarly the recovered keplerian model is in phase and with the injected period owing to our
+treatment of that signal as one whose ephemeris is well-constrained by some unseen hypothetical data.
+The recovered semi-amplitude however is somewhat inaccurate at $K=1.83 \pm 0.55$ \mps{} which is underestimated
+compared to the injected semi-amplitude of 2 \mps{} although it is clearly consistent at the $1\sigma$ level.
+This $\sim 10$\% underestimation in the value of $K$ causes the slight offset from unity in the slope
+of the line in Fig.~\ref{fig:RVcomparison} comparing the recovered and injected keplerian signals.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\hsize]{figures/RVcomparison.png}
+  \caption[Comparison of injected to recovered RV signals.]
+          {Left panel: comparison of the injected RV activity signal to the recovered GP activity model.
+            The mean GP model appears to lie along the one-to-one line (black line) with a residual rms
+            of 0.72 \mps{.} Right panel:
+          comparison of the injected keplerian signal to the recovered keplerian model. }
+  \label{fig:RVcomp}
 \end{figure}
 
 

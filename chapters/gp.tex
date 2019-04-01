@@ -12,25 +12,25 @@ stellar activity in RV time series.
 \subsection{Stellar Activity as a Scalar Parameter}
 Back when the first giant exoplanets where being discovered with RVs,
 typically a treatment of stellar activity was not implemented. The reason being
-that the quality of the datasets at that time were insufficient to resolve the
+that the measurement precisions of those datasets were insufficient to resolve the
 temporal structure of RV activity for any but the most active stars. Many
 observers however did report the root-mean-square (rms) of their RV residuals
 following the removal of their best-fit planet model
 \citep[e.g.][]{mayor95,butler96}. In
-many cases this revealed residual rms values which exceeded the characteristic RV
+many cases it was revealed that the residual rms exceeded the characteristic RV
 measurement uncertainty and thus alluded to the presence of additional
 jitter signals which may or may not vary significantly with time. \\
 
 In many of the following RV planet searches the apparent jitter was characterized
-by an additive scalar $s$. The free parameter $s$ was used to characterize the
+by an additive scalar jitter $s$. The free parameter $s$ was used to characterize the
 level of RV jitter as it was added in quadrature to the RV measurement
 uncertainties when evaluating the objective function during any analysis
 equivalent or analogous to a $\chi^2$-minimization routine. The nature of this
 method assumes a fixed level of dispersion due to jitter that is constant in time.
 As such, the resulting
 measurement of $s$ does little more than inform us of the jitter amplitude as
-any temporal evolution of activity, due to finite active region lifetimes or magnetic
-cycles, will remain unresolved.
+any temporal evolution of activity due to finite active region lifetimes or magnetic
+cycles remained unresolved.
 
 \subsection{Correlations with Activity Indicators} \label{sect:indicators}
 Stellar RV observations are known to be affected by both planetary companions as
@@ -44,7 +44,7 @@ fitting an often linear relation between those datasets (Fig.~\ref{fig:corr}) to
 account for the temporal evolution of activity over the observational baseline.
 The relation, when fitted simultaneously with planetary solutions, allows the RVs
 to be de-correlated jointly with the measurement of the planetary parameters.
-This technique has been shown to be effective when the stellar rotation period
+This technique has been shown to be reasonably effective when the stellar rotation period
 \prot{} is well constrained, the planetary orbital period is distinct from
 \prot{,} the amplitude of the planetary signal exceeds that of the activity signal
 by $\gtrsim 30$\%, and the stellar rotation period is well sampled over multiple
@@ -52,7 +52,7 @@ cycles \citep{boisse11}. \\
 
 \begin{figure}
   \centering
-  %\includegraphics[width=.6\textwidth]{figures/vspan_rv.png}
+  \includegraphics[width=.6\textwidth]{figures/vspan_rv.png}
   \caption[Correlation between stellar RVs and the \vspan{} activity indicator.]
       {The correlation of the \vspan{} activity indicator with the RVs for the
     active Sun-like star HD 17051 from HARPS spectra. The solid line depicts the
@@ -63,25 +63,25 @@ cycles \citep{boisse11}. \\
 \end{figure}
 
 There exists a number of activity indicators which can be derived from the stellar
-spectra. There definitions and physical motivations are summarized below. \\
+spectra. Their definitions and physical motivations are summarized below. \\
 
 \emph{log R$'_{HK}$}:
-the \caii{} H and K resonance lines are excited by non-thermal heating 
+the \caii{} H \& K resonance lines are excited by non-thermal heating 
 and act as a sensitive indicator of chromospheric structure and particularly of
 the presence of bright chromospheric plages. 
-For optical spectra with access to the \caii{} H and K lines
-centered on 3968.47 \AA{} and 3933.66 \AA{,} the Mt. Wilson S-index is defined as
+For optical spectra with access to the \caii{} H \& K lines
+centered on 3968.47 \AA{} and 3933.66 \AA{,} the Mt. Wilson S-index is
 
 \begin{equation}
   \text{S-index} \propto \frac{\Psi_H + \Psi_K}{\Psi_B + \Psi_V}
 \end{equation}
 
 \noindent where $\Psi_H$ and $\Psi_K$ represent the narrowband
-($\sim 1.1$ \AA{} wide) fluxes in the cores of the H and K lines of the \caii{}
-doublet. The index is normalized by total flux in the $B$ and $V$ continuum bands
+($\sim 1.1$ \AA{} wide) fluxes in the cores of the H \& K lines of the \caii{}
+doublet. The S-index is normalized by total flux in the $B$ and $V$ continuum bands
 which are 20 \AA{} wide broad bands centered on 3900 and 4000 \AA{} respectively.
-From this the \Rhk{} indicator is derived using a variety of formulations which are
-all $\propto$ S-index and attempt to isolate the chromospheric component of
+From the S-index, the \Rhk{} indicator is derived using a variety of formulations which are
+all proportional to the S-index and attempt to isolate the chromospheric component of
 $\Psi_H$ and $\Psi_K$ from the photospheric component using normalization factors
 which are dependent on \teff{} and level of stellar activity \citep{lovis11}. The
 \Rhk{} indicator has been well characterized as a sensitive probe of activity on
@@ -92,7 +92,7 @@ $H\alpha$:
 similarly to the \Rhk{} index, H$\alpha$ photons ($\lambda = 6562.81$ \AA{)} are emitted by
 hot plages and thus act as a tracer of stellar activity originating from the chromosphere.
 H$\alpha$ may act as a more suitable spectroscopic activity indicator for cool M dwarfs
-which of lack significant flux in the \caii{} H and K lines \citep{robertson14}.
+which of lack significant flux in the \caii{} H \& K lines \citep{robertson14}.
 In practical terms,  
 similar spectral features tracing a star's chromospheric structure may alternatively be used
 as activity indicators depending on the accessible wavelengths of the employed spectrograph
@@ -102,7 +102,7 @@ as activity indicators depending on the accessible wavelengths of the employed s
 \emph{CCF shape parameters}:
 the cross-correlation function (CCF) of a stellar spectrum represents its average line profile
 at typically a high S/N.
-As illustrated in Fig.~\ref{fig:ccf}, the presence of active regions distorts
+As was seen in Fig.~\ref{fig:starspot}, the presence of active regions distorts
 the Gaussianity of the CCF thus alluding to the presence and nature of those active regions.
 A number of shape parameters to the fitted CCF may be used to characterize stellar activity
 using the same CCF from which the stellar RVs themselves are derived. However, these
@@ -113,7 +113,7 @@ shape parameters are visualized in Fig.~\ref{fig:ccf} and described below. \\
 
 \begin{figure}
   \centering
-  %\includegraphics[width=\hsize]{figures/ccf.png}
+  \includegraphics[width=\hsize]{figures/ccf.png}
   \caption[Illustrations of CCF shape parameters.]
           {Illustrations of measurements of the CCF width, asymmetry, and contrast via the full
             width half maximum (FWHM), bisector (BIS), and contrast shape parameters. The FWHM
@@ -128,9 +128,10 @@ shape parameters are visualized in Fig.~\ref{fig:ccf} and described below. \\
 \end{figure}
 
 \emph{FWHM}:
-the full width half maximum (FWHM) of the CCF is commonly used as a measure of CCF
-width. As an active region transverses the rotating stellar disk across the differentially
-Doppler-shifted limbs, its temperature contrast with the stellar photosphere adds additional
+the full width half maximum (FWHM) of the CCF is commonly used as a measure of CCF's
+width. As an active region transverses across the differentially
+Doppler-shifted limbs of a rotating star,
+its temperature contrast with the stellar photosphere adds additional
 power to the CCF in the velocity direction opposite the occulted limb. This results in a
 broadening of the CCF on one side of its mean velocity $V_0$. As illustrated in
 the first panel in Fig.~\ref{fig:ccf},
@@ -144,14 +145,14 @@ Similar parameters have also been proposed as measures of CCF asymmetry such as 
 the bisector line \citep{hatzes96}, the velocity span \citep{boisse11}, and the BIS inverse
 slope \citep{queloz01}. Their definitions are closely related and rely on computing the weighted
 velocity in the upper and lower portions of the CCF (see middle panel of Fig.~\ref{fig:ccf})
-and computing their difference. A symmetric line profile will therefore have a BIS$=0$ whereas
+and calculating their difference. A symmetric line profile will therefore have a BIS$=0$ whereas
 asymmetric profiles affected by active regions will be non-zero and whose exact value and units
 will depend on the definition of the asymmetry parameter used. \\
 
 \emph{Contrast}:
 \citep{boisse09} noted that increasingly active stars, based on their fractional coverage by dark
 star spots, tend to have shallower line profiles. This is the direct result of such stars featuring
-greater contributions to their average line profiles from cool and therefore dimmer regions.
+more significant contributions to their average line profiles from cool and therefore dimmer regions.
 This effect is often characterized by the CCF contrast which is equal to the difference between the
 average baseline of the CCF in the continuum (located many standard deviations away from $V_0$ in
 the CCF wings) and the flux at the stellar velocity $V_0$.
@@ -159,10 +160,16 @@ the CCF wings) and the flux at the stellar velocity $V_0$.
 
 \subsection{Photometric Modelling: the \textbf{\emph{FF}}$'$ Method} \label{sect:ffp}
 An alternative to using simultaneous spectroscopic activity indicators to temporally de-correlated
-RV measurements for the effects of stellar activity, \citep{aigrain12} present the $FF'$ formalism
-which uses contemporaneous photometry to model two distinct RV activity components. \cite{aigrain12}
-argue that in the limit of small active regions with non-complex configurations, the fractional
-coverage of the stellar disk by active regions (i.e. spots) $F(t)$ is related to the photometric flux
+RV measurements for the effects of stellar activity is to use contemporaneous photometry.
+\citep{aigrain12} present the $FF'$ formalism which uses photometry to model two distinct RV activity
+components resulting from the active regions that give rise to photometric variability. In this way
+the photometry is used to infer a quantity that is not directly observable (i.e. the fractional spot
+coverage) from which various RV activity components are derived using the $FF'$ formalism
+\citep{rajpaul15}. \\
+
+\cite{aigrain12}
+argue that in the limit of small active regions with non-complex configurations that the fractional
+coverage of the stellar disk by active regions $F(t)$ is related to the photometric flux
 $\Psi(t)$ via
 
 \begin{equation}
@@ -171,24 +178,25 @@ $\Psi(t)$ via
 \end{equation}
 
 \noindent Eq.~\ref{eq:ffp} reads that the fractional spot coverage is just one minus the observed
-stellar flux in normalized units such that the star's brightness equals unity in the absence of spots.
-The corresponding RV signals from a active regions giving rise to the photometric variations are known
-as the rotation or flux effect $\Delta \text{RV}_{\text{rot}}$ and the convection blueshift effect
+stellar flux in normalized units such that the star's brightness equals unity in the absence of active
+regions. The corresponding RV signals from a active regions giving rise to the photometric variations
+are known
+as the rotation effect $\Delta \text{RV}_{\text{rot}}$ and the convection blueshift effect
 $\Delta \text{RV}_{\text{conv}}$. The former arises from active regions occulting the differentially
 Doppler-shifted stellar limbs and thereby suppressing the flux of photons with a particular
 Doppler-shift. Because the rotation effect affects the RVs in proportion to the spot coverage and
-exhibits a sign change as the spot crosses from the blueshifted limb to the redshifted limb over a single
-rotation cycle, the rotation effect is
+exhibits a sign change as the spot crosses from the blueshifted limb to the redshifted limb over a
+single rotation cycle, the rotation effect is
 
 \begin{equation}
-  \Delta \text{RV}_{\text{rot}}(t) \propto F(t) \dot{F}(t)
+  \Delta \text{RV}_{\text{rot}}(t) \propto F(t) \dot{F}(t),
 \end{equation}
 
-\indent where the first time derivative of the fractional active region coverage is
+\noindent where the first time derivative of the fractional active region coverage is
 $\dot{F}(t) = -\dot{\Psi}(t)$ from Eq.~\ref{eq:ffp}. As such, the rotation effect tends to dominate
 on rapidly rotating stars wherein $\dot{F}(t)$ is large. Conversely, the convective blueshift effect
 operates by active regions disrupting the homogeneity of the stellar disk on which convective
-blueshift is on-going everywhere. This disruption scales with the fractional spot coverage and
+blueshift is ongoing everywhere. This disruption scales with the fractional spot coverage and
 the angle between the spot normal and the line-of-sight which results in
 
 \begin{equation}
@@ -204,7 +212,7 @@ incurred by a single spot over a portion of one stellar rotation cycle.
 
 \begin{figure}
   \centering
-  %\includegraphics[width=0.8\hsize]{figures/ffp.png}
+  \includegraphics[width=0.8\hsize]{figures/ffp.png}
   \caption[Illustration of the $FF'$ method.]
       {The $FF'$ method for deriving the rotation and convective blueshift components
     of stellar RV activity from contemporaneous photometry. Here the photometric stellar flux
@@ -216,25 +224,27 @@ incurred by a single spot over a portion of one stellar rotation cycle.
 
 
 \subsection{Pre-whitening}
-This method aims at identifying strong periodicities in the RV time series and removing also
-such signals until only residual Gaussian noise is remaining. This method known as pre-whitening
-is based on analyzes of multi-periodic stellar oscillation modes and works by performing a Fourier
-transform of the data and removing sinusoidal functions from the raw data whose periods and
-identified by the frequency analysis \citep{queloz09}. Pre-whitening assumes that all signals
-are long-lived and sinusoidal which is not always applicable for the stellar activity signals
-that it aims to mitigate. 
+This method aims at identifying strong periodicities in a RV time series by modelling
+said periodic signals with sinusoids and removing them
+until only residual Gaussian noise is remaining. This method is known as pre-whitening and
+is based on analyzes of multi-periodic stellar oscillation modes. Pre-whitening operates
+by performing a Fourier
+transform of the data and removing sinusoidal functions from the raw data whose periods are
+identified by the frequency analysis \citep{queloz09}. Pre-whitening however assumes that all
+signals are long-lived and strictly periodic which is not always applicable to the stellar activity
+signals which this method aims to mitigate.
 
 \subsection{Deterministic Model Fitting}
-RV time series exhibiting strong coherent signals at either \prot{} or its first
-harmonic\footnote{As can be the case for rapidly rotating spotted stars whose RV activity
+RV time series exhibiting strong coherent signals at \prot{} or one of its low order
+harmonics\footnote{For example the first harmonic of \prot{} can dominate for rapidly rotating
+  spotted stars whose RV activity
   is dominated by the rotation effect (see Sect.~\ref{sect:ffp}).} may be well modelled by
-a deterministic function in the form of a sinusoid at \prot{} or $P_{\text{rot}}/2$
-\citep{boisse11}. In general, such models are incomplete because they neglect any temporal
+a deterministic function in the form of a sinusoid at \prot{,} $P_{\text{rot}}/2$, $P_{\text{rot}}/3$,
+etc \citep{boisse11}. In general, such models are incomplete because they neglect any temporal
 evolution of active regions which vary in their sizes, temperatures, and spatial distributions
-over adjacent rotation cycles \citep{giles17}. These nuances are not captured in a 
-deterministic sinusoidal model although this methodology may still be applicable in time series
-with short observational baselines or for stars with long-lived active region groups.
-
+over adjacent rotation cycles \citep{giles17}. These nuances are not captured in 
+deterministic sinusoidal models although this methodology may still be applicable for time series
+with short observational baselines of stars with long-lived active region groups.
 
 %\subsection{Physical Models of Active Regions}
 %\citep{dumusque14}
@@ -242,10 +252,10 @@ with short observational baselines or for stars with long-lived active region gr
 
 %\subsection{Spectral Feature Decomposition}
 \subsection{Line by line radial velocities}
-Spectral lines are known to be affected differently by stellar activity due to their
-sensitivities to pressure, temperature, embedded magnetic field strength, and fluid
-velocity which are all affected by stellar activity \citep{davis17,wise18}. These
-effects from stellar activity to spectral line shapes are distinct from Doppler-induced
+Different spectral lines are known to be uniquely affected by stellar activity due to their
+unique sensitivities to pressure, temperature, embedded magnetic field strength, and local fluid
+velocities, all of which are influenced by stellar activity \citep{davis17,wise18}. These
+effects from stellar activity on spectral line shapes are distinct from Doppler-induced
 line shifts which are identical to all lines. \cite{dumusque18} investigated
 the prospect of deriving stellar RVs line by line. The resulting RVs derived from
 individual lines were shown to be
@@ -256,16 +266,16 @@ are utilized. Intelligent identification of lines that are minimally sensitive t
 activity remains an active area of research. \\
 
 \cite{davis17} also demonstrated the power of analyzing individual spectral lines
-to identify the effect of stellar activity on RVs. Principal component analysis
-is run on sets of idealized spectra from stars containing either an equatorial spot,
+to identify the effect of stellar activity on measured RVs. Principal component analysis
+was run on sets of idealized spectra from stars hosting either an equatorial spot,
 an equatorial facula, or a planetary companion on a circular orbit. As shown in
 Fig.~\ref{fig:pca}, the maximum variance contained in the first principal component
 of the Doppler-shifted spectrum (i.e. with no activity) is maximized where the slope
 of spectral features is greatest and is identical to all spectral features as they
 are each equivalently affected by Doppler shifts. Lines in the remaining synthetic
-spectra that are affected by either a spot or facula or not identically affected due
-to the differential sensitivity of various lines to their physical environments
-which in turn are influenced by the presence of active regions. Fig.~\ref{fig:pca}
+spectra that are affected by either a spot or facula are not identically affected due
+to the differential sensitivity of various lines to their physical environment
+which in turn is influenced by the presence of active regions. Fig.~\ref{fig:pca}
 reveals examples of strongly varying lines from Ti \footnotesize I \normalsize and Ni
 \footnotesize I \normalsize at 5009.5 \AA{} and 5010.8 \AA{} respectively.
 \cite{davis17} also quantify the wealth of information contained in the spectra
@@ -275,7 +285,7 @@ activity information content.
 
 \begin{figure}
   \centering
-  %\includegraphics[width=\hsize]{figures/pca.png}
+  \includegraphics[width=\hsize]{figures/pca.png}
   \caption[Principal component analysis of idealized spectra containing either spots, faculae, or planets.]
           {The values of the first principal component for three spectra of a star with either an equatorial
             spot, an equatorial facula, or a circular keplerian orbit. The maximum variance (with either sign)
@@ -298,9 +308,9 @@ of active regions between adjacent rotation cycles or over
 significant subsets of long-term magnetic cycles. \\
 
 Gaussian process regression models represent one such tool which aims to overcome
-these shortcomings by jointly modelling planets and activity in a self-consistent
-manner. This technique originally pioneered on active Sun-like stars
-\citep[e.g.][]{haywood14,grunblatt15,faria16,lopezmorales16}
+many of these shortcomings by jointly modelling planets and activity in a self-consistent
+manner. This technique, originally pioneered on active Sun-like stars
+\citep[e.g.][]{haywood14,grunblatt15,faria16,lopezmorales16},
 has been shown to reconcile disparate solutions
 between observations from multiple spectrographs \citep{rajpaul17,cloutier19},
 to reconcile RV solutions for planetary systems whose favoured models are
@@ -309,7 +319,13 @@ signals from planets, stellar rotation, and/or from window functions
 \citep{rajpaul16,cloutier17b}.
 In the following sections I will give an overview
 of what Gaussian processes are and how I implement their formalism in the context
-of modelling stellar activity in RV time series.
+of modelling stellar activity in RV time series. \\
+
+Before proceeding it is important
+to note that GP models of activity are not the be all end all when it comes to activity
+modelling in RV time series. As will been argued throughout this thesis though, GP activity
+modelling does provide a tractable framework with many desirable properties for deriving
+models of stochastic activity signals in RVs. 
 
 \subsection{The one dimensional Gaussian distribution}
 A Gaussian process (GP) is defined as \emph{a collection of random variables, any
@@ -352,7 +368,7 @@ against per game. Hence, my favourite Gaussian random variable. \\
 
 \begin{figure}
   \centering
-  %\includegraphics[width=.8\textwidth]{figures/GAA1D.png}
+  \includegraphics[width=.8\textwidth]{figures/GAA1D.png}
   \caption[Gaussian random variable in one dimension.]
       {The distribution of $GAA$ for NHL goaltenders over the past five
     seasons as an example of a Gaussian random variable. The solid line depicts
@@ -431,7 +447,7 @@ $X_2$ in a sample for which the corresponding value of $X_1$ is known. \\
 
 \begin{figure}
   \centering
-  %\includegraphics[width=.9\textwidth]{figures/uncorr_2d.png}
+  \includegraphics[width=.9\textwidth]{figures/uncorr_2d.png}
   \caption[Uncorrelated Gaussian random variables in two dimensions.]
       {The one and two dimensional distributions of the Gaussian random
         variables $GAA$ and draws from the standard normal distribution (i.e. $\mathcal{N}(0,1)$).
@@ -476,7 +492,7 @@ is easily visualized in their joint distribution in Fig.~\ref{fig:corr2d}. \\
 % see /Users/ryancloutier/Talks/CEHWcolloquium/GP_examples.ipynb
 \begin{figure}
   \centering
-  %\includegraphics[width=0.9\hsize]{figures/corr_2D_HARTpost_logo_bkgd.png}%
+  \includegraphics[width=0.9\hsize]{figures/corr_2D_HARTpost_logo_bkgd.png}%
   \hspace{-0.9\hsize}%
   \begin{ocg}{fig:logosoff}{fig:logosoff}{0}%
   \end{ocg}%
@@ -544,7 +560,7 @@ mean and uncertainty. \\
 
 \begin{figure}
   \centering
-  %\includegraphics[width=\hsize]{figures/linearrep_v1.png}
+  \includegraphics[width=\hsize]{figures/linearrep_v1.png}
   \caption[Linear representation of Gaussian random variables in two dimensions.]
           {Visual comparison of samples from the two-dimensional Gaussian distribution
             depicted in the
@@ -574,7 +590,7 @@ predictive models as we shall see in Sect.~\ref{sect:regression}. \\
 
 \begin{figure}
   \centering
-  %\includegraphics[width=\hsize]{figures/linearrep_v2.png}
+  \includegraphics[width=\hsize]{figures/linearrep_v2.png}
   \caption[Linear representation of Gaussian random variables in five dimensions.]
           {The linear representation of samples from a five dimensional Gaussian
             distribution with each sample depicted with a particular colour in each
@@ -631,7 +647,7 @@ matrices are also shown in Fig.~\ref{fig:matrices}. \\
 
 \begin{figure}
   \centering
-  %\includegraphics[width=\hsize]{figures/gpmatrices.png}
+  \includegraphics[width=\hsize]{figures/gpmatrices.png}
   \caption[Example of covariance matrices.]
           {Examples of covariance matrices with a squared exponential covariance kernel (left),
             a periodic covariance kernel (middle), and a quasi-periodic covariance kernel (right).
@@ -701,8 +717,8 @@ uncertainties. \\
 
 \begin{figure}
   \centering
-  %\includegraphics[width=0.8\hsize]{figures/gpkernels.png}
-  %\includegraphics[width=0.8\hsize]{figures/gpkernelvalues.png}
+  \includegraphics[width=0.8\hsize]{figures/gpkernels.png}
+  \includegraphics[width=0.8\hsize]{figures/gpkernelvalues.png}
   \caption[Behaviour of GPs with different covariance kernels and hyperparameters.]
           {Top panel: the behaviour of three GP models with different covariance
             kernel functions on a synthetic dataset. Bottom panel: the behaviour of three
@@ -851,8 +867,8 @@ approximately a quarter that of the injected activity. \\
 
 \begin{figure}
   \centering
-  %\includegraphics[width=\hsize]{figures/RVinjected.png}
-  %\includegraphics[width=\hsize]{figures/RVrecovered.png}
+  \includegraphics[width=\hsize]{figures/RVinjected.png}
+  \includegraphics[width=\hsize]{figures/RVrecovered.png}
   \caption[Synthetic RV time series used to demonstrate the effectiveness of GP activity modelling.]
           {A synthetic RV time series with injected stellar activity from a \texttt{SOAP 2.0} physical
             model, a keplerian planetary signal, and noise. The RVs are sampled with the real HARPS window
@@ -888,7 +904,7 @@ of the line in Fig.~\ref{fig:RVcomp} comparing the recovered and injected kepler
 
 \begin{figure}
   \centering
-  %\includegraphics[width=\hsize]{figures/RVcomparison.png}
+  \includegraphics[width=\hsize]{figures/RVcomparison.png}
   \caption[Comparison of injected to recovered RV signals.]
           {Left panel: comparison of the injected RV activity signal to the recovered GP activity model.
             The mean GP model appears to lie along the one-to-one line (black line) with a residual rms

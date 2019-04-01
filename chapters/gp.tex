@@ -673,7 +673,8 @@ matrices are also shown in Fig.~\ref{fig:matrices}. \\
   k_{\text{SE}}(t_i,t_j) = a^2 \exp{\left[ -\frac{(t_i-t_j)^2}{2\lambda^2} \right]},
 \end{equation}
 
-\noindent has two hyperparameters. Namely, the covariance amplitude $a$ in units of the observable,
+\noindent has two hyperparameters $\boldsymbol{\Theta}=\{a, \lambda \}$.
+Namely, the covariance amplitude $a$ in units of the observable,
 and an exponential timescale $\lambda$ describing how much time is required for measurements to
 effectively forget previous values. With this covariance kernel, measurements made closely in time
 are more highly correlated than well separated measurements and the degree of correlation for a
@@ -685,7 +686,8 @@ given time separation will be larger for smaller $\lambda$. \\
   k_{\text{P}}(t_i,t_j) = a^2 \exp{\left[ -\Gamma \sin^2{\left( \frac{\pi |t_i-t_j|}{P} \right)} \right]},
 \end{equation}
 
-\noindent has three hyperparameters including the familiar covariance amplitude $a$. The periodic kernel
+\noindent has three hyperparameters  $\boldsymbol{\Theta}=\{a, \Gamma, P \}$
+which includes the familiar covariance amplitude $a$. The periodic kernel
 also contains a coherence parameter $\Gamma$ and a periodic timescale $P$ within the sinusoidal term.
 With this covariance kernel, measurements which are separated by an integer number of $P$ will be highly
 correlated. \\
@@ -698,7 +700,8 @@ correlated. \\
 \end{equation}
 
 \noindent is the product of the squared exponential and periodic covariance kernels and therefore
-contains all four unique hyperparameters among the two kernels. \\
+contains all four unique hyperparameters among the two kernels
+$\boldsymbol{\Theta}=\{a, \lambda, \Gamma, P \}$. \\
 
 Stellar activity on M dwarfs
 is dominated by active regions \citep{lindegren03}\footnote{And sometimes flares but those
@@ -759,11 +762,11 @@ that predictions from each unique GP can vary widely at times far from the epoch
 \subsubsection{Hyperparameter estimation}
 Determination of the GP hyperparameters $\boldsymbol{\Theta}$ for a given covariance kernel is
 done by first specifying a mean model $\boldsymbol{\mu}$ which itself is parameterized by
-a set of model parameters $\boldsymbol{\theta}$. In the case of modelling RVs the mean model
+a set of model parameters $\boldsymbol{\theta}$. In the case of modelling RVs, the mean model
 might represent our planet model whose keplerian orbital parameters are what we are interested
-in measuring as the GP is used to model the correlated RV residuals arising from stellar
+in measuring with the GP being used to model the correlated RV residuals arising from stellar
 activity. The residual vector is written as $\mathbf{r} = \mathbf{y} - \boldsymbol{\mu}$
-where $\mathbf{y}$ is the vector of \nrv{} measurements. 
+where $\mathbf{y}$ is the vector of \nrv{} RV measurements. 
 To estimate all model parameters, including the GP hyperparameters and mean model
 parameters (i.e. $\boldsymbol{\Psi} = \boldsymbol{\Theta} \cup \boldsymbol{\theta}$),
 we sample their joint posterior according to Bayes theorem
@@ -792,20 +795,20 @@ we have neglected the normalization factor which is not required
 for the purpose of parameter estimation. \\
 
 Sampling of the $\boldsymbol{\Psi}$ posteriors is done using MCMC. In this way, our
-uncertainties in the keplerian model parameters $\boldsymbol{\theta}$,
-that are of interest for studying planets, are marginalized over our uncertainties in
-the GP hyperparameters $\boldsymbol{\Theta}$. The exact details of
-our MCMC implementation and strategies are discussed in subsequent chapters
+uncertainties in the keplerian model parameters $\boldsymbol{\theta}$
+are marginalized over our uncertainties in
+the GP hyperparameters $\boldsymbol{\Theta}$. The exact strategies and details of
+our MCMC implementation are discussed in subsequent chapters
 as necessary. After sampling the $\boldsymbol{\Psi}$ posteriors, the values of the
 hyperparameters are obtained from the maximum a-posteriori point estimates of those
 posteriors which in turn are used to define our GP activity model.
 
 \subsubsection{Model inference}
-From the set of hyperparameters $\boldsymbol{\Theta}$,
+From the set of maximum a-posteriori hyperparameters $\boldsymbol{\Theta}$,
 we define a unique GP prior distribution. From this distribution we can sample
 functions or construct a predictive distribution
 conditioned on the data $\mathbf{y}(\mathbf{t})$ and evaluated at some unseen
-epochs $\mathbf{t}^*$. Function predictions from such a predictive distribution is
+epochs $\mathbf{t}^*$. Function prediction from such a predictive distribution is
 historically known as kriging. The mean function and standard deviation of the
 predictive distribution are
 
@@ -860,25 +863,25 @@ planet model. \\
 \subsection{Demonstrating the effectiveness of a GP activity model: a toy model}
 Here I will provide a quick demonstration of the effectiveness of using a semi-parametric GP
 to model the temporally correlated physical process of stellar RV activity. The forthcoming
-experiment is not intended to be representative of GP activity modelling in general but is
-useful to demonstrate how a non-physical model in the form of a GP can aid in the accurate 
-modelling of RV planets and activity. \\
+experiment is not intended to be representative of the performance of GP activity modelling
+in general but it is useful to demonstrate how a non-physical model in the form of a GP can
+aid in the accurate modelling of RV planets and activity. \\
 
 Firstly, I construct
-a set of synthetic RVs containing a planet, stellar activity, and noise and sampled using the
+a set of synthetic RVs containing a planet, stellar activity, and noise, sampled using the
 actual window function of 71 HARPS observations of the M dwarf K2-18 \citep{cloutier17b}.
 The injected planetary
 signal takes the form of a circular keplerian with $P=22$ days and $K=2$ \mps{.} The stellar
 activity signal is derived from a physical spot model from \texttt{SOAP 2.0} \citep{dumusque14}
-which derives time series of the photometric, RV, and line shape parameters resulting from
+which computes time series of the photometric, RV, and line shape parameters resulting from
 spots and/or plages on a rotating star. In this toy model I simulate a single equatorial spot
 with 1\% fractional coverage of the visible stellar disk on a star with \prot{}$=30$ days.
-White noise at the level of 1 \mps{} is also added to the time series.
+White noise at the level of 1 \mps{} is also added to the RV time series.
 The injected time series and the synthetic RVs are shown in the top panel of
 Fig.~\ref{fig:RVsignals}. The injected activity signal is seen to have a peak-to-peak amplitude of
 $\sim 8.5$ \mps{} and is dominated by the suppression of convective blueshift when the simulated
 starspot is present on the visible hemisphere. The RV signal due to activity is equal to zero when
-the starspot is not visible. The amplitude of the injected keplerian signal is seen to be
+the lone starspot is not visible. The amplitude of the injected keplerian signal is seen to be
 approximately a quarter that of the injected activity. \\
 
 \begin{figure}
@@ -886,13 +889,16 @@ approximately a quarter that of the injected activity. \\
   \includegraphics[width=\hsize]{figures/RVinjected.png}
   \includegraphics[width=\hsize]{figures/RVrecovered.png}
   \caption[Synthetic RV time series used to demonstrate the effectiveness of GP activity modelling.]
-          {A synthetic RV time series with injected stellar activity from a \texttt{SOAP 2.0} physical
-            model, a keplerian planetary signal, and noise. The RVs are sampled with the real HARPS window
-            function sampling of K2-18.}
+          {\emph{Top}: a synthetic RV time series with injected stellar activity from a \texttt{SOAP 2.0} physical
+            model (\emph{red curve}), a keplerian planetary signal (\emph{blue curve}), and noise.
+            The RVs (\emph{black markers}) are sampled with the real HARPS window
+            function of K2-18. \emph{Bottom}: the recovered Gp activity model and keplerian model using the
+            maximum a-posteriori model parameters from MCMC analysis. The recovered models closely resemble their
+            injected counterparts (see Fig.~\ref{fig:RVcomp} for more details).}
   \label{fig:RVsignals}
 \end{figure}
 
-Next I impose an RV model that includes an activity model in the form of an untrained
+Next I impose a RV model that includes an activity component in the form of an untrained
 quasi-periodic GP plus a single keplerian model of the planet which I treat as a transiting
 planet such that its linear ephemeris (i.e. $P$ and $T_0$) are well-constrained by its transit
 light curve. We note that untrained GPs can be dangerous as scenarios have been observed in which
@@ -902,19 +908,20 @@ I proceed by deriving the joint posterior of the GP hyperparameters and kepleria
 parameters to compute the `best-fit' GP and keplerian models which can then be compared to their
 injected signal counterparts. The recovered models are shown in the bottom panel of
 Fig.~\ref{fig:RVsignals}. Here the mean GP model is depicted along with its 68\% confidence
-interval. \\
+interval and appears to closely resemble the injected activity signal depsite being derived from
+a semi-parametric model of a physically induced signal. \\
 
 Fig.~\ref{fig:RVcomp} compares the recovered activity and planetary signals with the injected
-ones. The mean GP model appears to have approximately the same period and phase as the injected activity
+signals. The mean GP model appears to have approximately the same period and phase as the injected activity
 signal as it lies along the one-to-one line in Fig.~\ref{fig:RVcomp}. The residual RV rms between the
 recovered and injected activity signals is 0.72 \mps{} compared to the injected RV measurement uncertainties
 of 1 \mps{.} A notable exception to the inaccuracy of the GP activity model is in its failure to
 capture the pile up of injected RVs at 0 \mps{} corresponding to when the single simulated starspot is
-not visible. Although, the mean GP activity model at those epochs are often consistent with $1\sigma$ of
+not visible. Although, the mean GP activity model at those epochs are often consistent within $1\sigma$ of
 0 \mps{.} Similarly the recovered keplerian model is in phase and with the injected period owing to our
 treatment of that signal as one whose ephemeris is well-constrained by some unseen hypothetical data.
 The recovered semi-amplitude however is somewhat inaccurate at $K=1.83 \pm 0.55$ \mps{} which is underestimated
-compared to the injected semi-amplitude of 2 \mps{} although it is clearly consistent at the $1\sigma$ level.
+compared to the injected semi-amplitude of 2 \mps{.} However it is clearly consistent at the $1\sigma$ level.
 This $\sim 10$\% underestimation in the value of $K$ causes the slight offset from unity in the slope
 of the line in Fig.~\ref{fig:RVcomp} comparing the recovered and injected keplerian signals.
 
@@ -922,10 +929,10 @@ of the line in Fig.~\ref{fig:RVcomp} comparing the recovered and injected kepler
   \centering
   \includegraphics[width=\hsize]{figures/RVcomparison.png}
   \caption[Comparison of injected to recovered RV signals.]
-          {Left panel: comparison of the injected RV activity signal to the recovered GP activity model.
-            The mean GP model appears to lie along the one-to-one line (black line) with a residual rms
-            of 0.72 \mps{.} Right panel:
-          comparison of the injected keplerian signal to the recovered keplerian model. }
+          {\emph{Left panel}: comparison of the injected RV activity signal to the recovered GP activity model.
+            The mean GP model appears to lie along the one-to-one line (\emph{black line}) with a residual rms
+            of 0.72 \mps{.} \emph{Right panel}:
+            comparison of the injected keplerian signal to the recovered keplerian model. }
   \label{fig:RVcomp}
 \end{figure}
 
@@ -946,7 +953,7 @@ Examples of GP packages includes \texttt{scikit-learn} \citep{sklearn},
 \renewcommand\labelitemi{--}
 \item~\ref{sect:methods} \textbf{An Overview of Techniques for Stellar Activity
   Mitigation}: a multitude of techniques for the mitigation of stellar activity in RV time series exist
-  but many of them suffer from being incompleteness and/or inaccuracy.
+  but many of them suffer from incompleteness and/or inaccuracy.
 \item~\ref{sect:gp} \textbf{Gaussian Process Regression for Semi-Parametric
   Activity Modelling}: Gaussian process regression offers an alternative method to model
   stochastic activity signals within a semi-parametric Bayesian formalism that ensures consistency

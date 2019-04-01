@@ -322,22 +322,26 @@ of what Gaussian processes are and how I implement their formalism in the contex
 of modelling stellar activity in RV time series. \\
 
 Before proceeding it is important
-to note that GP models of activity are not the be all end all when it comes to activity
-modelling in RV time series. As will been argued throughout this thesis though, GP activity
+to note that Gaussian process regressionmodels of activity are not the be all end all
+when it comes to activity modelling in RV time series. As will be argued throughout this
+thesis though, Gaussian process activity
 modelling does provide a tractable framework with many desirable properties for deriving
-models of stochastic activity signals in RVs. 
+models of stochastic activity signals in RVs.
 
-\subsection{The one dimensional Gaussian distribution}
+\subsection{The one-dimensional Gaussian distribution}
 A Gaussian process (GP) is defined as \emph{a collection of random variables, any
 finite subset of which has a joint Gaussian distribution}. In other words,
 any random process\footnote{A random process is any collection of random
   variables indexed by an independent variable such as time.} for which all
 finite subsets have a multivariate Gaussian distribution, is a Gaussian process
-\citep{rasmussen05}. 
-In order to develop a visual intuition of the definition of a Gaussian process,
-let us a first consider a Gaussian random variable in one dimension. \\
+\citep{rasmussen05}. The following discussion is intended to help the reader
+develop an intuition of what a Gaussian process is. Much of the information
+provided and the pedogical approach taken throughout was acquired from a video lecture
+by Prof. David MacKay\footnote{\url{https://www.youtube.com/watch?v=NegVuuHwa8Q}}. \\
 
-Imagine some random
+In order to develop a visual intuition of the definition of a Gaussian process,
+let us a first consider a Gaussian random variable in one dimension. 
+So, imagine some random
 process that draws a single value of a random variable $X$ for each realization of
 an experiment. As an astronomer with a life
 outside of astronomy, and furthermore as an astronomer who spends many of his
@@ -360,7 +364,7 @@ be expressed by the Gaussian probability density function (PDF) of the form
 \end{equation}
 
 \noindent which is parameterized by $\mu=\text{mean}(X)$ and $\sigma^2=\text{var}(X)$;
-i.e. the mean and variance of $X$. As shown in Fig.~\ref{fig:gaa1d}, the empirical
+the mean and variance of $X$. As shown in Fig.~\ref{fig:gaa1d}, the empirical
 distribution of the $GAA$ for goaltenders in
 the National Hockey League (NHL) over the past five seasons closely follows a
 Gaussian distribution with a mean of 2.64 and a standard deviation of 0.40 goals
@@ -381,11 +385,11 @@ Before a new season begins, we can write down a prior distribution on the $GAA$
 based on the prior knowledge we have obtained from previous NHL seasons; i.e.
 $\mathcal{N}(GAA|2.64,0.16)$. This distribution has a unique expectation value and
 variance describing what we expect any given goaltender's $GAA$ to be in an
-up-coming season and, as crucially, how precisely that value constrained.
+up-coming season and, as crucially, how precisely that value is constrained.
 
-\subsection{The two dimensional Gaussian distribution}
+\subsection{The two-dimensional Gaussian distribution}
 Of course we can introduce a second Gaussian random variable and extend the 
-concept of the one dimensional Gaussian distribution to two dimensions. This is done
+concept of the one-dimensional Gaussian distribution to two dimensions. This is done
 by recasting the expression for the Gaussian PDF in $k>1$
 dimensions where $k=2$ in this scenario. Rewriting Eq.~\ref{eq:gauss} in $k$
 dimensions is achieved by replacing the scalar mean and variance with a mean
@@ -422,7 +426,7 @@ its mean. \\
 \subsubsection{Uncorrelated variables}
 Consider the special case of when the two Gaussian random variables under
 consideration $X_1$ and $X_2$ are uncorrelated; i.e. cov$(X_1X_2)=0$. A quick
-example of this is to let $X_1=GAA$ and sample $X_2$ from a independent Gaussian
+example of this is to let $X_1=GAA$ and sample $X_2$ from an independent Gaussian
 distribution with zero mean and unit variance.
 The nature of sampling $X_2$ in this way ensures
 that $X_1$ and $X_2$ are indeed uncorrelated. The corresponding covariance matrix
@@ -436,12 +440,12 @@ that $X_1$ and $X_2$ are indeed uncorrelated. The corresponding covariance matri
   \label{eq:Kuncorr}
 \end{equation}
 
-\noindent is calculated using Eq.~\ref{eq:coveq} is diagonal and confirms that
+\noindent is calculated using Eq.~\ref{eq:coveq}, is diagonal, and confirms that
 $X_1$ and $X_2$ are uncorrelated as the off-diagonal elements of $\mathbf{K}$ are zero.
-This fact can also be seen in the joint $X_1X_2$ distribution in Fig.~\ref{fig:uncorr2d}.
-Because the variables $X_1$ and $X_2$ are uncorrelated in this example the
-measurement of a value of $X_1$ does nothing to inform us of its corresponding
-$X_2$ value. That is that the prior distribution
+This fact can also be visually discerned in the joint $X_1X_2$ distribution in
+Fig.~\ref{fig:uncorr2d}. Because the variables $X_1$ and $X_2$ are uncorrelated in this,
+example the measurement of a value of $X_1$ does nothing to inform us of its
+corresponding $X_2$ value. That is that the prior distribution
 $\mathcal{N}(\mathbf{X}|\boldsymbol{\mu},\mathbf{K})$ is uninformative with regards to
 $X_2$ in a sample for which the corresponding value of $X_1$ is known. \\
 
@@ -449,7 +453,7 @@ $X_2$ in a sample for which the corresponding value of $X_1$ is known. \\
   \centering
   \includegraphics[width=.9\textwidth]{figures/uncorr_2d.png}
   \caption[Uncorrelated Gaussian random variables in two dimensions.]
-      {The one and two dimensional distributions of the Gaussian random
+      {The marginalized and joint distributions of the Gaussian random
         variables $GAA$ and draws from the standard normal distribution (i.e. $\mathcal{N}(0,1)$).
         The solid
     lines overlaid on their joint distribution represent the 1, 2, and 3$\sigma$
@@ -497,10 +501,11 @@ is easily visualized in their joint distribution in Fig.~\ref{fig:corr2d}. \\
   \begin{ocg}{fig:logosoff}{fig:logosoff}{0}%
   \end{ocg}%
   \begin{ocg}{fig:logoson}{fig:logoson}{1}%
-   % \includegraphics[width=0.9\hsize]{figures/corr_2D_HARTpost_logo_logos.png}%
+    \includegraphics[width=0.9\hsize]{figures/corr_2D_HARTpost_logo_logos.png}%
   \end{ocg}
+  \hspace{-0.9\hsize}%
   \caption[Correlated Gaussian random variables in two dimensions.]
-      {The one and two dimensional distributions of the Gaussian random
+      {The marginalized and joint distributions of the Gaussian random
     variables $GAA$ and $SV$\%.
     The covariance matrix (Eq.~\ref{eq:Kcorr}) has negative off-diagonal
     elements describing the degree of anti-correlation between the two
@@ -521,6 +526,7 @@ The fact that the two variables are
 correlated implies that knowledge of one variable provides some additional constraining
 power on the value of the second. This demonstrated in Fig.~\ref{fig:corr2d}
 wherein we measure the value of the $GAA$ for the Toronto Maple Leafs' goaltender
+Freddie Andersen
 to be 2.57 goals per game. Not bad. Not great, but not bad. By measuring
 this value we can establish a posterior distribution on Freddie's corresponding
 $SV$\% given his $GAA$: $p(SV\%|GAA=2.57)$. Because the variables are dependent
@@ -528,44 +534,46 @@ on each other according to Eq.~\ref{eq:Kcorr}, this posterior distribution is
 narrower (i.e. more precise) than the full $SV$\% distribution. Indeed this is
 evidenced in the lower right panel of Fig.~\ref{fig:corr2d} which compares the
 two $SV$\% distributions and reveals that the dispersion in $p(SV\%|GAA=2.57)$
-has approximately half of the dispersion as the full $SV$\% distribution. The degree
+has approximately half of the dispersion as does the full $SV$\% distribution. The degree
 of improvement in the predictive distribution of $X_2$ given $X_1$ is dependent
 on how strongly correlated the two variables are. \\
 
 \subsection{The $k$-dimensional Gaussian distribution}
 So far we have considered a pair of correlated Gaussian random variables whose
-PDF is given in Eq.~\ref{eq:gauss2d} for $k=2$. Next we want to extend the multivariate
+PDF is given by Eq.~\ref{eq:gauss2d} for $k=2$. Next we want to extend the multivariate
 Gaussian distribution to arbitrarily large $k$ and visualize that distribution which
 cannot be done with the conventional contour-based visualization
 (Figs.~\ref{fig:uncorr2d} \&~\ref{fig:corr2d}) beyond two dimensions. To resolve this
 restriction we now adopt an alternative visualization of a multivariate Gaussian
-distribution which I call the linear representation which is depicted in
-Fig.~\ref{fig:linrep} alongside the conventional representation. Fig.~\ref{fig:linrep}
-depicts a finite number of samples from the two dimensional Gaussian distribution shown
-in Fig.~\ref{fig:corr2d} in both representations. \\
+distribution which I refer to as its \emph{linear representation}. \\
 
-Each identically coloured line in the
+This new visualization is
+depicted in Fig.~\ref{fig:linrep} for the $GAA$ and the $SV$\% alongside the conventional
+representation. Specifically, Fig.~\ref{fig:linrep}
+depicts a finite number of samples from the two-dimensional Gaussian distribution shown
+in Fig.~\ref{fig:corr2d}. Each identically coloured line in the
 linear representation depicts the values of the scaled $GAA$ and the $SV$\%\footnote{Note
   that the $GAA$ and $SV$\% are scaled to a common unit such that they span roughly
   the same region of the y-axis in the Fig.~\ref{fig:linrep} linear representation.
   The scaling is also such that the correlation between the scaled $GAA$ and $SV$\% is
   now positive (i.e. not anti-correlated).} for a single
-sample from their joint distribution. Furthermore the correlation between the two variables,
-which we now insist be a positive correlation, is qualitatively apparent as a small value
+sample from their joint distribution. Furthermore, the correlation between the two variables,
+which we now insist be a positive correlation, is qualitatively apparent as a low value
 of the scaled $GAA$ often corresponds to a low value of the scaled $SV$\%. If the two
 variables were weakly correlated then we would expect more crossing of curves in the
 linear representation then is seen in Fig.~\ref{fig:linrep}. What's more is that the
-distribution of values in the vertical direction for each variable is indicative of its
-mean and uncertainty. \\
+distribution of values in the vertical direction represent samples from each variable's
+one-dimensional marginalized distribution such that the samples are indicative of the
+variable's mean and variance. \\
 
 \begin{figure}
   \centering
   \includegraphics[width=\hsize]{figures/linearrep_v1.png}
   \caption[Linear representation of Gaussian random variables in two dimensions.]
           {Visual comparison of samples from the two-dimensional Gaussian distribution
-            depicted in the
-            conventional way (left panel) and in the new linear representation (right
-            panel). The $GAA$ and $SV$\% variables are scaled to a common unit with a
+            depicted in the conventional way (\emph{left panel}) and in the new linear
+            representation (\emph{right panel}).
+            The $GAA$ and $SV$\% variables are scaled to a common unit with a
             positive correlation and offset for clarity.}
   \label{fig:linrep}
 \end{figure}
@@ -573,11 +581,11 @@ mean and uncertainty. \\
 
 The benefit of adopting the new linear representation is that it can be extended to
 arbitrarily large dimensions. Fig.~\ref{fig:linrepv2} depicts the linear representation
-of an $k=5$ dimensional space which includes three new Gaussian random variables which
+of a $k=5$ dimensional space which includes three new Gaussian random variables which
 are defined to be positively correlated with the scaled $GAA$ and $SV$\%. The left panel
-in Fig.~\ref{fig:linrepv2} depicts samples from the five dimensional Gaussian distribution
+in Fig.~\ref{fig:linrepv2} depicts samples from the five-dimensional Gaussian distribution
 as well as each variable's mean and $1\sigma$ dispersion. The right panel of
-Fig.~\ref{fig:linrepv2} illustrates the effect of how the measurement of one of variables
+Fig.~\ref{fig:linrepv2} illustrates the effect of how the measurement of one of the variables
 informs the posteriors of the other variables as a result of their correlation. That is
 that when the third variable in Fig.~\ref{fig:linrepv2} is measured and its uncertainty
 goes to zero, the posterior distributions on the remaining variables are narrowed. As
@@ -592,10 +600,10 @@ predictive models as we shall see in Sect.~\ref{sect:regression}. \\
   \centering
   \includegraphics[width=\hsize]{figures/linearrep_v2.png}
   \caption[Linear representation of Gaussian random variables in five dimensions.]
-          {The linear representation of samples from a five dimensional Gaussian
+          {The linear representation of samples from a five-dimensional Gaussian
             distribution with each sample depicted with a particular colour in each
             panel. The mean and $1\sigma$ dispersion of each variable is depicted
-            by the offset black markers and error bars. The right panel illustrates
+            by the offset black markers and error bars. The \emph{right panel} illustrates
             how the measurement of the third variable constrains the values of the
             remaining variables due to their correlations.}
   \label{fig:linrepv2}
@@ -604,14 +612,16 @@ predictive models as we shall see in Sect.~\ref{sect:regression}. \\
 
 \subsection{Gaussian process regression modelling} \label{sect:regression}
 Upon inspection of Fig.~\ref{fig:linrepv2}, one might imagine changing the ``variables''
-axis to and independent variable such as time and the ``scaled values'' axis to an
-observable such as stellar RVs. Because RV signals arising from active stars are temporally
-correlated as active regions rotate in and out of view of the observer, it is clear that
+axis to an independent variable such as time and the ``scaled values'' axis to an
+observable such as stellar RVs. In this way we would be looking at a time series and
+particularly at the correlation between adjacent measurements. 
+Because RV signals arising from active stars are temporally
+correlated as active regions rotate in and out of the view of the observer, it is clear that
 modelling the correlation between adjacent RV observations could be used to inform
-our understanding of the activity signal in a way that is independent of attempting to
+our understanding of that signal in a way that is independent of attempting to
 model the physical nature of the signal. \\
 
-Indeed one dimension Gaussian process (GP) regression models are a convenient method to model
+Indeed one-dimensional GP regression models are a convenient way to model
 correlations between observations in a semi-parametric way. In particular, GPs provide a
 flexible framework to perform Bayesian inference on functions. Their flexibility stems from
 their semi-parametric nature which makes them well-suited to modelling stochastic processes
@@ -635,23 +645,23 @@ function $k(t,t')$ as
 \label{eq:Kmat}
 \end{equation}
 
-\noindent where the indices run up to the number of RV measurements (i.e. $i,j=1,\dots,$\nrv{)}.
+\noindent where the indices $i,j$ run up to the number of RV measurements (i.e. $i,j=1,\dots,$\nrv{)}.
 Because of the Dirac delta function $\delta_{ij}$ in Eq.~\ref{eq:Kmat}, the 
-diagonal of the covariance matrix $\mathbf{K}$ includes contributions directly from the
+diagonal of the covariance matrix $\mathbf{K}$ includes direct contributions from the
 RV measurement uncertainties \sigRV{} plus an additive scalar jitter $s$ designed to absorb excess
-white noise from systematics or from other temporally independent noise sources. \\
+white noise from systematics and/or from other temporally independent noise sources. \\
 
-A number of covariance kernels which have been proposed
-for the treatment of stellar RV activity are summarized below. Their corresponding covariance
+A number of covariance kernels have been proposed for the treatment of stellar RV activity
+and are summarized below \citep{grunblatt15}. Their corresponding covariance
 matrices are also shown in Fig.~\ref{fig:matrices}. \\
 
 \begin{figure}
   \centering
   \includegraphics[width=\hsize]{figures/gpmatrices.png}
   \caption[Example of covariance matrices.]
-          {Examples of covariance matrices with a squared exponential covariance kernel (left),
-            a periodic covariance kernel (middle), and a quasi-periodic covariance kernel (right).
-            In this example the exponential timescale exceeds the periodic timescale such that the
+          {Examples of covariance matrices with a squared exponential covariance kernel (\emph{left}),
+            a periodic covariance kernel (\emph{middle}), and a quasi-periodic covariance kernel (\emph{right}).
+            In the latter example the exponential timescale exceeds the periodic timescale such that the
             nearly periodic nature of the covariance is still discernible for points closely separated
           in time (i.e. near the matrix diagonal).}
           \label{fig:matrices}
@@ -665,7 +675,7 @@ matrices are also shown in Fig.~\ref{fig:matrices}. \\
 
 \noindent has two hyperparameters. Namely, the covariance amplitude $a$ in units of the observable,
 and an exponential timescale $\lambda$ describing how much time is required for measurements to
-effectively forget previous values. With this covariance kernel measurements made closely in time
+effectively forget previous values. With this covariance kernel, measurements made closely in time
 are more highly correlated than well separated measurements and the degree of correlation for a
 given time separation will be larger for smaller $\lambda$. \\
 
@@ -677,7 +687,7 @@ given time separation will be larger for smaller $\lambda$. \\
 
 \noindent has three hyperparameters including the familiar covariance amplitude $a$. The periodic kernel
 also contains a coherence parameter $\Gamma$ and a periodic timescale $P$ within the sinusoidal term.
-With this covariance kernel measurements that are separated by an integer number of $P$ will be highly
+With this covariance kernel, measurements which are separated by an integer number of $P$ will be highly
 correlated. \\
 
 \emph{Quasi-periodic}:
@@ -691,19 +701,20 @@ correlated. \\
 contains all four unique hyperparameters among the two kernels. \\
 
 Stellar activity on M dwarfs
-is dominated by active regions\citep{lindegren03}\footnote{And sometimes flares but those
+is dominated by active regions \citep{lindegren03}\footnote{And sometimes flares but those
   occur on short timescales such that they rarely affect low cadence RV observations for almost
   all but the most active flare stars.} and the resulting RV signals evolve in a manner that
 is easy to understand qualitatively. Namely, we can expect a periodic component to the
 RV correlations because active regions rotate in and out of view at the stellar rotation period
 although the periodicity of the correlations need not be at \prot{} and may instead appear
 at a low order harmonic of \prot{} such as in the case of rapidly rotating spotted stars 
-(see Sect.~\ref{sect:ffp}). But in addition to these periodic variations, we can expect activity
-arising from active regions to not be strictly periodic because of active region evolution
-in terms of their sizes, temperatures, and spatial distributions. Thus we
+(see Sect.~\ref{sect:ffp}). But in addition to these periodic variations we can also expect activity
+arising from active regions to not be strictly periodic because of active region evolution through
+which their sizes, temperatures, and spatial distributions will vary. Thus we
 have a physical justification for the adaption of a
-quasi-periodic covariance kernel as it includes the squared exponential term
-whose timescale can be thought of a characterizing active region lifetimes. \\
+quasi-periodic covariance kernel as it includes the first-order periodic structure of the activity
+signal as well as the squared exponential term
+whose timescale can be thought of as characterizing the active region lifetimes. \\
 
 The optimization of the quasi-periodic covariance kernel over competing kernel functions
 was demonstrated by \cite{grunblatt15} on the active Sun-like star Kepler-78. However, it
@@ -713,31 +724,36 @@ much as one might think. Fig.~\ref{fig:exactgp} illustrates this notion by model
 set of synthetic data points with each of the three covariance functions defined above.
 The synthetic data are generated by a sinusoidal function plus a decreasing linear trend. 
 Each GP does a qualitatively similar job at modelling the data and with comparable $1\sigma$
-uncertainties. \\
+uncertainties.  \\
+
+Also depicted in Fig.~\ref{fig:exactgp} is the effect of varying the hyperparameters of
+a quasi-periodic GP regression model to the same synthetic data. The first curve depicts
+the resulting GP model using the approximate optimized hyperparameters with a periodic
+timescale approximately equal to the injected timescale of 50 (arbitrary units). The second
+GP model has the same periodic timescale but whose exponential timescale is greater by nearly
+three orders of magnitude relative to the first curve.
+Despite this, the resulting mean GP appears to continue to be a good
+fit to the data. The final GP model reverts back to the optimized exponential timescale but
+decreases the periodic timescale from 50 to 20. The effect of a shorter periodic timescale
+is only apparent in the regions between data points as the resulting GP again appears to do
+a qualitatively similar job at modelling the data despite having widely varying hyperparameters.
+This exercise was intended to demonstrate that for some datasets, the exact form of the covariance
+kernel or the exact values of the hyperparameters does not always have a drastic effect on the
+model prediction at the epochs of observations. Although it is clear from Fig.~\ref{fig:exactgp}
+that predictions from each unique GP can vary widely at times far from the epochs of observation.
 
 \begin{figure}
   \centering
   \includegraphics[width=0.8\hsize]{figures/gpkernels.png}
   \includegraphics[width=0.8\hsize]{figures/gpkernelvalues.png}
   \caption[Behaviour of GPs with different covariance kernels and hyperparameters.]
-          {Top panel: the behaviour of three GP models with different covariance
-            kernel functions on a synthetic dataset. Bottom panel: the behaviour of three
+          {\emph{Top panel}: the behaviour of three GP models with different covariance
+            kernel functions on a synthetic dataset. \emph{Bottom panel}: the behaviour of three
             quasi-periodic GP models with varying hyperparameters. Each GP, regardless of
             covariance kernel or hyperparameters, exhibits
             a qualitatively similar behaviour in the vicinity of the data points.}
           \label{fig:exactgp}
 \end{figure}
-  
-Also depicted in Fig.~\ref{fig:exactgp} is the effect of varying the hyperparameters of
-a quasi-periodic GP regression model to the same synthetic data. The first curve depicts
-the resulting GP model using the approximate optimized hyperparameters with a periodic
-timescale approximately equal to the injected timescale of 50 (arbitrary units). The second
-GP model has the same periodic timescale but whose exponential timescale is greater by nearly
-three orders of magnitude. Despite this the resulting mean GP appears to continue to be a good
-fit to the data. The final GP model reverts back to the optimized exponential timescale but
-decreases the periodic timescale from 50 to 20. The effect of a shorter periodic timescale
-is only apparent in the regions between data points as the resulting GP again appears to do
-a qualitatively similar job at modelling the data despite having widely varying hyperparameters.
 
 
 \subsubsection{Hyperparameter estimation}

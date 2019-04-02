@@ -1,11 +1,130 @@
 \chapter{Conclusions and Future Work}
 
-\section{RVFC}
-M dwarf model spectra are known to be inaccurate \citep{passegger16}
+This thesis has focused on the development and implementation of
+semi-parametric Gaussian process (GP) regression modelling of stellar activity
+and other nuissance signals. The GP formalism helps enable the detection as
+well as the precise and accurate characterization of exoplanetary systems
+around low mass stars in particular. \\
 
-\begin{itemize}
-\item update the M dwarf stellar spectra in the \texttt{RVFC}
-\item add a more realistic treatment of telluric contamination when computing
-  \sigRV{} to avoid eliminating such large regions of the near-IR wavelength
-  domain
-\end{itemize}
+In Chapter~\ref{chap:BS} I simulated the
+now ongoing SPIRou Legacy Survey-Planet Search (SLS-PS)
+in which I search for planets
+in synthetic RV time series using a GP treatment of activity to detect
+those planets and calculate the expected planet yield of the survey. In
+Chapter~\ref{chap:rvfc} I derive an analytical framework to calculate the
+RV observational requirement to measure the masses of transiting planets at
+a desired level of precision in the presence of correlated RV residuals stemming
+from stellar activity and treated as a quasi-periodic GP as has largely become
+conventional within the field. In Chapter\ref{chap:k218} the GP formalism is
+applied to empirical time series from K2, HARPS, and CARMENES of the transiting
+planetary system around the nearby mid-M dwarf K2-18. Lastly,
+Chapter\ref{chap:orion} extends the one-dimensional GP regression modelling to
+the search for transiting planets in high cadence light curves from TESS. Here
+GP modelling was used to treat stellar varaibaility and residual systematic
+effects while searching for repeating transit-like events in the 2 minute
+extracted light curves. \\
+
+Each of the applications of the GP formalism in the aforementioned chapters
+may lead to a number of improvements or continued paths of investigation which
+are discussed below.
+
+\section{On the Accuracy of the SLS-PS Planet Yield Predictions}
+Although not a critical assessment, in four years time it would be interesting
+to compare the actual yield of the SLS-PS to the predictions presented in
+Chapter~\ref{chap:BS}. The details of making this comparison one-to-one will
+need to be worked out as the actual time series obtained during the SLS-PS will
+certainly differ from those simulated both in terms of size, sampling, and
+measurement uncertainties. This may or may not prove to be a major hinderance
+however because it was determined through comparsion of many flavours of the
+simulated SLS-PS that for \nrv{} $\gtrsim 50$, that the GP treatment of stellar
+activity results in nearly white RV residuals such that the detection
+sensitivity within the survey scales approximately as $\sqrt{N_{\text{RV}}}$ and
+as $\sigma_{\text{RV}}^{-1}$. \\
+
+Discrepancies between the predicted and actual planet yields could stem
+from any of a number of inconsistencies. The assumed planet occurrence rates
+throughout were derived from Kepler statistics and converted to planetary masses
+using an empirical mass-radius relation. Inaccuracies from either calculation
+in general or their inapplicability to the stars in the SLS-PS target list may
+lead to a misestimated planet yield prediction. For example, the input Kepler
+statistics were derived from late K to early M dwarfs \citep{dressing15a} and
+may not be applicable to the full range of M dwarf spectral types targeted in
+the SLS-PS. Another danger with simulated time series is that injected signals
+may be too simplistic or that the number of injected signals is incomplete. For
+example, the inclusion of systematic RV noise sources may directly affect the
+survey's detection sensitivity. Another major source of potential inconsistency
+is that the nature of detecting planets in the SLS-PS was based on an automated
+detection algorithm intended to emulate the steps taken by a human when
+searching for RV planets. Indeed the data flow from RV surveys is sufficently
+small that manual planet detection is managable (unlike in large transit
+surveys) and variance between human performance and the automated detection
+algorithm from \cite{cloutier18a} may result in a different planet yield than
+was initially predicted. Overall, it would be an interesting exercise to
+isolate which of these sources contributes to the observed differences between
+the predicted planet yield and the true planet yield following the conclusion
+of the SLS-PS.
+
+\section{Foreseen Improvements to the \texttt{RVFC}}
+Recall that the Radial Velocity Follow-up Calculator (\texttt{RVFC}) is a tool
+used to calculate the number of RV measurements required to measure a transiting
+planet's RV semi-amplitude at a desired level of precision given the properties
+of the planet, host star, and RV spectrograph. The properties of the latter two
+are required, in part, to compute the photon noise limited RV precision using
+model spectra from which the RV information content can be quantified. However,
+late K to M dwarf model spectra are known to be incomplete largely due to the
+abundance of molecular transitions that are not well understood
+\citep{passegger16,behmard19}. Updating the M dwarf model spectra within the
+\texttt{RVFC}, from which $\sigms_{\gamma}$ values are calculated, would improve
+the accuracy of the \texttt{RVFC} calculations for cool stars. \\
+
+Another limiting factor to the accuracy of computed values of $\sigma_{\gamma}$
+is the treatment of telluric contamination. Currently in the \texttt{RVFC},
+regions of the spectral domain for which the vertically integrated atmospheric
+transmission is below some user-defined threshold are omitted from the
+calculation. As noted in Sect.~\ref{sect:tellurics}, these regions are often
+wide in the infrared such that calculations of $\sigma_{\gamma}$ in near-IR
+bands are likely underestimated relative to the values that could be obtained
+if a more sophisticated treatment of telluric contaimination was applied
+\citep[e.g.][]{artigau14,bedell19}. Implementation of an accurate model of the
+telluric spectrum and its subsequent subtraction from the observed spectrum
+would signficantly increase the usable amount of spectral information for stars
+observed with near-IR spectrographs and would thus decrease values of
+$\sigma_{\gamma}$ in the near-IR closer to typical values in the optical (see
+Fig.~\ref{fig:RVFCfig:sigRV}). \\
+
+Another point of potential improvement to the accuracy of the \texttt{RVFC} is
+to allow for custom window functions to be used. In the special case of planets
+plus white noise in RV time series, exact window function does not affect the
+$K$ measurement precision \sigK{} as long as the time series approximately
+samples the planet's orbital phase uniformly. However when correlated noise
+persists, the form of the window function matters because of the factors
+$t_i-t_j$ in the quasi-periodic covariance function. Currently the \texttt{RVFC}
+adopts a uniformly spaced window function for correlated noise calculations but
+the option for users to define their own window functions that take into account
+target visibility and/or observatory resistrictions would be desirable.
+
+
+\section{Improving our Physical Understanding of M dwarf Stellar Activity}
+
+simultaneous photometry and RVs
+
+The Sun is unique in that its surface can be resolved and observational
+signatures seen in various stellar activity diagnostics (e.g. magnetograms,
+polarimetry) can be related to exactly what is seen on the Sun's surface.  
+
+
+\section{Detailing the Accuracy of RV Planet Models in the Presence of a GP}
+The GP treatment of stellar activity is known to at times absorb some of
+the planetary signal \citep[e.g.][]{ribas18}
+
+
+In the sense that all models are incomplete, a better understanding of the
+physical sources of stellar activity on M dwarfs will help inform any absent
+components in our RV models. 
+
+Understanding
+
+
+\section{Characterizing the Performance of \texttt{ORION}}
+characterize the sensitivity and FP rate
+do planetary occurrence rates

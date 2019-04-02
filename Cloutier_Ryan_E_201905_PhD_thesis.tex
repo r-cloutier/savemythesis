@@ -7,6 +7,7 @@
 \usepackage[x11names]{xcolor}   %% to color interactive figures
 \usepackage{pdflscape}   %% to rotate pages
 \usepackage{multicol}   %% for multiple columns in itemize
+\usepackage{lipsum}     %% for including markerless footnotes
 
 %% new commands
 \newcommand{\mps}[1]{m s$^{-1}$#1}
@@ -39,6 +40,14 @@
 \newcommand{\pipeline}[1]{\texttt{ORION}#1}
 \newcommand{\vespa}[1]{\texttt{vespa}#1}
 
+
+%% setup footnote without a marker
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
 
 %% define aliases
 \defcitealias{sullivan15}{S15}
@@ -148,13 +157,13 @@ To-Do?: table centering, abstract, conclusion section
 
 %\input{chapters/parametertable}
 %\input{chapters/intro}  % 28-pages
-\input{chapters/GP}
+%\input{chapters/GP}  % 26 pages
 %\input{chapters/blindsurveypaper} %Predictions of Radial Velocity Planet Detections (59 pages w/ bibliography)
 %\input{chapters/TESSpaper} % RVInformation (45 pages w/ bibliography)
 %\include{chapters/k218paper}  % first k2-18 paper (35 pages w/ bibliography)
 %\include{chapters/k218paper2}  % second k2-18 paper (28 pages w/ bibliography)
 %\input{chapters/tessplanets}  % orion tess paper (45 pages w/ bibliography)
-%\input{chapters/conclusion}
+\input{chapters/conclusion}
 
 %% This adds a line for the Bibliography in the Table of Contents.
 \addcontentsline{toc}{chapter}{Bibliography}

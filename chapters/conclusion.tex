@@ -74,7 +74,7 @@ model spectra from which the RV information content can be quantified. However,
 late K to M dwarf model spectra are known to be incomplete largely due to the
 abundance of molecular transitions that are not well understood
 \citep{passegger16,behmard19}. Updating the M dwarf model spectra within the
-\texttt{RVFC}, from which $\sigms_{\gamma}$ values are calculated, would improve
+\texttt{RVFC}, from which $\sigma_{\gamma}$ values are calculated, would improve
 the accuracy of the \texttt{RVFC} calculations for cool stars. \\
 
 Another limiting factor to the accuracy of computed values of $\sigma_{\gamma}$
@@ -105,26 +105,87 @@ target visibility and/or observatory resistrictions would be desirable.
 
 
 \section{Improving our Physical Understanding of M dwarf Stellar Activity}
+The Sun is unique in that its surface can be resolved with a variety of
+observational diagnostics of its brightness, velocity, magnetic field strength,
+and orientation distributions. When those observables are obtained
+simultaneously with other time series that are obtainable for distant stars
+(e.g. disk integrated photometry and RVs), then resolved structures on the solar
+surface can be related to the other observables in inform models of solar
+activity \citep{dumusque15,haywood16}. Numerous programs which I have recently
+become involved with\footnote{The RVxTESS collaboration which has proposed
+  to use a number of optical and near-IR RV spectrographs and polarimeters to
+contemporaneous observe TESS sectors } aim to observe a sample of M dwarfs with a similar
+strategy. That is, to obtain contemporaneous optical and near-IR RVs along with
+polarimetric diagnostics of bright M dwarfs spanning a range of stellar masses
+and rotation periods. This large collaboration known as the RVxTESS program
+has proposed to obtain those observations of M dwarfs within a suite of TESS
+sectors as they are being observed with TESS. The goal of this and other
+similar programs is to provide as many contemporaneous diagnostics of M dwarf
+stellar activity in order to infer the physical nature of activity signals that
+are seen in the RVs and that hinder our ability to detect low mass planets. \\
 
-simultaneous photometry and RVs
-
-The Sun is unique in that its surface can be resolved and observational
-signatures seen in various stellar activity diagnostics (e.g. magnetograms,
-polarimetry) can be related to exactly what is seen on the Sun's surface.  
+%In the sense that all models are incomplete a better understanding of the
+%physical sources of stellar activity on M dwarfs will help inform any absent
+%components in our RV models. 
+Deepening our understanding of the physical sources of M dwarf stellar may also
+be useful for modifying our GP models of stellar activity in that additional
+covariance terms may be required or these correlated noise models may need to
+be supplemented with other physical models of RV activity
+\citep{aigrain12,haywood14}. Another potential
+outcome of these studies is the establishment of what observational diagnostics
+are optimal in terms of informing RV activity models as I have discerned that
+in practice, stellar photometry provides the strongest constraints on RV
+activity despite the photometric time series used throughout
+chapters~\ref{chap:k2181} and~\ref{chap:k2182} were not contemporaneous with
+the RV measurements.
 
 
 \section{Detailing the Accuracy of RV Planet Models in the Presence of a GP}
-The GP treatment of stellar activity is known to at times absorb some of
-the planetary signal \citep[e.g.][]{ribas18}
+Since some of the original implementations of GP models of correlated noise in
+RV time series the results have been widely accepted due to the ability of the
+formalism to return precise planetary parameters in models that are favoured
+over models lacking such a treatment of stellar activity
+\citep{haywood14,rajpaul15}. What remains to be quantified is the accuracy of
+derived planetary parameters from RV models containing a GP activity model. For
+example, the GP treatment of stellar activity is known to at times absorb some
+of the planetary signal \citep[e.g.][]{ribas18}. Furthermore, GP activity models
+that are untrained are at times disfavoured over models with trained GP models
+as they lack the
+constraining power provided by ancillary activity-sensitive time series like
+photometry \citep{cloutier17b}. \\
 
-
-In the sense that all models are incomplete, a better understanding of the
-physical sources of stellar activity on M dwarfs will help inform any absent
-components in our RV models. 
-
-Understanding
+One avenue worth considering to quantify the accuracy of planet parameters
+derived from
+RV models containing a GP activity model is to compute planet parameters
+from a suite of synthetic RV time series for which the injected planet
+parameters are known. Calculating the bias function as the difference between
+the maximum a-posteriori $K$ (for example) and the injected $K$ for models with
+and without a GP would inform the ways in which the GO biases our inference of
+observable planetary parameters and consequently their physical properties.
+Inherent biases in the planetary mass-radius relation resulting from only
+reporting high S/N planet mass detections has already been noted \citep{burt18}.
+Whether or not the incompleteness of GP activity models is resulting in biased
+planetary mass measurements, we want known about it.
 
 
 \section{Characterizing the Performance of \texttt{ORION}}
-characterize the sensitivity and FP rate
-do planetary occurrence rates
+Although the TESS mission was not designed as a statistical mission to study
+the bulk properties of the exoplanet population and subsets therein,
+characterization of the sensitivity and false positive rate of transit detection
+algorithms will enable the planet occurrence rates to be derived. Particularly,
+for close-in planets where TESS is most sensitive due its 27 day fields.
+However, these planetary systems are of particular interest given structure
+that was recently detected in the occurrence rate of close-in planets around
+Sun-like stars postulated to be the result of photoevaporation on the planetary
+atmospheres \cite{owen13,fulton17,vaneylen18}. \\
+
+A thorough set of injection-recovery simulations using the \texttt{ORION}
+transit detection code (see chapter~\ref{chap:orion}) may be used to
+characterize the algorithm's detection sensitivity and systematic false positive
+rate as a function of planetary orbital period and $r_p/R_s$. Application to the
+TESS data will then allow for the occurrence rate of close-in planets around M
+dwarfs to be calculated as TESS features an enhanced sensitivity to early-to-mid
+M dwarfs than did Kepler. Focusing on the detailed occurrence rates of these
+planetary systems will enable the resolution of the radius valley for M dwarf
+planetary systems and the comparision of its location and slope with orbital
+period to the results obtained for Sun-like stars \citep{fulton18}.

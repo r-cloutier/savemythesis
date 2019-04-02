@@ -2,7 +2,7 @@
 
 This thesis has focused on the development and implementation of
 semi-parametric Gaussian process (GP) regression modelling of stellar activity
-and other nuissance signals. The GP formalism helps enable the detection as
+and other nuisance signals. The GP formalism helps enable the detection as
 well as the precise and accurate characterization of exoplanetary systems
 around low mass stars in particular. \\
 
@@ -20,7 +20,7 @@ applied to empirical time series from K2, HARPS, and CARMENES of the transiting
 planetary system around the nearby mid-M dwarf K2-18. Lastly,
 Chapter\ref{chap:orion} extends the one-dimensional GP regression modelling to
 the search for transiting planets in high cadence light curves from TESS. Here
-GP modelling was used to treat stellar varaibaility and residual systematic
+GP modelling was used to treat stellar variability and residual systematic
 effects while searching for repeating transit-like events in the 2 minute
 extracted light curves. \\
 
@@ -34,8 +34,8 @@ to compare the actual yield of the SLS-PS to the predictions presented in
 Chapter~\ref{chap:BS}. The details of making this comparison one-to-one will
 need to be worked out as the actual time series obtained during the SLS-PS will
 certainly differ from those simulated both in terms of size, sampling, and
-measurement uncertainties. This may or may not prove to be a major hinderance
-however because it was determined through comparsion of many flavours of the
+measurement uncertainties. This may or may not prove to be a major hindrance
+however because it was determined through comparison of many flavours of the
 simulated SLS-PS that for \nrv{} $\gtrsim 50$, that the GP treatment of stellar
 activity results in nearly white RV residuals such that the detection
 sensitivity within the survey scales approximately as $\sqrt{N_{\text{RV}}}$ and
@@ -55,8 +55,8 @@ example, the inclusion of systematic RV noise sources may directly affect the
 survey's detection sensitivity. Another major source of potential inconsistency
 is that the nature of detecting planets in the SLS-PS was based on an automated
 detection algorithm intended to emulate the steps taken by a human when
-searching for RV planets. Indeed the data flow from RV surveys is sufficently
-small that manual planet detection is managable (unlike in large transit
+searching for RV planets. Indeed the data flow from RV surveys is sufficiently
+small that manual planet detection is manageable (unlike in large transit
 surveys) and variance between human performance and the automated detection
 algorithm from \cite{cloutier18a} may result in a different planet yield than
 was initially predicted. Overall, it would be an interesting exercise to
@@ -84,10 +84,10 @@ transmission is below some user-defined threshold are omitted from the
 calculation. As noted in Sect.~\ref{sect:tellurics}, these regions are often
 wide in the infrared such that calculations of $\sigma_{\gamma}$ in near-IR
 bands are likely underestimated relative to the values that could be obtained
-if a more sophisticated treatment of telluric contaimination was applied
+if a more sophisticated treatment of telluric contamination was applied
 \citep[e.g.][]{artigau14,bedell19}. Implementation of an accurate model of the
 telluric spectrum and its subsequent subtraction from the observed spectrum
-would signficantly increase the usable amount of spectral information for stars
+would significantly increase the usable amount of spectral information for stars
 observed with near-IR spectrographs and would thus decrease values of
 $\sigma_{\gamma}$ in the near-IR closer to typical values in the optical (see
 Fig.~\ref{fig:RVFCfig:sigRV}). \\
@@ -101,7 +101,7 @@ persists, the form of the window function matters because of the factors
 $t_i-t_j$ in the quasi-periodic covariance function. Currently the \texttt{RVFC}
 adopts a uniformly spaced window function for correlated noise calculations but
 the option for users to define their own window functions that take into account
-target visibility and/or observatory resistrictions would be desirable.
+target visibility and/or observatory restrictions would be desirable.
 
 
 \section{Improving our Physical Understanding of M dwarf Stellar Activity}
@@ -187,5 +187,5 @@ TESS data will then allow for the occurrence rate of close-in planets around M
 dwarfs to be calculated as TESS features an enhanced sensitivity to early-to-mid
 M dwarfs than did Kepler. Focusing on the detailed occurrence rates of these
 planetary systems will enable the resolution of the radius valley for M dwarf
-planetary systems and the comparision of its location and slope with orbital
+planetary systems and the comparison of its location and slope with orbital
 period to the results obtained for Sun-like stars \citep{fulton18}.

@@ -59,7 +59,7 @@ atmosphere \citep{kasting93}. The presence of liquid water is a condition likely
 This implies that habitable zone exoplanets receive comparable levels of stellar insolation to what the Earth
 receives from the Sun. Habitable zone exoplanets therefore represent superlative opportunities to
 search for life outside of the solar system via the characterization of their atmospheric structure
-and composition via transmission spectroscopy for transiting exoplanets.
+and composition via transmission spectroscopy for transiting exoplanets. \\
 
 M dwarf host stars are ideal targets to probe potentially habitable exoplanetary atmospheres
 \citep[e.g.][]{kaltenegger11, rodler14}. 
@@ -72,7 +72,7 @@ the HZ are less than those around Sun-like stars (weeks for those in the HZ of M
 thus increasing the number of accessible transit events within a given observational baseline.
 M dwarfs are also known to frequently host multiple small planets
 \citep[typically 2.5 planets per star with $0.5 \leq r_p/\text{R}_{\oplus} \leq 4$ and within 200 days;][]{dressing15a,gaidos16}
-thus enabling direct comparative planetology to be conducted on known multi-planet systems.
+thus enabling direct comparative planetology to be conducted on known multi-planet systems. \\
 
 \cite{montet15} reported the detection of the HZ super-Earth K2-18b originally proposed in
 the K2 light curve analysis of \cite{foremanmackey15b}. In these studies,
@@ -91,7 +91,7 @@ James Webb Space Telescope \citep[JWST;][]{beichman14}.
 Owing to the proximity of the system
 \citep[$\sim 34$ pc, $V=13.5$, $I=11.7$, $K=8.9$;][]{cutri03, zacharias13}, K2-18
 is truly an attractive target for characterizing the atmosphere of a HZ super-Earth with
-unprecedented precision in the JWST-era.
+unprecedented precision in the JWST-era. \\
 
 In this study we report the first measurement of the planetary mass of K2-18b using precision
 radial velocity measurements taken with the HARPS spectrograph. In this data we also find strong
@@ -134,7 +134,7 @@ with tellurics masked by the median telluric spectrum.
 We then computed precision radial velocities by performing a $\chi^2$-minimization
 of each spectrum with the reference spectrum \citep{astudillodefru15}.
 Radial velocity uncertainties were then estimated directly on the reference
-spectrum \citep{bouchy01}.
+spectrum \citep{bouchy01}. \\
 
 From the extracted spectra we also derived a number of activity indicators including
 the time series of the H$\alpha$ index which is sensitive to chromospheric activity and
@@ -157,7 +157,7 @@ K2 mission as part of the `Targeting M dwarfs with K2' proposal
 (GO1053\footnote{K2-18 was also targeted in the following programmes:
   GO1006, GO1036, GO1050, GO1051, GO1052, GO1059, GO1063, GO1075}, PI: B. Montet).
 The baseline of the K2 light curve is just 80 days but provides nearly continuous
-coverage between June 1st, 2014 (BJD=2456810.5) and August 20th, 2014 (BJD=2456890.5). 
+coverage between June 1st, 2014 (BJD=2456810.5) and August 20th, 2014 (BJD=2456890.5).  \\
 
 We obtained the full de-trended light curve from the
 MAST\footnote{http://archive.stsci.edu/k2/hlsp/everest/search.php} data retrieval service. As a result
@@ -166,7 +166,7 @@ observations from the K2 mission exhibit a reduced pointing precision, and
 hence photometric precision, compared to the original Kepler mission. Raw K2
 light curves must be de-trended with the variable pointing of the
 spacecraft throughout the observing sequence. We selected the EVEREST reduction of
-the K2 light curve which performs this de-trending correction \citep{luger16}.
+the K2 light curve which performs this de-trending correction \citep{luger16}. \\
 
 The majority of the residual photometric variability following de-trending of
 the light curve can be attributed to the intrinsic photometric variability of
@@ -216,7 +216,7 @@ and/or its harmonics. In the top panel of Fig.~\ref{k218fig:periodograms} we plo
 Lomb-Scargle periodogram \citep{scargle82} of the raw RVs to determine which periodicities are
 present at high significance, that is, those with a low false alarm probability (FAP). In all
 LS-periodograms we calculated FAPs via bootstrapping with replacement using $10^4$ iterations
-and individually normalize each periodogram's power by its standard deviation. 
+and individually normalize each periodogram's power by its standard deviation.  \\
 
 \begin{figure}
   \centering
@@ -282,7 +282,7 @@ The observed photometric variability---or photometric activity---has
 a correlated manifestation in the
 variation of the star's apparent radial velocity and certain spectroscopic indicators
 because it is a single physical process that is responsible for the activity in each
-time series \citep{aigrain12}.
+time series \citep{aigrain12}. \\
 
 In order to obtain accurate and self-consistent detections of the planetary signals in radial velocity
 we must model the RV activity signal of K2-18 simultaneously with our planet model. The  
@@ -307,7 +307,7 @@ FWHM time series but find results consistent with training on the BIS. Following
 considered a joint activity + planet model but neglected any training of the activity model's covariance structure in
 a third model; Model 3. Finally for comparison
 purposes we also considered a fourth model---called Model 4---that neglected any contribution from stellar
-activity.
+activity. \\
 
 To implement this joint modelling procedure
 we followed \cite{cloutier17a} by using a Gaussian process (GP) regression model to model the covariance between
@@ -334,8 +334,7 @@ can be evaluated at previously unseen epochs $\mathbf{t^*}$ using
 \end{equation}
 
 \noindent which we took to be our GP activity model of the RVs 
-%$\mathbf{y}(\mathbf{t})$
-by evaluating Eq.~\ref{k218eq:meanGP} at $\mathbf{t}$.
+by evaluating Eq.~\ref{k218eq:meanGP} at $\mathbf{t}$. \\
 
 Because the stellar activity, and in particular the long-term photometric variation,
 is modulated by the stellar rotation period, we included a
@@ -358,7 +357,7 @@ correlations, $\lambda$ the exponential timescale, $\Gamma$ the coherence scale 
 correlations, and $P_{\text{GP}}$ the periodic timescale of the correlations which we
 interpret as \prot{.} We also included an additional
 scalar jitter parameter $s$ which is added in quadrature to the diagonal elements of the
-covariance matrix $K$ such that $\boldsymbol{\theta}$ becomes $(a,\lambda,\Gamma,P_{\text{GP}},s)$.
+covariance matrix $K$ such that $\boldsymbol{\theta}$ becomes $(a,\lambda,\Gamma,P_{\text{GP}},s)$. \\
 
 Using the Markov chain Monte-Carlo (MCMC)
 ensemble sampler \texttt{emcee} \citep{foremanmackey13} we sample the marginalized
@@ -376,7 +375,7 @@ logarithmic likelihood function
 the binned photometric data points\footnote{Binning
   the K2 photometry in one day bins results in $N=78$ compared to the 3439 unbinned photometric
   observations thus drastically increasing the computational efficiency of the evaluating Eq.~\ref{k218eq:like} in
-  each step of the Markov chains.} whereas $\mathbf{y}=$ BIS time series in Model 2.
+  each step of the Markov chains.} whereas $\mathbf{y}=$ BIS time series in Model 2. \\
 
 The MCMC was initialized with 200 walkers and hyperparameter values
 $(a,\lambda,\Gamma,P_{\text{GP}})= (max(\mathbf{y}-\langle \mathbf{y} \rangle), 10^2\text{ days}, 1, 36\text{ days})$.
@@ -412,7 +411,7 @@ $a$ and $s$ as free parameters. We sampled the informative priors using the kern
 of each hyperparameter's PDF obtained during training. This methodology
 allows the model to learn the covariance structure of the stellar activity through observations which are
 independent of planetary sources and then apply that knowledge to the joint modelling of the RVs
-thus distinguishing between stellar activity and planet-induced Doppler shifts.
+thus distinguishing between stellar activity and planet-induced Doppler shifts. \\
 
 The RV modelling is again performed using \texttt{emcee}. In Models 1, 2, and 3
 our RV model consisted of 16 parameters including
@@ -426,8 +425,7 @@ $e$ and $\omega$ as well as reduce the tendency for the MCMC sampler to favour h
 Table~\ref{k218table:models} summarizes the adopted priors on each RV model parameter in each
 of the models considered in this study. We adopted non-informative priors for all Keplerian parameters other than the 
 orbital period and time of mid-transit of K2-18b which were well-constrained by the transit light curve modelling in 
-\citetalias{benneke17}.
-
+\citetalias{benneke17}. 
 
 \input{chapters/k218_rvpriors}
 
@@ -443,14 +441,14 @@ of K2-18b such that the two signals are not confused in our joint modelling and 
 K2-18b is not mis-estimated. Model 2 models the RV residuals with a quasi-periodic GP regression
 model that is trained on the BIS time series which is contemporaneous with the RVs.
 Model 3 models the RV residuals with an effectively unconstrained quasi-periodic GP and Model 4 neglects
-any modelling of the RV residuals therefore assuming that they are uncorrelated.
+any modelling of the RV residuals therefore assuming that they are uncorrelated. \\
 
 The maximum a-posteriori (MAP) values of each model parameter along with the 16$^{\text{th}}$
 and $84^{\text{th}}$ percentiles of
 the marginalized posterior PDFs are reported in Table~\ref{k218table:k2184}. The marginalized and joint posterior
 PDFs of the model parameters used in Model 1 are shown in Fig.~\ref{k218fig:cornerRV}. In Sect.~\ref{k218sect:modelcomp}
 we shall see that Model 1 is the best predictor of the observed RVs and therefore we only show the results from
-Model 1 in Fig.~\ref{k218fig:cornerRV}.
+Model 1 in Fig.~\ref{k218fig:cornerRV}. \\
 
 We emphasize that all Keplerian 
 model parameters for the two planets are consistent at $1\sigma$ across all four models. Recall that the stellar
@@ -462,9 +460,6 @@ but appear to be hidden within a forest of peaks spanning periodicities between 
 The consistency of all measured Keplerian parameters in each model also suggests that the RV residuals,
 following the removal of the two MAP Keplerian solutions, are weakly correlated because nearly identical RV solutions
 are obtained with and without a GP treatment of the RV residuals following the removal of our planet models.
-%With that said the inclusion of a treatment of any correlated RV residuals with a trained GP regression model
-%does result in a slightly improved measurement precision on keplerian model parameters of importance (e.g. $K_b$,
-%$K_c$) compared to 
 That is that K2-18 appears to be a spectroscopically quiet star with the majority of its observed RV variation being
 attributable to planetary companions. Being spectroscopically quiet is promising for the prospect of
 transmission spectroscopy of K2-18b; an observation that is significantly complicated by the presence of
@@ -496,7 +491,7 @@ and median absolute deviation for each model is
 reported at the bottom of Table~\ref{k218table:k2184} and was used to distinguish which of our four
 RV models performs optimally on the prediction of unseen RV measurements and thus best fits the data without over-fitting.
 Through time-series cross-validation we find that Model 1 is the best predictor of the observed RVs. In the remainder of
-this study we consider the results from Model 1 to be the measured values of the planets K2-18b and c.
+this study we consider the results from Model 1 to be the measured values of the planets K2-18b and c. \\
 
 To confirm that we have detected a second planet K2-18c in our RV data, we performed a second round of time-series
 cross-validation calculations. In these calculations we compared
@@ -508,7 +503,7 @@ discussed we find median logarithmic likelihoods of $\ln{\mathcal{L}_0}=-2.693 \
 $\ln{\mathcal{L}_1}=-2.642 \pm 0.047$, and $\ln{\mathcal{L}_2}=-2.566 \pm 0.026$.
 From this we find that $\ln{\mathcal{L}_2}-\ln{\mathcal{L}_1} = 0.076 \pm 0.054 > 0$ therefore arguing that
 the two planet model is the best predictor of unseen RV measurements and confirming that our two planet model
-containing both K2-18b and c is the RV model most favoured by the data. 
+containing both K2-18b and c is the RV model most favoured by the data.  \\
 
 The contributions to the observed RVs from stellar activity and each planet were depicted in
 Fig.~\ref{k218fig:fullrvs}. Together these physical models account for all significant periodicities in the
@@ -523,7 +518,7 @@ The residual rms following the removal of all modelled contributions is 2.89
 we have modelled all significant RV contributions. For comparison, the residual rms achieved in Model 4, which
 neglects any red noise modelling following the removal of the two Keplerian solutions, is 3.16 \mps{.} This value is
 also less than the median photon noise limit suggesting that the GP regression modelling alone in Models 1, 2, and
-3 does not result in over-fitting of the data.
+3 does not result in over-fitting of the data. \\
 
 \begin{figure}
   \centering
@@ -586,7 +581,7 @@ escape compared to K2-18b. However the two $10\sigma$ transits of K2-18b
 are clearly discernible by-eye in the K2 photometry whereas the predicted transits of K2-18c
 are not. This suggests that either K2-18c is much smaller than K2-18b such that its resulting
 transit depth is below the threshold for detection, or that
-the orbit K2-18c is mutually inclined with that of K2-18b such that it misses a transit configuration.
+the orbit K2-18c is mutually inclined with that of K2-18b such that it misses a transit configuration. \\
 
 Here we attempt to confirm that K2-18c is indeed not transiting in the K2 light curves. To do so
 we perform an MCMC sampling of the K2-18c transit
@@ -604,7 +599,7 @@ conjunction (i.e. time of mid-transit) were sampled from their joint RV posterio
 their apparent correlation (see Fig.~\ref{k218fig:cornerRV}). Priors on
 the scaled planet radius, and impact parameter are assumed uniform. In this way
 the scaled planetary radius is uncorrelated with its measured minimum mass and the impact parameter is
-constrained to be $|b_c|<1$ as is required for a transit to occur.
+constrained to be $|b_c|<1$ as is required for a transit to occur. \\
 
 Based on our MCMC analysis we find that the values of $r_{p,c}/R_s$ are consistent with zero,
 that is, no transit is detected in the K2 data.
@@ -615,7 +610,7 @@ transiting, albeit unknowingly due to its small size, the planet would have a bu
 of $\gtrsim 295$ g cm$^{-3}$ or $\gtrsim 54$ $\rho_{\oplus}$; an unphysically large value given
 the compressibility of pure iron. Thus
 we conclude that K2-18c is not transiting in the K2 data and is therefore non-coplanar with
-K2-18b despite having a smaller orbital separation.
+K2-18b despite having a smaller orbital separation. \\
 
 To visualize the data a selection of light
 curve models are compared to the phase-folded K2 photometry in Fig.~\ref{k218fig:transit}. Models shown
@@ -679,7 +674,7 @@ nearly aligned then we can analytically evaluate their Hill stability
 given estimates of their orbital eccentricities and assuming an inclination
 correction factor that is close to unity \citep{gladman93}. If we assume the simplest case of 
 initially circular orbits then the system is strongly Hill stable given that the two planets
-are currently separated by $\sim 23$ mutual Hill radii. 
+are currently separated by $\sim 23$ mutual Hill radii.  \\
 
 %\begin{equation}
 %  R_{\text{Hill}} = \left( \frac{m_{p,b}+m_{p,c}}{3M_s} \right)^{1/3} \frac{a_b+a_c}{2}. 
@@ -692,7 +687,7 @@ eccentricity of 0.1 is $\lesssim 2$ cm s$^{-1}$ ($\sim 0.5$\% of $K_b$) or 15 cm
 order of magnitude smaller than the characteristic RV uncertainty of the HARPS measurements
 presented in this work. Given that the system is Hill stable at small eccentricities 
 we can use dynamical simulations to constrain the orbital eccentricities of the
-planets insisting that the system remain stable throughout its simulated evolution. 
+planets insisting that the system remain stable throughout its simulated evolution.  \\
 
 To constrain the planet eccentricities
 we performed a suite of $10^4$ dynamical integrations wherein we sample linearly
@@ -719,7 +714,7 @@ open-source \texttt{REBOUND} N-body package \citep{rein12}. These integrations a
 provide a comprehensive overview of the system's dynamical stability but rather are 
 useful to show that the 
 system can remain stable up to at least 1 Myr and provide constraints on the planet
-eccentricities.
+eccentricities. \\
 
 We classify stable integrations as those in which the minimum distance between the planets never
 becomes less than their mutual Hill radius. The fraction of stable systems as a function of each
@@ -732,7 +727,7 @@ and the system is known to be Hill stable based on the analytic criterion.
 As we increase either planet's eccentricity the fraction of stable systems decreases.
 This is also illustrated by further marginalizing over planet eccentricities and considering the 
 one-dimensional representations of each system's stability fraction in the histograms shown in 
-Fig.~\ref{k218fig:dynam}.
+Fig.~\ref{k218fig:dynam}. \\
 
 \begin{figure}
 \centering
@@ -783,7 +778,7 @@ unknown. The discovery of RV planets in transiting M dwarf planetary systems
 further emphasizes the prevalence of multiple Earth to super-Earth-sized planets around
 nearby M dwarfs and that these additional planets can be uncovered with moderate RV follow-up
 \citep{cloutier17a}. Multi-planet systems such as K2-18 provide unique opportunities to study
-planet formation processes around M dwarfs via direct comparative planetology. 
+planet formation processes around M dwarfs via direct comparative planetology.  \\
 
 The presence of a second planet in the K2-18 transiting system will result in mutual 
 planetary interactions thus making the orbit of K2-18b non-Keplerian and possibly resulting
@@ -800,7 +795,7 @@ time of mid-transit \citepalias[$\sim 50$ seconds;][]{benneke17}.
 Thus with photometric monitoring of at least comparable quality to the K2 photometry
 shown in Fig.~\ref{k218fig:k2phot}, detecting TTVs in the K2-18 multi-planet system is unlikely to provide
 any significant new insight into the nature of the system. Indeed no significant TTVs were observed in
-the Spitzer light curves from \citetalias{benneke17}.
+the Spitzer light curves from \citetalias{benneke17}. \\
 
 With our measured mass of K2-18b the planet joins a select group of HZ planets with constraints
 on both its mass and radius. This represents a significant step towards searching for potentially habitable
@@ -825,7 +820,7 @@ and receives a comparable level of insolation despite being $\sim 1.6$ times lar
 1140b. Analyzing the mass-radius relationship of these small planets over a range of equilibrium
 temperatures is a critical step towards
 understanding which of these systems have retained significant atmospheric content
-thus making them more suitable to extraterrestrial life. 
+thus making them more suitable to extraterrestrial life.  \\
 
 
 \begin{figure}
@@ -846,7 +841,7 @@ or from space with JWST. With $J$=9.8, $H$=9.1, and $K$=8.9 \citep{cutri03},
 we stress that K2-18 is currently the second brightest M dwarf with a transiting
 habitable zone planet behind the recently discovered LHS 1140b. In the coming years the sample of
 habitable zone M dwarf planets is expected to increase dramatically following the launch of TESS
-\citep{ricker14}, although the majority of TESS planets will be more distant than LHS 1140 \citep{sullivan15}.
+\citep{ricker14}, although the majority of TESS planets will be more distant than LHS 1140 \citep{sullivan15}. \\
 
 Considering the prospect of observational follow-up of K2-18b in transmission spectroscopy, if we
 consider an atmosphere that is

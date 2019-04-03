@@ -1,36 +1,39 @@
-\begin{deluxetable*}{lc}
-\tablecaption{Model parameter priors\label{table:priors}}
-\tablehead{Parameter & Prior}
-\startdata
-\multicolumn{2}{c}{\emph{GP hyperparameters}\tablenotemark{a}} \\
-Covariance amplitude, $\ln{a_{\text{GP}}}$ & $\mathcal{U}(-20,0)$ \\
-Exponential timescale, $\ln{\lambda/}$days & $\mathcal{U}(-3,10)$ \\
-Coherence, $\ln{\Gamma}$ & $\mathcal{U}(-5,5)$ \\
-Periodic timescale, $\ln{P_{\text{GP}}/}$days & $\mathcal{U}(-3,10)$  \\
-\multicolumn{2}{c}{\emph{Transit model parameters}} \\
-Orbital period, $P$ [days] & $\mathcal{U}(0.9,1.11)\cdot P_{\text{opt}}$\tablenotemark{b} \\
-Time of mid-transit, $T_0$ & $\mathcal{U}(-1.11,1.11)\cdot P_{\text{opt}} + T_{0,\text{opt}}$ \\
-$[$BJD-2,457,000$]$ & \\
-Scaled semimajor axis, $a/R_s$ & $\mathcal{U}(0.58,1.70)\cdot (a/R_s)_{\text{opt}}$ \\
-Planet-star radius ratio, $r_p/R_s$ & $\mathcal{U}(0,1)$ \\
-Orbital inclination, $i$ & $\mathcal{U}(-1,1)\cdot i((a/R_s)_{\text{opt}},b=1)$\tablenotemark{c} \\
-\multicolumn{2}{c}{\emph{Single transit model parameters}} \\
-Orbital period, $P$ [days] & $\mathcal{J}(1,100)\cdot P_{\text{inner}}$\tablenotemark{d} \\
-Time of mid-transit, $T_0$ & $\mathcal{U}(-3,3)\cdot D$ \\
-$[$BJD-2,457,000$]$ & \\
-Scaled semimajor axis, $a/R_s$ & $\mathcal{J}(1,100)\cdot (a/R_s)_{\text{inner}}$ \\
-Planet-star radius ratio, $r_p/R_s$ & $\mathcal{U}(0,1)$ \\
-Orbital inclination, $i$ & $\mathcal{U}(-1,1)\cdot i((a/R_s)_i,b=1)$ \\
-\enddata
-\tablenotetext{a}{GP hyperparameter priors used during de-trending (i.e. with zero mean model) and during the simultaneous systematics plus transit modeling.}
-\tablenotetext{b}{The designation `opt' is indicative of the 
-optimized parameter values from the maximum likelihood model used for parameter initialization.}
-\tablenotetext{c}{The function $i(a/R_s,b)=a \cos{i}/R_s$ returns the orbital inclination
-  given $a/R_s$ and the impact parameter $b$ which is constrained to $|b|<1$ in our
-  transit models.}
-\tablenotetext{d}{The designation `inner' is indicative of the inner-most orbital period 
-permissible for a single transit event over the \tess{} baseline.}
-%\tablecomments{Note that {\tt \string \colnumbers} does not work with the
-%vertical line alignment token. If you want vertical lines in the headers you
-%can not use this command at this time.}
-\end{deluxetable*}
+\begin{table*}
+  \small
+  \renewcommand{\arraystretch}{0.7}
+  \caption{Model parameter priors}
+  \label{oriontable:priors}
+  \begin{tabular}{lc}
+    \hline \\ [-1ex]
+    Parameter & Prior \\
+    \hline
+    \multicolumn{2}{c}{\emph{GP hyperparameters}$^{\text{a}}$} \\
+    Covariance amplitude, $\ln{a_{\text{GP}}}$ & $\mathcal{U}(-20,0)$ \\
+    Exponential timescale, $\ln{\lambda/}$days & $\mathcal{U}(-3,10)$ \\
+    Coherence, $\ln{\Gamma}$ & $\mathcal{U}(-5,5)$ \\
+    Periodic timescale, $\ln{P_{\text{GP}}/}$days & $\mathcal{U}(-3,10)$  \\
+    \multicolumn{2}{c}{\emph{Transit model parameters}} \\
+    Orbital period, $P$ [days] & $\mathcal{U}(0.9,1.11)\cdot P_{\text{opt}}^{\text{b}}$ \\
+    Time of mid-transit, $T_0$ & $\mathcal{U}(-1.11,1.11)\cdot P_{\text{opt}} + T_{0,\text{opt}}$ \\
+    $[$BJD-2,457,000$]$ & \\
+    Scaled semimajor axis, $a/R_s$ & $\mathcal{U}(0.58,1.70)\cdot (a/R_s)_{\text{opt}}$ \\
+    Planet-star radius ratio, $r_p/R_s$ & $\mathcal{U}(0,1)$ \\
+    Orbital inclination, $i$ & $\mathcal{U}(-1,1)\cdot i((a/R_s)_{\text{opt}},b=1)^{\text{c}}$ \\
+    \multicolumn{2}{c}{\emph{Single transit model parameters}} \\
+    Orbital period, $P$ [days] & $\mathcal{J}(1,100)\cdot P_{\text{inner}}^{\text{d}}$ \\
+    Time of mid-transit, $T_0$ & $\mathcal{U}(-3,3)\cdot D$ \\
+    $[$BJD-2,457,000$]$ & \\
+    Scaled semimajor axis, $a/R_s$ & $\mathcal{J}(1,100)\cdot (a/R_s)_{\text{inner}}$ \\
+    Planet-star radius ratio, $r_p/R_s$ & $\mathcal{U}(0,1)$ \\
+    Orbital inclination, $i$ & $\mathcal{U}(-1,1)\cdot i((a/R_s)_i,b=1)$ \\
+  \end{tabular}
+  \begin{list}{}{}
+  \item {\bf{Notes.}}
+  \item $^{\text{a}}$ GP hyperparameter priors used during de-trending (i.e. with zero mean model) and during the simultaneous systematics plus transit modeling.
+  \item $^{\text{b}}$ The designation `opt' is indicative of the optimized parameter values from the maximum likelihood model used for parameter initialization.
+  \item $^{\text{c}}$ The function $i(a/R_s,b)=a \cos{i}/R_s$ returns the orbital inclination
+    given $a/R_s$ and the impact parameter $b$ which is constrained to $|b|<1$ in our transit models.
+  \item $^{\text{d}}$ The designation `inner' is indicative of the inner-most orbital period 
+  permissible for a single transit event over the TESS baseline.
+  \end{list}
+\end{table*}

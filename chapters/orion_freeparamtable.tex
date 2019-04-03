@@ -1,95 +1,104 @@
-\begin{longrotatetable}
-  \begin{deluxetable*}{clcl}
-  \tabletypesize{\small}
-\tablecaption{Descriptions of the free parameters controlling the performance of \pipeline{}\label{table:freeparams}}
-\tablehead{Parameter & Definition & Default Value & Summary of Behavior}
-\startdata
-\multicolumn{4}{c}{\emph{Linear search parameters}} \\
-\hline \\
-$\Delta t$ & Linear search temporal bin width & 30 minutes &
-Decreasing $\Delta t$ will improve sensitivity to ultra-short period \\
-&&& planets while increasing the \pipeline{} runtime number of signals \\
-&&& for confusion in the periodic search stage. \\ 
-$D$ grid & Grid of transit durations considered during the & $\{1.2,2.4,$ &
-Decreasing the minimum duration improves sensitivity to \\
-& linear search stage & $4.8\}$ hours &
-ultra-short period planets but makes \pipeline{} more \\
-&&& susceptible to stochastic features with short timescales. \\ 
-S/N$_{\text{thresh}}$ & Minimum linear search S/N of a transit- & 5 &
-Decreasing S/N$_{\text{thresh}}$ will result in more light curve features \\
-& like event &&
-being flagged as false positives thus creating more signals for \\
-&&& confusion within the periodic search stage.  \\
-\multicolumn{4}{c}{\emph{Periodic search parameters}} \\
-\hline \\
-$f_{\text{P}}$ & Maximum relative difference between two  & 0.01 &
-Increasing $f_{\text{P}}$ makes fewer period pairs consistent with  \\
-& periods to be flagged as a multiple &&
-being multiples thus increasing the sensitivity to resonant \\
-&&& planet pairs while simultaneously increasing the number \\
-&&& of single planets misidentifed as a resonant pair.  \\
-\multicolumn{4}{c}{\emph{Automated light curve vetting parameters}} \\
-\hline \\
-$c_1$ & Minimum transit S/N & 8.4 & Increasing $c_1$ prevents the detection of some small planets \\
-&&& but will also significantly reduce the number false positives \\
-&&& due to residual systematics. \\
-$c_2$ & Minimum number of MADs from the & 2.4 &
-Similar behavior to $c_1$. \\
-& out-of-transit flux that the difference in && \\
-& median in and out-of-transit fluxes  && \\
-& must exceed && \\
-$c_3$ & Minimum fraction of in-transit points & 0.7 &
-Increasing $c_3$ may result in more accurate determinations of \\
-& below $Z+\sigma_Z$ &&
-correct periods but will also cause some transits to be \\
-&&& discarded if residual noise is also present during the transit.  \\
-$c_4$ & Minimum fraction of in-transit points & 0.1 &
-Increasing $c_4$ increases sensitivity to asymmetric transit \\
-& prior to $T_0$ && 
-shapes such as those from disintegrating planets. \\
-$c_5$ & Minimum number of MADs for a flare & 8 &
-Increasing $c_5$ makes flare detection smore robust but at the \\
-& above the flux continuum &&
-risk of missing some lower amplitude flares. \\
-$c_6$ & Minimum number of successive points & 2 &
-Increasing $c_6$ decreases sensitivity to flares of short relative \\
-& within a flare duration & & to the light curve cadence. \\
-$c_7$ & Assumed M dwarf flare duration & 30 minutes &
-Increasing $c_7$ decreases the sensitivity to long duration flares \\
-&&& while increasing the assumed fraction light curve fraction that \\
-&&& is contaminated by flares. \\
-$c_8$ & Number of transit durations from $T_0$ & 4 &
-Decreasing $c_8$ decreases the probability of an transit being \\
-& which cannot be affected by flares &&
-contaminated by flares. \\
-$c_9$ & Maximum time from the light curve & 4.8 hours &
-Increasing $c_9$ descreases the probability of a transit being \\
-& edges to not be rejected due to possible &&
-affects by light curve systematics at its edges but also narrows \\
-&  contamination at the edges. &&
-the baseline over which transits can be found. \\
-$c_{10}$ & Minimum autocorrelation of flux residuals & 0.6 &
-Increasing $c_{10}$ improves the robustness of transit detections \\
-&&& but decreases the detection sensitivity in light curves with \\
-&&& imperfect systematics corrections. \\
-\multicolumn{4}{c}{\emph{Eclipsing binary vetting parameters}} \\
-\hline \\
-$c_{\text{EB},1}$ & Maximum $r_p/R_s$ of a  transit-like event & 0.5 & - \\
-$c_{\text{EB},2}$ & Maximum planet radius & 30 R$_{\oplus}$ & - \\
-$c_{\text{EB},3}$ & Maximum transit duration, & $D(30\text{ R}_{\oplus},$ & - \\
-& $D(r_p,P,a/R_s,Z,i)$ & $P,a/R_s,Z,i)$ & \\
-$c_{\text{EB},4}$\tablenotemark{a} & Minimum occultation S/N of an EB (Eq.~\ref{eq:occ}) & 5 &
-Decreasing $c_{\text{EB},4}$ makes a larger fraction of occultations \\
-&&& consistent with being due to an EB rather than a transiting \\
-&&& planet. \\
-$c_{\text{EB},5}$\tablenotemark{a} & Minimum fraction of iterative occultation & 0.5 &
-Increasing $c_{\text{EB},5}$ makes transit-like events more robust as \\
-& searches consistent with an EB & &
-the probability of being flagged as an EB is reduced. \\ 
-$c_{\text{EB},6}$\tablenotemark{a} & Minimum ingress plus egress time fraction & 0.9 &
-Increasing $c_{\text{EB},6}$ makes fewer transit-like events consistent \\
-& of $D$ for a `V'-shaped transit && with having a `V'-shaped transit. \\
-\enddata
-\tablenotetext{a}{These eclising binary (EB) parameters are intended to identify favorable EBs rather than transiting planets. Planetary signals of interest are rejected if any of the EB criteria are satisfied.}
-\end{deluxetable*}
-\end{longrotatetable}
+\clearpage
+\begin{landscape}
+\begin{table*}
+  \small
+  \renewcommand{\arraystretch}{0.7}
+  \caption{Descriptions of the free parameters controlling the performance of \pipeline{}}
+  \label{oriontable:freeparams}
+  \begin{tabular}{clcl}
+    \hline \\ [-1ex]
+    Parameter & Definition & Default Value & Summary of Behavior \\
+    \hline
+    \multicolumn{4}{c}{\emph{Linear search parameters}} \\
+    \hline
+    $\Delta t$ & Linear search temporal bin width & 30 minutes &
+    Decreasing $\Delta t$ will improve sensitivity to ultra-short period \\
+    &&& planets while increasing the \pipeline{} runtime number of signals \\
+    &&& for confusion in the periodic search stage. \\ 
+    $D$ grid & Grid of transit durations considered during the & $\{1.2,2.4,$ &
+    Decreasing the minimum duration improves sensitivity to \\
+    & linear search stage & $4.8\}$ hours &
+    ultra-short period planets but makes \pipeline{} more \\
+    &&& susceptible to stochastic features with short timescales. \\ 
+    S/N$_{\text{thresh}}$ & Minimum linear search S/N of a transit- & 5 &
+    Decreasing S/N$_{\text{thresh}}$ will result in more light curve features \\
+    & like event &&
+    being flagged as false positives thus creating more signals for \\
+    &&& confusion within the periodic search stage.  \\
+    \multicolumn{4}{c}{\emph{Periodic search parameters}} \\
+    \hline \\
+    $f_{\text{P}}$ & Maximum relative difference between two  & 0.01 &
+    Increasing $f_{\text{P}}$ makes fewer period pairs consistent with  \\
+    & periods to be flagged as a multiple &&
+    being multiples thus increasing the sensitivity to resonant \\
+    &&& planet pairs while simultaneously increasing the number \\
+    &&& of single planets misidentifed as a resonant pair.  \\
+    \multicolumn{4}{c}{\emph{Automated light curve vetting parameters}} \\
+    \hline \\
+    $c_1$ & Minimum transit S/N & 8.4 & Increasing $c_1$ prevents the detection of some small planets \\
+    &&& but will also significantly reduce the number false positives \\
+    &&& due to residual systematics. \\
+    $c_2$ & Minimum number of MADs from the & 2.4 &
+    Similar behavior to $c_1$. \\
+    & out-of-transit flux that the difference in && \\
+    & median in and out-of-transit fluxes  && \\
+    & must exceed && \\
+    $c_3$ & Minimum fraction of in-transit points & 0.7 &
+    Increasing $c_3$ may result in more accurate determinations of \\
+    & below $Z+\sigma_Z$ &&
+    correct periods but will also cause some transits to be \\
+    &&& discarded if residual noise is also present during the transit.  \\
+    $c_4$ & Minimum fraction of in-transit points & 0.1 &
+    Increasing $c_4$ increases sensitivity to asymmetric transit \\
+    & prior to $T_0$ && 
+    shapes such as those from disintegrating planets. \\
+    $c_5$ & Minimum number of MADs for a flare & 8 &
+    Increasing $c_5$ makes flare detection smore robust but at the \\
+    & above the flux continuum &&
+    risk of missing some lower amplitude flares. \\
+    $c_6$ & Minimum number of successive points & 2 &
+    Increasing $c_6$ decreases sensitivity to flares of short relative \\
+    & within a flare duration & & to the light curve cadence. \\
+    $c_7$ & Assumed M dwarf flare duration & 30 minutes &
+    Increasing $c_7$ decreases the sensitivity to long duration flares \\
+    &&& while increasing the assumed fraction light curve fraction that \\
+    &&& is contaminated by flares. \\
+    $c_8$ & Number of transit durations from $T_0$ & 4 &
+    Decreasing $c_8$ decreases the probability of an transit being \\
+    & which cannot be affected by flares &&
+    contaminated by flares. \\
+    $c_9$ & Maximum time from the light curve & 4.8 hours &
+    Increasing $c_9$ descreases the probability of a transit being \\
+    & edges to not be rejected due to possible &&
+    affects by light curve systematics at its edges but also narrows \\
+    &  contamination at the edges. &&
+    the baseline over which transits can be found. \\
+    $c_{10}$ & Minimum autocorrelation of flux residuals & 0.6 &
+    Increasing $c_{10}$ improves the robustness of transit detections \\
+    &&& but decreases the detection sensitivity in light curves with \\
+    &&& imperfect systematics corrections. \\
+    \multicolumn{4}{c}{\emph{Eclipsing binary vetting parameters}} \\
+    \hline \\
+    $c_{\text{EB},1}$ & Maximum $r_p/R_s$ of a  transit-like event & 0.5 & - \\
+    $c_{\text{EB},2}$ & Maximum planet radius & 30 R$_{\oplus}$ & - \\
+    $c_{\text{EB},3}$ & Maximum transit duration, & $D(30\text{ R}_{\oplus},$ & - \\
+    & $D(r_p,P,a/R_s,Z,i)$ & $P,a/R_s,Z,i)$ & \\
+    $c_{\text{EB},4}^{\text{a}}$ & Minimum occultation S/N of an EB (Eq.~\ref{eq:occ}) & 5 &
+    Decreasing $c_{\text{EB},4}$ makes a larger fraction of occultations \\
+    &&& consistent with being due to an EB rather than a transiting \\
+    &&& planet. \\
+    $c_{\text{EB},5}^{\text{a}}$ & Minimum fraction of iterative occultation & 0.5 &
+    Increasing $c_{\text{EB},5}$ makes transit-like events more robust as \\
+    & searches consistent with an EB & &
+    the probability of being flagged as an EB is reduced. \\ 
+    $c_{\text{EB},6}^{\text{a}}$ & Minimum ingress plus egress time fraction & 0.9 &
+    Increasing $c_{\text{EB},6}$ makes fewer transit-like events consistent \\
+    & of $D$ for a `V'-shaped transit && with having a `V'-shaped transit. \\
+  \end{tabular}
+  \begin{list}{}{}
+  \item {\bf{Notes.}}
+  \item $^{\text{a}}$ These eclising binary (EB) parameters are intended to identify favorable EBs rather than transiting planets. Planetary signals of interest are rejected if any of the EB criteria are satisfied.
+    \end{list}
+\end{table*}
+\clearpage
+\end{landscape}

@@ -1,38 +1,48 @@
-\begin{longrotatetable}
-\begin{deluxetable*}{cc|cc|cccccccc}
-\tabletypesize{\small}
-\tablecaption{\texttt{vespa} input parameters and inferred probabilities of transiting planet and astrophysical false positive models for our 24 objects of interest\label{table:vespa}}
-\tablehead{\multicolumn{2}{c}{IDs} & \multicolumn{2}{c}{\texttt{vespa} Input} & \multicolumn{8}{c}{\texttt{vespa} Results} \\ OI & TOI & \texttt{maxrad} & \texttt{secthresh} & $\text{P}_{\text{EB}}$ & $\text{P}_{\text{EB}2}$ & $\text{P}_{\text{HEB}}$ & $\text{P}_{\text{HEB}2}$ & $\text{P}_{\text{BEB}}$ & $\text{P}_{\text{BEB}2}$ & FPP\tablenotemark{a} & Disposition\tablenotemark{b}}
-\startdata
-12421862.01 & 198.01 & 34.755 & 9.9$\times 10^{-4}$ & 2.0$\times 10^{-9}$ & 4.9$\times 10^{-5}$ & 1.1$\times 10^{-14}$ & 9.8$\times 10^{-8}$ & 5.8$\times 10^{-2}$ & 3.7$\times 10^{-2}$ & 9.6$\times 10^{-2}$ & PC \\ 
-47484268.01 & 226.01 & 34.147 & 4.8$\times 10^{-3}$ & 1.3$\times 10^{-7}$ & 3.8$\times 10^{-3}$ & 1.4$\times 10^{-9}$ & 1.6$\times 10^{-4}$ & 3.9$\times 10^{-1}$ & 2.8$\times 10^{-1}$ & 6.8$\times 10^{-1}$ & pPC \\ 
-49678165.01 & - & 75.094 & 7.7$\times 10^{-3}$ & 9.4$\times 10^{-27}$ & 1.4$\times 10^{-14}$ & 2.4$\times 10^{-26}$ & 3.5$\times 10^{-14}$ & 9.1$\times 10^{-3}$ & 7.1$\times 10^{-3}$ & 1.6$\times 10^{-2}$ & ST \\ 
-92444219.01 & - & 35.723 & 3.8$\times 10^{-3}$ & 4.1$\times 10^{-15}$ & 6.7$\times 10^{-8}$ & 4.4$\times 10^{-15}$ & 1.6$\times 10^{-8}$ & 2.6$\times 10^{-1}$ & 1.6$\times 10^{-1}$ & 4.1$\times 10^{-1}$ & pST \\ 
-100103200.01 & - & 47.832 & 7.0$\times 10^{-4}$ & 5.1$\times 10^{-19}$ & 4.3$\times 10^{-12}$ & 5.0$\times 10^{-33}$ & 2.9$\times 10^{-20}$ & 3.8$\times 10^{-3}$ & 2.0$\times 10^{-3}$ & 5.7$\times 10^{-3}$ & pPC\tablenotemark{c} \\ 
-100103201.01 & - & 47.941 & 8.1$\times 10^{-4}$ & 2.2$\times 10^{-73}$ & 1.7$\times 10^{-67}$ & 5.1$\times 10^{-132}$ & 3.7$\times 10^{-91}$ & 6.2$\times 10^{-1}$ & 3.5$\times 10^{-1}$ & 9.7$\times 10^{-1}$ & BEB \\ 
-100103201.02 & - & 47.941 & 8.1$\times 10^{-4}$ & 2.2$\times 10^{-73}$ & 1.7$\times 10^{-67}$ & 5.1$\times 10^{-132}$ & 3.7$\times 10^{-91}$ & 6.2$\times 10^{-1}$ & 3.5$\times 10^{-1}$ & 9.7$\times 10^{-1}$ & BEB \\ 
-141708335.01 & - & 33.606 & 3.6$\times 10^{-3}$ & 6.7$\times 10^{-39}$ & 2.9$\times 10^{-31}$ & 3.4$\times 10^{-35}$ & 8.6$\times 10^{-26}$ & 6.3$\times 10^{-1}$ & 3.3$\times 10^{-1}$ & 9.5$\times 10^{-1}$ & BEB \\ 
-206660104.01 & - & 38.276 & 8.4$\times 10^{-4}$ & 1.7$\times 10^{-65}$ & 8.6$\times 10^{-39}$ & 2.5$\times 10^{-87}$ & 1.2$\times 10^{-40}$ & 1.3$\times 10^{-2}$ & 9.3$\times 10^{-3}$ & 2.2$\times 10^{-2}$ & PC \\ 
-231279823.01 & - & 36.346 & 5.3$\times 10^{-4}$ & 7.7$\times 10^{-43}$ & 7.9$\times 10^{-47}$ & 7.5$\times 10^{-55}$ & 4.0$\times 10^{-78}$ & 5.1$\times 10^{-1}$ & 4.9$\times 10^{-1}$ & $1.0\times 10^{0}$ & BEB \\ 
-231702397.01 & 122.01 & 36.485 & 6.9$\times 10^{-3}$ & 7.5$\times 10^{-18}$ & 8.7$\times 10^{-6}$ & 1.8$\times 10^{-23}$ & 5.1$\times 10^{-9}$ & 2.3$\times 10^{-3}$ & 2.7$\times 10^{-3}$ & 5.0$\times 10^{-3}$ & PC \\ 
-234994474.01 & 134.01 & 37.794 & 7.1$\times 10^{-4}$ & 1.2$\times 10^{-51}$ & 8.5$\times 10^{-34}$ & 3.9$\times 10^{-107}$ & 4.2$\times 10^{-61}$ & 9.6$\times 10^{-4}$ & 1.9$\times 10^{-4}$ & 1.2$\times 10^{-3}$ & PC \\ 
-235037759.01 & - & 39.567 & 1.9$\times 10^{-2}$ & - & - & - & - & - & - & - & AFP\tablenotemark{d} \\ 
-238027971.01 & - & 37.085 & 1.4$\times 10^{-3}$ & 2.5$\times 10^{-67}$ & 7.5$\times 10^{-92}$ & 5.6$\times 10^{-76}$ & 4.1$\times 10^{-79}$ & 3.4$\times 10^{-1}$ & 6.6$\times 10^{-1}$ & $1.0\times 10^{0}$ & BEB2 \\ 
-260004324.01 & - & 35.803 & 1.1$\times 10^{-3}$ & 3.3$\times 10^{-44}$ & 4.1$\times 10^{-17}$ & 1.4$\times 10^{-61}$ & 8.8$\times 10^{-20}$ & 5.3$\times 10^{-2}$ & 2.8$\times 10^{-2}$ & 8.1$\times 10^{-2}$ & PC \\ 
-262530407.01 & 177.01 & 40.509 & 8.0$\times 10^{-4}$ & 6.5$\times 10^{-38}$ & 3.2$\times 10^{-41}$ & 7.6$\times 10^{-45}$ & 5.5$\times 10^{-44}$ & 1.8$\times 10^{-7}$ & 5.7$\times 10^{-7}$ & 7.5$\times 10^{-7}$ & PC \\ 
-278661431.01 & - & 48.894 & 5.1$\times 10^{-3}$ & 2.4$\times 10^{-31}$ & 1.4$\times 10^{-37}$ & 3.6$\times 10^{-48}$ & 6.9$\times 10^{-55}$ & 3.8$\times 10^{-1}$ & 4.8$\times 10^{-1}$ & 8.6$\times 10^{-1}$ & pPC \\ 
-279574462.01 & - & 146.950 & 1.3$\times 10^{-2}$ & - & 1.7$\times 10^{-86}$ & 1.0$\times 10^{-304}$ & 1.9$\times 10^{-77}$ & 3.0$\times 10^{-1}$ & 7.0$\times 10^{-1}$ & $1.0\times 10^{0}$ & BEB2 \\ 
-303586421.01 & - & 32.084 & 6.2$\times 10^{-3}$ & 7.8$\times 10^{-53}$ & 6.2$\times 10^{-47}$ & 3.1$\times 10^{-67}$ & 1.5$\times 10^{-31}$ & 3.3$\times 10^{-1}$ & 5.6$\times 10^{-1}$ & 9.0$\times 10^{-1}$ & BEB2 \\ 
-305048087.01 & 237.01 & 34.445 & 8.7$\times 10^{-3}$ & 2.6$\times 10^{-30}$ & 1.4$\times 10^{-8}$ & 4.8$\times 10^{-27}$ & 8.0$\times 10^{-8}$ & 1.8$\times 10^{-2}$ & 1.4$\times 10^{-2}$ & 3.2$\times 10^{-2}$ & PC \\ 
-307210830.01 & 175.01 & 38.817 & 7.7$\times 10^{-4}$ & 1.7$\times 10^{-5}$ & 8.0$\times 10^{-3}$ & 9.0$\times 10^{-10}$ & 7.5$\times 10^{-5}$ & 9.2$\times 10^{-3}$ & 4.3$\times 10^{-3}$ & 2.2$\times 10^{-2}$ & PC \\ 
-415969908.01 & 233.01 & 32.000 & 2.3$\times 10^{-3}$ & 1.5$\times 10^{-11}$ & 1.1$\times 10^{-5}$ & 1.4$\times 10^{-18}$ & 2.0$\times 10^{-8}$ & 6.0$\times 10^{-3}$ & 5.5$\times 10^{-3}$ & 1.2$\times 10^{-2}$ & PC \\ 
-415969908.02 & - & 32.000 & 2.3$\times 10^{-3}$ & 2.5$\times 10^{-19}$ & 2.4$\times 10^{-10}$ & 4.9$\times 10^{-28}$ & 2.7$\times 10^{-13}$ & 2.6$\times 10^{-3}$ & 2.0$\times 10^{-3}$ & 4.7$\times 10^{-3}$ & ST \\ 
-441056702.01 & - & 35.795 & 1.9$\times 10^{-3}$ & 5.5$\times 10^{-19}$ & 5.3$\times 10^{-9}$ & 1.8$\times 10^{-37}$ & 6.0$\times 10^{-17}$ & 2.5$\times 10^{-2}$ & 1.7$\times 10^{-2}$ & 4.2$\times 10^{-2}$ & PC \\ 
-\enddata
-\tablecomments{P$_i$ represents the relative probability (i.e. the product of the model's prior and likelihood relative to the probabilties of all other models) of the $i^{\text{th}}$ astrophysical false positive scenario where $i$ is one of six possible scenarios: blended eclipsing binaries (BEB), undiluted eclipsing binaries (EB), and hiearchical eclipsing biaries (HEB), each with either one or twice its input orbital period.}
-\tablenotetext{a}{The transiting planet false positive probability.}
-\tablenotetext{b}{Possible dispositions of objects of interest are a planet candidate (PC), a putative planet candidate (pPC), a single transit event (ST), a putative single transit event (pST), an unclassifed astrophysical false positive (AFP), or any of the scenarios $i$. The putative dispositions have FPP $\in [0.1,0.9]$ whereas remaining candidates and astrophysical false positives have FPP $<0.1$ and $>0.9$ respectively.}
-\tablenotetext{c}{OI 100103200.01 is assigned the pPC disposition despite having a FPP $<0.1$ because of its proximity to the comparably bright TIC 100103201 (see Fig.~\ref{fig:gaiafps}).}
-\tablenotetext{d}{The MCMC for OI 235037759.01 failed to converge so we broadly classify it as an astrophysical false positive (AFP) based on the prevalence of nearby bright sources from \gaia{} (see panel `v' in Fig.~\ref{fig:gaiafps}). We are unable to classify the object as a particular type of astrophysical false positive.}
-\end{deluxetable*}
-\end{longrotatetable}
+\clearpage
+\begin{landscape}
+\begin{table*}
+  \small
+  \renewcommand{\arraystretch}{0.7}
+  \caption{\texttt{vespa} input parameters and inferred probabilities of transiting planet and astrophysical false positive models for our 24 objects of interest}
+  \label{oriontable:vespa}
+  \begin{tabular}{cc|cc|cccccccc}
+    \hline \\ [-1ex]
+    \multicolumn{2}{c}{IDs} & \multicolumn{2}{c}{\texttt{vespa} Input} & \multicolumn{8}{c}{\texttt{vespa} Results} \\
+    OI & TOI & \texttt{maxrad} & \texttt{secthresh} & $\text{P}_{\text{EB}}$ & $\text{P}_{\text{EB}2}$ & $\text{P}_{\text{HEB}}$ & $\text{P}_{\text{HEB}2}$ & $\text{P}_{\text{BEB}}$ & $\text{P}_{\text{BEB}2}$ & FPP$^{\text{a}}$ & Disposition$^{\text{b}}$ \\
+    \hline
+    12421862.01 & 198.01 & 34.755 & 9.9$\times 10^{-4}$ & 2.0$\times 10^{-9}$ & 4.9$\times 10^{-5}$ & 1.1$\times 10^{-14}$ & 9.8$\times 10^{-8}$ & 5.8$\times 10^{-2}$ & 3.7$\times 10^{-2}$ & 9.6$\times 10^{-2}$ & PC \\ 
+    47484268.01 & 226.01 & 34.147 & 4.8$\times 10^{-3}$ & 1.3$\times 10^{-7}$ & 3.8$\times 10^{-3}$ & 1.4$\times 10^{-9}$ & 1.6$\times 10^{-4}$ & 3.9$\times 10^{-1}$ & 2.8$\times 10^{-1}$ & 6.8$\times 10^{-1}$ & pPC \\ 
+    49678165.01 & - & 75.094 & 7.7$\times 10^{-3}$ & 9.4$\times 10^{-27}$ & 1.4$\times 10^{-14}$ & 2.4$\times 10^{-26}$ & 3.5$\times 10^{-14}$ & 9.1$\times 10^{-3}$ & 7.1$\times 10^{-3}$ & 1.6$\times 10^{-2}$ & ST \\ 
+    92444219.01 & - & 35.723 & 3.8$\times 10^{-3}$ & 4.1$\times 10^{-15}$ & 6.7$\times 10^{-8}$ & 4.4$\times 10^{-15}$ & 1.6$\times 10^{-8}$ & 2.6$\times 10^{-1}$ & 1.6$\times 10^{-1}$ & 4.1$\times 10^{-1}$ & pST \\ 
+    100103200.01 & - & 47.832 & 7.0$\times 10^{-4}$ & 5.1$\times 10^{-19}$ & 4.3$\times 10^{-12}$ & 5.0$\times 10^{-33}$ & 2.9$\times 10^{-20}$ & 3.8$\times 10^{-3}$ & 2.0$\times 10^{-3}$ & 5.7$\times 10^{-3}$ & pPC$^{\text{c}}$ \\ 
+    100103201.01 & - & 47.941 & 8.1$\times 10^{-4}$ & 2.2$\times 10^{-73}$ & 1.7$\times 10^{-67}$ & 5.1$\times 10^{-132}$ & 3.7$\times 10^{-91}$ & 6.2$\times 10^{-1}$ & 3.5$\times 10^{-1}$ & 9.7$\times 10^{-1}$ & BEB \\ 
+    100103201.02 & - & 47.941 & 8.1$\times 10^{-4}$ & 2.2$\times 10^{-73}$ & 1.7$\times 10^{-67}$ & 5.1$\times 10^{-132}$ & 3.7$\times 10^{-91}$ & 6.2$\times 10^{-1}$ & 3.5$\times 10^{-1}$ & 9.7$\times 10^{-1}$ & BEB \\ 
+    141708335.01 & - & 33.606 & 3.6$\times 10^{-3}$ & 6.7$\times 10^{-39}$ & 2.9$\times 10^{-31}$ & 3.4$\times 10^{-35}$ & 8.6$\times 10^{-26}$ & 6.3$\times 10^{-1}$ & 3.3$\times 10^{-1}$ & 9.5$\times 10^{-1}$ & BEB \\ 
+    206660104.01 & - & 38.276 & 8.4$\times 10^{-4}$ & 1.7$\times 10^{-65}$ & 8.6$\times 10^{-39}$ & 2.5$\times 10^{-87}$ & 1.2$\times 10^{-40}$ & 1.3$\times 10^{-2}$ & 9.3$\times 10^{-3}$ & 2.2$\times 10^{-2}$ & PC \\ 
+    231279823.01 & - & 36.346 & 5.3$\times 10^{-4}$ & 7.7$\times 10^{-43}$ & 7.9$\times 10^{-47}$ & 7.5$\times 10^{-55}$ & 4.0$\times 10^{-78}$ & 5.1$\times 10^{-1}$ & 4.9$\times 10^{-1}$ & $1.0\times 10^{0}$ & BEB \\ 
+    231702397.01 & 122.01 & 36.485 & 6.9$\times 10^{-3}$ & 7.5$\times 10^{-18}$ & 8.7$\times 10^{-6}$ & 1.8$\times 10^{-23}$ & 5.1$\times 10^{-9}$ & 2.3$\times 10^{-3}$ & 2.7$\times 10^{-3}$ & 5.0$\times 10^{-3}$ & PC \\ 
+    234994474.01 & 134.01 & 37.794 & 7.1$\times 10^{-4}$ & 1.2$\times 10^{-51}$ & 8.5$\times 10^{-34}$ & 3.9$\times 10^{-107}$ & 4.2$\times 10^{-61}$ & 9.6$\times 10^{-4}$ & 1.9$\times 10^{-4}$ & 1.2$\times 10^{-3}$ & PC \\ 
+    235037759.01 & - & 39.567 & 1.9$\times 10^{-2}$ & - & - & - & - & - & - & - & AFP$^{\text{d}}$ \\ 
+    238027971.01 & - & 37.085 & 1.4$\times 10^{-3}$ & 2.5$\times 10^{-67}$ & 7.5$\times 10^{-92}$ & 5.6$\times 10^{-76}$ & 4.1$\times 10^{-79}$ & 3.4$\times 10^{-1}$ & 6.6$\times 10^{-1}$ & $1.0\times 10^{0}$ & BEB2 \\ 
+    260004324.01 & - & 35.803 & 1.1$\times 10^{-3}$ & 3.3$\times 10^{-44}$ & 4.1$\times 10^{-17}$ & 1.4$\times 10^{-61}$ & 8.8$\times 10^{-20}$ & 5.3$\times 10^{-2}$ & 2.8$\times 10^{-2}$ & 8.1$\times 10^{-2}$ & PC \\ 
+    262530407.01 & 177.01 & 40.509 & 8.0$\times 10^{-4}$ & 6.5$\times 10^{-38}$ & 3.2$\times 10^{-41}$ & 7.6$\times 10^{-45}$ & 5.5$\times 10^{-44}$ & 1.8$\times 10^{-7}$ & 5.7$\times 10^{-7}$ & 7.5$\times 10^{-7}$ & PC \\ 
+    278661431.01 & - & 48.894 & 5.1$\times 10^{-3}$ & 2.4$\times 10^{-31}$ & 1.4$\times 10^{-37}$ & 3.6$\times 10^{-48}$ & 6.9$\times 10^{-55}$ & 3.8$\times 10^{-1}$ & 4.8$\times 10^{-1}$ & 8.6$\times 10^{-1}$ & pPC \\ 
+    279574462.01 & - & 146.950 & 1.3$\times 10^{-2}$ & - & 1.7$\times 10^{-86}$ & 1.0$\times 10^{-304}$ & 1.9$\times 10^{-77}$ & 3.0$\times 10^{-1}$ & 7.0$\times 10^{-1}$ & $1.0\times 10^{0}$ & BEB2 \\ 
+    303586421.01 & - & 32.084 & 6.2$\times 10^{-3}$ & 7.8$\times 10^{-53}$ & 6.2$\times 10^{-47}$ & 3.1$\times 10^{-67}$ & 1.5$\times 10^{-31}$ & 3.3$\times 10^{-1}$ & 5.6$\times 10^{-1}$ & 9.0$\times 10^{-1}$ & BEB2 \\ 
+    305048087.01 & 237.01 & 34.445 & 8.7$\times 10^{-3}$ & 2.6$\times 10^{-30}$ & 1.4$\times 10^{-8}$ & 4.8$\times 10^{-27}$ & 8.0$\times 10^{-8}$ & 1.8$\times 10^{-2}$ & 1.4$\times 10^{-2}$ & 3.2$\times 10^{-2}$ & PC \\ 
+    307210830.01 & 175.01 & 38.817 & 7.7$\times 10^{-4}$ & 1.7$\times 10^{-5}$ & 8.0$\times 10^{-3}$ & 9.0$\times 10^{-10}$ & 7.5$\times 10^{-5}$ & 9.2$\times 10^{-3}$ & 4.3$\times 10^{-3}$ & 2.2$\times 10^{-2}$ & PC \\ 
+    415969908.01 & 233.01 & 32.000 & 2.3$\times 10^{-3}$ & 1.5$\times 10^{-11}$ & 1.1$\times 10^{-5}$ & 1.4$\times 10^{-18}$ & 2.0$\times 10^{-8}$ & 6.0$\times 10^{-3}$ & 5.5$\times 10^{-3}$ & 1.2$\times 10^{-2}$ & PC \\ 
+    415969908.02 & - & 32.000 & 2.3$\times 10^{-3}$ & 2.5$\times 10^{-19}$ & 2.4$\times 10^{-10}$ & 4.9$\times 10^{-28}$ & 2.7$\times 10^{-13}$ & 2.6$\times 10^{-3}$ & 2.0$\times 10^{-3}$ & 4.7$\times 10^{-3}$ & ST \\ 
+    441056702.01 & - & 35.795 & 1.9$\times 10^{-3}$ & 5.5$\times 10^{-19}$ & 5.3$\times 10^{-9}$ & 1.8$\times 10^{-37}$ & 6.0$\times 10^{-17}$ & 2.5$\times 10^{-2}$ & 1.7$\times 10^{-2}$ & 4.2$\times 10^{-2}$ & PC \\ 
+  \end{tabular}
+  \begin{list}{}{}
+    \item {\bf{Notes.}}
+      \item P$_i$ represents the relative probability (i.e. the product of the model's prior and likelihood relative to the probabilties of all other models) of the $i^{\text{th}}$ astrophysical false positive scenario where $i$ is one of six possible scenarios: blended eclipsing binaries (BEB), undiluted eclipsing binaries (EB), and hiearchical eclipsing biaries (HEB), each with either one or twice its input orbital period.
+\item $^{\text{a}}$ The transiting planet false positive probability.
+\item $^{\text{b}}$ Possible dispositions of objects of interest are a planet candidate (PC), a putative planet candidate (pPC), a single transit event (ST), a putative single transit event (pST), an unclassifed astrophysical false positive (AFP), or any of the scenarios $i$. The putative dispositions have FPP $\in [0.1,0.9]$ whereas remaining candidates and astrophysical false positives have FPP $<0.1$ and $>0.9$ respectively.
+\item $^{\text{c}}$ OI 100103200.01 is assigned the pPC disposition despite having a FPP $<0.1$ because of its proximity to the comparably bright TIC 100103201 (see Fig.~\ref{fig:gaiafps}).
+  \item $^{\text{d}}$ The MCMC for OI 235037759.01 failed to converge so we broadly classify it as an astrophysical false positive (AFP) based on the prevalence of nearby bright sources from GAIA (see panel `v' in Fig.~\ref{fig:gaiafps}). We are unable to classify the object as a particular type of astrophysical false positive.
+  \end{list}
+\end{table*}
+\clearpage
+\end{landscape}

@@ -451,7 +451,7 @@ using the \texttt{scipy.optimize.minimize python} function to minimize the negat
 $\ln{\mathcal{L}(\Theta)}$ from Eq.~\ref{eq:lnL}
 given the Jacobian of $\ln{\mathcal{L}(\Theta)}$ with respect to the hyperparameters in
 $\Theta$. During optimization the $\ln$ GP hyperparameters are bounded by broad uninformative priors
-which are explicitly reported in Table~\ref{table:priors}. Broad $\ln$ uniform priors enable
+which are explicitly reported in Table~\ref{oriontable:priors}. Broad $\ln$ uniform priors enable
 the generalization of the \pipeline{} de-trending method across all of the input TESS light curves
 which greatly benefit from semi-parametric modelling given the wide range of covariance timescales
 exhibited by TICs in photometry.
@@ -556,7 +556,7 @@ The linear search along the $T_0$ dimension proceeds by stepping through the obs
 $\mathbf{t}$ in 30 minute bins and assigning
 $t_{\text{bin},i}$ to $T_0$ $\forall$ $i=1,\dots,N_{\text{bin}}$.
 This fixed binning is the first of many \pipeline{} free parameters which are listed in
-Table~\ref{table:freeparams} along with their default values and brief explanations of their
+Table~\ref{oriontable:freeparams} along with their default values and brief explanations of their
 effects. Initial \pipeline{} tests on synthetic light curves with injected transit models
 determined that finer temporal binning did not result in a significant variation in the number
 of detected high S/N transit-like events. This is likely due to 30 minute bins being more comparable
@@ -735,7 +735,7 @@ and statistical vetting for astrophysical false positives. \\
 
 The automated vetting criteria are controlled by the set of free parameters
 $\{c_i\}$ for $i=1,\dots,10$ which are described below and are included in the
-summary Table~\ref{table:freeparams}.
+summary Table~\ref{oriontable:freeparams}.
 The adopted values of these parameters controls the performance of \pipeline{} in terms of its
 detection sensitivity and false positive rate and were derived
 from early \pipeline{} executions on both archival \emph{Kepler} and simulated TESS light
@@ -886,10 +886,10 @@ are fit along with the
 transiting planet parameters $\theta = \{P_i,T_{0,i},a_i/R_s,r_{p,i}/R_s,i_i \}$
 $\forall$ $i=1,\dots,N_{\text{PC}}$. The GP hyperparameters are initialized to their maximum
 likelihood values from the de-trending stage and are continued to be bounded by the broad
-uniform priors listed in Table~\ref{table:priors}. Transit parameters are
+uniform priors listed in Table~\ref{oriontable:priors}. Transit parameters are
 initialized by their maximum likelihood values assuming fixed GP hyperparameters from
 de-trending. The adopted prior PDFs on the transit model parameters are also reported
-in Table~\ref{table:priors} for the most common case of fitting transiting PCs with
+in Table~\ref{oriontable:priors} for the most common case of fitting transiting PCs with
 multiple transits over the observational baseline.
 As we will see in Sect.~\ref{sect:ste}, some priors will be modified when sampling transit
 parameters used to model only a single transit.  \\
@@ -1017,7 +1017,7 @@ this and the other individual systems is reserved for Sect.~\ref{sect:indiv}. \\
 For each of the three OIs classified as a putative ST, we refine
 their transit parameters by re-modelling their transits by isolating the light curve around $10D$ and
 using MCMC to sample the transit model parameters with just a single transit \citep{seager03}. In these
-simulations the $P$, $T_0$, and $a/R_s$ priors are modified as listed in Table~\ref{table:priors}.
+simulations the $P$, $T_0$, and $a/R_s$ priors are modified as listed in Table~\ref{oriontable:priors}.
 The orbital period of the ST is further restricted to periods greater than the largest time difference
 between $T_0$ and both edges of the light curve's baseline. 
 The resulting periods are largely uncertain with their posterior PDFs showing extended tails out to long
@@ -1084,7 +1084,7 @@ the box model depths fitted to each transit time in $\mathbf{T}_0$ during the li
 transit window and extrapolating the fitted depths to the PC's transit duration,
 we adopt the 95$^{\text{th}}$ percentile of the depth distribution depths as the value of \texttt{secthresh}
 \citep{crossfield18}. The median \texttt{secthresh} is $\sim 2100$ ppm. The input \texttt{maxrad} and
-\texttt{secthresh} for each OI are reported in Table~\ref{table:vespa} along with the results of
+\texttt{secthresh} for each OI are reported in Table~\ref{oriontable:vespa} along with the results of
 our \vespa{} calculations. \\
 
 \input{chapters/orion_vespatable}
@@ -1198,8 +1198,8 @@ After manual vetting and statistical validation we are left with sixteen candida
 ten PCs, two STs, three pPCs, and one pST. Half of our candidates are `new' having not yet been released
 as TOIs\footnote{As of December 19, 2018.}.
 Point estimates of observable and derived planetary parameters for these candidates are reported in
-Table~\ref{table:planets}.  Fig.~\ref{fig:LCs} also depicts their phase-folded light curves along with
-the transit models computed using the MAP parameter values from Table~\ref{table:planets}. \\
+Table~\ref{oriontable:planets}.  Fig.~\ref{fig:LCs} also depicts their phase-folded light curves along with
+the transit models computed using the MAP parameter values from Table~\ref{oriontable:planets}. \\
 
 \input{chapters/orion_planetparamstable}
 
@@ -1462,7 +1462,7 @@ threshold as this would drastically increase the number of FPs purely from the n
 \subsubsection{Mass characterization via precision radial velocities} \label{sect:rv}
 The TESS level one science requirement is to deliver at least 50 planets smaller than 4
 R$_{\oplus}$ with measured masses via precision radial velocity (RV) follow-up. All sixteen of our
-candidates have a measured radius consistent with being $<4$ R$_{\oplus}$ (see Table~\ref{table:planets}).
+candidates have a measured radius consistent with being $<4$ R$_{\oplus}$ (see Table~\ref{oriontable:planets}).
 Using the empirical mass-radius relation for small planets $<14.26$ R$_{\oplus}$ from \cite{chen17},
 we compute the maximum likelihood masses $m_p$ of our planet candidates and single transit events
 to then infer their expected RV semi-amplitudes using  
@@ -1481,7 +1481,7 @@ $<4200$ K). Many existing high performance RV spectrographs are stable at the le
 RV observations are often limited by photon noise and intrinsic stellar activity at the level of 1 to a few
 m/s, even for relatively inactive stars \citep{fischer16}. 
 The majority of our objects of interest have expected $K_{\text{RV}}$ values in excess of this typical RV
-sensitivity limit and are reported in Table~\ref{table:followup}.  \\
+sensitivity limit and are reported in Table~\ref{oriontable:followup}.  \\
 
 \input{chapters/orion_planetfollowuptable}
 
@@ -1520,7 +1520,7 @@ conditions:
 
 \noindent is a proxy for $K_{\text{RV}}$ that can be computed from transit-derived parameters.
 Seven out of sixteen of our candidates satisfy Eqs.~\ref{eq:Omega1} and~\ref{eq:Omega2} and are highlighted
-in Table~\ref{table:followup} and in Fig.~\ref{fig:followup}.
+in Table~\ref{oriontable:followup} and in Fig.~\ref{fig:followup}.
 If astrophysical false positive scenarios can be ruled out for these OIs, then
 they represent highly favorable targets for RV follow-up observations and the rapid completion of the
 TESS level one science requirement. That is, assuming that the stars are not active which is an
@@ -1551,10 +1551,10 @@ and the detailed simulations from \cite{louie18} using the \emph{NIRISS} simulat
 Slitless Spectroscopy (SOSS) observations. Values of $f$ are reported in \cite{kempton18} each of four
 planet types separately: terrestrials ($r_p < 1.5$ R$_{\oplus}$), super-Earths ($1.5 < r_p/\text{R}_{\oplus} < 2.75$) 
 sub-Neptunes ($2.75 < r_p/\text{R}_{\oplus} < 4$), and giants ($4 < r_p/\text{R}_{\oplus} < 10$). 
-We calculate the TSM for our 16 candidates and report those values in Table~\ref{table:followup} and in
+We calculate the TSM for our 16 candidates and report those values in Table~\ref{oriontable:followup} and in
 Fig.~\ref{fig:followup}. \cite{kempton18} highly recommends planets for atmospheric characterization
 (and a-priori RV characterization) based on their TSM values relative to their derived cutoffs (see
-their Table 1). Five out of sixteen candidates exceed the threshold TSM cutoff as highlighted in Table~\ref{table:followup}
+their Table 1). Five out of sixteen candidates exceed the threshold TSM cutoff as highlighted in Table~\ref{oriontable:followup}
 and should be considered for confirmation as they represent highly attractive targets for transmission spectroscopy
 observations. We note however that host stars with $J\lesssim 8.1$ start to approach the \emph{NIRISS}
 bright limit (depending on its spectral type) and will require specialized fast readout modes and/or the use
@@ -1571,7 +1571,7 @@ Similarly to the TSM, \cite{kempton18} defined the thermal emission spectroscopy
 $T$ at 7.5 $\mu$m and $T_{\text{day}}$ is the planet's day-side temperature assumed to be $1.1T_{\text{eq}}$.
 The constant $c=4.29\times 10^6$ is used to scale the ESM to yield the S/N of the reference planet GJ 1132b
 \citep{berta15,dittmann17b} in the center of the \emph{MIRI} low resolution spectroscopy bandpass at 7.5 $\mu$m. 
-We calculate the ESM for our 16 candidates and report those values in Table~\ref{table:followup} and in
+We calculate the ESM for our 16 candidates and report those values in Table~\ref{oriontable:followup} and in
 Fig.~\ref{fig:followup}. \citep{kempton18} advocate that planets with ESM $>$ ESM$_{\text{GJ 1132}}=7.5$ should
 be considered favorable targets for thermal emission spectroscopy observations with \emph{MIRI}. Within our
 candidate sample, 2/16 candidates exceed this threshold ESM and represent some of the best targets to-date for

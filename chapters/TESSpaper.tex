@@ -231,7 +231,7 @@ In deriving Eq.~\ref{RVFCeq:sigK} we must assume that the RV time-series noise w
 distributed. However, numerous analyses of transiting systems have shown that there exist cases in which this is
 a poor assumption. Instead the RV residuals---after the removal of planetary models---can be temporally correlated
 often owing to the presence of RV signals arising from stellar activity
-\citep[e.g.][]{haywood14, grunblatt15, lopezmorales16, cloutier17b, dittmann17}. In
+\citep[e.g.][]{haywood14, grunblatt15, lopezmorales16, cloutier17b, dittmann17a}. In
 such cases, a correlated `noise'\footnote{Note that we use the term correlated `noise' whereas---if arising
   from temporally correlated stellar activity---then this is a signal rather than noise but it is not the planetary
   signal that we interested in.}
@@ -673,7 +673,7 @@ considered in this analysis are summarized in Table~\ref{RVFCtable:compare_white
 To compare our formalism in the presence of correlated noise to observed systems we consider five cases analyzed
 with a quasi-periodic GP correlated noise activity model. Namely CoRoT-7 \citep{haywood14},
 K2-18 \citep{cloutier17b}, Kepler-21 \citep{lopezmorales16}, Kepler-78 \citep{grunblatt15}, and
-LHS 1140 \citep{dittmann17}. The calculated value of \nrv{} for these systems is obtained by evaluating
+LHS 1140 \citep{dittmann17a}. The calculated value of \nrv{} for these systems is obtained by evaluating
 \sigK{} from Eq.~\ref{RVFCeq:sigKGP} using each systems' unique RV time-series $\mathbf{t},\mathbf{y},$ and
 $\boldsymbol{\sigma}_{\text{RV}}$ from their
 %set of time-series of increasing \nrv{} from 10-$10^3$, in steps of
@@ -698,7 +698,7 @@ with one notable exception. Quantitatively, the rms of the O-C \nrv{} values is 
 cases alone and 5.2 for all planetary systems included in Fig.~\ref{RVFCfig:compare} with the exception of
 the curious outlier LHS 1140.
 Our calculated value of \nrv{} for LHS 1140 is overestimated relative to the
-size of the RV time-series presented in \cite{dittmann17} from which $K$ is measured to be $5.34 \pm 1.1$
+size of the RV time-series presented in \cite{dittmann17a} from which $K$ is measured to be $5.34 \pm 1.1$
 \mps{.} After Monte-Carlo sampling $K$ and the GP hyperparameters from their measurement
 uncertainties we calculate a median \nrv{}$=265 \pm 64$ which is $\sim 1.8$ times greater than the actual
 time-series size (\nrv{}$=144$) at $1.9\sigma$. The exact cause of this anomalous discrepancy is not known
@@ -807,7 +807,7 @@ such as those which are often obtained in practice over many observing seasons.
 For each of the 12 time-series with a unique \nrv{} we compute \sigK{} before
 interpolating \nrv{(}\sigK{)} to the desired value of \sigK{.} The
 initial guesses of the GP hyperparameters $\{\lambda, \Gamma, P_{\text{GP}} \}$ are adopted from
-from \cite{dittmann17} (see Methods section \emph{Radial-velocity analysis with Gaussian process regression.})
+from \cite{dittmann17a} (see Methods section \emph{Radial-velocity analysis with Gaussian process regression.})
 with the remaining GP hyperparameters set to $a=\sqrt{2}\sigma_{\text{act}}$ and
 $\sigma_{\text{jitter}}=\sigma_{\text{planets}}$. The RV time-series $\mathbf{y}(\mathbf{t})$
 contains keplerian contribution from the

@@ -46,7 +46,7 @@ their atmospheric compositions, dynamics, and thermal structures \citep{louie18,
 nearby transiting planets smaller than Neptune around stars within $\sim 1000$ pc \citep{stassun17}.
 Indeed TESS has already produced a number of new confirmed planet detections
 \citep{esposito18,gandolfi18,huang18a,trifonov18,vanderspek18} %,astudillodefru19}
-in addition to its set of TESS Objects of Interest or TESS `alerts'.
+in addition to its set of TESS Objects of Interest or TESS `alerts'. \\
 
 TESS features four refractive lens that provide a combined wide field-of-view of
 $24^{\circ} \times 96^{\circ}$ (i.e. $\sim 2300$ square degrees) for a single sector. The primary
@@ -67,7 +67,7 @@ extended missions \citep{bouma17,huang18b}. The launch of TESS
 and its recent large data release marks the beginning of a new era of exoplanetary survey
 science that will carry on the legacy of the infamous \emph{Kepler} space telescope which was
 decommissioned on November 16 2018, after nearly a decade of transformative exoplanet observations
-and thousands of planet discoveries.
+and thousands of planet discoveries. \\
 
 TESS is also unique to past space-based transiting exoplanet survey observatories
 (e.g. \emph{Kepler}, \emph{CoRoT}) in that its bandpass extends further redward into the near-IR:
@@ -88,7 +88,7 @@ increase observational signatures of transiting planets thus making their planet
 particular interest for the atmospheric characterization of terrestrial to super-Earth-sized planets
 whose scale heights are expected to be inherently small \citep[$\lesssim$][]{millerricci09}
 and thus difficult to detect even with state-of-art instrumentation on-board the up-coming
-\emph{JWST} \citep{morley17}.
+\emph{JWST} \citep{morley17}. \\
 
 The recent public data release from the first two TESS sectors, processed and validated by the
 TESS Science Processing Operations Center \citep{jenkins16,twicken18,li18}, provides an opportunity
@@ -124,7 +124,7 @@ from \cite{stassun17}, modified from \cite{collier07}. We further restrict our s
 of detecting small planetary transits. As such, the priority is dependent on $R_s$, the
 expected photometric precision, the number of TESS sectors in which the TIC will be visible, and its
 contamination ratio: the ratio of contamination to source flux where contamination is computed over ten
-TESS pixels from the source ($\sim 3.5$ arcmin).
+TESS pixels from the source ($\sim 3.5$ arcmin). \\
 
 Next we establish our initial sample of low mass stars based on the physical stellar parameters from the
 TIC-7 and using the following criteria:
@@ -173,7 +173,7 @@ The TIC-7 stellar radii are typically known at the level of $\sim 16$\% which of
 the error budget of the measured planetary radii from transit observations. Here we aim to produce a
 homogeneously-derived set of precise stellar parameters by exploiting the exquisite precision of their
 2MASS photometry and stellar parallaxes from the GAIA DR2 \cite{gaia18} available for the majority of
-stars in our initial sample.
+stars in our initial sample. \\
 
 For the accurate and precise characterization of transiting planets we are principally
 interested in the measurement of host stellar radii $R_s$. Additionally, the derivation of other fundamental
@@ -196,7 +196,7 @@ respectively. We claim a source match when all of the calculated colors are with
 values. Based on numerous checks of individual known TICs, we determined
 that such a tolerance is required to ensure accurate source matches. This dispersion is also expected given
 that higher order effects not taken into account by the polynomial fits, can have stark effects on the accuracy
-of the photometric predictions.
+of the photometric predictions. \\
 
 We proceed with identifying bona-fide low mass TICs within our initial stellar sample by using the GAIA data
 of matched sources to refine the stellar parameters that were initially used to flag low mass stars. 
@@ -233,7 +233,7 @@ that the resulting $d$ PDF obtained using the standard formula ($d/$ pc) = ($\va
 as a Gaussian distribution \citep{bailorjones18}. The median relative distance uncertainty therefore corresponds to 
 that of the measured parallax (i.e. $\sim 0.2$\%). The maximum a-posteriori (MAP) $d$ value and its $1\sigma$
 uncertainty are then propagated to the calculation of $\mu$ which we will ultimately use in Eq.~\ref{eq:MK} to
-calculate \MK{} after the extinction coefficient are obtained (see Sect.~\ref{sect:AK}).
+calculate \MK{} after the extinction coefficient are obtained (see Sect.~\ref{sect:AK}). \\
 
 There are known systematic effects in the GAIA astrometric solution in the form of a non-zero parallax zero-point
 that is dependent on the source position, $G$-band magnitude, and possibly color \citep{lindegren18}.
@@ -256,12 +256,8 @@ the methodology of \citep{fulton18}.
 \subsubsection{Deriving the set of refined stellar radii}
 Combining the retrieved values of \Ks{,} $\mu$, and $A_{K_{\text{S}}}$ into Eq.~\ref{eq:MK} returns the
 distribution of \MK{} for all of the 2489 stars in our initial sample for which 2MASS photometry and GAIA
-parallaxes are available.
+parallaxes are available. \\
 
-%Bolometric corrections typically used
-%to derive absolute magnitudes from near-IR photometry and parallaxes often suffer from comparatively large
-%inaccuracies for cool stars \citep[\teff{} $\lesssim 4100$ K;][]{berger18} thus largely prohibiting the
-%use of GAIA parallaxes to derive stellar masses and radii for our stars of interest.
 Calculations of M dwarf stellar radii from their bolometric magnitudes would require \Ks{-}band bolometric
 corrections which for cool stars, are known to often suffer from comparatively large inaccuracies 
 \citep[\teff{} $\lesssim 4100$ K;][]{berger18}. We therefore adopt the alternative approach from
@@ -274,7 +270,7 @@ analysis to TICs with \MK{} values that are applicable to the \cite{mann15} RLR 
 is valid for M dwarfs with \MK{} $\in (4.6,9.8)$. This condition will be used to establish our final
 sample of low mass dwarf stars following the derivation of \teff{} within our initial sample.
 The radii inferred from the RLR have a fractional residual dispersion of 0.0289 $R_s$ which we add
-in quadrature to the radius uncertainty propagated from \MK{.} 
+in quadrature to the radius uncertainty propagated from \MK{.}  \\
 
 Fig.~\ref{fig:Rs} compares the TIC-7 stellar radii (compiled from various input sources) with those
 derived from GAIA distances and and the M dwarf RLR from \cite{mann15}. The relation is largely one-to-one
@@ -305,7 +301,7 @@ relation (TCMR). Our sample contains both 2MASS and GAIA photometry so we use th
 \teff{} for the stars in our newly refined sample. Specifically, we adopt the fitted TCMR from \cite{mann15} which is
 cubic in $G_{\text{BP}}$-$G_{\text{RP}}$ and quadratic in $J$-$H$. The latter color is used as a proxy for metallicity
 \citep{leggett92,johnson12,mann13,newton14}. The TCMR used here has a residual temperature dispersion of 49 K which we
-add in quadrature to the uncertainties in \teff{} propagated from the input photometric uncertainties.
+add in quadrature to the uncertainties in \teff{} propagated from the input photometric uncertainties. 
 
 \subsubsection{Deriving the set of refined stellar masses}
 We revise the stellar masses using the empirically-derived M dwarf mass-luminosity relation (MLR) from  
@@ -330,7 +326,7 @@ the GAIA DR2, we now construct our final stellar sample as stars that obey the f
 
 \noindent That is that we retain all TICs whose luminosities, effective temperatures, surface
 gravities, radii, and masses that are consistent with those of late-K to M dwarf parameter ranges
-\citep{pecaut13} at the $1\sigma$ level.
+\citep{pecaut13} at the $1\sigma$ level. \\
 
 Our final stellar sample contains 1599 low mass stars with 537, 694, and 368
 observed within TESS sectors 1, 2, and both respectively.
@@ -362,13 +358,6 @@ PCs to a set of vetting criteria in an automated way, and 6) to re-model the lig
 systematics plus transit mode for all vetted transit-like events. These stages are described
 in detail in the succeeding sections.
 
-%from the methods discussed in crossfield K2 paper, TERRA petigura13 (http://adsabs.harvard.edu/abs/2013ApJ...770...69P),
-%\cite{dressing15},
-%\cite{batalha10, bryson13, foremanmackey15a, aigrain16}.
-% box search is commonly used in BLS kovacs02, TPS jenkins10, TERRA petigura13 
-%The algorithm's performance on our stellar sample---in terms of its sensitivity and false positive rate over
-%the $P-r_p$ parameter space---is controlled by \textbf{6} free parameters (see Sect.~\ref{sect:vetting}).
-
 \subsection{TESS light curve acquisition}
 The execution of \pipeline{} on a TIC begins with downloading the star's publicly available
 2 minute TESS extracted light curves and target pixel files for all available sectors. 
@@ -378,7 +367,7 @@ following its processing by the TESS Science Processing Operations Center. Effor
 curve data from the TESS Full Frame Images and significantly expand the list of TESS targets accessible to
 \pipeline{} are underway but are reserved for a future study.
 Target pixels files are principally used to quickly assess the data quality and will be used to
-infer the TIC's point spread function during the statistical validation of putative PCs in Sect.~\ref{sect:vespa}.
+infer the TIC's point spread function during the statistical validation of putative PCs in Sect.~\ref{sect:vespa}. \\
 
 For each available sector of data, the chronological vectors of valid observing times $\mathbf{t}$
 (i.e. not NaNs), measured fluxes $\mathbf{f}$, and the associated $1\sigma$ flux
@@ -395,7 +384,7 @@ are often largely attributable to astrophysical noise sources such as flicker \c
 Sun-like stars but more commonly for low mass stars from
 large-scale variability caused by active regions on the rotating stellar surface. As an initial de-trending step
 to correct for temporally-correlated noise sources from either systematics or intrinsic stellar phenomena,
-a semi-parametric Gaussian process (GP) regression model is fit to the extracted TESS photometry.
+a semi-parametric Gaussian process (GP) regression model is fit to the extracted TESS photometry. \\
 
 GP regression models provide a flexible and probabilistic framework to model the temporal
 covariances between photometric measurements following the removal of a mean model
@@ -440,7 +429,7 @@ systematic and astrophysical noise sources within the GP noise model are not dis
 the fitted hyperparameter values are unable to be used to interpret the origin of the photometric
 variability. Furthermore, during the remainder of this paper the covariance structures modelled by the
 GP will be solely referred to as `systematics' despite the possibility that their (partial) origin may
-be astrophysical.
+be astrophysical. \\
 
 The logarithmic hyperparameters are initialized and subsequently optimized in an iterative manner and
 are performed on each TESS sector independently assuming a null mean function (i.e.
@@ -455,7 +444,7 @@ activity is largely common between the optical RVs and broadband TESS photometry
 $\ln{\lambda}$ is initialized to $\ln{3P_{\text{GP}}}$. In each iteration $\ln{\Gamma}$ is initialized to
 $0$ and $\ln{a_{\text{GP}}}=\ln{\text{max}(|\mathbf{f}_{\text{bin}} - \text{median}(\mathbf{f}_{\text{bin}})|)}$
 where $\mathbf{f}_{\text{bin}}$ is the vector of binned photometric points whose temporal bin width is set
-such that a single periodic GP timescale is sampled by at least eight measurements.
+such that a single periodic GP timescale is sampled by at least eight measurements. \\
 
 For each iteration in each TESS sector, the uniquely initialized GP hyperparameters are optimized
 using the \texttt{scipy.optimize.minimize python} function to minimize the negative
@@ -470,7 +459,7 @@ Given an optimized set of hyperparameters, the resulting GP posterior PDF is a $
 multi-variate Gaussian distribution whose mean function is taken to be a potential systematic correction.
 The mean function of the GP from the iteration whose optimized hyperparameters maximize
 $\ln{\mathcal{L}(\Theta)}$ is assigned as the initial systematic
-correction and is used to de-trend the photometry prior to the search for periodic transit events.
+correction and is used to de-trend the photometry prior to the search for periodic transit events. \\
 
 \input{chapters/orion_priortable}
 
@@ -481,7 +470,7 @@ is required to be much more aggressive than that for TIC 262530407
 given the star's large photometric variability with a peak-to-peak
 amplitude in the binned light curve of 280,000 ppm and a 85,000 ppm rms. Unlike in the raw
 light curve, the de-trended light curve lacks any low frequency variations and exhibits a significantly
-reduced rms of 12,000 ppm.
+reduced rms of 12,000 ppm. \\
 
 The TIC 262530407 light curve also exhibits photometric variability albeit with a much lower peak-to-peak
 amplitude and rms of 1700 and 1000 ppm respectively. After de-trending, the rms is slightly reduced to 
@@ -491,7 +480,7 @@ transit-like events with minimal contamination from residual systematic features
 a transiting planet candidate is detected
 around each of these systems although the putative PC around TIC 235037759
 is ultimately favored by an astrophysical false positive interpretation as presented in
-Sect.~\ref{sect:gaiafps}.
+Sect.~\ref{sect:gaiafps}. \\
 
 \begin{figure*}
   \centering
@@ -520,16 +509,11 @@ To ensure that the GP hyperparameters were not being strongly affected by the an
 during this period, those measurements were masked and the GP hyperparameters re-optimized with the
 remaining data. The resulting GP systematics only varies marginally from that shown in
 Fig.~\ref{fig:detrend} for TIC 235037759 such that we are confident that the \pipeline{} de-trending is
-largely robust to the loss in pointing precision for TICs observed in TESS sector 1.
+largely robust to the loss in pointing precision for TICs observed in TESS sector 1. \\
 
 Recall that in the initial de-trending step discussed in this section that the methodology
 assumes a null mean function which implies that any transient events such as flares or transits are still
 present during the optimization of the de-trending model.
-%not removed
-%involves the
-%median filtering of the light curve to suppress 
-%short timescale transient events, like transits, and subsequently modelling the data with a
-%zero-mean GP regression model.
 The principal caveat with this methodology is that one cannot guarantee
 that the GP model does not (partially) capture any of the in-transit light curve deprecations that
 \pipeline{} is searching for. If partially suppressed by the initial GP model, planets will be more
@@ -550,7 +534,7 @@ search algorithms
 \citealt{petigura13a}, \citealt{foremanmackey15a}). The aim here is
 to identify high S/N transit-like events along with their associated mid-transit times $T_0$,
 durations $D$, and depths $Z$ which will feed into the search for repeating transit-like
-events and ultimately the list of putative transiting PCs.
+events and ultimately the list of putative transiting PCs. \\
 
 The linear search for transit-like events begins with stepping through
 a two-dimensional grid of $T_0$ and $D$. At each $(T_0,D)$ grid point a simple box model of the form
@@ -580,7 +564,7 @@ to typical transit durations of the types of planets that can be detected in 27-
 The $D$ dimension is sampled on a much coarser grid
 given that the precision of the box model parameters are not yet required to infer planet properties
 but only to identify epochs at which transit-like events are likely to have occurred. Explicitly, the
-adopted linear search $D$ grid contains three possible transit durations of either 1.2, 2.4, or 4.8 hours.
+adopted linear search $D$ grid contains three possible transit durations of either 1.2, 2.4, or 4.8 hours. \\
 
 \input{chapters/orion_freeparamtable}
 
@@ -603,7 +587,7 @@ inherent photometric precision. An example linear search S/N spectrum is shown i
 Fig.~\ref{fig:linearsearch} for a fixed duration of 1.2 hours. We note that referring to the
 linear search S/N spectra as a S/N is a misnomer given that its values over $T_0$ can be negative.
 However, we find this language to be a clear descriptor of the quantity's aim and its
-interpretability.
+interpretability. \\
 
 \begin{figure}
   \centering
@@ -651,7 +635,7 @@ below the main diagonal are valid periods for consideration, or $\sum_{i=1}^{n_{
 Because this search if for repeating transit-like events, it is required that $n_{\text{T}}>1$. In this
 way, more than two transit events are not required in order to detect a repeating putative 
 PC. This fact extends the \pipeline{} detection sensitivity to nearly the full observational baseline
-or $\sim 27$ days for the majority of TICs.
+or $\sim 27$ days for the majority of TICs. \\
 
 \begin{figure*}
   \centering
@@ -696,7 +680,7 @@ from the \cite{claret17} grid over \teff{,} \logg{,} and assuming solar metallic
 parameters are optimized using the same routine which was used to optimize the GP hyperparameters during
 the initial de-trending stage (see Sect.~\ref{sect:detrend}). With each POI's optimized transit
 model, the $\ln$ likelihood of the data is computed for use during the succeeding steps
-aimed at identifying repeating transit-like events from the initial set of POIs.
+aimed at identifying repeating transit-like events from the initial set of POIs. \\
 
 A series of cuts is performed on the set of optimized POIs to identify the most likely independent
 periods within the data. The first cut is to remove repeated period multiples.
@@ -709,7 +693,7 @@ $n=2,\dots,n_{\text{transit}}$ where $n_{\text{transit}}$ is the number of trans
 TIC's observational baseline given $P_i$ and $T_{0,i}$.
 One important caveat to the removal of integer multiple periods is that resonant multi-planet systems
 are undetectable within the periodic transit search because all but one of the POIs will always be
-rejected in favor of its maximum $\ln$ likelihood multiple.
+rejected in favor of its maximum $\ln$ likelihood multiple. \\
 
 Similarly, because the set of POIs are derived from peaks in the linear search S/N spectrum, 
 rational multiples of each POI must also be sampled (i.e. $P_i/2,P_i/3,\dots$).
@@ -732,7 +716,7 @@ are investigated and because the temporal bin width used during the linear searc
 the sensitivity to short-period planets whose transit durations are comparable to the 30 minute bins used
 therein. Limiting the periodic search to orbital periods $< 0.5$ is
 unlikely to result in a large number of missed transits owing to the intrinsically low occurrence rate of
-ultra-short-period planets \citep[$\lesssim 1$\%;][]{sanchisojeda14,adams16}.
+ultra-short-period planets \citep[$\lesssim 1$\%;][]{sanchisojeda14,adams16}. \\
 
 The result of the cuts to the initial set POIs are a set of repeating transit-like events which may or
 may not correspond to a transiting planet or some other form or periodic astrophysical source
@@ -747,7 +731,7 @@ Here, POIs are automatically vetted using a set of eight vetting criteria which 
 the flagged transit-like features in the de-trended light curve (see Sect.~\ref{sect:periodic}).
 This automated vetting stage is intended to identify false or insignificant transit-like events
 and thus provides a preliminary list of putative PCs prior to more selective human vetting
-and statistical vetting for astrophysical false positives.
+and statistical vetting for astrophysical false positives. \\
 
 The automated vetting criteria are controlled by the set of free parameters
 $\{c_i\}$ for $i=1,\dots,10$ which are described below and are included in the
@@ -756,7 +740,7 @@ The adopted values of these parameters controls the performance of \pipeline{} i
 detection sensitivity and false positive rate and were derived
 from early \pipeline{} executions on both archival \emph{Kepler} and simulated TESS light
 curves\footnote{\url{https://archive.stsci.edu/tess/ete-6.html}} prior to the first TESS data
-release. We do not however make any significant claims of their optimality.
+release. We do not however make any significant claims of their optimality. \\
 
 The eight automated vetting criteria are defined as follows:
 
@@ -892,7 +876,7 @@ transits, is mitigated by simultaneously modelling systematics and PCs.
 The resulting joint systematic+planet model is therefore derived in a self-consistent
 manner with more robust solutions for the transiting PC parameters of interest.
 MCMC sampling of the transit parameter marginalized posterior PDFs allows us to compute
-point estimates of their MAP values and uncertainties for later use.
+point estimates of their MAP values and uncertainties for later use. \\
 
 For systems containing $N_{\text{PC}}$ PCs, $4+5N_{\text{PC}})$ parameter PDFs are sampled
 by continuing to insist on circular orbits and fixed limb-darkening coefficients.
@@ -908,7 +892,7 @@ de-trending. The adopted prior PDFs on the transit model parameters are also rep
 in Table~\ref{table:priors} for the most common case of fitting transiting PCs with
 multiple transits over the observational baseline.
 As we will see in Sect.~\ref{sect:ste}, some priors will be modified when sampling transit
-parameters used to model only a single transit. 
+parameters used to model only a single transit.  \\
 
 MCMC sampling is performed with the \texttt{emcee}
 ensemble-sampler \citep{foremanmackey13}. One hundred walkers are initialized in small Gaussian balls
@@ -916,7 +900,7 @@ centered on each parameter's initial value. Throughout the MCMC, each walker's a
 fraction is monitored and warns the user when its mean value over all walkers does not
 fall within the desired range of 20-60\% in either of the burn-in or final sampling stages.
 The desired duration of each MCMC stage is $\gtrsim 10$ autocorrelation times. Warnings are again produced
-if the MCMC chains fail to reach this length.
+if the MCMC chains fail to reach this length. \\
 
 The main \pipeline{} output is a list of objects of interest (OIs)
 along with samples from the model parameter marginalized
@@ -1023,12 +1007,12 @@ events exceeding S/N$_{\text{thresh}}$. If the ST event has a sufficiently high 
 then the addition of noise by phase-folding to the incorrect
 period, but correct $T_0$, may result in a feature that still passes our automated vetting criteria due solely
 to the significance of the ST event. The inferred period of such a ST event in \pipeline{} will therefore
-always be less than its true period if the feature is indeed the result of a singly transiting planet.
+always be less than its true period if the feature is indeed the result of a singly transiting planet. \\
 
 Three OIs resembling ST events are identified during manual vetting around the TICs 49678165, 92444219,
 and 415969908. The latter TIC already hosts the known TOI-233.01 at 11.7 days but the proposed ephemeris for
 TOI-233.01 is inconsistent with the $T_0$ of our putative ST event. A more complete discussion of
-this and the other individual systems is reserved for Sect.~\ref{sect:indiv}.
+this and the other individual systems is reserved for Sect.~\ref{sect:indiv}. \\
 
 For each of the three OIs classified as a putative ST, we refine
 their transit parameters by re-modelling their transits by isolating the light curve around $10D$ and
@@ -1051,7 +1035,7 @@ Despite the lack of such follow-up observations, it is still advisable to attemp
 validate OIs by inferring the relative probabilities of a variety of astrophysical false
 positive (AFP) scenarios which can be compared to the planetary interpretation.
 Such considerations are further motivated given that the rate of AFPs in
-the 2 minute TESS light curves is expected to be significant \citep[$\sim 60$\%;][]{sullivan15}.
+the 2 minute TESS light curves is expected to be significant \citep[$\sim 60$\%;][]{sullivan15}. \\
 
 We attempt to statistically validate our 24 OIs around 22 TICs using the \texttt{PyMultinest}
 \citep{buchner14} implementation of the probabilistic transit validation software
@@ -1063,7 +1047,7 @@ background or foreground EBs which are not physically associated with the target
 these scenarios then have two instances with the first assuming the input orbital period and the
 second assuming twice the input orbital period.
 We note however that the forthcoming statistical OI interpretations are not treated as abolsutely
-definitive in lieu of follow-up observations aimed at distinguishing transiting planets from AFPs.
+definitive in lieu of follow-up observations aimed at distinguishing transiting planets from AFPs. \\
 
 For \vespa{} input we use the TIC's celestial coordinates ($\alpha$,$\delta$),
 stellar parameters \teff{,} \logg{,} and $\varpi$, along
@@ -1077,7 +1061,7 @@ OI's orbital period and planet-to-star radius ratio along with
 its de-trended light curve following the removal of all candidate transit models that are not associated
 with the OI being statistically validated. The light curves are phase-folded and restricted
 to $\pm 3D$ around $T_0$ for comparison to light curve models generated under the transiting planet
-and each AFP scenario.
+and each AFP scenario. \\
 
 \vespa{} also requires constraints on the maximum angular separation
 (\texttt{maxrad}) from the target star that
@@ -1087,7 +1071,7 @@ The FWHM of the PSF is derived by fitting a 2-dimensional Gaussian profile to th
 target image in each target pixel file over time and adopting the median FWHM as \vespa{} input.
 The median FWHM value among the 22 TICs is $\sim 37$ arcsec or nearly two TESS pixels across.
 Over such a large field, it is reasonable to expect that many of the OIs may be favored by either the
-BEB or BEB2 models.
+BEB or BEB2 models. \\
 
 Lastly, \vespa{} requires
 the maximum permissible depth of a secondary eclipse of an EB (\texttt{secthresh}) to be specified.
@@ -1101,7 +1085,7 @@ transit window and extrapolating the fitted depths to the PC's transit duration,
 we adopt the 95$^{\text{th}}$ percentile of the depth distribution depths as the value of \texttt{secthresh}
 \citep{crossfield18}. The median \texttt{secthresh} is $\sim 2100$ ppm. The input \texttt{maxrad} and
 \texttt{secthresh} for each OI are reported in Table~\ref{table:vespa} along with the results of
-our \vespa{} calculations.
+our \vespa{} calculations. \\
 
 \input{chapters/orion_vespatable}
 
@@ -1115,7 +1099,7 @@ that \vespa{} results should not be taken absolutely in the absence of follow-up
 observations. Our limiting values on interpreting FPPs are as follows: OIs with FPP$<0.1$
 are classified as PCs. Similarly, OIs are classified as AFPs when
 FPP $\geq 0.9$ and have their dispositions assigned to the specific AFP model with the highest
-probability. OIs with intermediate FPPs are classified as putative planet candidates (pPC).
+probability. OIs with intermediate FPPs are classified as putative planet candidates (pPC). \\
 
 The statistical validation calculations with \vespa{} result in 13/24 of our
 OIs being classified as PCs plus 3/24 as pPCs.
@@ -1141,7 +1125,7 @@ sources fall within or near the PSF of the targeted TIC. The resulting maps of G
 the 22 TICs with OIs in our sample are shown in Fig.~\ref{fig:gaiafps}. Querying the GAIA DR2 is
 performed identically to the method used in Sect.~\ref{sect:gaia} to match TICs with the GAIA DR2 catalog
 although here we conduct our searches with a fixed radius of 105 arcseconds or $\sim 10$ TESS pixels
-in diameter.
+in diameter. \\
 
 \begin{figure*}
   \centering
@@ -1169,7 +1153,7 @@ and `s' do have at least one neighbouring source of comparable brightness that m
 for the favorability of an AFP scenario by \vespa{.}
 This includes the TIC 235037759 whose \vespa{} calculation failed.
 Two bright sources are clearly seen to contribute to the flux within the target's PSF thus supporting the
-probable interpretation of the OI 235037759.01 transit-like event as being caused by an AFP.
+probable interpretation of the OI 235037759.01 transit-like event as being caused by an AFP. \\
 
 We note however that some discrepancies between the distributions of GAIA sources and our \vespa{}
 interpretations still persist. Particularly with regards to the TICs 100103200 and 100103201 (panels `l'
@@ -1215,7 +1199,7 @@ ten PCs, two STs, three pPCs, and one pST. Half of our candidates are `new' havi
 as TOIs\footnote{As of December 19, 2018.}.
 Point estimates of observable and derived planetary parameters for these candidates are reported in
 Table~\ref{table:planets}.  Fig.~\ref{fig:LCs} also depicts their phase-folded light curves along with
-the transit models computed using the MAP parameter values from Table~\ref{table:planets}.
+the transit models computed using the MAP parameter values from Table~\ref{table:planets}. \\
 
 \input{chapters/orion_planetparamstable}
 
@@ -1241,7 +1225,7 @@ candidates have  for contributing to the realization of the TESS level one scien
 We do not detect any hot sub-Neptunes in the photoevaporation desert
 \citep{lundkvist16} nor any small planets ($\lesssim 1.5$ R$_{\oplus}$) on orbits longer than $\sim 20$
 days. This is largely attributable to our poor detection sensitivity in that regime due to the limited
-TESS baselines of just 27 days.
+TESS baselines of just 27 days. \\
 
 \begin{figure*}
   \centering
@@ -1271,7 +1255,7 @@ edge, where an increase in insolation results in the photolysis of stratospheric
 to experience rapid hydrogen escape, and the `maximum-greenhouse' outer edge where an increase in CO$_2$ no longer
 results in a net surface heating due to the increased albedo. Our five temperate candidates may represent attractive
 targets for the characterization of HZ exoplanets around nearby low mass stars. We will address the prospect of
-atmospheric characterization of these planets in Sect.~\ref{sect:atmospheres}.
+atmospheric characterization of these planets in Sect.~\ref{sect:atmospheres}. \\
 
 The distribution of our candidates versus stellar parameters of interest are shown in
 Fig.~\ref{fig:planetstar}. All candidates are detected around stars hotter than 3000 K which
@@ -1284,7 +1268,7 @@ temperature of the candidate-hosting TICs in our sample is 3560 K. A notable dea
 with $r_p \gtrsim 2$ R$_{\oplus}$ exists around stars hotter than $\sim 3500$ K. The cause of
 this is unlikely to be due to sensitivity losses around these relatively hot (and correspondingly
 bright) stars and is instead likely attributable to the sharp decrease in the number of stars
-within our sample at \teff{} $\sim 3550$ K (see Fig.~\ref{fig:stars}).
+within our sample at \teff{} $\sim 3550$ K (see Fig.~\ref{fig:stars}). \\
 
 \begin{figure*}
   \centering
@@ -1314,7 +1298,7 @@ From the number of \pipeline{} candidates as a function of $J$,
 it is clear that the \pipeline{} sensitivity to planets orbiting low mass TICs starts to drop
 off around $J \gtrsim 12$.
 The large photometric uncertainties in this regime are largely dominated by photon-noise
-from the target star, zodiacal light, and unresolved background stars \citep{ricker15}.
+from the target star, zodiacal light, and unresolved background stars \citep{ricker15}. \\
 
 The distance distribution of our candidates is also included in Fig.~\ref{fig:planetstar}. All of
 our candidates are found between 10-65 pc with a median distance of 34 pc. Our sample includes
@@ -1335,38 +1319,38 @@ GJ 3470 \citep{bonfils12}.
 \emph{OI 12421862.01}. This PC has already been reported as TOI-198.01. The \pipeline{} planet parameters
 are consistent with those of TOI-198.01 with a 20.4 day orbital period and measured
 radius of 1.6 R$_{\oplus}$, making it an interesting target for probing the photoevaporation valley
-around M dwarfs.
+around M dwarfs. \\
 
 \emph{OI 47484268.01}. This pPC based on its moderate FPP, has already been reported as TOI-226.01.
 The \pipeline{} orbital period is consistent with that of TOI-226.01 but we derive a 10\% smaller
 planet radius of 3.8 R$_{\oplus}$ despite the star's refined radius being 15\% larger. At 1.4 S$_{\oplus}$,
 this pPC orbits within the `recent-Venus' habitable zone but remains an attractive target for rapid RV
 characterization owing to its expected large mass compared to most of the smaller candidate planets (see
-Sect.~\ref{sect:rv}).
+Sect.~\ref{sect:rv}). \\
 
 \emph{OI 49678165.01}. A new candidate ST event with an estimated period between 21-85 days and a radius of
 3 R$_{\oplus}$. This candidate is likely the coldest object in our sample with a MAP $S=0.3$ S$_{\oplus}$
-and a corresponding equilibrium temperature of $T_{\text{eq}}= 212$ K assuming zero albedo and perfect heat redistribution.
+and a corresponding equilibrium temperature of $T_{\text{eq}}= 212$ K assuming zero albedo and perfect heat redistribution. \\
 
 \emph{OI 92444219.01}. A pST based on its moderate FPP. This cool 3 R$_{\oplus}$ candidate is
 has an estimated period between 22-95 days placing it at $S=0.5$ S$_{\oplus}$ with
-an equilibrium temperature $T_{\text{eq}}= 238$ K.
+an equilibrium temperature $T_{\text{eq}}= 238$ K. \\
 
 \emph{OI 100103200.01}. The pPC with ultra low FPP but is seen to likely be contaminated by the nearby
 TIC 100103201 based on the GAIA astrometry. This pPC orbits a $J=7.5$ star with an 18.4 day period and
 whose size is 2 R$_{\oplus}$ making it a attractive target for both RV characterization and possibly
 transmission spectroscopy observations with \emph{JWST} if impending difficulties of observing
-bright targets can be strategically mitigated (see Sect.~\ref{sect:atmospheres}).
+bright targets can be strategically mitigated (see Sect.~\ref{sect:atmospheres}). \\
 
 \emph{OI 206660104.01}. A new terrestrial-sized (1.2 R$_{\oplus}$) PC at 13.4 days. This PC is the
 second smallest candidate recovered by \pipeline{} and is smaller than most (3/4) of the TOIs missed by
-\pipeline{} (see Sect.~\ref{sect:undet}).
+\pipeline{} (see Sect.~\ref{sect:undet}). \\
 
 \emph{OI 231702397.01}. This PC has already been reported as TOI-122.01. The \pipeline{} orbital
 period is consistent with that of TOI-122.01 although we derive a 15\% larger radius (2.8 R$_{\oplus}$)
 corresponding to the 13\% larger stellar radius in our sample. Given its large size, the expected
 mass from the \cite{chen17} mass-radius relation is 8.26 M$_{\oplus}$ making it an attractive target
-for rapid RV follow-up despite being relatively dim with $J=11.5$.
+for rapid RV follow-up despite being relatively dim with $J=11.5$. \\
 
 \emph{OI 234994474.01}: This PC has been reported as TOI-134.01 and is being validated with RVs
 from HARPS and PFS \citep{astudillodefru19}. The \pipeline{} parameters are largely consistent with the TOI-134.01
@@ -1376,30 +1360,30 @@ and orbiting an early M dwarf with $J=7.9$, this PC is one of the best targets f
 characterization to search for longer period companions, transmission spectroscopy, and even thermal
 emission spectroscopy. Regarding the latter, TOI-134.01
 is even more favorable than the previously most attractive
-terrestrial-sized planet for such observations: GJ 1132b \citep{morley17}.
+terrestrial-sized planet for such observations: GJ 1132b \citep{morley17}. \\
 
 \emph{OI 260004324.01}. A new terrestrial-sized PC which is the smallest in our sample
 at 1.15 R$_{\oplus}$ with a 3.8 day period. Its small size and small expected mass of 1.6 M$_{\oplus}$
 around a 0.56 M$_{\oplus}$ early M dwarf ($J=8.8$) will make this a slightly more challenging target
 for RV follow-up but may still be of interest for probing the low mass end of the 50 planets
-smaller than 4 R$_{\oplus}$ targeted for completion of the TESS level one science requirement.
+smaller than 4 R$_{\oplus}$ targeted for completion of the TESS level one science requirement. \\
 
 \emph{OI 262530407.01}. This PC has already been reported as TOI-177.01. The \pipeline{} orbital
 period is consistent with that of TOI-177.01 although we find a 12\% smaller radius of 1.87
 $R_{\oplus}$ for an unchanged stellar radius. The short period and host star brightness ($J=8.17$)
 make this PC an exceptional candidate for transmission spectroscopy observations and is one
 that is less affected by the \emph{NIRISS} bright limit of its SOSS mode compared to other
-close-in super-Earth-sized planets in this catalog.
+close-in super-Earth-sized planets in this catalog. \\
 
 \emph{OI 278661431.01}. A new pPC based on its moderate FFP. If validated, the candidate
 would have an orbital period of 17 days and a radius of 2.8 $R_{\oplus}$. This pPC is temperate
 at $S=1.1$ S$_{\oplus}$ and near to the `water-loss' HZ inner edge. This pPC orbits one of the
 cooler TICs in our candidate-hosting sample (\teff{} $=3300$ K) with a correspondingly small
 radius of 0.28 R$_{\odot}$, thus making it an attractive target for transmission spectroscopy
-observations.
+observations. \\
 
 \emph{OI 305048087.01}. This PC has already been reported as TOI-237.01. The \pipeline{} orbital
-period is consistent with the 5.4 day period and 1.7 R$_{\oplus}$ radius of TOI-177.01.
+period is consistent with the 5.4 day period and 1.7 R$_{\oplus}$ radius of TOI-177.01. \\
 
 \emph{OI 307210830.01}. This PC is one of the three reported TOIs around TIC 307210830 (i.e. 175-01,
 02, 03). Only TOI-175.01 is detected by \pipeline{} for the reasons discussed in Sect.~\ref{sect:undet}.
@@ -1408,24 +1392,24 @@ system, are all consistent with those for TOI-175.01. This PC is in the closest 
 in our sample and is correspondingly an attractive target for RV characterization of individual masses
 and the RV analysis of the  possible resonant pair 175.01/175.02 for comparisons to TTV analyzes
 from follow-up photometry. This PC is also a viable target for the atmospheric characterization of
-a terrestrial-sized planet (1.3 R$_{\oplus}$).
+a terrestrial-sized planet (1.3 R$_{\oplus}$). \\
 
 \emph{OI 415969908.01}. This PC has already been reported as TOI-233.01. The \pipeline{} orbital
 period is consistent with that of TOI-233.01 but finds a 26\% smaller radius (1.9 R$_{\oplus}$)
-in part because of the refined stellar radius being reduced by 21\% in our sample.
+in part because of the refined stellar radius being reduced by 21\% in our sample. \\
 
 \emph{OI 415969908.02}. The ST event detected in the light of TIC 415969908 which already
 hosts the aforementioned candidate TOI-233.01 at 11.7 days. The estimated period of OI 415969908.02 is 32-108 days
 which effectively spans the conservative HZ limits from \cite{kopparapu13} and whose MAP value is
 53 days or $S=0.5$ S$_{\oplus}$. The measured radius is 2 R$_{\oplus}$ ($r_p/Rs=0.05$) making this
 ST event the most difficult to follow-up from the ground among the three ST events in our candidate
-catalog.
+catalog. \\
 
 \emph{OI 441056702.01}. A new PC with an orbital period of 6.3 days and radius of 2 R$_{\oplus}$
 thus potentially being located within the photoevaporation valley around M dwarfs. Orbiting a moderately bright
 early-M to late-K dwarf (\teff{} = 4030 K) and with an expected mass of 4.5 M$_{\oplus}$, this PC
 represents another attractive target for RV characterization aimed at addressing the TESS level
-one science requirement. 
+one science requirement. \\
 
 
 \subsection{TOIs undetected by \pipeline{}} \label{sect:undet}
@@ -1435,7 +1419,7 @@ These ten systems host a total of twelve TOIs in nine single PC systems
 and TIC 307210830 which hosts three TOIs. The \pipeline{} results presented in this paper
 include the independent detection of 8/12 TOIs with an additional ST event around TIC 415969908 which
 already hosts TOI-233.01. The discrepancies between the TESS alerts and our \pipeline{} results
-are described in what follows.
+are described in what follows. \\
 
 \emph{TIC 259962054}. This TIC was observed in the consecutive TESS sectors 1 and 2.
 The TOI-203.01 has an orbital period of 52 days, longer than any repeating
@@ -1446,7 +1430,7 @@ The phase-folded light curve satisfies all but the second criterion from the aut
 stage (see Sect.~\ref{sect:autovetting}) with S/N$_{\text{transit}}=5.6<c_1=8.4$. This is principally
 because the fitted transit depth within \pipeline{} is $Z=1839$ ppm  which is just
 $\sim 73$\% of the TOI's reported depth thus making it difficult to confirm the nature of the
-repeating signal as due to a transiting planet with just two transits observed.
+repeating signal as due to a transiting planet with just two transits observed. \\
 
 
 \emph{TIC 307210830}. This system contains three TOIs (175.01, 175.02, 175.03) at 3.69, 7.45,
@@ -1459,7 +1443,7 @@ transit depths. However, this candidate pair has an orbital period ratio that is
 of a 2:1 resonant configuration. Recall that pairs of periods of interest which are that close to
 an integer period ratio will have one of those periods automatically discarded in the periodic search
 stage due to the detected periodic signals likely being aliases of the each other rather than being
-due to two separate planetary candidates.
+due to two separate planetary candidates. \\
 
 
 \emph{TIC 316937670}. TOI-221.01 has an orbital period of 0.624 days and a low transit depth
@@ -1471,7 +1455,7 @@ no periodic events can be found. If the linear search S/N threshold is lowered
 such that multiple transits from TOI-221.01 are detected in the linear and periodic search stages, then
 the expected S/N$_{\text{transit}}$ is $\sim 7.2$ which would still be insufficient to detect the PC in
 a single TESS sector. We are further discouraged by the prospect of lowering the linear search S/N
-threshold as this would drastically increase the number of FPs purely from the noise.
+threshold as this would drastically increase the number of FPs purely from the noise. \\
 
 
 \subsection{Prospects for follow-up observations}
@@ -1481,7 +1465,7 @@ R$_{\oplus}$ with measured masses via precision radial velocity (RV) follow-up. 
 candidates have a measured radius consistent with being $<4$ R$_{\oplus}$ (see Table~\ref{table:planets}).
 Using the empirical mass-radius relation for small planets $<14.26$ R$_{\oplus}$ from \cite{chen17},
 we compute the maximum likelihood masses $m_p$ of our planet candidates and single transit events
-to then infer their expected RV semi-amplitudes using 
+to then infer their expected RV semi-amplitudes using  
 
 \begin{equation}
   K_{\text{RV}} = 2.4 \text{ m/s} \left( \frac{m_p}{5 \text{ M}_{\oplus}} \right)
@@ -1497,7 +1481,7 @@ $<4200$ K). Many existing high performance RV spectrographs are stable at the le
 RV observations are often limited by photon noise and intrinsic stellar activity at the level of 1 to a few
 m/s, even for relatively inactive stars \citep{fischer16}. 
 The majority of our objects of interest have expected $K_{\text{RV}}$ values in excess of this typical RV
-sensitivity limit and are reported in Table~\ref{table:followup}. 
+sensitivity limit and are reported in Table~\ref{table:followup}.  \\
 
 \input{chapters/orion_planetfollowuptable}
 
@@ -1548,7 +1532,7 @@ TESS will provide many of the best transiting exoplanets for atmospheric charact
 near future. \cite{kempton18} presented a framework to prioritize transiting planets for
 either transmission spectroscopy or emission spectroscopy observations with dedicated missions
 like \emph{JWST} and \emph{ARIEL}. This framework consists of analytical metrics which quantify
-the expected S/N ratio of transmission and emission signals from planetary atmospheres.
+the expected S/N ratio of transmission and emission signals from planetary atmospheres. \\
 
 The transmission spectroscopy metric from \cite{kempton18} is
 
@@ -1574,7 +1558,7 @@ their Table 1). Five out of sixteen candidates exceed the threshold TSM cutoff a
 and should be considered for confirmation as they represent highly attractive targets for transmission spectroscopy
 observations. We note however that host stars with $J\lesssim 8.1$ start to approach the \emph{NIRISS}
 bright limit (depending on its spectral type) and will require specialized fast readout modes and/or the use
-of detector subarrays to be observed with \emph{NIRISS} in its SOSS mode \citep{beichman14}.
+of detector subarrays to be observed with \emph{NIRISS} in its SOSS mode \citep{beichman14}. \\
 
 Similarly to the TSM, \cite{kempton18} defined the thermal emission spectroscopy metric as
 
@@ -1607,7 +1591,7 @@ distribution \citep{limbach15}, dynamical stability \citep{fabrycky12}, and mult
 effects according to the `Kepler dichotomy' \citep{ballard16} of M dwarf planet populations:
 either high multiplicity systems ($N>5$) with low mutual inclinations or systems with lower
 multiplicity ($N\sim 1-2$) and high mutual inclinations. The resulting TESS yield
-around M1-M4 dwarfs is predicted to be $990 \pm 350$ planets. 
+around M1-M4 dwarfs is predicted to be $990 \pm 350$ planets.  \\
 
 The following back-of-the-envelope calculation reveals how the expected
 M dwarf planet population to be discovered with TESS compares to our \pipeline{} results
@@ -1623,7 +1607,7 @@ a distinct population of just 1149 M1-M4 dwarfs observed in either or both of TE
 and 2. We use a simple correction factor to the expected TESS yield to account for the
 fractionally fewer M1-M4 stars that we target for transit searches compared to the TIC-7.
 This factor is $f=1149/2849 = 0.40 \pm 0.01$ where the $f$ uncertainty
-is propagated from Poisson statistics. 
+is propagated from Poisson statistics.  \\
 
 The predicted number of M dwarf TESS planets discovered in sectors 1 and 2 is
 $990w \sim 53 \pm 19$ where $w=2849/53204$ is the fraction of all M1-M4 dwarfs targeted in
@@ -1631,7 +1615,7 @@ those sectors. Correcting this expected number of planets from the first two TES
 by the $f$ times fewer M1-M4 dwarfs in our stellar sample compared to in the TIC-7,
 we find that we are expected to detect
 $\sim 21 \pm 8$ planets. Note that this calculation inherently assumes that the detection
-completeness of \pipeline{} is equivalent to the ensemble completeness derived in \cite{ballard18}. 
+completeness of \pipeline{} is equivalent to the ensemble completeness derived in \cite{ballard18}.  \\
 
 If we include putative planet candidates, then recall that the
 total number of PCs detected around M1-M4 dwarfs in this study is sixteen (see

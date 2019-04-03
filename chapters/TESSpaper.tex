@@ -46,7 +46,7 @@ will be amenable to precision radial velocity (RV) observations using ground-bas
 establish their planetary nature and to measure the masses of identified planets.
 The population of TESS planets to-be discovered are on average systematically closer than the 2342
 validated Kepler planets\footnote{According to the NASA Exoplanet Archive accessed on March 18, 2018.}
-of which only 243 ($\sim 10$\%) have been characterized with RVs.
+of which only 243 ($\sim 10$\%) have been characterized with RVs. \\
 
 The growing number of precision velocimeters---and their variety---is vast and includes both optical
 and near-infrared spectrographs 
@@ -95,7 +95,7 @@ to compute the number of RV measurements required to detect a transiting planet'
 expected TESS planet yield from \citetalias{sullivan15}.
 Combining these calculations with an exposure time calculator provides estimates of the total
 observing time required to measure all TESS planet masses and to complete a variety of interesting science
-cases that will be addressed by TESS.
+cases that will be addressed by TESS. \\
 
 This paper is structured as follows: Sect.~\ref{RVFCsect:model} describes our model used to compute the
 total observing time for all TESS objects-of-interest, Sect.~\ref{RVFCsect:accuracy} compares our model to
@@ -123,7 +123,7 @@ the amount of information present in the data with regards to the value of
 the planet's RV semi-amplitude $K$ is contained in the Fisher information. The amount of
 information regarding $K$ is the $K$ measurement uncertainty \sigK{,} that is calculated by
 evaluating the Fisher information given a model of the observed stellar RV variations due to the
-planet.
+planet. \\
 
 The Fisher
 information matrix $B$ is defined as the Hessian matrix of the lnlikelihood of the data given a model
@@ -150,7 +150,7 @@ $\boldsymbol{\mu}(\mathbf{t})$. The RV time-series and model are each 1D vectors
 time-series $\mathbf{y}(\mathbf{t})-\boldsymbol{\mu}(\mathbf{t})$. Once constructed,
 the Fisher information matrix can be inverted to return a new covariance matrix; the covariance matrix
 of the $n$ model parameters and whose diagonal elements are equal to the measurement variances in the
-model parameters.
+model parameters. \\
 
 The model of observed stellar RV variations due to a single orbiting planet is a
 keplerian solution. Its general form is written as
@@ -188,7 +188,7 @@ $\boldsymbol{\sigma}_{\text{RV}}^2(\mathbf{t})$ along the diagonal. The resultin
   \label{RVFCeq:lnl2}
 \end{equation}
 
-\noindent modulo a constant offset that is independent of the model parameters.
+\noindent modulo a constant offset that is independent of the model parameters. \\
 
 The second simplifying assumption is rather
 than considering the full measurement uncertainty time-series $\boldsymbol{\sigma}(\mathbf{t})$, we will
@@ -211,9 +211,7 @@ $\boldsymbol{\theta}=\{K\}$. The Fisher information matrix then reduces to the s
 \noindent where in the final step we have assumed 
 that the \nrv{} measurements are uniformly sampled
 over the planet's orbital phases such that the summation term in Eq.~\ref{RVFCeq:fisher2} averages to one
-half of \nrv{.}
-%Certainly we cannot arrive at Eq.~\ref{RVFCeq:fisher3} if the RV measurements are sampled
-%at, for example, the planet's quadrature phases.
+half of \nrv{.} \\
 
 The inverse of the expression in Eq.~\ref{RVFCeq:fisher3} is the K measurement variance or
 
@@ -264,9 +262,7 @@ When attempting to measure the semi-amplitude of a known transiting planet, alon
 activity model, the full set of model parameters becomes
 $\boldsymbol{\theta} = \{K, a, \lambda, \Gamma, P_{\text{GP}}, \sigma_{\text{jitter}} \}$. Hence our new Fisher
 information matrix will be $6 \times 6$ and takes into account the dependence of the $K$
-measurement precision on the remaining hyperparameters. 
-%compared to the considerably more simplistic $1 \times 1$ matrix
-%obtained when only a white noise jitter parameter is necessary to model stellar activity.
+measurement precision on the remaining hyperparameters. \\
 
 The elements of the Fisher information matrix are computed identically as before from Eqs.~\ref{RVFCeq:fisher}
 and~\ref{RVFCeq:lnl} but now using a non-diagonal covariance matrix $C$ (Eq.~\ref{RVFCeq:cov}). The derivation
@@ -286,7 +282,7 @@ $\boldsymbol{\sigma}(\mathbf{t})$ in the lnlikelihood such that
 
 \noindent Therefore estimating \sigK{} from the Fisher
 information including correlated noise requires time-series as input and numerical values for all model
-parameters in $\boldsymbol{\theta}$.
+parameters in $\boldsymbol{\theta}$. \\
 
 We note that when including a GP correlated noise activity model, a simple analytical expression
 for \sigK{} in terms of $\sigma_{\text{RV}}$ and \nrv{} cannot be derived. In this case \sigK{} must be
@@ -305,7 +301,7 @@ Calculating \sigK{} from RV time-series with either white noise or correlated no
 in-part on the RV measurement uncertainty. Here we estimate the photon-noise limited
 RV measurement precision \sigRV{} following the formalism from \cite{bouchy01}. Their formalism
 is used to calculate \sigRV{} given the RV information content contained within a stellar spectrum
-over a particular wavelength range of interest.
+over a particular wavelength range of interest. \\
 
 From \cite{bouchy01} the RV measurement precision \sigRV{} is shown to be
 
@@ -342,7 +338,7 @@ by
 \end{equation}
 
 \noindent The quality factor represents the density of the RV information content in the spectrum
-$A_i$.
+$A_i$. \\
 
 When computing \sigRV{} from Eq.~\ref{RVFCeq:sigrv}
 we use model stellar spectra from the PHOENIX-ACES library \citep{husser13}.
@@ -369,7 +365,7 @@ When computing the rotation kernel we adopt a linear limb-darkening coefficient 
 For each star we compute \vsini{} from the known stellar radius \citepalias[see][]{sullivan15}, the
 inclination of the stellar spin-axis to the line-of-sight $i_s$---drawn from a narrow geometric
 distribution centered on $90^{\circ}$---and the stellar rotation period \prot{,} 
-that we sample following the methodology described in Sect.~\ref{RVFCsect:act}.
+that we sample following the methodology described in Sect.~\ref{RVFCsect:act}. \\
 
 \input{chapters/RVFC_bandtable}
 
@@ -377,7 +373,7 @@ After the aforementioned convolutions the PHOENIX model's wavelength grid is res
 constant $\delta \lambda = \lambda_0 / R$ whose value is specified at the center of a reference band.
 For the optical spectrograph that will be considered in this study we fix the reference band to be
 the $V$ band ($\lambda_0 = 0.55$ \micron{)} whereas the reference band is fixed to the $J$ band
-($\lambda_0 = 1.25$ \micron{)} with the near-IR spectrograph considered.
+($\lambda_0 = 1.25$ \micron{)} with the near-IR spectrograph considered. \\
 
 \cite{artigau18} compared the value of \sigRV{} derived from stellar spectra---as we do
 here---to the value derived from empirical spectra from HARPS, ESPaDOnS, and CRIRES. They find
@@ -396,7 +392,7 @@ photon-noise limited RV precision by a factor $\mathcal{O}(2)$---depending on th
 spectrograph---as it does for Barnard's star from the $\sim J$ to $K$ band. Note that the
 corresponding effect on total observing times will be $\mathcal{O}(<2)$ due to 
 the other contributors to the RV uncertainty in addition to the photon-noise limit (see
-Sect.~\ref{RVFCsect:noise}).
+Sect.~\ref{RVFCsect:noise}). \\
 
 \subsection{Additional sources of RV noise} \label{RVFCsect:noise}
 Often when searching for transiting planets in radial velocity the residual rms following the
@@ -413,7 +409,7 @@ rotation \citep[e.g.][]{forveille09, bonfils13, delfosse13b}.
 Another source of dispersion in observed RVs may be
 from additional planets not seen in-transit \citep[e.g.][]{christiansen17, cloutier17b, bonfils18};
 an effect that is especially pertinent when searching for small planets whose RV semi-amplitudes are
-less than the characteristic RV uncertainty of the time-series \citep[e.g.][]{astudillodefru17a}.
+less than the characteristic RV uncertainty of the time-series \citep[e.g.][]{astudillodefru17a}. \\
 
 In order to compute \nrv{} for each TOI using our white noise model we will
 absorb the aforementioned additional noise sources into an effective RV uncertainty \sigeff{} rather than the
@@ -431,12 +427,8 @@ Eq.~\ref{RVFCeq:sigK} can then be rearranged for \nrv{} in terms of the effectiv
 
 \noindent In empirical time-series with white RV residuals
 \sigeff{} can be estimated from the rms of the residual dispersion following the removal of
-all modelled planets.
-%The value of \nrv{} is then calculated by evaluating
-%\sigK{} from Eq.~\ref{RVFCeq:sigKGP} using a set of time-series of increasing \nrv{} from 10-$10^3$, in steps of
-%90, before fitting a powerlaw to \nrv{(}\sigK{)} and interpolating to the desired value of \sigK{.}
-Eq.~\ref{RVFCeq:nrv} is not applicable to 
-empirical time-series that require a GP correlated noise activity model.
+all modelled planets. Eq.~\ref{RVFCeq:nrv} is not applicable to 
+empirical time-series that require a GP correlated noise activity model. \\
 
 In Sect.~\ref{RVFCsect:accuracy} we will compare the results from real RV campaigns to our 
 analytic estimates as a test of their validity. 
@@ -457,14 +449,12 @@ the \cite{newton16a} empirical distribution for M dwarfs ($T_{\text{eff}} \leq 3
 stellar equatorial velocity is calculated using the stellar radius from \citetalias{sullivan15}. The projected
 stellar rotation velocity \vsini{} is then calculated after drawing the inclination of the stellar spin--axis
 from a geometrical distribution. The value of \vsini{} acts as a first-order estimate of the star's activity
-level \citep[e.g.][]{west15, moutou17}.
+level \citep[e.g.][]{west15, moutou17}. \\
 
 For active stars
-%(\Rhk{} $> -4.6$),
 (\prot{} $\lesssim 10$ days), \cite{oshagh17} showed through simultaneous
 K2 photometry and HARPS spectroscopy that monotonic correlations exist between the measured RVs and numerous
 spectroscopic activity indicators (e.g. \Rhk{,} FWHM, BIS). Meanwhile quiet stars
-%(\Rhk{} $< -4.8$)
 (\prot{} $\gtrsim 10$ days) appear to lack such strong
 correlations with spectroscopic activity indicators yet do correlate strongly with $F_8$, the photometric
 flicker or photometric RMS on timescales $<8$ hours \citep{bastien13}. The $F_8$ parameter has been shown to
@@ -486,7 +476,7 @@ $\sim 0.5-10$ \mps{} but with a relatively small median value of $\lesssim 2$ \m
 We sample $F_8$ values---measured in parts-per-thousand---from the empirical \emph{Kepler} distribution
 that has been corrected for their intrinsic \emph{Kepler} magnitude \citep{bastien13}. After sampling $F_8$ and its
 uncertainty we use Eq.~\ref{RVFCeq:cegla} to map to the distribution of \sigact{} for the inactive FGK stars in
-the sample of planet-hosting TOIs.
+the sample of planet-hosting TOIs. \\
 
 For active FGK stars (\prot{} $<10$ days) we revert to the \Rhk{} activity indicator \citep{noyes84} 
 whose distribution among nearby field FGK stars
@@ -511,7 +501,7 @@ instead define the boundaries between
 FGK stars based on $T_{\text{eff}}$ given the limited information available for the TOIs. The assumed ranges
 are $T_{\text{eff,F}} \in (6000,7500]$ K, $T_{\text{eff,G}} \in (5200,6000]$ K, and $T_{\text{eff,K}} \in (3800,5200]$ K.
       By computing \Rhk{} and its uncertainty from sampled values of \prot{} and $B-V$, we can map from \Rhk{} to the
-      distribution of \sigact{} for the active FGK stars in the sample of planet-hosting TOIs.
+      distribution of \sigact{} for the active FGK stars in the sample of planet-hosting TOIs. \\
 
 Lastly, for M dwarfs there exists a clean relation between \Rhk{} and \prot{} \citep{astudillodefru17b}.
 The correlation saturates at a maximum mean value of \Rhk{} $=-4.045$ for rapid rotators with \prot{} $< 10$
@@ -536,7 +526,7 @@ M dwarfs with $2 \lesssim P_{\text{rot}} \lesssim 150$ days (c.f. Fig. 3 \citeal
 whose RV activity rms was characterized with HARPS (X. Delfosse private communication).
 Additional empirical data to further
 calibrate these models for M dwarfs are part of an ongoing study with HARPS
-(Delfosse et al. in prep.) and with a subset of active M dwarfs from CARMENES recently reported \citep{tal-or18}.
+(Delfosse et al. in prep.) and with a subset of active M dwarfs from CARMENES recently reported \citep{tal-or18}. \\
 
 We note that the
 empirical distributions of RV activity used in this study were derived from observations using optical
@@ -559,7 +549,7 @@ M dwarf. In the TESS simulations of \citetalias{sullivan15} up to one transiting
 multiplicity of each simulated planetary system is reported.
 Here we use the number of additional planets around each TOI---along with the known occurrence rates of
 planets---to estimate the RV contribution due to these planets whose transits
-are not characterized with TESS.
+are not characterized with TESS. \\
 
 For TOIs with a reported multiplicity $N_p>1$, we sample the radius $r_p$ and orbital period $P$ of the $N_p-1$
 additional planets from the \emph{Kepler}-derived occurrence rates from \cite{fressin13} for FGK dwarfs or from
@@ -568,7 +558,7 @@ transit probability $\propto P^{-2/3}$, we draw the orbital periods of additiona
 the reported orbital period of the known TESS planet.
 In this way the TESS planet is always the innermost planet in the system and therefore most likely to transit.
 However, inner non-transiting planets have been detected in known transiting systems
-as a result of a potentially small mutual inclination \citep[$\Delta i \sim 1^{\circ}$;][]{cloutier17b}.
+as a result of a potentially small mutual inclination \citep[$\Delta i \sim 1^{\circ}$;][]{cloutier17b}. \\
 
 When sampling the planet occurrence rates as a function of $P$ and $r_p$, $f(P,r_p)$, a few caveats arise. Firstly,
 $f(P,r_p)$ are reported over a coarse grid. Therefore when drawing a planet with a range of potential orbital
@@ -593,7 +583,7 @@ $m_p$ according to the empirically derived mean mass-radius relations from \cite
 \end{equation}
 
 \noindent where $S$ is the irradiance received by the planet. By adopting the mean mass-radius relation this
-formalism neglects to reflect the diversity of exoplanet masses for a given planet radius.  
+formalism neglects to reflect the diversity of exoplanet masses for a given planet radius.   \\
 
 The sinusoidal keplerian solution with unit amplitude has an rms value of $\sqrt{2}/2 \sim 0.707$.
 Therefore for each additional planet $i=1,\dots,N_p-1$,
@@ -614,7 +604,7 @@ used as well as on the star's magnitude in the spectral bands spanned by the spe
 For each TOI in this study we calculate the exposure time that is required to reach a S/N of at least $100$
 at the center of a reference band; $V$ ($\lambda=0.55$ \micron{)} or $J$ ($\lambda=1.25$ \micron{)} for optical
 and near-IR spectrographs respectively. The zero point flux densities in each spectral band used to
-calculate the S/N $=\sqrt{N_{e^-}}$ per resolution element are reported in Table~\ref{RVFCtable:bands}.
+calculate the S/N $=\sqrt{N_{e^-}}$ per resolution element are reported in Table~\ref{RVFCtable:bands}. \\
 
 The benefit of integrating longer is only to achieve a photon-noise
 limited RV precision less than a few \sigact{,} is one of diminishing returns because the effective RV precision
@@ -676,7 +666,7 @@ report their residual rms values explicitly whilst others treat the stellar acti
 white by fitting an additive scalar jitter parameter that we
 add in quadrature to the median RV measurement uncertainty of the time-series to estimate \sigeff{.}
 The planetary systems with white noise models
-considered in this analysis are summarized in Table~\ref{RVFCtable:compare_white}.
+considered in this analysis are summarized in Table~\ref{RVFCtable:compare_white}. \\
 
 \input{chapters/RVFC_Ncomparetable}
 
@@ -695,7 +685,7 @@ from a Gaussian distribution
 whose mean is equal to its best-fit value and standard deviation equal to the parameter's measured $1\sigma$
 uncertainty. Evaluating the Fisher information matrix with $10^3$ model parameter draws results in a
 distribution of \sigK{} for each planet from which the distribution of \nrv{} can be calculated using
-Eq.~\ref{RVFCeq:nrv} after \sigeff{} is derived identically to as in the white noise scenario.
+Eq.~\ref{RVFCeq:nrv} after \sigeff{} is derived identically to as in the white noise scenario. \\
 
 \input{chapters/RVFC_Ncomparetable_red}
 
@@ -713,7 +703,7 @@ size of the RV time-series presented in \cite{dittmann17} from which $K$ is meas
 uncertainties we calculate a median \nrv{}$=265 \pm 64$ which is $\sim 1.8$ times greater than the actual
 time-series size (\nrv{}$=144$) at $1.9\sigma$. The exact cause of this anomalous discrepancy is not known
 but may be related to how the GP covariance function is implemented although this investigation is
-beyond the scope of this paper. 
+beyond the scope of this paper.  
 
 \begin{figure}
   \centering
@@ -742,7 +732,7 @@ have yielded higher false positive rates than initially anticipated \citep{slisk
 The properties of the adopted planet population
 were derived from planet occurrence rates measured with Kepler circa 2015. Some planetary properties,
 particularly the planetary radii, have since been modified slightly following
-the reanalysis of Kepler-planet host star properties \citep[e.g.][]{fulton17}.
+the reanalysis of Kepler-planet host star properties \citep[e.g.][]{fulton17}. \\
 
 Here we compute analytical estimates of \nrv{}
 required to measure a planet's RV semi-amplitude---at a given precision---for the entire synthetic catalog
@@ -759,7 +749,7 @@ are modelled after the up-coming NIRPS spectrograph that will join HARPS at the 
 telescope at La Silla observatory in 2019 \citep{bouchy17}. The adopted specifications for our
 two fiducial spectrographs are given in Table~\ref{RVFCtable:spectrographs}. Using the formalism discussed in
 Sect.~\ref{RVFCsect:sigrv} we calculate \sigRV{} for each TOI with both spectrographs.
-For reference, the distributions of TOI \sigRV{} for both spectrographs are shown in Fig.~\ref{RVFCfig:sigRV}. 
+For reference, the distributions of TOI \sigRV{} for both spectrographs are shown in Fig.~\ref{RVFCfig:sigRV}. \\
 
 \begin{figure}
   \centering
@@ -774,7 +764,7 @@ For reference, the distributions of TOI \sigRV{} for both spectrographs are show
 
 In Sect.~\ref{RVFCapp:rvfc}
 we will present a web-based \nrv{(}\sigRV{)} calculator that can be used to repeat these calculations but
-using \emph{any} spectrograph defined by the user.
+using \emph{any} spectrograph defined by the user. \\
 
 \input{chapters/RVFC_spectrographtable}
 
@@ -794,7 +784,7 @@ follow-up science that one wishes to conduct once the planet's mass has been cha
 For example, conventionally the \emph{detection} of a planet's $K$ requires a $3\sigma$ detection
 significance; $3 = K/$ \sigK{}. Conversely, targets that will be amenable to atmospheric
 characterization via transmission spectroscopy will benefit from a more precise measurement of the
-planet's bulk density that in-turn requires a mass detection significance $>3\sigma$.
+planet's bulk density that in-turn requires a mass detection significance $>3\sigma$. \\
 
 In the following Sect.~\ref{RVFCsect:results} we present results of \nrv{} for the full TESS sample in the
 limit of correlated RV noise (see Sect.~\ref{RVFCsect:fisherGP}). We also consider four subsamples of TESS
@@ -840,7 +830,7 @@ be characterized with RVs due to either their small RV semi-amplitude, certain i
 host properties that deter RV observations (e.g. a low apparent
 magnitude, rapid projected stellar rotation, or high levels of stellar activity), or simply due to
 a lack of available observing time. Despite this fact we present the results for \emph{all} TESS
-planets.
+planets. \\
 
 Detecting a planet's mass at $3\sigma$ requires a $K$ detection significance that is slightly larger
 than three because the calculation of $m_p$ from $K$ is also dependent on other observables such as the
@@ -859,14 +849,14 @@ asteroseismology or spectroscopy coupled with precision parallaxes \citep[e.g.][
 We note that the calculations presented here represent conservative
 values if TOI stellar masses can be determined to a precision higher than 10\%. 
 Nevertheless, under our current assumptions a $3.06\sigma$ detection of $K$
-(i.e. \sigK{} $=0.327 K$) is required to detect $m_p$ at $3\sigma$.
+(i.e. \sigK{} $=0.327 K$) is required to detect $m_p$ at $3\sigma$. \\
 
 The median results---over Monte-Carlo realizations---of our calculations
 are reported in Table~\ref{RVFCtable:results} for
 each TOI. Specifically, we report the median photon noise-limited RV precision in both the optical and
 near-IR spectrographs, \sigact{,} \sigplan{,} \nrv{,} and total observing times in each spectrograph;
 $t_{\text{obs,opt}}$ and $t_{\text{obs,nIR}}$. The values of \nrv{---}and the corresponding
-$t_{\text{obs}}$---are derived from the general case which includes a GP treatment of correlated RV noise.
+$t_{\text{obs}}$---are derived from the general case which includes a GP treatment of correlated RV noise. \\
 
 In Fig.~\ref{RVFCfig:ratio} we compare $t_{\text{obs,opt}}$ and $t_{\text{obs,nIR}}$ as a function of
 TOI effective temperature to ascertain which flavor of spectrograph is favorable for efficient RV planet
@@ -876,7 +866,7 @@ Efficient characterization of planets around
 late TOIs with $T_{\text{eff}} \lesssim 3800$ K is significantly favoured by the use of near-IR spectrographs
 due to the reduced photon noise exhibited by those stars in the near-IR.
 Conversely for TOIs with $T_{\text{eff}} \gtrsim 5500$ K, the optical spectrograph is preferred. For
-intermediate TOIs the two spectrographs offer nearly consistent performance.
+intermediate TOIs the two spectrographs offer nearly consistent performance. \\
 
 \begin{figure}
   \centering
@@ -928,7 +918,7 @@ Efficient M dwarf planet detections favor the near-IR
 spectrograph wherein a thousand hours of observing time yields $\sim 165$/927 early-mid M dwarf planets
 or nearly all $\sim 54$ mid-late M dwarf planets.
 These numbers are reduced to $\sim 60$/927 and $\sim 21$/54 in a thousand hours with our 
-optical spectrograph.
+optical spectrograph. \\
 
 \begin{figure*}
   \centering
@@ -991,7 +981,7 @@ of any spectral type with $J \leq 13.6$.
 The cumulative median observing times required to detect TESS planets as a function of planet type 
 are shown in Fig.~\ref{RVFCfig:cumulativerp} up to $10^3$ hours. We consider four types of planet defined by their radii to
 be Earths ($<1.25$ R$_{\oplus}$), super-Earths ($1.25-2$ R$_{\oplus}$), Neptunes ($2-4$ R$_{\oplus}$),
-and giants ($>4$ R$_{\oplus}$).
+and giants ($>4$ R$_{\oplus}$). \\
 
 Of the 1984 planets in the \citetalias{sullivan15}
 TESS sample, 66 are classified as Earths with 26 around stars with
@@ -1002,7 +992,7 @@ near-IR spectrograph compared to $\sim 15$ detections in the optical. We note th
 planets can be expensive as the detection efficiency exceeds 20 hours per detection
 after $\sim 11$ nights or after just $\sim 8$ detections in the near-IR. The detection efficiency
 drops more rapidly in the optical to greater than 20 hours per detection after just $\sim 6$ nights or
-$\sim 4$ detections.
+$\sim 4$ detections. \\
 
 Super-Earths can be detected rather efficiently in the near-IR to beyond $10^3$ hours and with an optical
 detection efficiency better than 20 hours per detection up to $\sim 100$ nights.
@@ -1015,7 +1005,7 @@ the detection efficiency remains $<20$ hours per detection for up to
 after $\sim 510$ nights or $\sim 370$ detections in the optical and after $\sim 960$ nights or $\sim 660$ detections
 in the near-IR. Lastly, $\sim 130$/151 giant planets are detected in the optical in $\sim 80$ nights at which point the
 optical detection efficiency begins to exceed 20 hours per detection. Similarly in the near-IR, $\sim 110$/151 giants planets
-are detected in $\sim 85$ nights.
+are detected in $\sim 85$ nights. 
 
 \begin{figure*}
   \centering
@@ -1062,7 +1052,7 @@ Given our previous assumptions regarding the measurement precision on $P$ and
 $M_s$ (see Sect.~\ref{RVFCsect:all}),
 a $5\sigma$ mass detection requires a $5.29\sigma$ $K$ detection (i.e. \sigK{} $=0.189 K$).
 According to our analytic model for \nrv{} in the white noise limit, a $5\sigma$ mass detection requires
-$(0.327/0.189)^2 = 2.99$ more observing time than a $3\sigma$ mass detection.
+$(0.327/0.189)^2 = 2.99$ more observing time than a $3\sigma$ mass detection. \\
 
 The cumulative median observing time required to complete the TESS level one science requirement is shown
 in Fig.~\ref{RVFCfig:50}. Here we calculate the cumulative median observing times from various planet samples:
@@ -1082,7 +1072,7 @@ characterized in the optical and with the remaining 19/50 being done in the near
 the `best' 50 small planets naturally biases the sample towards larger planets with their larger $K$ values, 
 thus making their mass characterization faster with RVs. Despite this, the set of the `best' small TESS planets
 with either spectrograph contains 9 super-Earths and 41 Neptunes with the average radius being 2.8 R$_{\oplus}$
-and the smallest planet being likely terrestrial at 1.37 R$_{\oplus}$ (c.f. inset of Fig.~\ref{RVFCfig:50}).
+and the smallest planet being likely terrestrial at 1.37 R$_{\oplus}$ (c.f. inset of Fig.~\ref{RVFCfig:50}). \\
 
 We note that identifying the `best' small TESS planets cannot be done exactly
 until the conclusion of the full TESS planet search. By not focusing on the `best' 50 small
@@ -1160,13 +1150,13 @@ time required to achieve a given mass detection significance as larger signals a
 a given Rv measurement precision. We considered various values of $\alpha \in (0,3]$
 and found little discrepancy between these values with regards to where in the region of the corresponding
 magnitude-$\Omega$ parameter space the `best' 50 small planets sit. Given uncertainties and possible discontinuities
-in the mass-radius relation for small planets we opt for $\alpha =1$.
+in the mass-radius relation for small planets we opt for $\alpha =1$. \\
 
 In Fig.~\ref{RVFCfig:identify50} we compare the location of the 50 `best' small planets to the remaining
 1833 small planets in the apparent magnitude-$\Omega$ parameter space. For considerations with our
 optical and near-IR spectrographs we use the $V$ and $J$ band magnitudes respectively.
 We note that in what follows we are marginalizing over stellar rotation and the level of stellar activity, both of
-which have a direct effect on our ability to detect planets in RV.
+which have a direct effect on our ability to detect planets in RV. \\
 
 \begin{figure}
   \centering
@@ -1246,13 +1236,13 @@ The precise characterization of the mass-radius relation in the vicinity of this
 \emph{radius valley} will elucidate as to whether or not the valley persists in terms of planet bulk
 densities as the peaks in the bi-modal radius distribution are posited to harbour terrestrial and
 volatile-rich planets on opposing sides of the radius valley. Characterizing the mass-radius relation
-in this regime will greatly benefit from the inclusion of relevant TESS planets.
+in this regime will greatly benefit from the inclusion of relevant TESS planets. \\
 
 In order to accurately inform the mass-radius relation of planets across the radius valley 
 with TESS planets, we seek a 20\% fractional mass uncertainty (i.e. $5\sigma$ mass detection) following
 \cite{dressing15b}. We define TESS planets
 of interest as those spanning the radius valley using the period-dependent locus of planet radii---and
-its upper and lower bounds---as defined by the powerlaw in \cite{vaneylen18} from asteroseismology.
+its upper and lower bounds---as defined by the powerlaw in \cite{vaneylen18} from asteroseismology. \\
 
 The cumulative median observing time required to detect relevant TESS planets at $5\sigma$ are
 shown in Fig.~\ref{RVFCfig:cumulativeMR}. To avoid the bias that the most efficiently observed targets
@@ -1330,7 +1320,7 @@ the near-IR spectrograph. This is about fifteen times shorter than the total tim
 to complete the same task with the optical spectrograph. Regardless of the spectrograph
 used, RV follow-up of potentially habitable TESS planets will be an expensive task with
 just $\sim 2$ planets detected in $\sim 2.5$ nights after which the detection
-efficiency begins to require more than 20 hours per detection.
+efficiency begins to require more than 20 hours per detection. \\
 
 \begin{figure}
   \centering
@@ -1382,7 +1372,7 @@ Many TOIs will represent some of the most interesting targets for atmospheric ch
 JWST through transmission spectroscopy observations in particular. To quantify the RV requirement needed
 to understand the bulk densities of these planets we will consider TOIs that are most amenable to
 efficient JWST observations. Specifically, TOIs with their expected S/N of transmission features
-$\geq 10$.
+$\geq 10$. \\
 
 For each TOI we calculate the expected S/N in transmission from the expected
 differential transmission depth $\Delta D$ of the planet and the photon-noise per spectral bin
@@ -1409,7 +1399,7 @@ radius. The atmospheric mean molecular weights of the TESS planets are not given
 so we adopt a very simplistic prescription of $\mu$ using a step-wise function of H/He-dominated atmospheres
 ($\mu=2$) to Earth-like atmospheres ($\mu=29$) for planets $\leq 2$ R$_{\oplus}$. However, this simple prescription
 is known to be inaccurate but an approximation is necessary to facilitate the exercise of estimating $\Delta D$
-for planets yet to be studied in transmission.
+for planets yet to be studied in transmission. \\
 
 According to Eq.~\ref{RVFCeq:transm} the interpretation of planetary transmission spectra
 heavily relies on a-priori knowledge of the planet's bulk density. The $\rho$ measurement
@@ -1426,7 +1416,7 @@ density detection detection would require a $\sim 6.9\sigma$ mass detection on a
 measurement would require a $\sim 7.8\sigma$ $K$ measurement or $(0.327/0.129)^2 = 6.4$ more observing time
 than a $3\sigma$ mass detection. We therefore opt for a more reasonable mass detection of $5\sigma$, similarly to
 what was pursued when characterizing 50 TESS planets smaller than 4 R$_{\oplus}$ and planets across the radius gap
-in Sects.~\ref{RVFCsect:lvl1} and ~\ref{RVFCsect:mr}.
+in Sects.~\ref{RVFCsect:lvl1} and ~\ref{RVFCsect:mr}. \\
 
 Fig.~\ref{RVFCfig:trans} depicts the cumulative median observing time required to detect the $5\sigma$ masses
 of TESS planets that are favorable for JWST follow-up with an expected transmission S/N $\geq 10$.
@@ -1545,7 +1535,7 @@ have systematically longer periods making them cooler and of interest for future
 Lastly, the TESS mission has the possibly of being extended beyond its nominal 2-year long primary mission.
 If extended, the extension of the TESS observational baselines will improve the measured ephemerides of confirmed TESS
 planets, shed light on the nature of systems exhibiting single transit-like events, and expand the
-population of planets discovered with TESS \cite[see the overview in][]{bouma17}.
+population of planets discovered with TESS \cite[see the overview in][]{bouma17}. \\
 
 Further caveats to the planet population from \citetalias{sullivan15} used throughout this study were
 addressed by a variety of studies and corresponding updates to the expected TESS planet population
@@ -1568,7 +1558,7 @@ challenging as demonstrated by the CARMENES near-IR channel that seems to yield 
 optical \citep[][c.f. Fig 6]{reiners18}.
 The focus on M dwarf planets with either class of spectrograph is well warranted as these planets
 represent some of the most interesting planets in terms of potential habitability and for the
-prospect transmission spectroscopy follow-up with JWST.
+prospect transmission spectroscopy follow-up with JWST. \\
 
 In Sect.~\ref{RVFCsect:jwst} we presented the results for the most favorable TESS targets for
 transmission spectroscopy follow-up with JWST. In addition to identifying the `best' such planets
@@ -1579,7 +1569,7 @@ describing the ease of detecting atmospheric features in either transmission or 
 the observing time required to detect their masses in RVs, that also overlap with favorable TESS planets
 based on the metrics from \cite{kempton18}, should be strongly considered for rapid RV follow-up.
 Similar target selection may be done based on the simulated transmission spectra from \cite{louie18}
-and the resulting S/N in transmission.
+and the resulting S/N in transmission. \\
 
 It is worth reiterating that although TOIs will be frequently reported following the launch and
 commissioning of TESS, RV follow-up teams should refrain from targeting just any TOI. Many detected
@@ -1614,7 +1604,7 @@ Furthermore, because the results presented throughout this paper
 have been regarding a hypothetical planet population and with only two fiducial spectrographs,
 we present to the community an online web-tool version of the generalized
 \emph{Radial Velocity Follow-up Calculator}\footnote{\url{http://maestria.astro.umontreal.ca/rvfc}}
-(\texttt{RVFC}) used throughout this study.
+(\texttt{RVFC}) used throughout this study. \\
 
 The \texttt{RVFC} is intended to serve the community by providing rapid calculations of
 \nrv{} and total observing times for an arbitrary user-defined transiting planet with a user-defined
@@ -1636,7 +1626,7 @@ interest and only white noise calculations are desired (\emph{option 2.3}).
 \emph{Option 2} may be viable for users whose employed
 spectrograph features an independent ETC, the results from which differ from those returned by
 the built-in \texttt{RVFC} ETC. 
-The input parameters required to run the \texttt{RVFC} are summarized in Table~\ref{RVFCtable:rvfc}.
+The input parameters required to run the \texttt{RVFC} are summarized in Table~\ref{RVFCtable:rvfc}. \\
 
 \input{chapters/RVFC_rvfctable}
 
@@ -1653,7 +1643,7 @@ The remaining spectrograph parameters and stellar magnitude are then used to sca
 value of \sigRV{} to the correct S/N per resolution element. Notably, 
 the interpolation of \sigRV{} necessitates a trade-off between accuracy and computing time. However,
 the loss in accuracy we deem acceptable given the often inexact values of the other sources of RV
-noise (i.e. instrument stability, activity, and additional unseen planets).
+noise (i.e. instrument stability, activity, and additional unseen planets). \\
 
 Lastly, recall that the
 \texttt{RVFC} can be calculate \nrv{} in either white or correlated RV noise limits according to
@@ -1665,7 +1655,7 @@ we recommend using multiple calculations (e.g. $N_{\text{GP}} \gtrsim 10$) to ob
 spread in \nrv{} given a suite of sampled window functions. Users beware that increasing $N_{\text{GP}}$ will
 require a correspondingly longer computation time.  
 In the future we would like to implement a way for users to upload custom window functions to avoid this
-ambiguity.
+ambiguity. 
 
 
 \subsection{Fisher information with a quasi-periodic Gaussian process regression model} \label{RVFCapp:fishergp}

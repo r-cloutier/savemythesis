@@ -405,12 +405,12 @@ can be sampled simultaneously with the GP hyperparameters $\Theta$ which paramet
 the residual covariances through the covariance matrix K($\Theta$) and are fit by
 optimizing the $\ln$ likelihood function
 
-\begin{multline}
-  \ln{\mathcal{L}(\theta,\Theta)} = \\
+\begin{equation}
+  \ln{\mathcal{L}(\theta,\Theta)} = 
   -\frac{1}{2} \left[ (\mathbf{f}-\boldsymbol{\mu}(\theta))^{\text{T}}
-    \cdot \text{K}(\Theta)^{-1} \cdot (\mathbf{f}-\boldsymbol{\mu}(\theta)) \right. \\
+    \cdot \text{K}(\Theta)^{-1} \cdot (\mathbf{f}-\boldsymbol{\mu}(\theta)) \right. 
     \left. + \ln{\mathrm{det} \text{K}} + N \ln{2 \pi} \right] \label{eq:lnL}
-\end{multline}
+\end{equation}
 
 \noindent along with appropriately chosen priors on the parameters in $\theta$ and $\Theta$.
 Here, $N$ is the number of photometric measurements in the light curve. Similar routines based on GP regression 
@@ -471,6 +471,8 @@ multi-variate Gaussian distribution whose mean function is taken to be a potenti
 The mean function of the GP from the iteration whose optimized hyperparameters maximize
 $\ln{\mathcal{L}(\Theta)}$ is assigned as the initial systematic
 correction and is used to de-trend the photometry prior to the search for periodic transit events.
+
+\input{chapters/orion_priortable}
 
 Fig.~\ref{fig:detrend} depicts two examples of the results of this iterative de-trending procedure over
 individual TESS sectors for TICs 235037759 and 262530407. The accuracy of each mean GP regression model,
@@ -579,6 +581,8 @@ The $D$ dimension is sampled on a much coarser grid
 given that the precision of the box model parameters are not yet required to infer planet properties
 but only to identify epochs at which transit-like events are likely to have occurred. Explicitly, the
 adopted linear search $D$ grid contains three possible transit durations of either 1.2, 2.4, or 4.8 hours.
+
+\input{chapters/orion_freeparamtable}
 
 This procedure produces a $N_{\text{bin}} \times 3$ matrix of transit times and durations
 with each entry having an associated $\ln$ likelihood and optimized transit depth $Z$.
@@ -1099,6 +1103,8 @@ we adopt the 95$^{\text{th}}$ percentile of the depth distribution depths as the
 \texttt{secthresh} for each OI are reported in Table~\ref{table:vespa} along with the results of
 our \vespa{} calculations.
 
+\input{chapters/orion_vespatable}
+
 The true power of \vespa{} is realized when additional follow-up observations such as 
 contrast curves from AO-assisted imaging or photometric follow-up
 are used to inform the interpretation of transiting PCs.
@@ -1210,6 +1216,8 @@ as TOIs\footnote{As of December 19, 2018.}.
 Point estimates of observable and derived planetary parameters for these candidates are reported in
 Table~\ref{table:planets}.  Fig.~\ref{fig:LCs} also depicts their phase-folded light curves along with
 the transit models computed using the MAP parameter values from Table~\ref{table:planets}.
+
+\input{chapters/orion_planetparamstable}
 
 \begin{figure*}
   \centering
@@ -1491,6 +1499,8 @@ m/s, even for relatively inactive stars \citep{fischer16}.
 The majority of our objects of interest have expected $K_{\text{RV}}$ values in excess of this typical RV
 sensitivity limit and are reported in Table~\ref{table:followup}. 
 
+\input{chapters/orion_planetfollowuptable}
+
 \begin{figure}
   \centering
   \includegraphics[width=0.6\hsize]{figures/planetsample_followup.png}
@@ -1687,8 +1697,3 @@ Inc., under NASA contract NAS5-26555.
 
 %\input{chapters/orion_starphot}
 %\input{chapters/orion_starparams}
-%\input{chapters/orion_freeparamtable}
-%\input{chapters/orion_priortable}
-%\input{chapters/orion_vespatable}
-%\input{chapters/orion_planetparams}
-%\input{chapters/orion_planetfollowup}

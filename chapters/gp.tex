@@ -1,9 +1,9 @@
 \chapter{Stellar Activity Modelling in Radial Velocity Time Series}
 As discussed in Sect.~\ref{sect:activity}, there exists a multitude of physical
 processes ongoing within the photospheres and chromospheres of active stars
-which produce observable signatures with a variety of amplitudes and timescales
+that produce observable signatures with a variety of amplitudes and timescales
 (see Table~\ref{table:activity}). The subsequent sections discuss a variety of
-techniques which have been used to model and consequently mitigate the effects of
+techniques that have been used to model and consequently mitigate the effects of
 stellar activity in RV time series.
 
 \section{An Overview of Techniques for Stellar Activity Mitigation}
@@ -19,7 +19,7 @@ following the removal of their best-fit planet model
 \citep[e.g.][]{mayor95,butler96}. In
 many cases it was revealed that the residual rms exceeded the characteristic RV
 measurement uncertainty and thus alluded to the presence of additional
-jitter signals which may or may not vary significantly with time. \\
+jitter signals that may or may not vary significantly with time. \\
 
 In many of the following RV planet searches the apparent jitter was characterized
 by an additive scalar jitter $s$. The free parameter $s$ was used to characterize the
@@ -35,7 +35,7 @@ cycles remained unresolved.
 \subsection{Correlations with Activity Indicators} \label{sect:indicators}
 Stellar RV observations are known to be affected by both planetary companions as
 well as by stellar activity. Disentangling those signals in RV time series
-therefore benefits significantly from ancillary time series which are sensitive
+therefore benefits significantly from ancillary time series that are sensitive
 to stellar activity only \citep{boisse09}.
 The classical implementation of de-correlation by
 an activity indicator is to derive time series of one or many spectroscopic
@@ -62,7 +62,7 @@ cycles \citep{boisse11}. \\
   \label{fig:corr}
 \end{figure}
 
-There exists a number of activity indicators which can be derived from the stellar
+There exists a number of activity indicators that can be derived from the stellar
 spectra. Their definitions and physical motivations are summarized below. \\
 
 \emph{log R$'_{HK}$}:
@@ -80,10 +80,10 @@ centered on 3968.47 \AA{} and 3933.66 \AA{,} the Mt. Wilson S-index is
 ($\sim 1.1$ \AA{} wide) fluxes in the cores of the H \& K lines of the \caii{}
 doublet. The S-index is normalized by total flux in the $B$ and $V$ continuum bands
 which are 20 \AA{} wide broad bands centered on 3900 and 4000 \AA{} respectively.
-From the S-index, the \Rhk{} indicator is derived using a variety of formulations which are
+From the S-index, the \Rhk{} indicator is derived using a variety of formulations that are
 all proportional to the S-index and attempt to isolate the chromospheric component of
 $\Psi_H$ and $\Psi_K$ from the photospheric component using normalization factors
-which are dependent on \teff{} and level of stellar activity \citep{lovis11}. The
+that are dependent on \teff{} and level of stellar activity \citep{lovis11}. The
 \Rhk{} indicator has been well characterized as a sensitive probe of activity on
 both Sun-like stars and M dwarfs
 \citep[e.g.][]{wright04,lovis11,astudillodefru17b}. \\
@@ -92,7 +92,7 @@ $H\alpha$:
 similarly to the \Rhk{} index, H$\alpha$ photons ($\lambda = 6562.81$ \AA{)} are emitted by
 hot plages and thus act as a tracer of stellar activity originating from the chromosphere.
 H$\alpha$ may act as a more suitable spectroscopic activity indicator for cool M dwarfs
-which of lack significant flux in the \caii{} H \& K lines \citep{robertson14}.
+which lack significant flux in the \caii{} H \& K lines \citep{robertson14}.
 In practical terms,  
 similar spectral features tracing a star's chromospheric structure may alternatively be used
 as activity indicators depending on the accessible wavelengths of the employed spectrograph
@@ -161,7 +161,7 @@ the CCF wings) and the flux at the stellar velocity $V_0$.
 \subsection{Photometric Modelling: the \textbf{\emph{FF}}$'$ Method} \label{sect:ffp}
 An alternative to using simultaneous spectroscopic activity indicators to temporally de-correlated
 RV measurements for the effects of stellar activity is to use contemporaneous photometry.
-\citep{aigrain12} present the $FF'$ formalism which uses photometry to model two distinct RV activity
+\citep{aigrain12} present the $FF'$ formalism that uses photometry to model two distinct RV activity
 components resulting from the active regions that give rise to photometric variability. In this way
 the photometry is used to infer a quantity that is not directly observable (i.e. the fractional spot
 coverage) from which various RV activity components are derived using the $FF'$ formalism
@@ -218,7 +218,7 @@ incurred by a single spot over a portion of one stellar rotation cycle.
     of stellar RV activity from contemporaneous photometry. Here the photometric stellar flux
     is used to infer the fractional spot coverage $F(t)$. The rotation effect scales with
     $F(t) \dot{F}(t)$ and thus varies with half the period as does the convective blueshift
-    effect which scales as $F^2(t)$. \citep[Image credit:][]{haywood15}.}
+    effect that scales as $F^2(t)$. \citep[Image credit:][]{haywood15}.}
   \label{fig:ffp}
 \end{figure}
 
@@ -232,7 +232,7 @@ by performing a Fourier
 transform of the data and removing sinusoidal functions from the raw data whose periods are
 identified by the frequency analysis \citep{queloz09}. Pre-whitening however assumes that all
 signals are long-lived and strictly periodic which is not always applicable to the stellar activity
-signals which this method aims to mitigate.
+signals that this method aims to mitigate.
 
 \subsection{Deterministic Model Fitting}
 RV time series exhibiting strong coherent signals at \prot{} or one of its low order
@@ -241,7 +241,7 @@ harmonics\footnote{For example the first harmonic of \prot{} can dominate for ra
   is dominated by the rotation effect (see Sect.~\ref{sect:ffp}).} may be well modelled by
 a deterministic function in the form of a sinusoid at \prot{,} $P_{\text{rot}}/2$, $P_{\text{rot}}/3$,
 etc \citep{boisse11}. In general, such models are incomplete because they neglect any temporal
-evolution of active regions which vary in their sizes, temperatures, and spatial distributions
+evolution of active regions that vary in their sizes, temperatures, and spatial distributions
 over adjacent rotation cycles \citep{giles17}. These nuances are not captured in 
 deterministic sinusoidal models although this methodology may still be applicable for time series
 with short observational baselines of stars with long-lived active region groups.
@@ -265,7 +265,7 @@ Different spectral lines are known to be uniquely affected by stellar activity d
 unique sensitivities to pressure, temperature, embedded magnetic field strength, and local fluid
 velocities, all of which are influenced by stellar activity \citep{davis17,wise18}. These
 effects from stellar activity on spectral line shapes are distinct from Doppler-induced
-line shifts which are identical to all lines. \cite{dumusque18} investigated
+line shifts that are identical to all lines. \cite{dumusque18} investigated
 the prospect of deriving stellar RVs line by line. The resulting RVs derived from
 individual lines were shown to be
 consistent with the archival RVs derived from the HARPS data reduction software.
@@ -284,7 +284,7 @@ of spectral features is greatest and is identical to all spectral features as th
 are each equivalently affected by Doppler shifts. Lines in the remaining synthetic
 spectra that are affected by either a spot or facula are not identically affected due
 to the differential sensitivity of various lines to their physical environment
-which in turn is influenced by the presence of active regions. Fig.~\ref{fig:pca}
+that in turn is influenced by the presence of active regions. Fig.~\ref{fig:pca}
 reveals examples of strongly varying lines from Ti \footnotesize I \normalsize and Ni
 \footnotesize I \normalsize at 5009.5 \AA{} and 5010.8 \AA{} respectively.
 \cite{davis17} also quantify the wealth of information contained in the spectra
@@ -316,7 +316,7 @@ lack sensitivity to stochastic changes in activity levels due to the evolution
 of active regions between adjacent rotation cycles or over
 significant subsets of long-term magnetic cycles. \\
 
-Gaussian process regression models represent one such tool which aims to overcome
+Gaussian process regression models represent one such tool that aims to overcome
 many of these shortcomings by jointly modelling planets and activity in a self-consistent
 manner. This technique, originally pioneered on active Sun-like stars
 \citep[e.g.][]{haywood14,grunblatt15,faria16,lopezmorales16},
@@ -372,7 +372,7 @@ be expressed by the Gaussian probability density function (PDF) of the form
   \label{eq:gauss}
 \end{equation}
 
-\noindent which is parameterized by $\mu=\text{mean}(X)$ and $\sigma^2=\text{var}(X)$;
+\noindent that is parameterized by $\mu=\text{mean}(X)$ and $\sigma^2=\text{var}(X)$;
 the mean and variance of $X$. As shown in Fig.~\ref{fig:gaa1d}, the empirical
 distribution of the $GAA$ for goaltenders in
 the National Hockey League (NHL) over the past five seasons closely follows a
@@ -468,7 +468,7 @@ $X_2$ in a sample for which the corresponding value of $X_1$ is known. \\
     lines overlaid on their joint distribution represent the 1, 2, and 3$\sigma$
     contours. The covariance matrix (Eq.~\ref{eq:Kuncorr}) has off-diagonal
     elements equal to zero indicating that the two variables are uncorrelated;
-    a property which is largely discernible from the lack of correlation in their joint
+    a property that is largely discernible from the lack of correlation in their joint
     distribution.}
   \label{fig:uncorr2d}
 \end{figure}
@@ -518,7 +518,7 @@ is easily visualized in their joint distribution in Fig.~\ref{fig:corr2d}. \\
     variables $GAA$ and $SV$\%.
     The covariance matrix (Eq.~\ref{eq:Kcorr}) has negative off-diagonal
     elements describing the degree of anti-correlation between the two
-    variables; a property which is largely discernible from their joint
+    variables; a property that is largely discernible from their joint
     distribution as high values of the $SV$\% tend to correspond to a lower
     $GAA$. The correlation can be used to inform the value of one variable given a
     measurement of the other. This is demonstrated as the measured $GAA$ 
@@ -541,7 +541,7 @@ this value we can establish a posterior distribution on Freddie's corresponding
 $SV$\% given his $GAA$: $p(SV\%|GAA=2.57)$. Because the variables are dependent
 on each other according to Eq.~\ref{eq:Kcorr}, this posterior distribution is
 narrower (i.e. more precise) than the full $SV$\% distribution. Indeed this is
-evidenced in the lower right panel of Fig.~\ref{fig:corr2d} which compares the
+evidenced in the lower right panel of Fig.~\ref{fig:corr2d} that compares the
 two $SV$\% distributions and reveals that the dispersion in $p(SV\%|GAA=2.57)$
 has approximately half of the dispersion as does the full $SV$\% distribution. The degree
 of improvement in the predictive distribution of $X_2$ given $X_1$ is dependent
@@ -554,7 +554,7 @@ Gaussian distribution to arbitrarily large $k$ and visualize that distribution w
 cannot be done with the conventional contour-based visualization
 (Figs.~\ref{fig:uncorr2d} \&~\ref{fig:corr2d}) beyond two dimensions. To resolve this
 restriction we now adopt an alternative visualization of a multivariate Gaussian
-distribution which I refer to as its \emph{linear representation}. \\
+distribution that I refer to as its \emph{linear representation}. \\
 
 This new visualization is
 depicted in Fig.~\ref{fig:linrep} for the $GAA$ and the $SV$\% alongside the conventional
@@ -567,7 +567,7 @@ linear representation depicts the values of the scaled $GAA$ and the $SV$\%\foot
   The scaling is also such that the correlation between the scaled $GAA$ and $SV$\% is
   now positive (i.e. not anti-correlated).} for a single
 sample from their joint distribution. Furthermore, the correlation between the two variables,
-which we now insist be a positive correlation, is qualitatively apparent as a low value
+that we now insist be a positive correlation, is qualitatively apparent as a low value
 of the scaled $GAA$ often corresponds to a low value of the scaled $SV$\%. If the two
 variables were weakly correlated then we would expect more crossing of curves in the
 linear representation then is seen in Fig.~\ref{fig:linrep}. What's more is that the
@@ -590,7 +590,7 @@ variable's mean and variance. \\
 
 The benefit of adopting the new linear representation is that it can be extended to
 arbitrarily large dimensions. Fig.~\ref{fig:linrepv2} depicts the linear representation
-of a $k=5$ dimensional space which includes three new Gaussian random variables which
+of a $k=5$ dimensional space that includes three new Gaussian random variables that
 are defined to be positively correlated with the scaled $GAA$ and $SV$\%. The left panel
 in Fig.~\ref{fig:linrepv2} depicts samples from the five-dimensional Gaussian distribution
 as well as each variable's mean and $1\sigma$ dispersion. The right panel of
@@ -634,11 +634,11 @@ Indeed one-dimensional GP regression models are a convenient way to model
 correlations between observations in a semi-parametric way. In particular, GPs provide a
 flexible framework to perform Bayesian inference on functions. Their flexibility stems from
 their semi-parametric nature which makes them well-suited to modelling stochastic processes
-like stellar activity which lack a deterministic functional form. GP regression works to model
+like stellar activity that lack a deterministic functional form. GP regression works to model
 the covariance between data points simultaneously with deterministic components such as planets
 on keplerian orbits. Given a parameterization of the data covariance structure, the GP is
 by definition a multivariate Gaussian distribution with a well-defined mean function and
-variance which represent our model of the correlated observables and its uncertainty
+variance that represent our model of the correlated observables and its uncertainty
 \citep{rasmussen05}. \\
 
 \subsubsection{Covariance kernel functions}
@@ -696,9 +696,9 @@ given time separation will be larger for smaller $\lambda$. \\
 \end{equation}
 
 \noindent has three hyperparameters  $\boldsymbol{\Theta}=\{a, \Gamma, P \}$
-which includes the familiar covariance amplitude $a$. The periodic kernel
+that includes the familiar covariance amplitude $a$. The periodic kernel
 also contains a coherence parameter $\Gamma$ and a periodic timescale $P$ within the sinusoidal term.
-With this covariance kernel, measurements which are separated by an integer number of $P$ will be highly
+With this covariance kernel, measurements that are separated by an integer number of $P$ will be highly
 correlated. \\
 
 \emph{Quasi-periodic}:
@@ -801,7 +801,7 @@ $\boldsymbol{\Psi}$ and $\Pi(\boldsymbol{\Psi})$ represents our prior on
 the model parameters. When estimating the GP hyperparameters in practice we
 often sample the logarithmic hyperparameters and adopt broad log uniform priors
 unless otherwise stated. Note that in Eq.~\ref{eq:bayess}
-we have neglected the normalization factor which is not required
+we have neglected the normalization factor that is not required
 for the purpose of parameter estimation. \\
 
 Sampling of the $\boldsymbol{\Psi}$ posteriors is done using MCMC. In this way, our
@@ -811,7 +811,7 @@ the GP hyperparameters $\boldsymbol{\Theta}$. The exact strategies and details o
 our MCMC implementation are discussed in subsequent chapters
 as necessary. After sampling the $\boldsymbol{\Psi}$ posteriors, the values of the
 hyperparameters are obtained from the maximum a-posteriori point estimates of those
-posteriors which in turn are used to define our GP activity model.
+posteriors that in turn are used to define our GP activity model.
 
 \subsubsection{Model inference}
 From the set of maximum a-posteriori hyperparameters $\boldsymbol{\Theta}$,
@@ -883,7 +883,7 @@ actual window function of 71 HARPS observations of the M dwarf K2-18 \citep{clou
 The injected planetary
 signal takes the form of a circular keplerian with $P=22$ days and $K=2$ \mps{.} The stellar
 activity signal is derived from a physical spot model from \texttt{SOAP 2.0} \citep{dumusque14}
-which computes time series of the photometric, RV, and line shape parameters resulting from
+that computes time series of the photometric, RV, and line shape parameters resulting from
 spots and/or plages on a rotating star. In this toy model I simulate a single equatorial spot
 with 1\% fractional coverage of the visible stellar disk on a star with \prot{}$=30$ days.
 White noise at the level of 1 \mps{} is also added to the RV time series.
@@ -909,13 +909,13 @@ approximately a quarter that of the injected activity. \\
 \end{figure}
 
 Next I impose a RV model that includes an activity component in the form of an untrained
-quasi-periodic GP plus a single keplerian model of the planet which I treat as a transiting
+quasi-periodic GP plus a single keplerian model of the planet that I treat as a transiting
 planet such that its linear ephemeris (i.e. $P$ and $T_0$) are well-constrained by its transit
 light curve. We note that untrained GPs can be dangerous as scenarios have been observed in which
 an untrained GP model of RVs absorbs some planetary signal and can thus result in misestimated
 planetary parameters \citep{ribas18}.
 I proceed by deriving the joint posterior of the GP hyperparameters and keplerian
-parameters to compute the `best-fit' GP and keplerian models which can then be compared to their
+parameters to compute the `best-fit' GP and keplerian models that can then be compared to their
 injected signal counterparts. The recovered models are shown in the bottom panel of
 Fig.~\ref{fig:RVsignals}. Here the mean GP model is depicted along with its 68\% confidence
 interval and appears to closely resemble the injected activity signal depsite being derived from

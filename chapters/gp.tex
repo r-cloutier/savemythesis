@@ -21,7 +21,7 @@ many cases it was revealed that the residual rms exceeded the characteristic RV
 measurement uncertainty and thus alluded to the presence of additional
 jitter signals that may or may not vary significantly with time. \\
 
-In many of the following RV planet searches the apparent jitter was characterized
+In many of the subsequent RV planet searches the apparent jitter was characterized
 by an additive scalar jitter $s$. The free parameter $s$ was used to characterize the
 level of RV jitter as it was added in quadrature to the RV measurement
 uncertainties when evaluating the objective function during any analysis
@@ -130,7 +130,7 @@ shape parameters are visualized in Fig.~\ref{fig:ccf} and described below. \\
 \emph{FWHM}:
 the full width half maximum (FWHM) of the CCF is commonly used as a measure of CCF's
 width. As an active region transverses across the differentially
-Doppler-shifted limbs of a rotating star,
+Doppler-shifted limbs of a rotating star
 its temperature contrast with the stellar photosphere adds additional
 power to the CCF in the velocity direction opposite the occulted limb. This results in a
 broadening of the CCF on one side of its mean velocity $V_0$. As illustrated in
@@ -154,14 +154,14 @@ will depend on the definition of the asymmetry parameter used. \\
 star spots, tend to have shallower line profiles. This is the direct result of such stars featuring
 more significant contributions to their average line profiles from cool and therefore dimmer regions.
 This effect is often characterized by the CCF contrast which is equal to the difference between the
-average baseline of the CCF in the continuum (located many standard deviations away from $V_0$ in
+average baseline of the CCF in the continuum (located many FWHMs away from $V_0$ in
 the CCF wings) and the flux at the stellar velocity $V_0$.
 
 
 \subsection{Photometric Modelling: the \textbf{\emph{FF}}$'$ Method} \label{sect:ffp}
-An alternative to using simultaneous spectroscopic activity indicators to temporally de-correlated
+An alternative to using simultaneous spectroscopic activity indicators to temporally de-correlate
 RV measurements for the effects of stellar activity is to use contemporaneous photometry.
-\citep{aigrain12} present the $FF'$ formalism that uses photometry to model two distinct RV activity
+\cite{aigrain12} present the $FF'$ formalism that uses photometry to model two distinct RV activity
 components resulting from the active regions that give rise to photometric variability. In this way
 the photometry is used to infer a quantity that is not directly observable (i.e. the fractional spot
 coverage) from which various RV activity components are derived using the $FF'$ formalism
@@ -179,9 +179,9 @@ $\Psi(t)$ via
 
 \noindent Eq.~\ref{eq:ffp} reads that the fractional spot coverage is just one minus the observed
 stellar flux in normalized units such that the star's brightness equals unity in the absence of active
-regions. The corresponding RV signals from a active regions giving rise to the photometric variations
+regions. The corresponding RV signals from active regions, that also give rise to the photometric variations,
 are known
-as the rotation effect $\Delta \text{RV}_{\text{rot}}$ and the convection blueshift effect
+as the rotation effect $\Delta \text{RV}_{\text{rot}}$ and the convective blueshift effect
 $\Delta \text{RV}_{\text{conv}}$. The former arises from active regions occulting the differentially
 Doppler-shifted stellar limbs and thereby suppressing the flux of photons with a particular
 Doppler-shift. Because the rotation effect affects the RVs in proportion to the spot coverage and
@@ -217,16 +217,16 @@ incurred by a single spot over a portion of one stellar rotation cycle.
       {The $FF'$ method for deriving the rotation and convective blueshift components
     of stellar RV activity from contemporaneous photometry. Here the photometric stellar flux
     is used to infer the fractional spot coverage $F(t)$. The rotation effect scales with
-    $F(t) \dot{F}(t)$ and thus varies with half the period as does the convective blueshift
-    effect that scales as $F^2(t)$. \citep[Image credit:][]{haywood15}.}
+    $F(t) \dot{F}(t)$ and thus varies with half the rotation period while the convective blueshift
+    effect scales as $F^2(t)$. \citep[Image credit:][]{haywood15}.}
   \label{fig:ffp}
 \end{figure}
 
 
 \subsection{Pre-whitening}
-This method aims at identifying strong periodicities in a RV time series by modelling
-said periodic signals with sinusoids and removing them
-until only residual Gaussian noise is remaining. This method is known as pre-whitening and
+This method aims at identifying strong periodicities in an RV time series by modelling
+said periodic signals with sinusoids and iteratively removing them
+until only residual white noise remains. This method is known as pre-whitening and
 is based on analyzes of multi-periodic stellar oscillation modes. Pre-whitening operates
 by performing a Fourier
 transform of the data and removing sinusoidal functions from the raw data whose periods are
@@ -241,7 +241,7 @@ harmonics\footnote{For example the first harmonic of \prot{} can dominate for ra
   is dominated by the rotation effect (see Sect.~\ref{sect:ffp}).} may be well modelled by
 a deterministic function in the form of a sinusoid at \prot{,} $P_{\text{rot}}/2$, $P_{\text{rot}}/3$,
 etc \citep{boisse11}. In general, such models are incomplete because they neglect any temporal
-evolution of active regions that vary in their sizes, temperatures, and spatial distributions
+evolution of active regions that are known to vary in their sizes, temperatures, and spatial distributions
 over adjacent rotation cycles \citep{giles17}. These nuances are not captured in 
 deterministic sinusoidal models although this methodology may still be applicable for time series
 with short observational baselines of stars with long-lived active region groups.
@@ -331,7 +331,7 @@ of what Gaussian processes are and how I implement their formalism in the contex
 of modelling stellar activity in RV time series. \\
 
 Before proceeding it is important
-to note that Gaussian process regressionmodels of activity are not the be all end all
+to note that Gaussian process regression models of activity are not the be all end all
 when it comes to activity modelling in RV time series. As will be argued throughout this
 thesis though, Gaussian process activity
 modelling does provide a tractable framework with many desirable properties for deriving

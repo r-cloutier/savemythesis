@@ -244,7 +244,7 @@ etc \citep{boisse11}. In general, such models are incomplete because they neglec
 evolution of active regions that are known to vary in their sizes, temperatures, and spatial distributions
 over adjacent rotation cycles \citep{giles17}. These nuances are not captured in 
 deterministic sinusoidal models although this methodology may still be applicable for time series
-with short observational baselines of stars with long-lived active region groups.
+with short observational baselines, compared to \prot{,} of stars with long-lived active region groups.
 
 \subsection{Physical Models of Active Regions}
 Another seemingly logical approach to modelling stellar activity is to parameterize a physical model
@@ -252,8 +252,8 @@ of active regions and sample those parameter posteriors jointly with planet mode
 spot modelling has been considered in \cite{giguere16} who fit a multi-spot model
 to contemporaneous photometry and spectroscopic time series to determine the physical nature of
 spots on the early K dwarf $\epsilon$ Eridani. This method however
-suffers from issues resulting from attempting to sample such a large parameter space
-such as the sheer computational expense and inherent degeneracies in spot parameters
+suffers from a number of issues with attempting to sample such a large parameter space
+such as the large computational requirements and inherent degeneracies in spot parameters
 \citep{giguere16}. Other prominent packages exist for generating forward models of observables
 from physical spot models 
 (\texttt{SOAP}; \citealt{boisse12}, \texttt{SOAP 2.0}; \citealt{dumusque14},
@@ -310,7 +310,7 @@ Many of the shortcomings of the activity mitigation techniques discussed in the
 previous sections are based on their incompleteness and their inability to
 self-consistently characterize model uncertainties. For example, correlations with
 activity-sensitive time series are often incomplete because the chosen indicator
-is not sensitive to also activity sources present in the RVs and often result in
+is not sensitive to all activity sources present in the RVs and often result in
 large RV residuals after de-correlation. Similarly, deterministic activity models
 lack sensitivity to stochastic changes in activity levels due to the evolution
 of active regions between adjacent rotation cycles or over
@@ -348,7 +348,7 @@ develop an intuition of what a Gaussian process is. Much of the information
 provided and the pedogical approach taken throughout was acquired from a video lecture
 by Prof. David MacKay\footnote{\url{https://www.youtube.com/watch?v=NegVuuHwa8Q}}. \\
 
-In order to develop a visual intuition of the definition of a Gaussian process,
+In order to develop a visual intuition of the definition of a Gaussian process
 let us a first consider a Gaussian random variable in one dimension. 
 So, imagine some random
 process that draws a single value of a random variable $X$ for each realization of
@@ -356,7 +356,7 @@ an experiment. As an astronomer with a life
 outside of astronomy, and furthermore as an astronomer who spends many of his
 off-work hours being pelted with %170 gram
 disks of vulcanized rubber, my favourite
-Gaussian random variable has to be the `goals against average' statistic:
+Gaussian random variable has to be the `goals against average' (GAA) statistic:
 
 \begin{equation}
   X = GAA \equiv \frac{\text{total number of goals against}}{\text{total number of games played}}.
@@ -367,15 +367,15 @@ repeated draws from the empirical $GAA$ distribution for various goaltenders) ca
 be expressed by the Gaussian probability density function (PDF) of the form
 
 \begin{equation}
-  \mathcal{N}(X|\mu,\sigma^2) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp{\left(
+  \mathcal{N}(X|\mu,\sigma) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp{\left(
     -\frac{(X-\mu)^2}{2\sigma^2} \right)},
   \label{eq:gauss}
 \end{equation}
 
-\noindent that is parameterized by $\mu=\text{mean}(X)$ and $\sigma^2=\text{var}(X)$;
-the mean and variance of $X$. As shown in Fig.~\ref{fig:gaa1d}, the empirical
+\noindent that is parameterized by $\mu=\text{mean}(X)$ and $\sigma=\text{std}(X)$;
+the mean and standard deviation of $X$. As shown in Fig.~\ref{fig:gaa1d}, the empirical
 distribution of the $GAA$ for goaltenders in
-the National Hockey League (NHL) over the past five seasons closely follows a
+the National Hockey League (NHL) over the past five seasons closely resembles a
 Gaussian distribution with a mean of 2.64 and a standard deviation of 0.40 goals
 against per game. Hence, my favourite Gaussian random variable. \\
 
@@ -390,10 +390,10 @@ against per game. Hence, my favourite Gaussian random variable. \\
   \label{fig:gaa1d}
 \end{figure}
 
-Before a new season begins, we can write down a prior distribution on the $GAA$
+Before a new season begins we can write down a prior distribution on the $GAA$
 based on the prior knowledge we have obtained from previous NHL seasons; i.e.
-$\mathcal{N}(GAA|2.64,0.16)$. This distribution has a unique expectation value and
-variance describing what we expect any given goaltender's $GAA$ to be in an
+$\mathcal{N}(GAA|2.64,0.40)$. This distribution has a unique expectation value and
+variance describing what we expect a goaltender's $GAA$ to be in the
 up-coming season and, as crucially, how precisely that value is constrained.
 
 \subsection{The two-dimensional Gaussian distribution}
@@ -401,7 +401,7 @@ Of course we can introduce a second Gaussian random variable and extend the
 concept of the one-dimensional Gaussian distribution to two dimensions. This is done
 by recasting the expression for the Gaussian PDF in $k>1$
 dimensions where $k=2$ in this scenario. Rewriting Eq.~\ref{eq:gauss} in $k$
-dimensions is achieved by replacing the scalar mean and variance with a mean
+dimensions is achieved by replacing the scalar mean and standard deviation with a mean
 $k$-vector $\boldsymbol{\mu}$ and a $k \times k$ covariance matrix $\mathbf{K}$
 respectively. The updated expression for the so-called multivariate Gaussian
 distribution in $k$ dimensions is
@@ -419,7 +419,7 @@ random variable in $\mathbf{X}=(X_1,\dots,X_k)^{\text{T}}$.
 The elements of the covariance matrix
 $\mathbf{K}$ represent the covariances between each pair of random variables.
 The diagonal elements of $\mathbf{K}$ therefore represent the covariance of each
-random variable with itself, or equivalently the variance of that random variable.
+random variable with itself, or equivalently the variance of that random variable $\sigma^2$.
 The covariance between two random variables $X_1$ and $X_2$ can be computed explicitly
 in terms of their expectation values E[$X_1$] and E[$X_2$] via
 
@@ -452,8 +452,8 @@ that $X_1$ and $X_2$ are indeed uncorrelated. The corresponding covariance matri
 \noindent is calculated using Eq.~\ref{eq:coveq}, is diagonal, and confirms that
 $X_1$ and $X_2$ are uncorrelated as the off-diagonal elements of $\mathbf{K}$ are zero.
 This fact can also be visually discerned in the joint $X_1X_2$ distribution in
-Fig.~\ref{fig:uncorr2d}. Because the variables $X_1$ and $X_2$ are uncorrelated in this,
-example the measurement of a value of $X_1$ does nothing to inform us of its
+Fig.~\ref{fig:uncorr2d}. Because the variables $X_1$ and $X_2$ are uncorrelated in this
+example, the measurement of a value of $X_1$ does nothing to inform us of its
 corresponding $X_2$ value. That is that the prior distribution
 $\mathcal{N}(\mathbf{X}|\boldsymbol{\mu},\mathbf{K})$ is uninformative with regards to
 $X_2$ in a sample for which the corresponding value of $X_1$ is known. \\
@@ -549,7 +549,8 @@ on how strongly correlated the two variables are. \\
 
 \subsection{The $k$-dimensional Gaussian distribution}
 So far we have considered a pair of correlated Gaussian random variables whose
-PDF is given by Eq.~\ref{eq:gauss2d} for $k=2$. Next we want to extend the multivariate
+PDF is given by Eq.~\ref{eq:gauss2d} for $k=2$ and whose covariance matrix is 
+Eq.~\ref{eq:Kcorr}. Next we want to extend the multivariate
 Gaussian distribution to arbitrarily large $k$ and visualize that distribution which
 cannot be done with the conventional contour-based visualization
 (Figs.~\ref{fig:uncorr2d} \&~\ref{fig:corr2d}) beyond two dimensions. To resolve this
@@ -566,14 +567,15 @@ linear representation depicts the values of the scaled $GAA$ and the $SV$\%\foot
   the same region of the y-axis in the Fig.~\ref{fig:linrep} linear representation.
   The scaling is also such that the correlation between the scaled $GAA$ and $SV$\% is
   now positive (i.e. not anti-correlated).} for a single
-sample from their joint distribution. Furthermore, the correlation between the two variables,
+sample from their joint distribution. Furthermore, the correlation between the two scaled
+variables,
 that we now insist be a positive correlation, is qualitatively apparent as a low value
-of the scaled $GAA$ often corresponds to a low value of the scaled $SV$\%. If the two
+of the scaled $GAA$ tends to correspond to a low value of the scaled $SV$\%. If the two
 variables were weakly correlated then we would expect more crossing of curves in the
-linear representation then is seen in Fig.~\ref{fig:linrep}. What's more is that the
+linear representation than is seen in Fig.~\ref{fig:linrep}. What's more is that the
 distribution of values in the vertical direction represent samples from each variable's
 one-dimensional marginalized distribution such that the samples are indicative of the
-variable's mean and variance. \\
+variable's mean and standard deviation. \\
 
 \begin{figure}
   \centering
@@ -625,7 +627,7 @@ axis to an independent variable such as time and the ``scaled values'' axis to a
 observable such as stellar RVs. In this way we would be looking at a time series and
 particularly at the correlation between adjacent measurements. 
 Because RV signals arising from active stars are temporally
-correlated as active regions rotate in and out of the view of the observer, it is clear that
+correlated as active regions rotate in and out of view of the observer, it is clear that
 modelling the correlation between adjacent RV observations could be used to inform
 our understanding of that signal in a way that is independent of attempting to
 model the physical nature of the signal. \\
@@ -692,19 +694,19 @@ given time separation will be larger for smaller $\lambda$. \\
 \emph{Periodic}:
 
 \begin{equation}
-  k_{\text{P}}(t_i,t_j) = a^2 \exp{\left[ -\Gamma \sin^2{\left( \frac{\pi |t_i-t_j|}{P} \right)} \right]},
+  k_{\text{P}}(t_i,t_j) = a^2 \exp{\left[ -\Gamma^2 \sin^2{\left( \frac{\pi |t_i-t_j|}{P} \right)} \right]},
 \end{equation}
 
 \noindent has three hyperparameters  $\boldsymbol{\Theta}=\{a, \Gamma, P \}$
 that includes the familiar covariance amplitude $a$. The periodic kernel
 also contains a coherence parameter $\Gamma$ and a periodic timescale $P$ within the sinusoidal term.
-With this covariance kernel, measurements that are separated by an integer number of $P$ will be highly
+With this covariance kernel, measurements that are separated by an integer multiple of $P$ will be highly
 correlated. \\
 
 \emph{Quasi-periodic}:
 
 \begin{equation}
-  k_{\text{QP}}(t_i,t_j) = a^2 \exp{\left[ -\frac{(t_i-t_j)^2}{2\lambda^2} -\Gamma
+  k_{\text{QP}}(t_i,t_j) = a^2 \exp{\left[ -\frac{(t_i-t_j)^2}{2\lambda^2} -\Gamma^2
       \sin^2{\left( \frac{\pi |t_i-t_j|}{P} \right)} \right]},
   \label{eq:GpQp}
 \end{equation}
@@ -737,7 +739,9 @@ much as one might think. Fig.~\ref{fig:exactgp} illustrates this notion by model
 set of synthetic data points with each of the three covariance functions defined above.
 The synthetic data are generated by a sinusoidal function plus a decreasing linear trend. 
 Each GP does a qualitatively similar job at modelling the data and with comparable $1\sigma$
-uncertainties.  \\
+uncertainties. The optimal kernel choice often does not matter unless the intended use of the 
+resulting GP predictive distribution is for predictions at previously unseen epochs in which case 
+one should consider employing cross-validation practices to minimize over-fitting. \\
 
 Also depicted in Fig.~\ref{fig:exactgp} is the effect of varying the hyperparameters of
 a quasi-periodic GP regression model to the same synthetic data. The first curve depicts
@@ -749,11 +753,14 @@ Despite this, the resulting mean GP appears to continue to be a good
 fit to the data. The final GP model reverts back to the optimized exponential timescale but
 decreases the periodic timescale from 50 to 20. The effect of a shorter periodic timescale
 is only apparent in the regions between data points as the resulting GP again appears to do
-a qualitatively similar job at modelling the data despite having widely varying hyperparameters.
-This exercise was intended to demonstrate that for some datasets, the exact form of the covariance
-kernel or the exact values of the hyperparameters does not always have a drastic effect on the
+a qualitatively similar job at modelling the data despite having widely varying hyperparameters. \\
+
+These exercises were intended to demonstrate that for some datasets the exact form of the covariance
+kernel or the exact values of the hyperparameters do not always have a drastic effect on the
 model prediction at the epochs of observations. Although it is clear from Fig.~\ref{fig:exactgp}
-that predictions from each unique GP can vary widely at times far from the epochs of observation.
+that predictions from each unique GP can vary widely at times far from the epochs of observation. 
+Hence why the identification of over-fitting GPs is necessary if the GP regression models are being used 
+for prediction as is commonly done in the world of machine learning.
 
 \begin{figure}
   \centering
@@ -802,7 +809,8 @@ the model parameters. When estimating the GP hyperparameters in practice we
 often sample the logarithmic hyperparameters and adopt broad log uniform priors
 unless otherwise stated. Note that in Eq.~\ref{eq:bayess}
 we have neglected the normalization factor that is not required
-for the purpose of parameter estimation. \\
+for the purpose of parameter estimation but will be calculated in future 
+chapters for the purpose of comparing competing models of a dataset. \\
 
 Sampling of the $\boldsymbol{\Psi}$ posteriors is done using MCMC. In this way, our
 uncertainties in the keplerian model parameters $\boldsymbol{\theta}$
@@ -819,7 +827,7 @@ we define a unique GP prior distribution. From this distribution we can sample
 functions or construct a predictive distribution
 conditioned on the data $\mathbf{y}(\mathbf{t})$ and evaluated at some unseen
 epochs $\mathbf{t}^*$. Function prediction from such a predictive distribution is
-historically known as kriging. The mean function and standard deviation of the
+historically known as kriging. The mean function and variance of the
 predictive distribution are
 
 \begin{equation}
@@ -838,8 +846,8 @@ predictive distribution are
 \end{equation}
 
 Figs.~\ref{fig:gpsamples} and~\ref{fig:gpsamplespred} depict samples from a
-quasi-periodic GP prior and predictive distributions respectively. The latter is
-conditioned on an set of ten synthetic data points and whose mean function and
+quasi-periodic GP prior and predictive distribution respectively. The latter is
+conditioned on a set of ten synthetic data points and whose mean function and
 standard deviation are computed using Eqs.~\ref{eq:gpmu} and~\ref{eq:gpsig}. When
 modelling RV activity with a GP whose hyperparameters $\boldsymbol{\Theta}$ have
 been derived from MCMC, we take the ``best-fit'' of that multivariate Gaussian, namely
@@ -891,8 +899,8 @@ The injected time series and the synthetic RVs are shown in the top panel of
 Fig.~\ref{fig:RVsignals}. The injected activity signal is seen to have a peak-to-peak amplitude of
 $\sim 8.5$ \mps{} and is dominated by the suppression of convective blueshift when the simulated
 starspot is present on the visible hemisphere. The RV signal due to activity is equal to zero when
-the lone starspot is not visible. The amplitude of the injected keplerian signal is seen to be
-approximately a quarter that of the injected activity. \\
+the lone starspot is not visible. The peak-to-peak amplitude of the injected keplerian signal is 
+seen to be approximately half that of the injected activity. \\
 
 \begin{figure}
   \centering
@@ -900,25 +908,25 @@ approximately a quarter that of the injected activity. \\
   \includegraphics[width=\hsize]{figures/RVrecovered.png}
   \caption[Synthetic RV time series used to demonstrate the effectiveness of GP activity modelling.]
           {\emph{Top}: a synthetic RV time series with injected stellar activity from a \texttt{SOAP 2.0} physical
-            model (\emph{red curve}), a keplerian planetary signal (\emph{blue curve}), and noise.
+            model (\prot{} $=30$ days; \emph{red curve}), a keplerian planetary signal ($P=22$ days; \emph{blue curve}), and noise.
             The RVs (\emph{black markers}) are sampled with the real HARPS window
-            function of K2-18. \emph{Bottom}: the recovered Gp activity model and keplerian model using the
+            function of K2-18. \emph{Bottom}: the recovered GP activity model and keplerian model using the
             maximum a-posteriori model parameters from MCMC analysis. The recovered models closely resemble their
             injected counterparts (see Fig.~\ref{fig:RVcomp} for more details).}
   \label{fig:RVsignals}
 \end{figure}
 
-Next I impose a RV model that includes an activity component in the form of an untrained
+Next I impose an RV model that includes an activity component in the form of an untrained
 quasi-periodic GP plus a single keplerian model of the planet that I treat as a transiting
-planet such that its linear ephemeris (i.e. $P$ and $T_0$) are well-constrained by its transit
-light curve. We note that untrained GPs can be dangerous as scenarios have been observed in which
+planet such that its linear ephemeris (i.e. period and phase) are well-constrained by its transit
+light curve. Note that untrained GPs can be dangerous as scenarios have been observed in which
 an untrained GP model of RVs absorbs some planetary signal and can thus result in misestimated
 planetary parameters \citep{ribas18}.
 I proceed by deriving the joint posterior of the GP hyperparameters and keplerian
 parameters to compute the `best-fit' GP and keplerian models that can then be compared to their
 injected signal counterparts. The recovered models are shown in the bottom panel of
 Fig.~\ref{fig:RVsignals}. Here the mean GP model is depicted along with its 68\% confidence
-interval and appears to closely resemble the injected activity signal depsite being derived from
+interval and appears to closely resemble the injected activity signal despite being derived from
 a semi-parametric model of a physically induced signal. \\
 
 Fig.~\ref{fig:RVcomp} compares the recovered activity and planetary signals with the injected
@@ -931,7 +939,7 @@ not visible. Although, the mean GP activity model at those epochs are often cons
 0 \mps{.} Similarly the recovered keplerian model is in phase and with the injected period owing to our
 treatment of that signal as one whose ephemeris is well-constrained by some unseen hypothetical data.
 The recovered semi-amplitude however is somewhat inaccurate at $K=1.83 \pm 0.55$ \mps{} which is underestimated
-compared to the injected semi-amplitude of 2 \mps{.} However it is clearly consistent at the $1\sigma$ level.
+compared to the injected semi-amplitude of 2 \mps{.} However it is clearly consistent within $1\sigma$.
 This $\sim 10$\% underestimation in the value of $K$ causes the slight offset from unity in the slope
 of the line in Fig.~\ref{fig:RVcomp} comparing the recovered and injected keplerian signals.
 

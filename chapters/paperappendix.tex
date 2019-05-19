@@ -5,7 +5,7 @@ The following is chronological list of papers
 that include direct contributions from myself and have not been included as
 chapters in this thesis. My lead author papers are accompained by a brief paper
 summary whereas papers for which I was a contributing author are accompanied by
-a description of my contribution.
+descriptions of those contributions.
 
 \section{Prospects for Detecting the Rossiter-McLaughlin Effect of
   Earth-like Planets: the test case of TRAPPIST-1b and c \citep{cloutier16a}}
@@ -33,6 +33,7 @@ uncertainties of 2 \mps{.}
 
 \section{On the Radial Velocity Detection of Additional Planets in Transiting,
   Slowly Rotating M-dwarf Systems: The Case of GJ 1132 \citep{cloutier17a}}
+\label{app:gj1132}
 M dwarfs are known to frequently host multi-planet systems such that we can
 reasonably expect to find additional planets with RVs around M dwarfs with at
 least one known transiting planet. In this paper we focused on one such
@@ -45,7 +46,7 @@ From these calculations we compute our sensitivity to detecting additional
 planets in the GJ 1132 planetary system as a function of the number of RV
 measurements. We show that at 1 \mps{} precision, $\sim 50$\% of non-transiting
 planets from the expected planet population can be detected with $\sim 50$
-measurments.
+measurments. \\
 
 Indeed there turns out to be at least one additional planet in the system that
 is not transiting as is presented in Sect.~\ref{sect:gj1132bonfils}.
@@ -86,14 +87,14 @@ integral is
 $\mathcal{L}(\mathbf{y}|\theta,M)$ and full model parameter prior
 $\Pi(\theta|M)$ over the full model parameter space $\theta$.
 The evidence integral is expensive to compute accurately and many computational
-methods have been proposed to calculate or approximate $\mathcal{Z}$.
+methods have been proposed to calculate or approximate $\mathcal{Z}$. \\
 
 In this study, a number of astronomers from differing RV groups were given
 identical synthetic RV
 datasets with injected planets that we were agnostic to. The groups were then
 tasked with using our favourite methods to calculate or approximate
 $\mathcal{Z}$ using those datasets are a consistent set of priors. This paper
-was comparative study of those methods.
+was comparative study of those methods. \\
 
 My contribution was to test two non-Bayesian methods that operate
 analogously to the Bayesian evidence ratio (i.e. ratio of two model evidences
@@ -105,19 +106,79 @@ demonstrates more predictive power on unseen previously unseen RV measurements
 (i.e. it is more accurate), then $N+1$ planets are favoured in the dataset
 than just $N$ planets. 
 
-\section{Radial Velocity Follow-up of GJ1132 with HARPS: a Precise Mass for
-  Planet b and the Discovery of a Second Planet \citep{bonfils18}}
+\section{Radial Velocity Follow-up of GJ 1132 with HARPS: a Precise Mass for
+  Planet `b' and the Discovery of a Second Planet \citep{bonfils18}}
 \label{sect:gj1132bonfils}
+This paper presents the results of an intensive RV follow-up campaign with HARPS
+of the GJ 1132 M dwarf
+planetary system. My contribution to this work was to conduct an
+independent analysis of the RV time series using my GP formalism. This analysis
+was complementary to that performed by the lead authors which was based on more
+traditional methods that lacked a treatment of temporally correlated stellar
+activity signals. With the results of my analysis we measured a presice mass of
+the known transiting planet GJ 1132b to be $1.66\pm 0.23$ M$_{\oplus}$ (i.e. a
+$7.2\sigma$ mass detection). We also detected an additional signal at $\sim 8.9$
+days that favours a second terrestrial mass planet as postulated by my work in
+Sect.~\ref{app:gj1132}. Yet another significant signal was seen in the RVs at
+$\sim 177$ days although its interpretation as planetary or as an
+activity-induced signal remains an open question.
 
 
 \section{A Second Terrestrial Planet Orbiting the Nearby M Dwarf LHS 1140
-\citep{ment19}}
+  \citep{ment19}}
+This paper presents the results of another intensive RV follow-up compaign with
+HARPS. This time of the LHS 1140 M dwarf planetary system. LHS 1140 was known to
+host a small transiting HZ planet ($P=24.7$ days, $r_{p,b}=1.73$ R$_{\oplus}$)
+discovered from the ground with the MEarth
+telescope array \citep{dittmann17a}. Our RV follow-up campaign, which included
+an independent analysis from myself using my GP formalism, resulted in a
+significant improvement to the measurement precision of the planet's mass and
+also revealed a strong periodic signal at $\sim 3.8$ days. Reinvestigation of
+the MEarth photometry by the lead authors revealed a second small transiting
+planet, that was missed in the initial light curve analysis, and with an orbital
+period that was consistent with the 3.8 day RV signal. Through my reanalysis of
+the RV data now including two planetary signals, we measured the planet masses
+and confirmed the presence of two terrestrial planets around LHS 1140.
 
 
 \section{A Hot Terrestrial Planet Orbiting the Bright M dwarf GJ 4332 Unveiled
   by TESS (\textcolor{blue}{Astudillo-Defru et al. in prep.})}
+Shortly after the release of the first light curves from TESS sector 1, the
+TESS science team reported a transiting planetary candidate (TOI-134.01)
+around the nearby early M dwarf GJ 4332.
+The orbital period and size of the planet candidate make it a hot
+terrestrial-sized planet that would be a very promising target for atmospheric
+spectroscopy measurements in emission using JWST/MIRI\footnote{\url{https://jwst-docs.stsci.edu/display/JTI/Mid+Infrared+Instrument}}. As a formal members of
+the \emph{TESS Follow-up Observing Program}, the HARPS and PFS
+(\emph{Planet Finder Spectrograph}) RV teams combined their data to confirm the
+planetary nature of this planet candidate and measure its mass. Yet again I
+performed an independent analysis of all available RV data using separate GPs
+to model the activity signals from each spectrograph based on the methods used
+to jointly analyze the HARPS and CARMENES data presented in
+Chapter~\ref{chap:k2182}. At $r_{p,b}\sim 1.6$ R$_{\oplus}$, GJ 4332b will be one
+of the first terrestrial planets to contribute to the completion of the TESS
+level one science requirement\footnote{To measure the masses of 50 TESS planets
+  smaller than 4 R$_{\oplus}$.}.
 
 
 \section{Characterization of the L 98-59 Multi-Planetary System with HARPS:
   Two Confirmed Terrestrial Planets and a Mass Upper Limit on the Third
   (\textcolor{blue}{Cloutier et al. in prep.})}
+Similarly to the annoucnement of the planetary candidate around GJ 4332, the
+TESS team also reported the compact system of three transiting planet
+candidates orbiting the mid-M dwarf L 98-59 from sector 1 (i.e.
+TOI-175.01,02,03). From follow-up observations including ground-based
+photometry, reconnaissance spectroscopy high-resolution imaging, and
+dynamical stability arguments, \cite{kostov19} statistically validated each of
+the three planets. I led the HARPS RV follow-up of this system and applied my
+usual analysis techniques to measure precise planet masses for the two outermost
+planets ($r_{p,c}=1.37, r_{p,d}=1.48$ R$_{\oplus}$) and place an upper mass limit
+on the smallest inner planet ($r_{p,b}=0.77$ R$_{\oplus}$). \\
+
+Similarly to dynamical analysis perofrmed on the K2-18 2-planet system, I
+run a suite of N-body simulations of the L 98-59 planetary system to constrain
+their eccentricities. These results supplemented the orbital eccentricity
+constraints from the RVs themselves and together placed upper limits on each
+planet's orbital eccentricity of $< 0.1$ at 95\% confidence to ensure a
+dynamically stable system given their newly measured masses.
+

@@ -390,8 +390,8 @@ Computing $\text{RV}_{\text{Z}}$ to add to our complete physical RV activity mod
 local $B$ field strength within
 ARs. The empirical distribution of this quantity in M dwarfs is incomplete despite contributions from
 various observing campaigns \citep[e.g.][]{reiners07, shulyak14, hebrard16, moutou17, shulyak17}. 
-Instead of sampling $Bf$ from an empirical distribution, we use an ad hoc method of sampling $Bf$ which
-exploits what is known about small-scale $Bf$
+Instead of sampling $B$ from an empirical distribution, we use an ad hoc method of sampling $B$ which
+exploits what is known about small-scale $B$
 fields in M dwarfs as a function of spectral type and rotation. Namely, the fraction of M dwarfs
 that are magnetically active as a function of rotation period differs between early-type
 and late-type M dwarfs (M5-M8) as later M dwarfs are able to remain magnetically
@@ -663,7 +663,7 @@ orbital periods of $\sim 30$ days.
 \subsection{Radial Velocity Time-Series Construction} \label{BSsect:timeseries}
 In each MC realization, 
 the RV contribution from $N_p$ injected planets in the simulated planetary system (see Sect.~\ref{BSsect:planetsample})
-is calculated via the superposition of $N_p$ keplerian orbital solutions. Each keplerian RV$_{kep}$ is parameterized by
+is calculated via the superposition of $N_p$ Keplerian orbital solutions. Each Keplerian RV$_{kep}$ is parameterized by
 the planet's orbital period $P$, time of inferior conjunction $T_0$, orbital eccentricity $e$,
 argument of periastron $\omega$, and RV semi-amplitude $K$ according to
 
@@ -683,7 +683,7 @@ $\mathbf{t}$. The RV semi-amplitude $K$ is computed from the planet's minimum ma
   \frac{1}{\sqrt{1-e^2}}.
 \end{equation}
 
-The keplerian RV approximation
+The Keplerian RV approximation
 is valid in all single-planet systems and the majority of multi-planet systems considered
 and is best motivated by its ability to negate the
 need to perform costly numerical integrations of each sampled planetary system. However, we note that
@@ -698,7 +698,7 @@ The significance of the latter effect is also expected to be small given the dea
 multi-planet systems at low-order period ratio commensurabilities \citep{lissauer11, fabrycky14}. \\
 
 All RV components are evaluated at $\mathbf{t}$ and contain the additive i) RV activity RV$_{act}$ derived from 
-physical models (see Sect.~\ref{BSsect:activity}) ii) $N_p$ keplerian models, and iii) a white noise term with an rms equal
+physical models (see Sect.~\ref{BSsect:activity}) ii) $N_p$ Keplerian models, and iii) a white noise term with an rms equal
 to the median RV measurement uncertainty $\sigma_{\text{RV}}$ expected for the host star. Each star's value of
 $\sigma_{\text{RV}}$ is calculated using the nIR RV
 information content calculations from \cite{figueira16} corrected using the empirical spectra from \cite{artigau18}.
@@ -1045,7 +1045,7 @@ and a covariance matrix
 is computed from the vector of measurement uncertainties $\boldsymbol{\sigma}(\mathbf{t})$,
 the Kronecker delta function $\delta_{ij}$, and
 the user-defined covariance function $k(t_i,t_j)$ describing the covariance between two measurements taken at
-times $t_i$ and $t_j$for $i,j \in [1,n_{\text{obs}}]$.
+times $t_i$ and $t_j$ for $i,j \in [1,n_{\text{obs}}]$.
 Obtaining the GP model of an arbitrary input time-series $\mathbf{y}$ and uncertainty vector
 $\boldsymbol{\sigma}$ is done by maximizing the Gaussian logarithmic likelihood function
 
@@ -1177,11 +1177,11 @@ Fig.~\ref{BSfig:GPexample}. \\
 \end{figure*}
 
 Following the training phase on the FWHM time-series
-we proceed with modelling the RVs simultaneously with a trained GP activity model plus keplerian planetary
+we proceed with modelling the RVs simultaneously with a trained GP activity model plus Keplerian planetary
 signals. The marginalized posterior PDFs of the GP hyperparameters $\lambda$, $\Gamma$, and $P_{\text{GP}}$
 from training are used as informative priors in the joint RV analysis which treats the GP amplitude
 $a$ as a free parameter. For each assumed mean function $\boldsymbol{\mu}$, containing between zero and three
-keplerian solutions, we compute the MAP GP activity model from the hyperparameter values sampled using MCMC.
+Keplerian solutions, we compute the MAP GP activity model from the hyperparameter values sampled using MCMC.
 Assuming a zero mean function, the resulting mean GP activity models
 for the two stars shown in Fig.~\ref{BSfig:GPexample} are shown in the middle panels of the figure. The residuals
 following the removal of the mean GP activity model is also shown. In each case the stellar rotation period is
@@ -1193,7 +1193,7 @@ to the median RV measurement uncertainty $\sigma_{\text{RV}}=1.35$ \mps{.} In th
 the rms of the injected activity is reduced from 3.60 \mps{} to 1.53 \mps{} compared to
 $\sigma_{\text{RV}}=1.63$ \mps{} ($\chi_{\text{red}}^2 =0.9$). In both test cases considered in
 Fig.~\ref{BSfig:GPexample}, a planet is detected in the RV residuals and fit simultaneously with the activity assuming
-a new mean model containing a single keplerian solution. Details of our planet detection algorithm are discussed in
+a new mean model containing a single Keplerian solution. Details of our planet detection algorithm are discussed in
 Sect.~\ref{BSsect:detection}.
 
 
@@ -1350,11 +1350,11 @@ not guaranteed to converge to the correct solution \citep[see][]{dumusque17}. \\
 
 The second periodogram iteration requires that we fit the putative planetary signal and search for
 additional signals in the LS periodogram of the residuals. To model planet `b'
-we adopt the maximum-likelihood keplerian model parameters at the detected periodicity
+we adopt the maximum-likelihood Keplerian model parameters at the detected periodicity
 and re-compute the GP activity model which is modified due to the new mean function (i.e. a one planet model
 rather than the previously assumed no planet model). Note that the GP activity model is re-computed after each
 iteration due to the changing mean function. The fourth panel in Fig.~\ref{BSfig:periodograms} shows
-the resulting periodogram after correcting the raw RVs with the new GP activity model and a keplerian solution
+the resulting periodogram after correcting the raw RVs with the new GP activity model and a Keplerian solution
 for planet `b'. The strongest residual
 periodic signal is at the orbital period of the middle planet at $\sim 7.17$ days which
 we claim as a second putative planet detection because the periodicity obeys the aforementioned criteria.
@@ -1377,7 +1377,7 @@ models and LS periodogram FAPs.
 
 \subsection{Model Selection} \label{BSsect:CV}
 In Sect.~\ref{BSsect:det} we established putative planet detections based on low FAP LS periodogram
-periodicities. However the robust detection of a planet with a particular set of keplerian model parameters
+periodicities. However the robust detection of a planet with a particular set of Keplerian model parameters
 must be favoured over competing models that lack such a planet. The proper diagnostic for model
 selection is the ratio of Bayesian model evidences which are
 notoriously difficult and time-consuming to calculate \citep{ford07}. 
@@ -1389,7 +1389,7 @@ and is suitable to data featuring strong correlations in time as is the case wit
 For MC realizations featuring at least one putative planetary detection
 we perform time-series CV 
 on models that contain an increasing number of planets, including the null hypothesis i.e. no planets.
-The latter model has zero keplerian parameters whereas a model containing $N_p \ge 1$ planets
+The latter model has zero Keplerian parameters whereas a model containing $N_p \ge 1$ planets
 contains $3N_p$ model parameters where the three parameters per planet are its orbital period,
 time of inferior conjunction, and RV semi-amplitude. For the purpose of model selection we
 will assume circular orbits for all planets to limit the size of the parameter space. \\
@@ -1397,13 +1397,13 @@ will assume circular orbits for all planets to limit the size of the parameter s
 The CV algorithm proceeds by first splitting the RV time-series $y_1,\dots,y_{n_{\text{obs}}}$ into training and
 testing sets. For some $t>1$, each competing model is fit to the training set
 $y_1,\dots,y_t$ using a Levenberg-Marquardt optimization routine. The optimized model is then evaluated
-at the next epoch $t+1$ ($\mu_{t+1}$) and the lnlikelihood of the testing set $y_{t+1}$ given the optimized
+at the next epoch $t+1$ ($\mu_{t+1}$) and the ln likelihood of the testing set $y_{t+1}$ given the optimized
 model is computed
-using Eq.~\ref{BSeq:like}. When computing the lnlikelihood, we adopt a white covariance matrix for systems
+using Eq.~\ref{BSeq:like}. When computing the ln likelihood, we adopt a white covariance matrix for systems
 wherein the GP analysis is not used but otherwise assume the MAP GP hyperparameters from the
 iterative procedure in Sect.~\ref{BSsect:det}. These steps are repeated for
 $t=N_{\text{min}},\dots,N-1$ where the minimum size of the training set $N_{\text{min}}$ is set to 20. 
-The favoured model is determined by which of the competing models has a largest median lnlikelihood per
+The favoured model is determined by which of the competing models has a largest median ln likelihood per
 measurement among the $N-N_{\text{min}}$ CV iterations. In cases wherein two models are consistent
 within their median absolute deviations, the model containing less planets is accepted as an imposition of
 Occam's razor. \\
@@ -1431,7 +1431,7 @@ parameters of interest given an input time-series with \nobs{} measurements $\ma
 obtained at the epochs $\mathbf{t}=(t_1,\dots,t_N)$ and with measurement uncertainties
 $\boldsymbol{\sigma}=(\sigma_1,\dots,\sigma_N)$. \\
 
-The Fisher information matrix is a Hessian matrix of the lnlikelihood of a single keplerian model 
+The Fisher information matrix is a Hessian matrix of the ln likelihood of a single Keplerian model 
 with respect to its model parameters $\boldsymbol{\theta}=\{P,T_0,K\}$:
 
 \begin{equation}
@@ -1446,11 +1446,11 @@ $B$ we consider planets individually and account for the residual RV signal from
 through an ``effective'' RV uncertainty $\sigma_{\text{eff}}$
 in place of the RV measurement uncertainties $\sigma_i$
 in Eq.~\ref{BSeq:K}. The effective RV uncertainty is the rms of the RVs
-after removal of the keplerian signal from the planet being considered. It therefore contains
+after removal of the Keplerian signal from the planet being considered. It therefore contains
 contributions from any additional planets, stellar activity, and systematic errors.
 Because we do not fit for each planet's orbital eccentricity the
-keplerian model simplifies to $\mu(t_k) = -K \sin{\phi_k}$ where $\phi_k = \frac{2\pi}{P} (t_k-T_0)$.
-Using this mean model in the lnlikelihood (Eq.~\ref{BSeq:like}) along with $K_{ij}$ approximated by a
+Keplerian model simplifies to $\mu(t_k) = -K \sin{\phi_k}$ where $\phi_k = \frac{2\pi}{P} (t_k-T_0)$.
+Using this mean model in the ln likelihood (Eq.~\ref{BSeq:like}) along with $K_{ij}$ approximated by a
 white covariance matrix $K_{ij} = \sigma_{\text{eff}} \delta_{ij}$, we can compute each element of $B$ analytically
 (see Appendix~\ref{app:fisher}). The Fisher information matrix
 is then inverted to obtain the covariance matrix of the model
@@ -1464,7 +1464,7 @@ recall the three steps discussed throughout this section. Firstly we search for 
 planetary signals in the LS periodogram of either the raw RVs or the RVs corrected for activity using a
 zero-mean GP activity model. We are careful to ensure that significant periodicities have a
 planetary origin and are not associated with stellar activity signals or our time sampling. Secondly we
-compute model lnlikelihoods using time-series cross-validation and compare models with and without the
+compute model ln likelihoods using time-series cross-validation and compare models with and without the
 putative planet. We only retain planets which are favored by this model selection technique. The third and
 final step consists of vetting our planet detections by insisting that they must have an RV semi-amplitude
 detection significance greater than $3\sigma$ where the detection significance is estimated from the
@@ -1904,7 +1904,7 @@ of $f$ around late M dwarfs are currently poorly constrained. Furthermore, there
 some lines of empirical and theoretical evidence \citep{gillon17, pan17}
 that the fraction of multi-planetary systems that
 form low order mean-motion resonant chains is larger around late M dwarfs than is seen in the
-Kepler sample \citep{lissauer11, fabrycky14}. In this case, the keplerian RV modelling used
+Kepler sample \citep{lissauer11, fabrycky14}. In this case, the Keplerian RV modelling used
 in this study would not be applicable which may affect the resulting planet yield.
 However, this exercise is intended to demonstrate that \emph{if} the cumulative planet occurrence
 rate increases towards later M dwarfs, what is the nature of that effect
@@ -2363,16 +2363,16 @@ in a given RV time-series $y_k=y(t_k)$ we must estimate the semi-amplitude measu
 uncertainty $\sigma_{\text{K}}$ from the Fisher information matrix. The Fisher information matrix $B$
 encodes the amount of information about $K$ contained within the dataset $y_k$ and is computed
 analytically
-from the lnlikelihood given in Eq.~\ref{BSeq:like} under some simplifying assumptions. Namely,
-we treat each detected planet in a given system individually thus restricting the keplerian
-model $\mu_k=\mu(t_k)$ to a fixed number of parameters describing a single keplerian orbital
+from the ln likelihood given in Eq.~\ref{BSeq:like} under some simplifying assumptions. Namely,
+we treat each detected planet in a given system individually thus restricting the Keplerian
+model $\mu_k=\mu(t_k)$ to a fixed number of parameters describing a single Keplerian orbital
 solution. Secondly, we adopt the simplifying assumption that the planet is on a circular
 orbit such that only three model parameters (i.e. $\boldsymbol{\theta}=\{P,T_0,K\}$) need be
 constrained by the time-series. When considering planets individually we
 must absorb all noise sources from unmodelled RV activity and additional planets
 into an effective RV uncertainty $\sigma_{\text{eff}}$ equal to the rms of the RVs after the
-removal of the planet's keplerian model. Lastly we assume that the noise properties of the
-time-series are Gaussian distributed such that we can write the lnlikelihood as
+removal of the planet's Keplerian model. Lastly we assume that the noise properties of the
+time-series are Gaussian distributed such that we can write the ln likelihood as
 
 \begin{equation}
   \ln{\mathcal{L}} = -\frac{1}{2\sigma_{\text{eff}}^2} \sum_{k=1}^{n_{\text{obs}}} (y_k - \mu_k)^2 + c, \label{BSeq:ll2}
@@ -2380,7 +2380,7 @@ time-series are Gaussian distributed such that we can write the lnlikelihood as
 
 \noindent where $c$ is a constant that is independent of the model parameters in $\boldsymbol{\theta}$
 and \nobs{} is the number of observations in the time-series.
-Recall that for a circularized planet the keplerian orbital solution reduces to a simple sinusoid which
+Recall that for a circularized planet the Keplerian orbital solution reduces to a simple sinusoid which
 we write as
 
 \begin{equation}
@@ -2410,7 +2410,7 @@ form
 \noindent and contains six independent terms.
 Here we explicitly compute the analytical forms of each independent element of $B$
 calculated using Eqs.~\ref{BSeq:ll2},~\ref{BSeq:kep}, and~\ref{BSeq:fish}. The first partials
-of the lnlikelihood with respect to each of the model parameters in $\boldsymbol{\theta}$ are
+of the ln likelihood with respect to each of the model parameters in $\boldsymbol{\theta}$ are
 
 \begin{align}
   \frac{\partial \ln{\mathcal{L}}}{\partial P} &=

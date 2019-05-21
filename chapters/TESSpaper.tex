@@ -126,7 +126,7 @@ evaluating the Fisher information given a model of the observed stellar RV varia
 planet. \\
 
 The Fisher
-information matrix $B$ is defined as the Hessian matrix of the lnlikelihood of the data given a model
+information matrix $B$ is defined as the Hessian matrix of the ln likelihood of the data given a model
 where the model is parameterized by a set of $n$ parameters $\boldsymbol{\theta}=\{\theta_1,\dots,\theta_n\}$.
 Explicitly,
 
@@ -144,7 +144,7 @@ Explicitly,
   \label{RVFCeq:lnl}
 \end{equation}
   
-\noindent is the generalized lnlikelihood of $\mathbf{y}(\mathbf{t})$ given a model
+\noindent is the generalized ln likelihood of $\mathbf{y}(\mathbf{t})$ given a model
 $\boldsymbol{\mu}(\mathbf{t})$. The RV time-series and model are each 1D vectors containing
 \nrv{} measurements. The matrix $C$ is the \nrv{} $\times$ \nrv{} covariance matrix of the residual
 time-series $\mathbf{y}(\mathbf{t})-\boldsymbol{\mu}(\mathbf{t})$. Once constructed,
@@ -153,7 +153,7 @@ of the $n$ model parameters and whose diagonal elements are equal to the measure
 model parameters. \\
 
 The model of observed stellar RV variations due to a single orbiting planet is a
-keplerian solution. Its general form is written as
+Keplerian solution. Its general form is written as
 
 \begin{equation}
   \boldsymbol{\mu}(\mathbf{t},P,T_0,K,e,\omega) = K [\cos{(\boldsymbol{\nu}(\mathbf{t},P,T_0,e,\omega)+\omega)} \\
@@ -163,7 +163,7 @@ keplerian solution. Its general form is written as
 \noindent in terms of the star's orbital period $P$, time of inferior conjunction $T_0$,
 RV semi-amplitude $K$, orbital eccentricity $e$, argument of periapsis $\omega$, and true anomaly
 $\boldsymbol{\nu}$. If we assume that the planet's orbit is circular---as was done in \citetalias{sullivan15}---then
-our keplerian model reduces to
+our Keplerian model reduces to
 
 \begin{equation}
   \boldsymbol{\mu}(\mathbf{t},P,T_0,K) = -K \sin{\boldsymbol{\nu}(\mathbf{t},P,T_0)}
@@ -173,7 +173,7 @@ our keplerian model reduces to
 \noindent where the true anomaly can be expressed as $\boldsymbol{\nu}(\mathbf{t},P,T_0) =2\pi(\mathbf{t}-T_0)/P$.
 
 \subsubsection{Calculating \sigK{} with white RV noise} \label{RVFCsect:fisherwhite}
-Using the keplerian model given in Eq.~\ref{RVFCeq:kep} we can derive a simple analytical expression for
+Using the Keplerian model given in Eq.~\ref{RVFCeq:kep} we can derive a simple analytical expression for
 \sigK{} in terms of \nrv{} from the Fisher information under a few more simplifying assumptions. 
 From the resulting expression one can fix \sigK{} to a desired measurement value and calculate \nrv{}
 required to measure $K$ at that precision. As a initial assumption, where we will assume that the observed
@@ -181,7 +181,7 @@ RV noise is Gaussian distributed, or white.
 This assumption is used in the majority of RV analyses in the literature and
 is especially applicable to planets with semi-amplitudes much greater than the measured point-to-point RV rms.
 Assuming white noise, the covariance matrix $C$ in Eq.~\ref{RVFCeq:lnl} is diagonal with RV measurement variances
-$\boldsymbol{\sigma}_{\text{RV}}^2(\mathbf{t})$ along the diagonal. The resulting lnlikelihood reduces to
+$\boldsymbol{\sigma}_{\text{RV}}^2(\mathbf{t})$ along the diagonal. The resulting ln likelihood reduces to
 
 \begin{equation}
   \ln{\mathcal{L}} = -\frac{1}{2} \sum^{n_{\text{RV}}}_{i=1} \left( \frac{y(t_i)-\mu(t_i)}{\sigma_{\text{RV}}(t_i)} \right)^2,
@@ -194,12 +194,12 @@ The second simplifying assumption is rather
 than considering the full measurement uncertainty time-series $\boldsymbol{\sigma}(\mathbf{t})$, we will
 assume that the RV measurement uncertainty is well-characterized over time by a scalar value \sigRV{;} a common
 assumption when deriving model parameter uncertainties from time-series observations \cite[e.g.][]{gaudi07, carter08}.
-Thirdly, in our keplerian model 
+Thirdly, in our Keplerian model 
 we will assume that the values of $P$ and $T_0$ are known a-priori with absolute certainty
 from the planet's TESS transit light curve. Although this is not strictly true, $P$ and $T_0$ are often
 measured at high precision---compared to $K$---when multiple transit events are detected.
 Thus we can treat $P$ and $T_0$ as constants rather than as model parameters such
-that the set of model parameters in our keplerian RV solution reduces to a single value;
+that the set of model parameters in our Keplerian RV solution reduces to a single value;
 $\boldsymbol{\theta}=\{K\}$. The Fisher information matrix then reduces to the scalar value
 
 \begin{align}
@@ -274,7 +274,7 @@ However unlike computing \sigK{} in the white noise limit, the value of \sigK{} 
 GP correlated noise activity model is dependent on the values of the model parameters themselves
 and on the time-series due to the $t_i-t_j$ terms in the covariance kernel (Eq.~\ref{RVFCeq:kernel})
 and the appearance of $\mathbf{y}(\mathbf{t})$ and
-$\boldsymbol{\sigma}(\mathbf{t})$ in the lnlikelihood such that
+$\boldsymbol{\sigma}(\mathbf{t})$ in the ln likelihood such that
 
 \begin{equation}
   B \to B(\mathbf{t}, \mathbf{y}, \boldsymbol{\sigma_{\text{RV}}}, \boldsymbol{\theta}).
@@ -396,7 +396,7 @@ Sect.~\ref{RVFCsect:noise}). \\
 
 \subsection{Additional sources of RV noise} \label{RVFCsect:noise}
 Often when searching for transiting planets in radial velocity the residual rms following the
-removal of the maximum a-posteriori keplerian planet
+removal of the maximum a-posteriori Keplerian planet
 solution exceeds the characteristic RV measurement uncertainty.
 This implies the existence of additional sources of RV noise.
 The effect of these additional noise sources is detrimental to our ability to
@@ -585,13 +585,13 @@ $m_p$ according to the empirically derived mean mass-radius relations from \cite
 \noindent where $S$ is the irradiance received by the planet. By adopting the mean mass-radius relation this
 formalism neglects to reflect the diversity of exoplanet masses for a given planet radius.   \\
 
-The sinusoidal keplerian solution with unit amplitude has an rms value of $\sqrt{2}/2 \sim 0.707$.
+The sinusoidal Keplerian solution with unit amplitude has an rms value of $\sqrt{2}/2 \sim 0.707$.
 Therefore for each additional planet $i=1,\dots,N_p-1$,
 we can calculate $\sigma_{\text{planets},i}=0.707K_i$ where $K_i$ is the planet's semi-amplitude computed
 from its sampled $P_i$, $m_{p,i}$, and host stellar mass.
 The total value of \sigplan{}
 is calculated by the quadrature addition of $\sigma_{\text{planets},i}$ from each additional planet whose
-$K_i >$ \sigRV{.} This latest condition is imposed assuming that additional planets not seen in-transit
+$K_i <$ \sigRV{.} This latest condition is imposed assuming that additional planets not seen in-transit
 but whose semi-amplitudes are large compared to the RV measurement precision will be accurately
 modelled in the RV analysis and therefore not contribute to the residual RV rms.
 
@@ -810,7 +810,7 @@ initial guesses of the GP hyperparameters $\{\lambda, \Gamma, P_{\text{GP}} \}$ 
 from \cite{dittmann17a} (see Methods section \emph{Radial-velocity analysis with Gaussian process regression.})
 with the remaining GP hyperparameters set to $a=\sqrt{2}\sigma_{\text{act}}$ and
 $\sigma_{\text{jitter}}=\sigma_{\text{planets}}$. The RV time-series $\mathbf{y}(\mathbf{t})$
-contains keplerian contribution from the
+contains Keplerian contribution from the
 TESS planet and other sampled planets if applicable, plus correlated noise from a sample of the GP prior
 distribution, and white noise featuring contributions from the RV noise floor of the spectrograph  
 (Table~\ref{RVFCtable:spectrographs}) and the photon-noise limited measurement precision:
@@ -1659,10 +1659,10 @@ ambiguity.
 
 
 \subsection{Fisher information with a quasi-periodic Gaussian process regression model} \label{RVFCapp:fishergp}
-Here we derive the Fisher information matrix terms for a circular keplerian RV model
+Here we derive the Fisher information matrix terms for a circular Keplerian RV model
 plus a quasi-periodic GP correlated noise activity model, including an additional scalar jitter parameter.
 As discussed in Sect.~\ref{RVFCsect:fisherGP}
-the keplerian model parameter is solely the RV semi-amplitude $\{K \}$ whilst the GP covariance model has
+the Keplerian model parameter is solely the RV semi-amplitude $\{K \}$ whilst the GP covariance model has
 five hyperparameters $\boldsymbol{\Theta} = \{a, \lambda, \Gamma, P_{\text{GP}}, \sigma_{\text{jitter}} \}$
 that describe the quasi-periodic covariance matrix $C$ commonly used when simultaneously fitting RV planets
 and stellar activity:
@@ -1676,7 +1676,7 @@ and stellar activity:
 \noindent We therefore
 have six model parameters leading to a $6 \times 6$ Fisher information matrix $B$ which is related
 the model parameter covariance matrix $C'=B^{-1}$ from which model parameter measurement uncertainties
-are calculated. Assuming a circular keplerian orbit for the transiting planet of interest, the residual
+are calculated. Assuming a circular Keplerian orbit for the transiting planet of interest, the residual
 RV vector is
 
 \begin{equation}
@@ -1685,7 +1685,7 @@ RV vector is
 \end{equation}
 
 \noindent where $\mathbf{y}$ are the raw RVs observed at times $\mathbf{t}$ and $\phi(\mathbf{t})$ is
-the planet's orbital phase centered on mid-transit. The generalized lnlikelihood from which the Fisher
+the planet's orbital phase centered on mid-transit. The generalized ln likelihood from which the Fisher
 information matrix is calculated is then
 
 \begin{equation}

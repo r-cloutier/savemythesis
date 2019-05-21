@@ -145,7 +145,7 @@ application of Newton's third law: \emph{``for every action, there is an equal
 and opposite reaction''}. In this case, the presence of a planetary companion around a 
 host star displaces the barycenter of that two-body system (i.e. the centre-of-mass) from the
 centre of the star itself. Because of this, a star with a sole companion 
-will execute a keplerian orbit about the system's barycenter. The radial velocity of such a star
+will execute a Keplerian orbit about the system's barycenter. The radial velocity of such a star
 %as seen by any observer whose line of sight is not exactly orthogonal to the star's
 %orbit normal,
 is
@@ -162,8 +162,14 @@ $T_0$ is the reference epoch or time of inferior conjunction, and
 the orbital elements $e$ and $\omega$ are the orbital eccentricity and argument of
 periastron respectively. Note that $\omega$ is undefined for circular orbits with
 $e=0$ and is assigned the conventional value of $\pi/2$ in such a scenario.
-Eq.~\ref{eq:rv} is known as the keplarian orbital solution.
-The true anomaly $\nu(t,P,T_0)$ defines the position of the star on its orbit 
+Eq.~\ref{eq:rv} is known as the Keplerian orbital solution.
+The true anomaly 
+
+\begin{equation}
+\nu(t,P,T_0) = 2 \arctan{\left( \sqrt{\frac{1+e}{1-e}} \tan{\frac{E(t)}{2}}  \right)}
+\end{equation}
+
+\noindent defines the position of the star on its orbit 
 relative to the argument of periastron and in the direction of motion. It is derived 
 from another angular parameter, the eccentric anomaly $E(t)$. The eccentric 
 anomaly can be solved for using the mean anomaly $M(t)$ according to 
@@ -183,7 +189,7 @@ M(t) = \frac{2\pi}{P} (t-\tau_{\mathrm{peri}}),
 \noindent and $\tau_{\mathrm{peri}}$ is the epoch of 
 pericenter passage. Because Eq.~\ref{eq:kepler} does not have a closed-form 
 solution, in practice it is solved using iterative numerical techniques. 
-Examples of keplerian orbits using Eq.~\ref{eq:rv} are shown in Fig.~\ref{fig:rv} 
+Examples of Keplerian orbits using Eq.~\ref{eq:rv} are shown in Fig.~\ref{fig:rv} 
 for two 5 Earth mass planets each with an orbital period of 2 days around a 0.2 M$_{\odot}$ 
 star. The first planet is on a perfectly circular orbit and therefore induces a purely
 sinusoidal RV variation on the host star while the second planet's eccentricity is 0.3 and
@@ -192,25 +198,25 @@ cosine term in Eq.~\ref{eq:rv}. \\
 
 \begin{figure}
   \centering
-  \animategraphics[width=\textwidth,controls,loop]{200}{figures/RVcurve_}{0}{49}
+  %\animategraphics[width=\textwidth,controls,loop]{200}{figures/RVcurve_}{0}{49}
   \caption[Animation of observed radial velocities for different orbital configurations.]
       {An animation of the orbits of two (non-interacting) planets of equal
     mass and on 2 day orbits around a 0.2 solar mass star. The first planet has a circular
-    keplerian orbit ($e=0$) while the orbit of the second exhibits some ellipticity with
+    Keplerian orbit ($e=0$) while the orbit of the second exhibits some ellipticity with
     $e=0.3$. The lower panel depicts the corresponding RV variation induced on the host star
     by each planet independently.}
   \label{fig:rv}
 \end{figure}
 
-The keplarian orbital solution is valid in the absence of dynamical 
-perturbations to the two-body system. For keplerian orbits, only the true anomaly in
+The Keplerian orbital solution is valid in the absence of dynamical 
+perturbations to the two-body system. For Keplerian orbits, only the true anomaly in
 Eq.~\ref{eq:rv} varies with time. However,
 if additional bodies are present in the system such as in circumbinary  
 systems or in high multiplicity planetary systems, then the parameters in 
 Eq.~\ref{eq:rv} need not be fixed and we instead refer to the measured orbit as the 
 osculating orbit that may vary between orbital cycles. Note that if the timescale 
 for perturbations to the stellar orbital solution is comparable to or less than the 
-time interval over which RV observations are obtained, then the keplarian 
+time interval over which RV observations are obtained, then the Keplerian 
 orbital solution is an insufficient description of the observations and one must consider
 a more complicated treatment of the dynamics typically in the form of N-body simulations.
 

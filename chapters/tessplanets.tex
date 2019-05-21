@@ -15,7 +15,7 @@
   of transiting planets. This paper introduces our independent pipeline for the detection of periodic transit events along
   with the results of its inaugural application to the recently released 2 minute light curves of low mass stars
   from the first two TESS sectors. The stellar parameters within our
-  sample are refined using precise parallax measurements from the GAIA DR2 which reduces the number
+  sample are refined using precise parallax measurements from the Gaia DR2 which reduces the number
   of low mass stars in our sample relative to those listed in the TESS Input Catalog.
   In lieu of the follow-up observations required to confirm or refute the planetary nature of
   transit-like signals, a validation of transit-like events flagged by our pipeline is performed statistically.
@@ -65,7 +65,7 @@ is expected to discover thousands of new transiting exoplanets
 \citep{sullivan15,ballard18,barclay18} plus potentially thousands more from a variety of proposed
 extended missions \citep{bouma17,huang18b}. The launch of TESS
 and its recent large data release marks the beginning of a new era of exoplanetary survey
-science that will carry on the legacy of the infamous \emph{Kepler} space telescope which was
+science that will carry on the legacy of the famous \emph{Kepler} space telescope which was
 decommissioned on November 16 2018, after nearly a decade of transformative exoplanet observations
 and thousands of planet discoveries. \\
 
@@ -95,7 +95,7 @@ TESS Science Processing Operations Center \citep{jenkins16,twicken18,li18}, prov
 for members of the extended exoplanet community to pursue a variety of unique science cases. This
 includes the search for new transiting planets using transit detection algorithms that are independent
 of those used by the TESS Science Team and on distinct subsets of stars targeted by TESS.
-In this study, focus on low mass dwarf stars from the TIC and use GAIA parallaxes to infer precise
+In this study, we focus on low mass dwarf stars from the TIC and use Gaia parallaxes to infer precise
 stellar parameters and the refine the sample probable M dwarf TICs. We then search for transiting
 exoplanets around these low mass dwarfs in the high cadence TESS light curves using our
 custom-built transit detection pipeline described herein. \\
@@ -115,8 +115,8 @@ is accessed via the Barbara A. Mikulski Archive for Space Telescope (MAST)
 Portal\footnote{\url{https://mast.stsci.edu/portal/Mashup/Clients/Mast/Portal.html}}. Among other
 parameters, the TIC-7 table contains estimates of each star's physical parameters (i.e. effective
 temperatures \teff{,} surface gravities \logg{,} radii $R_s$, masses $M_s$, etc.),
-astrometry (either from the Tycho-GAIA astrometric solution; \citealt{gaia16,brown16}
-or from \emph{Hipparcos}), $G$-band magnitude from the GAIA data release 1, and 2MASS photometry
+astrometry (either from the Tycho-Gaia astrometric solution; \citealt{gaia16,brown16}
+or from \emph{Hipparcos}), $G$-band magnitude from the Gaia data release 1, and 2MASS photometry
 \citep{cutri03}. To identify putative low mass dwarf stars within the TIC-7, we first restrict our sample to
 sources flagged as dwarf stars based on their 2MASS colors and the reduced proper motion criterion
 from \cite{stassun17}, modified from \cite{collier07}. We further restrict our sample to stars whose
@@ -140,7 +140,7 @@ TIC-7 and using the following criteria:
 interest but instead are chosen to be intentionally conservative as to avoid missing any potential
 M dwarfs prior to their final classification (for use within this study) based on \teff{} and 
 near-IR luminosities  (\MK{} $\in [4.5,10]$; \citealt{delfosse00, benedict16}) that will be refined
-in Sect.~\ref{sect:gaia} using GAIA parallaxes.
+in Sect.~\ref{sect:gaia} using Gaia parallaxes.
 At this stage we find a total of 93090 TICs that obey our criteria. Of these, 2849 TIC are observed in
 one or both of TESS sectors 1 and 2 and are depicted in Fig.~\ref{fig:stars}.
 
@@ -152,13 +152,13 @@ one or both of TESS sectors 1 and 2 and are depicted in Fig.~\ref{fig:stars}.
     stellar radii, and stellar masses for our initial (translucent orange markers) and final
     (dark red markers) stellar samples. Our initial sample contains 2849 low mass stars observed in
     sectors 1 and/or 2 and identified by their stellar parameters from the TIC-7. Our final sample contains
-    1599 low mass stars with refined stellar parameters based on GAIA
+    1599 low mass stars with refined stellar parameters based on Gaia
     DR2 parallaxes. The median parameter values for each sample are annotated above each histogram.}
   \label{fig:stars}
 \end{figure}
   
 
-\subsection{Refined stellar sample based on GAIA DR2} \label{sect:gaia}
+\subsection{Refined stellar sample based on Gaia DR2} \label{sect:gaia}
 The stellar parameters used to derive our initial stellar sample were obtained from a variety of sources
 as outlined in \cite{stassun17}. Effective temperatures within our sample were predominantly obtained
 from the cool dwarf catalog \citep{muirhead18} or alternatively from spectroscopic catalogs or $V$-\Ks{}
@@ -166,13 +166,13 @@ colors.
 %Bolometric corrections typically used
 %to derive absolute magnitudes from near-IR photometry and parallaxes often suffer from comparatively large
 %inaccuracies for cool stars \citep[\teff{} $\lesssim 4100$ K;][]{berger18} thus largely prohibiting the
-%use of GAIA parallaxes to derive stellar masses and radii for our stars of interest.
+%use of Gaia parallaxes to derive stellar masses and radii for our stars of interest.
 Most stellar masses and radii also come from the cool dwarf catalog or from the \cite{torres10}
 spectroscopic relations. Stellar surface gravities follow from measurements of $R_s$ and $M_s$.
 The TIC-7 stellar radii are typically known at the level of $\sim 16$\% which often dominates
 the error budget of the measured planetary radii from transit observations. Here we aim to produce a
 homogeneously-derived set of precise stellar parameters by exploiting the exquisite precision of their
-2MASS photometry and stellar parallaxes from the GAIA DR2 \cite{gaia18} available for the majority of
+2MASS photometry and stellar parallaxes from the Gaia DR2 \cite{gaia18} available for the majority of
 stars in our initial sample. \\
 
 For the accurate and precise characterization of transiting planets we are principally
@@ -180,13 +180,13 @@ interested in the measurement of host stellar radii $R_s$. Additionally, the der
 parameters such as stellar masses and effective temperatures are of importance for a more complete understanding
 of the effect that stars can have on their host planetary systems. Here, we re-derive
 the stellar parameters of our initial sample by deriving their near-IR absolute magnitudes coupled with
-empirically-derived M dwarf radius-luminosity relations \citep{mann15}. We begin by querying the GAIA DR2
+empirically-derived M dwarf radius-luminosity relations \citep{mann15}. We begin by querying the Gaia DR2
 archive using the star's right ascension and declination ($\alpha,\delta$) with a search radius of 10-60 arcseconds.
-Cross-matching the TIC-7 with the GAIA DR2 data is necessary to obtain each star's updated parallax from the DR2,
-additional GAIA photometry (i.e. $G_{\text{BP}}$ and $G_{\text{RP}}$) which was not included in the TIC-7,
+Cross-matching the TIC-7 with the Gaia DR2 data is necessary to obtain each star's updated parallax from the DR2,
+additional Gaia photometry (i.e. $G_{\text{BP}}$ and $G_{\text{RP}}$) which was not included in the TIC-7,
 and point-estimates of their respective measurement uncertainties that we will approximate as Gaussian distributed.
 Our querying procedure utilizes the \texttt{astropy.astroquery python} package \citep{ginsburg17}.
-Next we identify source matches according to their predicted photometric colors based on the 2MASS-GAIA
+Next we identify source matches according to their predicted photometric colors based on the 2MASS-Gaia
 color-color relations reported in \cite{evans18}. Explicitly, we use the quadratic polynomial fits from
 \cite{evans18} to predict each of the colors
 $G-K_{\text{S}}$, $G_{\text{BP}}-K_{\text{S}}$, $G_{\text{RP}}-K_{\text{S}}$ and $G_{\text{BP}}-G_{\text{RP}}$ and then compare
@@ -198,7 +198,7 @@ that such a tolerance is required to ensure accurate source matches. This disper
 that higher order effects not taken into account by the polynomial fits, can have stark effects on the accuracy
 of the photometric predictions. \\
 
-We proceed with identifying bona-fide low mass TICs within our initial stellar sample by using the GAIA data
+We proceed with identifying bona-fide low mass TICs within our initial stellar sample by using the Gaia data
 of matched sources to refine the stellar parameters that were initially used to flag low mass stars. 
 We will classify low mass stars within this study based on their absolute \Ks{-}band magnitudes
 \citep{delfosse00,mann15,benedict16} and effective temperatures which are derived in the coming sub-sections.
@@ -214,12 +214,12 @@ is the distance modulus given the distance to the source $d$, and $A_{K_{\text{S
 \Ks{-}band. Therefore, in order to compute \MK{} for our stellar sample we must first obtain the parameters $d$ and
 $A_{K_S}$.
 
-\subsubsection{Stellar distances from GAIA}
-The GAIA DR2 reports precise stellar parallaxes $\varpi$ for the majority of stars in our initial sample
+\subsubsection{Stellar distances from Gaia}
+The Gaia DR2 reports precise stellar parallaxes $\varpi$ for the majority of stars in our initial sample
 %(i.e. \textbf{X}/90390).
 The typical parallax uncertainty for the stars in our sample is $\sim 0.2$\%.
 As noted by numerous authors \citep[e.g.][]{bailorjones15,astraatmadja16,luri18}, reliable distances to the
-majority of stars in the GAIA DR2 cannot be obtained by simply inverting the stellar parallax. Given $\varpi$
+majority of stars in the Gaia DR2 cannot be obtained by simply inverting the stellar parallax. Given $\varpi$
 values with posterior probability density functions (PDFs) that are presumed Gaussian distributed, and are
 therefore fully described by their mean values and $1\sigma$ dispersions, the non-linearity
 of the transformation from $\varpi$ to $d$ will result in an asymmetric $d$ posterior PDF whose skewness
@@ -235,17 +235,19 @@ that of the measured parallax (i.e. $\sim 0.2$\%). The maximum a-posteriori (MAP
 uncertainty are then propagated to the calculation of $\mu$ which we will ultimately use in Eq.~\ref{eq:MK} to
 calculate \MK{} after the extinction coefficient are obtained (see Sect.~\ref{sect:AK}). \\
 
-There are known systematic effects in the GAIA astrometric solution in the form of a non-zero parallax zero-point
+There are known systematic effects in the Gaia astrometric solution in the form of a non-zero parallax zero-point
 that is dependent on the source position, $G$-band magnitude, and possibly color \citep{lindegren18}.
 In computing $d$ from $\varpi$ we first apply a simple correction by adding the globally-averaged parallax
-zero-point of 29 $\mu$as \citep{lindegren18} to the verbatim stellar parallaxes from the GAIA DR2.
+zero-point of 29 $\mu$as \citep{lindegren18} to the verbatim stellar parallaxes from the Gaia DR2. Although this 
+correction may not be strictly accurate for our M dwarf target sample \citep{leung19}, the effect of differences in 
+the zero-point are marginal compared to the derived stellar parameter uncertainties in the coming sections.
 
 \subsubsection{Source extinction estimates} \label{sect:AK}
 The source extinction is dependent on the source's location on the sky and particularly on
 its proximity to the galactic plane where the dust column density is highest. To estimate the \Ks{-}band extinction
 for each source we utilize the \texttt{mwdust} package \citep{bovy16} which queries one of three E(B-V) reddening maps
 \citep[i.e.][]{drimmel03,marshall06,green15} based on the applicability of each map to the input source position.
-Given the source's galactic coordinates ($l,b$), GAIA distance, and uncertainties as input, \texttt{mwdust}
+Given the source's galactic coordinates ($l,b$), Gaia distance, and uncertainties as input, \texttt{mwdust}
 queries the reddening maps and returns the extinction coefficient $A_{\lambda}=R_{\lambda} \text{E(B-V)}$ in the desired
 band using the extinction vector scaling $R_{K_{\text{S}}}=0.31$ from \cite{schlafly11}. Uncertainties in $A_{K_{\text{S}}}$ are
 derived from the $d$ measurement uncertainty and from inherent uncertainties in the value of $R_{K_{\text{S}}}$
@@ -255,14 +257,14 @@ the methodology of \citep{fulton18}.
 
 \subsubsection{Deriving the set of refined stellar radii}
 Combining the retrieved values of \Ks{,} $\mu$, and $A_{K_{\text{S}}}$ into Eq.~\ref{eq:MK} returns the
-distribution of \MK{} for all of the 2489 stars in our initial sample for which 2MASS photometry and GAIA
+distribution of \MK{} for all of the 2489 stars in our initial sample for which 2MASS photometry and Gaia
 parallaxes are available. \\
 
 Calculations of M dwarf stellar radii from their bolometric magnitudes would require \Ks{-}band bolometric
 corrections which for cool stars, are known to often suffer from comparatively large inaccuracies 
 \citep[\teff{} $\lesssim 4100$ K;][]{berger18}. We therefore adopt the alternative approach from
 \cite{berger18} which used the empirically-derived M dwarf radius-luminosity relation (RLR) from
-\cite{mann15} to update M dwarf stellar radii in the \emph{Kepler} field using GAIA distances.
+\cite{mann15} to update M dwarf stellar radii in the \emph{Kepler} field using Gaia distances.
 The fitted RLR uses a quadratic function to map
 \MK{} to directly measured $R_s$ from interferometry and parallaxes. Because we are interested in deriving a
 self-consistent sample of low mass stellar radii, we restrict our
@@ -273,31 +275,31 @@ The radii inferred from the RLR have a fractional residual dispersion of 0.0289 
 in quadrature to the radius uncertainty propagated from \MK{.}  \\
 
 Fig.~\ref{fig:Rs} compares the TIC-7 stellar radii (compiled from various input sources) with those
-derived from GAIA distances and and the M dwarf RLR from \cite{mann15}. The relation is largely one-to-one
+derived from Gaia distances and and the M dwarf RLR from \cite{mann15}. The relation is largely one-to-one
 but with a slight translation of the updated $R_s$ distribution to larger radii ($\sim 3.7$\% median increase).
 The effect is already known \citep{berger18} and is the result of many sources having their distance
-measures increased following the release of the GAIA DR2 parallaxes. More notably for the measurement of
+measures increased following the release of the Gaia DR2 parallaxes. More notably for the measurement of
 transit planet radii is the significant reduction in the fractional radius uncertainty as evidence in the
 histogram included in Fig.~\ref{fig:Rs}. The typical fractional radius uncertainty $\sigma_{R_{s}}/R_s$ within
 our updated sample is $\sim 4-5$ smaller than in the TIC-7. The median fractional uncertainty on our
-GAIA-derived stellar radii is $\sim 3$\%.
+Gaia-derived stellar radii is $\sim 3$\%.
 
 \begin{figure}
   \centering
   \includegraphics[width=0.6\hsize]{figures/stellarradii.png}
-  \caption[Comparison of stellar radii derived from GAIA parallaxes to values in the TIC-7.]
+  \caption[Comparison of stellar radii derived from Gaia parallaxes to values in the TIC-7.]
       {A 2-dimensional histogram comparing the stellar radii in our sample of 1599 low mass stars,
-    derived from GAIA parallaxes and the M dwarf radius-luminosity relation from \cite{mann15}, to those
+    derived from Gaia parallaxes and the M dwarf radius-luminosity relation from \cite{mann15}, to those
     from the TESS Input Catalog (TIC-7) which are compiled from a variety of sources. The subpanel compares the
     distributions of fractional stellar radius uncertainties in each catalog. The refined stellar radii 
-    based on GAIA parallaxes have a typical precision improvement of $\sim 4-5$ compared to the TIC-7
+    based on Gaia parallaxes have a typical precision improvement of $\sim 4-5$ compared to the TIC-7
     parameters.}
   \label{fig:Rs}
 \end{figure}
 
 \subsubsection{Deriving the set of refined stellar effective temperatures}
 Similarly to the RLR, \citep{mann15} also parameterized an empirically-derived M dwarf temperature-color-metallicity
-relation (TCMR). Our sample contains both 2MASS and GAIA photometry so we use these photometric systems to infer
+relation (TCMR). Our sample contains both 2MASS and Gaia photometry so we use these photometric systems to infer
 \teff{} for the stars in our newly refined sample. Specifically, we adopt the fitted TCMR from \cite{mann15} which is
 cubic in $G_{\text{BP}}$-$G_{\text{RP}}$ and quadratic in $J$-$H$. The latter color is used as a proxy for metallicity
 \citep{leggett92,johnson12,mann13,newton14}. The TCMR used here has a residual temperature dispersion of 49 K which we
@@ -314,7 +316,7 @@ comes from the MAP of the PDF and the average of its $16^{\text{th}}$ and $84^{\
 
 \subsubsection{Final stellar sample}
 Using the refined stellar parameters obtained from cross-matching putative low mass stars from the TIC-7 with
-the GAIA DR2, we now construct our final stellar sample as stars that obey the following criteria:
+the Gaia DR2, we now construct our final stellar sample as stars that obey the following criteria:
 
 \begin{itemize}
 \item \MK{} $\in (4.6,9.8)$
@@ -334,7 +336,7 @@ The final stellar sample is over-plotted in Fig.~\ref{fig:stars}. The distributi
 in our stellar samples spans 7-15 with a median $T=12.1$. The distribution of
 effective temperatures extends from 2740-4040 K with a median \teff{} $=3450$ K
 whose approximate spectral type is M3V \citep{pecaut13}. The \teff{} distributions from the TIC-7 and
-our GAIA-derived values are roughly consistent. The stellar radii span 0.15-0.61 R$_{\odot}$
+our Gaia-derived values are roughly consistent. The stellar radii span 0.15-0.61 R$_{\odot}$
 with a median $R_s=0.42$ R$_{\odot}$. The stellar masses span 0.12-0.63 M$_{\odot}$
 with a median $M_s=0.47$ M$_{\odot}$. Owing to the increased distances of many TICs in our final sample,
 the distributions of $R_s$ and $M_s$ are both translated to slightly larger radii and masses compared
@@ -342,7 +344,7 @@ to the values listed in the TIC-7.
 
 
 \section{Overview of the \pipeline{} transit detection pipeline} \label{sect:pipe}
-Here we present our independent transit detection pipeline \pipeline{} that burrows many of the strategies and
+Here we present our independent transit detection pipeline \pipeline{} that borrows many of the strategies and
 vetting procedures from established methods focused on transit detections primarily with \emph{Kepler} and
 \emph{K2} (see references herein).
 %discussed in crossfield K2 paper, petigura, \cite{dressing15},
@@ -408,7 +410,7 @@ and can also be used to infer accurate photometric stellar rotation periods \cit
 the origin of the apparent photometric variations are likely dominated by active regions on rotating spotted
 stars, the resulting photometry will vary non-sinusoidally as the active regions 
 evolve in size, brightness, and location over the observational baseline. This physically motivates the
-use of a quasi-periodic covariance matrix K$_{i,j} = \delta_{i,j} \sigma_{f,i} + k_{i,j}$ where $\delta_{i,j}$
+use of a quasi-periodic covariance matrix K$_{i,j} = \delta_{i,j} \sigma_{f,i}^2 + k_{i,j}$ where $\delta_{i,j}$
 is the Kronecker delta and $k_{i,j}$ is the covariance kernel of the form
 
 \begin{equation}
@@ -919,7 +921,7 @@ by HARPS and PFS RVs \citep{astudillodefru19}.
   \caption[Summary output for TIC 234994474 from \texttt{ORION}.]
       {The summary image output from running \pipeline{} on TIC 234994474 and the resulting
     detection of OI 234994474.01 which is consistent with the known TOI-134.01. The TESS
-    magnitude $T$ and GAIA-derived physical stellar parameters 
+    magnitude $T$ and Gaia-derived physical stellar parameters 
     are annotated at the top. \emph{Top panel}: the 2 minute extracted light curve from
     the TESS Science Processing Operations Center along with the mean GP systematic model
     (orange line) and the
@@ -1115,23 +1117,23 @@ AFP scenarios. The derived rate of AFPs from this small sample of OIs is $\sim 3
 is somewhat lower than expected AFP rate of 60\% from the TESS simulations by \citep{sullivan15}.
 
 
-\subsection{Querying GAIA sources to supplement statistical validation calculations} \label{sect:gaiafps}
+\subsection{Querying Gaia sources to supplement statistical validation calculations} \label{sect:gaiafps}
 \vespa{} calculations are based on synthetic stellar populations from the
 \texttt{TRILEGAL} galaxy model \citep{girardi05}. These synthetic results can be supplemented
-by querying the GAIA DR2 in the vicinity of each TIC to investigate the number density and brightness
+by querying the Gaia DR2 in the vicinity of each TIC to investigate the number density and brightness
 distribution of nearby sources on the sky. In this way, we hope to find supporting empirical evidence for
 any of the BEB interpretations of OIs with high FPPs as those inferences should be expected if nearby bright
-sources fall within or near the PSF of the targeted TIC. The resulting maps of GAIA sources around
-the 22 TICs with OIs in our sample are shown in Fig.~\ref{fig:gaiafps}. Querying the GAIA DR2 is
-performed identically to the method used in Sect.~\ref{sect:gaia} to match TICs with the GAIA DR2 catalog
+sources fall within or near the PSF of the targeted TIC. The resulting maps of Gaia sources around
+the 22 TICs with OIs in our sample are shown in Fig.~\ref{fig:gaiafps}. Querying the Gaia DR2 is
+performed identically to the method used in Sect.~\ref{sect:gaia} to match TICs with the Gaia DR2 catalog
 although here we conduct our searches with a fixed radius of 105 arcseconds or $\sim 10$ TESS pixels
 in diameter. \\
 
 \begin{figure*}
   \centering
-  \includegraphics[width=0.8\hsize]{figures/GAIAFPs.png}
-  \caption[GAIA sources around TICs with \texttt{ORION} planet candidates.]
-      {Star maps containing sources from the GAIA DR2 in the vicinity of each TIC identified
+  \includegraphics[width=0.8\hsize]{figures/GaiaFPs.png}
+  \caption[Gaia sources around TICs with \texttt{ORION} planet candidates.]
+      {Star maps containing sources from the Gaia DR2 in the vicinity of each TIC identified
     as hosting an object of interest during the manual vetting stage. The panels are ordered by the
     dispositions which are annotated in the upper right of each panel (see Sect.~\ref{sect:vespa} for
     definitions). The fitted FWHM of each targeted TIC's PSF is annotated in the upper left
@@ -1155,7 +1157,7 @@ This includes the TIC 235037759 whose \vespa{} calculation failed.
 Two bright sources are clearly seen to contribute to the flux within the target's PSF thus supporting the
 probable interpretation of the OI 235037759.01 transit-like event as being caused by an AFP. \\
 
-We note however that some discrepancies between the distributions of GAIA sources and our \vespa{}
+We note however that some discrepancies between the distributions of Gaia sources and our \vespa{}
 interpretations still persist. Particularly with regards to the TICs 100103200 and 100103201 (panels `l'
 and `p' in Fig.~\ref{fig:gaiafps}) which strongly favor the PC and BEB models respectively despite being
 located within 1 TESS pixel of one another on the sky, having very
@@ -1275,7 +1277,7 @@ within our sample at \teff{} $\sim 3550$ K (see Fig.~\ref{fig:stars}). \\
   \includegraphics[width=0.9\hsize]{figures/planetsample_star.png}
   \caption[Stellar parameters for the \texttt{ORION} planet candidate sample host stars.]
       {The planetary radii of our 16 \pipeline{} candidates as functions of their host stellar
-    effective temperatures, $J$-band magnitudes, and GAIA distances. Our candidates
+    effective temperatures, $J$-band magnitudes, and Gaia distances. Our candidates
     are compared to the population of confirmed transiting planets around cool stars (\teff{} $<4200$
     K) from the NASA Exoplanet Archive which are depicted with small black circles.
     The legend labels are planet candidates (PC), 
@@ -1337,7 +1339,7 @@ has an estimated period between 22-95 days placing it at $S=0.5$ S$_{\oplus}$ wi
 an equilibrium temperature $T_{\text{eq}}= 238$ K. \\
 
 \emph{OI 100103200.01}. The pPC with ultra low FPP but is seen to likely be contaminated by the nearby
-TIC 100103201 based on the GAIA astrometry. This pPC orbits a $J=7.5$ star with an 18.4 day period and
+TIC 100103201 based on the Gaia astrometry. This pPC orbits a $J=7.5$ star with an 18.4 day period and
 whose size is 2 R$_{\oplus}$ making it a attractive target for both RV characterization and possibly
 transmission spectroscopy observations with \emph{JWST} if impending difficulties of observing
 bright targets can be strategically mitigated (see Sect.~\ref{sect:atmospheres}). \\
@@ -1413,7 +1415,7 @@ one science requirement. \\
 
 
 \subsection{TOIs undetected by \pipeline{}} \label{sect:undet}
-Our stellar sample using refined stellar parameters based on GAIA distances,
+Our stellar sample using refined stellar parameters based on Gaia distances,
 contains ten TICs with TOIs listed as part of the TESS alerts\footnote{As of December 19, 2018.}.
 These ten systems host a total of twelve TOIs in nine single PC systems
 and TIC 307210830 which hosts three TOIs. The \pipeline{} results presented in this paper
@@ -1602,7 +1604,7 @@ effectively the size of the TIC \citep{stassun17}. Using the stellar parameters 
 we find 53204 TIC M1-M4 dwarfs (\teff{} $\in [3200-3700]$ K; \citealt{pecaut13}).
 Of these, 1624 and 1869 are targeted in sectors 1 and 2 respectively with 2849
 being unique TICs. However unlike in the TIC-7,
-our stellar sample is derived using parallaxes from the GAIA DR2 which results in
+our stellar sample is derived using parallaxes from the Gaia DR2 which results in
 a distinct population of just 1149 M1-M4 dwarfs observed in either or both of TESS sectors 1
 and 2. We use a simple correction factor to the expected TESS yield to account for the
 fractionally fewer M1-M4 stars that we target for transit searches compared to the TIC-7.
@@ -1641,7 +1643,7 @@ Norm Murray,
 Adiv Paradise, and
 Marten van Kerkwijk
 for both motivating discussions as well as informative ones that improved the content of this
-paper as well as my understanding of the data from GAIA and TESS used throughout.
+paper as well as my understanding of the data from Gaia and TESS used throughout.
 I also thank the Canadian Institute for Theoretical Astrophysics for use of the Sunnyvale
 computing cluster throughout this work. 
 I would also like to acknowledge that this
@@ -1664,7 +1666,7 @@ This research has made use of the NASA Exoplanet Archive, which is operated by t
 Institute of Technology, under contract with the National Aeronautics and Space Administration
 under the Exoplanet Exploration Program.
 
-This work presents results from the European Space Agency (ESA) space mission GAIA.} GAIA
+This work presents results from the European Space Agency (ESA) space mission Gaia.} Gaia
 data are being processed by the Gaia Data Processing and Analysis Consortium (DPAC). Funding for
 the DPAC is provided by national institutions, in particular the institutions participating in
 the Gaia MultiLateral Agreement (MLA). The Gaia mission website is

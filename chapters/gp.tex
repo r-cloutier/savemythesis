@@ -297,7 +297,7 @@ activity information content.
   \includegraphics[width=\hsize]{figures/pca.png}
   \caption[Principal component analysis of idealized spectra containing either spots, faculae, or planets.]
           {The values of the first principal component for three spectra of a star with either an equatorial
-            spot, an equatorial facula, or a circular keplerian orbit. The maximum variance (with either sign)
+            spot, an equatorial facula, or a circular Keplerian orbit. The maximum variance (with either sign)
             in the Doppler-shifted spectrum is dominated by regions with the greatest slope and is the same
             for all spectral features. Variance in the active spectra and not equal within each line as not all
             lines respond identically to in the presence of active regions. \citep[Image credit:][]{davis17}}
@@ -638,7 +638,7 @@ flexible framework to perform Bayesian inference on functions. Their flexibility
 their semi-parametric nature which makes them well-suited to modelling stochastic processes
 like stellar activity that lack a deterministic functional form. GP regression works to model
 the covariance between data points simultaneously with deterministic components such as planets
-on keplerian orbits. Given a parameterization of the data covariance structure, the GP is
+on Keplerian orbits. Given a parameterization of the data covariance structure, the GP is
 by definition a multivariate Gaussian distribution with a well-defined mean function and
 variance that represent our model of the correlated observables and its uncertainty
 \citep{rasmussen05}. \\
@@ -652,7 +652,7 @@ as semi-parametric. The covariance matrix of the GP is written in terms of the c
 function $k(t,t')$ as
 
 \begin{equation}
-  \mathbf{K}_{ij} = k(t_i,t_j) + \delta_{ij} \sqrt{\sigma_{\text{RV}}^2(t_i) + s^2} 
+  \mathbf{K}_{ij} = k(t_i,t_j) + \delta_{ij} (\sigma_{\text{RV}}^2(t_i) + s^2)
 \label{eq:Kmat}
 \end{equation}
 
@@ -780,7 +780,7 @@ for prediction as is commonly done in the world of machine learning.
 Determination of the GP hyperparameters $\boldsymbol{\Theta}$ for a given covariance kernel is
 done by first specifying a mean model $\boldsymbol{\mu}$ which itself is parameterized by
 a set of model parameters $\boldsymbol{\theta}$. In the case of modelling RVs, the mean model
-might represent our planet model whose keplerian orbital parameters are what we are interested
+might represent our planet model whose Keplerian orbital parameters are what we are interested
 in measuring with the GP being used to model the correlated RV residuals arising from stellar
 activity. The residual vector is written as $\mathbf{r} = \mathbf{y} - \boldsymbol{\mu}$
 where $\mathbf{y}$ is the vector of \nrv{} RV measurements. 
@@ -813,7 +813,7 @@ for the purpose of parameter estimation but will be calculated in future
 chapters for the purpose of comparing competing models of a dataset. \\
 
 Sampling of the $\boldsymbol{\Psi}$ posteriors is done using MCMC. In this way, our
-uncertainties in the keplerian model parameters $\boldsymbol{\theta}$
+uncertainties in the Keplerian model parameters $\boldsymbol{\theta}$
 are marginalized over our uncertainties in
 the GP hyperparameters $\boldsymbol{\Theta}$. The exact strategies and details of
 our MCMC implementation are discussed in subsequent chapters
@@ -852,12 +852,12 @@ standard deviation are computed using Eqs.~\ref{eq:gpmu} and~\ref{eq:gpsig}. Whe
 modelling RV activity with a GP whose hyperparameters $\boldsymbol{\Theta}$ have
 been derived from MCMC, we take the ``best-fit'' of that multivariate Gaussian, namely
 its mean function, to be our activity model similarly to how maximum a-posteriori
-point estimates of keplerian orbital parameters are used to compute a ``best-fit''
+point estimates of Keplerian orbital parameters are used to compute a ``best-fit''
 planet model. \\
 
 \begin{figure}
   \centering
-  \animategraphics[width=\textwidth,controls,loop]{5}{figures/GPsample_}{0}{49}
+  %\animategraphics[width=\textwidth,controls,loop]{5}{figures/GPsample_}{0}{49}
   \caption[Samples from a quasi-periodic Gaussian process prior distribution.]
           {Continuous samples from a quasi-periodic Gaussian process prior distribution.
             A discontinuity in the sampling occurs after 50 frames. This animation was
@@ -868,7 +868,7 @@ planet model. \\
 
 \begin{figure}
   \centering
-  \animategraphics[width=\textwidth,controls,loop]{5}{figures/GPsample_pred_}{0}{49}
+  %\animategraphics[width=\textwidth,controls,loop]{5}{figures/GPsample_pred_}{0}{49}
   \caption[Samples from a quasi-periodic Gaussian process predictive distribution.]
           {Independent samples from a quasi-periodic Gaussian process predictive distribution
             conditioned on ten synthetic data points. The mean function and
@@ -889,7 +889,7 @@ Firstly, I construct
 a set of synthetic RVs containing a planet, stellar activity, and noise, sampled using the
 actual window function of 71 HARPS observations of the M dwarf K2-18 \citep{cloutier17b}.
 The injected planetary
-signal takes the form of a circular keplerian with $P=22$ days and $K=2$ \mps{.} The stellar
+signal takes the form of a circular Keplerian with $P=22$ days and $K=2$ \mps{.} The stellar
 activity signal is derived from a physical spot model from \texttt{SOAP 2.0} \citep{dumusque14}
 that computes time series of the photometric, RV, and line shape parameters resulting from
 spots and/or plages on a rotating star. In this toy model I simulate a single equatorial spot
@@ -899,7 +899,7 @@ The injected time series and the synthetic RVs are shown in the top panel of
 Fig.~\ref{fig:RVsignals}. The injected activity signal is seen to have a peak-to-peak amplitude of
 $\sim 8.5$ \mps{} and is dominated by the suppression of convective blueshift when the simulated
 starspot is present on the visible hemisphere. The RV signal due to activity is equal to zero when
-the lone starspot is not visible. The peak-to-peak amplitude of the injected keplerian signal is 
+the lone starspot is not visible. The peak-to-peak amplitude of the injected Keplerian signal is 
 seen to be approximately half that of the injected activity. \\
 
 \begin{figure}
@@ -908,22 +908,22 @@ seen to be approximately half that of the injected activity. \\
   \includegraphics[width=\hsize]{figures/RVrecovered.png}
   \caption[Synthetic RV time series used to demonstrate the effectiveness of GP activity modelling.]
           {\emph{Top}: a synthetic RV time series with injected stellar activity from a \texttt{SOAP 2.0} physical
-            model (\prot{} $=30$ days; \emph{red curve}), a keplerian planetary signal ($P=22$ days; \emph{blue curve}), and noise.
+            model (\prot{} $=30$ days; \emph{red curve}), a Keplerian planetary signal ($P=22$ days; \emph{blue curve}), and noise.
             The RVs (\emph{black markers}) are sampled with the real HARPS window
-            function of K2-18. \emph{Bottom}: the recovered GP activity model and keplerian model using the
+            function of K2-18. \emph{Bottom}: the recovered GP activity model and Keplerian model using the
             maximum a-posteriori model parameters from MCMC analysis. The recovered models closely resemble their
             injected counterparts (see Fig.~\ref{fig:RVcomp} for more details).}
   \label{fig:RVsignals}
 \end{figure}
 
 Next I impose an RV model that includes an activity component in the form of an untrained
-quasi-periodic GP plus a single keplerian model of the planet that I treat as a transiting
+quasi-periodic GP plus a single Keplerian model of the planet that I treat as a transiting
 planet such that its linear ephemeris (i.e. period and phase) are well-constrained by its transit
 light curve. Note that untrained GPs can be dangerous as scenarios have been observed in which
 an untrained GP model of RVs absorbs some planetary signal and can thus result in misestimated
 planetary parameters \citep{ribas18}.
-I proceed by deriving the joint posterior of the GP hyperparameters and keplerian
-parameters to compute the `best-fit' GP and keplerian models that can then be compared to their
+I proceed by deriving the joint posterior of the GP hyperparameters and Keplerian
+parameters to compute the `best-fit' GP and Keplerian models that can then be compared to their
 injected signal counterparts. The recovered models are shown in the bottom panel of
 Fig.~\ref{fig:RVsignals}. Here the mean GP model is depicted along with its 68\% confidence
 interval and appears to closely resemble the injected activity signal despite being derived from
@@ -936,12 +936,12 @@ recovered and injected activity signals is 0.72 \mps{} compared to the injected 
 of 1 \mps{.} A notable exception to the inaccuracy of the GP activity model is in its failure to
 capture the pile up of injected RVs at 0 \mps{} corresponding to when the single simulated starspot is
 not visible. Although, the mean GP activity model at those epochs are often consistent within $1\sigma$ of
-0 \mps{.} Similarly the recovered keplerian model is in phase and with the injected period owing to our
+0 \mps{.} Similarly the recovered Keplerian model is in phase and with the injected period owing to our
 treatment of that signal as one whose ephemeris is well-constrained by some unseen hypothetical data.
 The recovered semi-amplitude however is somewhat inaccurate at $K=1.83 \pm 0.55$ \mps{} which is underestimated
 compared to the injected semi-amplitude of 2 \mps{.} However it is clearly consistent within $1\sigma$.
 This $\sim 10$\% underestimation in the value of $K$ causes the slight offset from unity in the slope
-of the line in Fig.~\ref{fig:RVcomp} comparing the recovered and injected keplerian signals.
+of the line in Fig.~\ref{fig:RVcomp} comparing the recovered and injected Keplerian signals.
 
 \begin{figure}
   \centering
@@ -950,7 +950,7 @@ of the line in Fig.~\ref{fig:RVcomp} comparing the recovered and injected kepler
           {\emph{Left panel}: comparison of the injected RV activity signal to the recovered GP activity model.
             The mean GP model appears to lie along the one-to-one line (\emph{black line}) with a residual rms
             of 0.72 \mps{.} \emph{Right panel}:
-            comparison of the injected keplerian signal to the recovered keplerian model. }
+            comparison of the injected Keplerian signal to the recovered Keplerian model. }
   \label{fig:RVcomp}
 \end{figure}
 

@@ -194,7 +194,8 @@ single rotation cycle, the rotation effect is
 
 \noindent where the first time derivative of the fractional active region coverage is
 $\dot{F}(t) = -\dot{\Psi}(t)$ from Eq.~\ref{eq:ffp}. As such, the rotation effect tends to dominate
-on rapidly rotating stars wherein $\dot{F}(t)$ is large. Conversely, the convective blueshift effect
+on rapidly rotating stars (\prot{} $\lesssim$ a few days) 
+wherein $\dot{F}(t)$ is large. Conversely, the convective blueshift effect
 operates by active regions disrupting the homogeneity of the stellar disk on which convective
 blueshift is ongoing everywhere. This disruption scales with the fractional spot coverage and
 the angle between the spot normal and the line-of-sight which results in
@@ -723,13 +724,16 @@ is easy to understand qualitatively. Namely, we can expect a periodic component 
 RV correlations because active regions rotate in and out of view at the stellar rotation period
 although the periodicity of the correlations need not be at \prot{} and may instead appear
 at a low order harmonic of \prot{} such as in the case of rapidly rotating spotted stars 
-(see Sect.~\ref{sect:ffp}). But in addition to these periodic variations we can also expect activity
+(see Sect.~\ref{sect:ffp}). It is worth noting that a precise value of \prot{} may not exist 
+for stars with significant differential rotation although that effect is known to be small 
+for cool M dwarf stars \citep{barnes05}.
+But in addition to these periodic variations we can also expect activity
 arising from active regions to not be strictly periodic because of active region evolution through
 which their sizes, temperatures, and spatial distributions will vary. Thus we
 have a physical justification for the adaption of a
 quasi-periodic covariance kernel as it includes the first-order periodic structure of the activity
 signal as well as the squared exponential term
-whose timescale can be thought of as characterizing the active region lifetimes. \\
+whose timescale can be thought of as characterizing the lifetimes of the active regions. \\
 
 The optimization of the quasi-periodic covariance kernel over competing kernel functions
 was demonstrated by \cite{grunblatt15} on the active Sun-like star Kepler-78. However, it
@@ -857,7 +861,7 @@ planet model. \\
 
 \begin{figure}
   \centering
-  %\animategraphics[width=\textwidth,controls,loop]{5}{figures/GPsample_}{0}{49}
+  \animategraphics[width=\textwidth,controls,loop]{5}{figures/GPsample_}{0}{49}
   \caption[Samples from a quasi-periodic Gaussian process prior distribution.]
           {Continuous samples from a quasi-periodic Gaussian process prior distribution
 	    over the continuous variable time (\emph{x-axis}). The samples have arbitrary 
@@ -869,7 +873,7 @@ planet model. \\
 
 \begin{figure}
   \centering
-  %\animategraphics[width=\textwidth,controls,loop]{5}{figures/GPsample_pred_}{0}{49}
+  \animategraphics[width=\textwidth,controls,loop]{5}{figures/GPsample_pred_}{0}{49}
   \caption[Samples from a quasi-periodic Gaussian process predictive distribution.]
           {Independent samples from a quasi-periodic Gaussian process predictive distribution
             conditioned on ten synthetic data points with arbitrary units and

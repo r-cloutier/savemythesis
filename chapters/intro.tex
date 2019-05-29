@@ -1,7 +1,5 @@
 \chapter[Introduction]{Introduction: radial velocity studies of planets around small stars}
 
-\textbf{?? uncomment animations}
-
 \section{Exoplanets}  \label{sect:exoplanets}
 Since the first detection of an exo-solar planet around a main sequence star 
 \citep{mayor95}
@@ -53,9 +51,24 @@ characterization of temperate M dwarf planets a much more tractable problem obse
 
 A critical caveat to the aforementioned benefits of focusing on planet searches around M dwarfs
 is that many of these stars tend to be active (see Sect.~\ref{sect:activity}). This fact not only
-deters the prospect of finding signs of life like us on M dwarf planets but it also inhibits
+deters the prospect of finding signs of life like us on M dwarf planets 
+\citep[e.g.][]{owen16,omalley17} but it also inhibits
 our ability to obtain accurate and precise empirical parameters of their planetary systems.
-Overcoming this problem is one of the primary topics of this thesis.
+Overcoming this problem is one of the primary topics of this thesis. \\
+
+M dwarfs effective temperatures span a wide range of values: \teff{} $\in [2700,3800]$ K. Their relatively 
+cool temperatures compared to that of the Sun (i.e. $T_{\text{eff},\odot} = 5777$ K) cause their  
+spectra to peak at near-IR wavelengths between $\sim 0.8-1.1$ \micron{} rather than in the optical.
+As such, many of the next generation of radial velocity spectrographs are being adapted from optical
+instruments to the development of near-IR spectrographs
+(e.g. SPIRou; \citealt{delfosse13,artigau14}, NIRPS; \citealt{bouchy17}, CARMENES;
+\citealt{quirrenbach14}, HPF; \citealt{mahadevan12}, IRD; \citealt{tamura12}).
+Spectrographs in the near-IR wavelength domain are optimized to 
+observe cool M dwarfs by maximizing the flux received from those stars. However, as will be discussed
+throughout this thesis, a number of issues
+and benefits accompany the use of near-IR spectrographs including the increased contamination of 
+stellar spectra by telluric spectral features and the reduced effects of
+radial velocity stellar activity from active regions (Sect.~\ref{sect:activity}).
 
   
 \section{Methods of Detecting Exoplanets} \label{sect:detection}
@@ -200,7 +213,7 @@ cosine term in Eq.~\ref{eq:rv}. \\
 
 \begin{figure}
   \centering
-  %\animategraphics[width=\textwidth,controls,loop]{200}{figures/RVcurve_}{0}{49}
+  \animategraphics[width=\textwidth,controls,loop]{200}{figures/RVcurve_}{0}{49}
   \caption[Animation of observed radial velocities for different orbital configurations.]
       {An animation of the orbits of two (non-interacting) planets of equal
     mass and on 2 day orbits around a 0.2 solar mass star. The first planet has a circular
@@ -589,8 +602,8 @@ photospheric boundary will be blueshifted whereas the receding fluid within the
 `intergranular lanes' will be redshifted. The domination of the stellar
 surface area by hot parcels results in a granulated star having a net \emph{convective
   blueshift} that in turn creates an asymmetry in the disk-integrated spectral line profile
-with additional power at blueshifted velocities. The effect of granulation is also known
-to decrease towards cool M dwarf stars \citep{dumusque11a,meunier17}. \\
+with additional power at blueshifted velocities. The effect of granulation is also
+empirically known to decrease towards cool M dwarf stars \citep{dumusque11a,meunier17}. \\
 
 \begin{figure}
   \centering
@@ -680,7 +693,7 @@ rotating population (\prot{} $\lesssim 3$ days) and a slowly rotating population
 have a distinct range of ages with
 the slow rotators belonging to an older stellar population based on their galactic
 kinematics \citep{irwin11} and resulting from magnetic-braking over time.
-Indeed, a fairly robust relation exists for GK and early M dwarf stars between stellar
+Indeed, a robust relation exists for GK and early M dwarf stars between stellar
 mass, age, and rotation \citep[gyrochronology;][]{barnes03}. \\
 
 \begin{figure}

@@ -118,7 +118,7 @@ Together with calculations of the exposure time, \nrv{} can be used to
 compute the total observing time required to detect each TESS planet with RVs.
 
 \subsection{Calculating \sigK{} from the Fisher Information} \label{RVFCsect:fisher}
-Given an RV time-series of a TOI $\mathbf{y}(\mathbf{t})$ taken a times $\mathbf{t}$,
+Given an RV time series of a TOI $\mathbf{y}(\mathbf{t})$ taken a times $\mathbf{t}$,
 the amount of information present in the data with regards to the value of
 the planet's RV semi-amplitude $K$ is contained in the Fisher information. The amount of
 information regarding $K$ is the $K$ measurement uncertainty \sigK{,} that is calculated by
@@ -145,9 +145,9 @@ Explicitly,
 \end{equation}
   
 \noindent is the generalized ln likelihood of $\mathbf{y}(\mathbf{t})$ given a model
-$\boldsymbol{\mu}(\mathbf{t})$. The RV time-series and model are each 1D vectors containing
+$\boldsymbol{\mu}(\mathbf{t})$. The RV time series and model are each 1D vectors containing
 \nrv{} measurements. The matrix $C$ is the \nrv{} $\times$ \nrv{} covariance matrix of the residual
-time-series $\mathbf{y}(\mathbf{t})-\boldsymbol{\mu}(\mathbf{t})$. Once constructed,
+time series $\mathbf{y}(\mathbf{t})-\boldsymbol{\mu}(\mathbf{t})$. Once constructed,
 the Fisher information matrix can be inverted to return a new covariance matrix; the covariance matrix
 of the $n$ model parameters and whose diagonal elements are equal to the measurement variances in the
 model parameters. \\
@@ -191,9 +191,9 @@ $\boldsymbol{\sigma}_{\text{RV}}^2(\mathbf{t})$ along the diagonal. The resultin
 \noindent modulo a constant offset that is independent of the model parameters. \\
 
 The second simplifying assumption is rather
-than considering the full measurement uncertainty time-series $\boldsymbol{\sigma}(\mathbf{t})$, we will
+than considering the full measurement uncertainty time series $\boldsymbol{\sigma}(\mathbf{t})$, we will
 assume that the RV measurement uncertainty is well-characterized over time by a scalar value \sigRV{;} a common
-assumption when deriving model parameter uncertainties from time-series observations \cite[e.g.][]{gaudi07, carter08}.
+assumption when deriving model parameter uncertainties from time series observations \cite[e.g.][]{gaudi07, carter08}.
 Thirdly, in our Keplerian model 
 we will assume that the values of $P$ and $T_0$ are known a-priori with absolute certainty
 from the planet's TESS transit light curve. Although this is not strictly true, $P$ and $T_0$ are often
@@ -227,7 +227,7 @@ required to detect $K$ of any transiting planet, with a precision of \sigK{,} wh
 can be accurately treated as white.
 
 \subsubsection{Calculating \sigK{} when relaxing the white RV noise approximation} \label{RVFCsect:fisherGP}
-In deriving Eq.~\ref{RVFCeq:sigK} we must assume that the RV time-series noise was Gaussian
+In deriving Eq.~\ref{RVFCeq:sigK} we must assume that the RV time series noise was Gaussian
 distributed. However, numerous analyses of transiting systems have shown that there exist cases in which this is
 a poor assumption. Instead the RV residuals---after the removal of planetary models---can be temporally correlated
 often owing to the presence of RV signals arising from stellar activity
@@ -267,12 +267,12 @@ measurement precision on the remaining hyperparameters. \\
 The elements of the Fisher information matrix are computed identically as before from Eqs.~\ref{RVFCeq:fisher}
 and~\ref{RVFCeq:lnl} but now using a non-diagonal covariance matrix $C$ (Eq.~\ref{RVFCeq:cov}). The derivation
 of the elements of $B$ are provided in Appendix~\ref{RVFCapp:fishergp}. The general effect of computing \sigK{}
-from this new Fisher information matrix is to decrease its expected value given a time-series of fixed
+from this new Fisher information matrix is to decrease its expected value given a time series of fixed
 \nrv{} compared to the value obtained when using
 Eq.~\ref{RVFCeq:sigK}. The resulting \nrv{} is typically larger than in the white noise limit.
 However unlike computing \sigK{} in the white noise limit, the value of \sigK{} when including a
 GP correlated noise activity model is dependent on the values of the model parameters themselves
-and on the time-series due to the $t_i-t_j$ terms in the covariance kernel (Eq.~\ref{RVFCeq:kernel})
+and on the time series due to the $t_i-t_j$ terms in the covariance kernel (Eq.~\ref{RVFCeq:kernel})
 and the appearance of $\mathbf{y}(\mathbf{t})$ and
 $\boldsymbol{\sigma}(\mathbf{t})$ in the ln likelihood such that
 
@@ -281,13 +281,13 @@ $\boldsymbol{\sigma}(\mathbf{t})$ in the ln likelihood such that
 \end{equation}
 
 \noindent Therefore estimating \sigK{} from the Fisher
-information including correlated noise requires time-series as input and numerical values for all model
+information including correlated noise requires time series as input and numerical values for all model
 parameters in $\boldsymbol{\theta}$. \\
 
 We note that when including a GP correlated noise activity model, a simple analytical expression
 for \sigK{} in terms of $\sigma_{\text{RV}}$ and \nrv{} cannot be derived. In this case \sigK{} must be
 derived as a function of \nrv{}
-from time-series of varying \nrv{} used to compute the full Fisher
+from time series of varying \nrv{} used to compute the full Fisher
 information using Eq.~\ref{RVFCeq:fisher} before calculating the covariance matrix of the model parameters
 $C'=B^{-1}$ and ultimately \sigK{} from its corresponding diagonal matrix element:
 
@@ -297,7 +297,7 @@ $C'=B^{-1}$ and ultimately \sigK{} from its corresponding diagonal matrix elemen
 \end{equation}
 
 \subsection{Calculating \sigRV{} for TOIs in the photon-noise limit} \label{RVFCsect:sigrv}
-Calculating \sigK{} from RV time-series with either white noise or correlated noise is dependent
+Calculating \sigK{} from RV time series with either white noise or correlated noise is dependent
 in-part on the RV measurement uncertainty. Here we estimate the photon-noise limited
 RV measurement precision \sigRV{} following the formalism from \cite{bouchy01}. Their formalism
 is used to calculate \sigRV{} given the RV information content contained within a stellar spectrum
@@ -409,7 +409,7 @@ rotation \citep[e.g.][]{forveille09, bonfils13, delfosse13b}.
 Another source of dispersion in observed RVs may be
 from additional planets not seen in-transit \citep[e.g.][]{christiansen17, cloutier17b, bonfils18};
 an effect that is especially pertinent when searching for small planets whose RV semi-amplitudes are
-less than the characteristic RV uncertainty of the time-series \citep[e.g.][]{astudillodefru17a}. \\
+less than the characteristic RV uncertainty of the time series \citep[e.g.][]{astudillodefru17a}. \\
 
 In order to compute \nrv{} for each TOI using our white noise model we will
 absorb the aforementioned additional noise sources into an effective RV uncertainty \sigeff{} rather than the
@@ -425,14 +425,14 @@ Eq.~\ref{RVFCeq:sigK} can then be rearranged for \nrv{} in terms of the effectiv
   \label{RVFCeq:nrv}
 \end{equation}
 
-\noindent In empirical time-series with white RV residuals
+\noindent In empirical time series with white RV residuals
 \sigeff{} can be estimated from the rms of the residual dispersion following the removal of
 all modelled planets. Eq.~\ref{RVFCeq:nrv} is not applicable to 
-empirical time-series that require a GP correlated noise activity model. \\
+empirical time series that require a GP correlated noise activity model. \\
 
 In Sect.~\ref{RVFCsect:accuracy} we will compare the results from real RV campaigns to our 
 analytic estimates as a test of their validity. 
-However unlike in actual RV time-series, the RV jitter rms
+However unlike in actual RV time series, the RV jitter rms
 resulting from activity and unknown planets is not known a-priori for any of the TOIs in the
 \citetalias{sullivan15} synthetic catalog. We therefore need to employ generalized statistical arguments
 to estimate the expected RV jitter from activity and unknown planets for each TOI. These estimates are
@@ -634,12 +634,12 @@ near their host star's habitable zone\footnote{There are approximately nine temp
 
 \section{Model Comparison to Observations}  \label{RVFCsect:accuracy}
 In Sect.~\ref{RVFCsect:model} we derived Eq.~\ref{RVFCeq:nrv} for the number of RV observations required to measure
-$K$ of a transiting planet with a precision of \sigK{} in an RV time-series with white noise and an
+$K$ of a transiting planet with a precision of \sigK{} in an RV time series with white noise and an
 effective RV uncertainty \sigeff{.} Similar calculations can be made of \sigK{(}\nrv{)} in the presence of
 correlated noise using the formalism discussed in Sect.~\ref{RVFCsect:fisherGP} and Eq.~\ref{RVFCeq:sigKGP}. 
 Here we compare our analytic estimates of \nrv{-}--under the applicable noise condition---to
-observational results from existing RV time-series to ensure that our model provides
-an accurate approximation to \nrv{} when applied to the TOIs. We consider two sets of RV time-series
+observational results from existing RV time series to ensure that our model provides
+an accurate approximation to \nrv{} when applied to the TOIs. We consider two sets of RV time series
 of transiting planetary systems featuring either a white or correlated noise model. The latter models being
 restricted to a quasi-periodic GP treatment of correlated RV residuals as was assumed in Sect.~\ref{RVFCsect:fisherGP}.
 All systems considered must also obey the
@@ -649,9 +649,9 @@ assumptions imposed when deriving \sigK{.} To recapitulate, those assumptions ar
 \item the planet's orbital solution is well-approximated as circular.
 \item The value of the TESS planet's $P$ and $T_0$ are known to ultra-high precision compared to $K$ such
   that correlations between the measured values of $P$, $T_0$, and $K$ are unimportant.
-\item The window function of the RV time-series is (approximately) sampled uniformly over the planet's full
+\item The window function of the RV time series is (approximately) sampled uniformly over the planet's full
   orbital phase.
-\item The white RV time-series have a characteristic scalar RV uncertainty equal to the rms of the RV residuals.
+\item The white RV time series have a characteristic scalar RV uncertainty equal to the rms of the RV residuals.
 \end{enumerate}
 
 \noindent To make the analytic estimates of \nrv{} for each observed planetary system featuring a white
@@ -660,11 +660,11 @@ system. By the nature of the Fisher information the value of \sigK{} for each mo
 multi-planet system should be equal so long as all ephemerides are well-constrained and
 planet semi-amplitudes are not correlated. Indeed, the measured planet
 semi-amplitudes should be uncorrelated when all planets' are weakly interacting with distinct orbital
-periods. For each RV time-series we set the value of \sigeff{} to the
+periods. For each RV time series we set the value of \sigeff{} to the
 rms of the RV residuals following the removal of all RV signals modelled by the authors. Some authors
 report their residual rms values explicitly whilst others treat the stellar activity signal as
 white by fitting an additive scalar jitter parameter that we
-add in quadrature to the median RV measurement uncertainty of the time-series to estimate \sigeff{.}
+add in quadrature to the median RV measurement uncertainty of the time series to estimate \sigeff{.}
 The planetary systems with white noise models
 considered in this analysis are summarized in Table~\ref{RVFCtable:compare_white}. \\
 
@@ -674,9 +674,9 @@ To compare our formalism in the presence of correlated noise to observed systems
 with a quasi-periodic GP correlated noise activity model. Namely CoRoT-7 \citep{haywood14},
 K2-18 \citep{cloutier17b}, Kepler-21 \citep{lopezmorales16}, Kepler-78 \citep{grunblatt15}, and
 LHS 1140 \citep{dittmann17a}. The calculated value of \nrv{} for these systems is obtained by evaluating
-\sigK{} from Eq.~\ref{RVFCeq:sigKGP} using each systems' unique RV time-series $\mathbf{t},\mathbf{y},$ and
+\sigK{} from Eq.~\ref{RVFCeq:sigKGP} using each systems' unique RV time series $\mathbf{t},\mathbf{y},$ and
 $\boldsymbol{\sigma}_{\text{RV}}$ from their
-%set of time-series of increasing \nrv{} from 10-$10^3$, in steps of
+%set of time series of increasing \nrv{} from 10-$10^3$, in steps of
 %90, before fitting a powerlaw to \nrv{(}\sigK{)} and interpolating to the desired value of \sigK{.}
 respective papers along with the semi-amplitude and GP hyperparameter values plus uncertainties.
 The maximum likelihood parameter values are reported in Table~\ref{RVFCtable:compare_red}.
@@ -698,10 +698,10 @@ with one notable exception. Quantitatively, the rms of the O-C \nrv{} values is 
 cases alone and 5.2 for all planetary systems included in Fig.~\ref{RVFCfig:compare} with the exception of
 the curious outlier LHS 1140.
 Our calculated value of \nrv{} for LHS 1140 is overestimated relative to the
-size of the RV time-series presented in \cite{dittmann17a} from which $K$ is measured to be $5.34 \pm 1.1$
+size of the RV time series presented in \cite{dittmann17a} from which $K$ is measured to be $5.34 \pm 1.1$
 \mps{.} After Monte-Carlo sampling $K$ and the GP hyperparameters from their measurement
 uncertainties we calculate a median \nrv{}$=265 \pm 64$ which is $\sim 1.8$ times greater than the actual
-time-series size (\nrv{}$=144$) at $1.9\sigma$. The exact cause of this anomalous discrepancy is not known
+time series size (\nrv{}$=144$) at $1.9\sigma$. The exact cause of this anomalous discrepancy is not known
 but may be related to how the GP covariance function is implemented although this investigation is
 beyond the scope of this paper.  
 
@@ -794,8 +794,8 @@ particular subset of TOIs. Total observing times are then calculated as
 \nrv{}$\cdot (t_{\text{exp}}+t_{\text{overhead}})$. Because the exact value of $t_{\text{overhead}}$ varies
 between observatories, we will set $t_{\text{overhead}}=0$ such that its effect can easily
 be added to the total observing times later-on for non-zero values. To estimate \nrv{} in the presence
-of correlated RV noise we construct time-series of increasing \nrv{} from $10-10^3$ in steps of 90.
-For our time-series we adopt a simple uniform window function $\mathbf{t}$ spanning 100 days
+of correlated RV noise we construct time series of increasing \nrv{} from $10-10^3$ in steps of 90.
+For our time series we adopt a simple uniform window function $\mathbf{t}$ spanning 100 days
 which is sufficient to sample the full orbit of $\sim 99$\% of TOIs. Such simplistic
 time sampling is admittedly unrealistic given the expected number and frequency of nights
 lost due to poor observing conditions (clouds, poor seeing, etc). To that end we
@@ -804,18 +804,18 @@ which included longer baselines and gaps due to observing seasons.
 We found results roughly consistent with the uniform window
 functions although this need not be true for \emph{any} window function with arbitrary complexity
 such as those which are often obtained in practice over many observing seasons.
-For each of the 12 time-series with a unique \nrv{} we compute \sigK{} before
+For each of the 12 time series with a unique \nrv{} we compute \sigK{} before
 interpolating \nrv{(}\sigK{)} to the desired value of \sigK{.} The
 initial guesses of the GP hyperparameters $\{\lambda, \Gamma, P_{\text{GP}} \}$ are adopted from
 from \cite{dittmann17a} (see Methods section \emph{Radial-velocity analysis with Gaussian process regression.})
 with the remaining GP hyperparameters set to $a=\sqrt{2}\sigma_{\text{act}}$ and
-$\sigma_{\text{jitter}}=\sigma_{\text{planets}}$. The RV time-series $\mathbf{y}(\mathbf{t})$
+$\sigma_{\text{jitter}}=\sigma_{\text{planets}}$. The RV time series $\mathbf{y}(\mathbf{t})$
 contains Keplerian contribution from the
 TESS planet and other sampled planets if applicable, plus correlated noise from a sample of the GP prior
 distribution, and white noise featuring contributions from the RV noise floor of the spectrograph  
 (Table~\ref{RVFCtable:spectrographs}) and the photon-noise limited measurement precision:
 $\sqrt{\sigma_{\text{floor}}^2 + \sigma_{\text{RV}}^2}$. 
-The RV measurement uncertainty time-series $\boldsymbol{\sigma}_{\text{RV}}(\mathbf{t})$
+The RV measurement uncertainty time series $\boldsymbol{\sigma}_{\text{RV}}(\mathbf{t})$
 contains the aforementioned value repeated \nrv{} times.
 
 

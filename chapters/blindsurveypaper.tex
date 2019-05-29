@@ -317,19 +317,19 @@ in an effect known as the suppression of \emph{convective blueshift} \citep{drav
 
 In the limit of simple distributions of ARs, the observed RV structure from the two aforementioned effects 
 is dependent on the fractional coverage of the visible stellar disk by the ARs and its first time
-derivative \citep{aigrain12}. For each simulated RV time-series, we sample the relevant physical
+derivative \citep{aigrain12}. For each simulated RV time series, we sample the relevant physical
 parameters of the ARs (i.e. AR sizes and spatial distribution) and 
 simulate the corresponding RV activity, full width at half maximum (FWHM), bi-sector inverse slope (BIS),
-and photometric time-series arising from both the flux effect and from the suppression of convective blueshift 
-using the \texttt{SOAP 2.0} code \citep{dumusque14}. The FWHM and BIS time-series are shape parameters of
+and photometric time series arising from both the flux effect and from the suppression of convective blueshift 
+using the \texttt{SOAP 2.0} code \citep{dumusque14}. The FWHM and BIS time series are shape parameters of
 the cross-correlation function between the observed stellar spectra and the template spectrum used to measure
-the stellar RVs in an observing campaign. These ancillary time-series are sensitive to the presence of ARs but not to planets
+the stellar RVs in an observing campaign. These ancillary time series are sensitive to the presence of ARs but not to planets
 making them useful diagnostics for distinguishing activity-induced RV signals from planetary signals.
-In particular, the FWHM time-series will be used in
+In particular, the FWHM time series will be used in
 Sect.~\ref{BSsect:GP} to train our RV activity model and disentangle RV activity signals from planetary signals. \\
 
-The \texttt{SOAP 2.0} code outputs time-series that are phase-folded to the input 
-stellar rotation period. These time-series are initially treated as strictly periodic
+The \texttt{SOAP 2.0} code outputs time series that are phase-folded to the input 
+stellar rotation period. These time series are initially treated as strictly periodic
 and interpolated to the epochs of observation. In
 this way we ignore any contribution from differential rotation whose amplitude has been shown to
 decrease with decreasing stellar mass \citep{donati08, morin08, kitchatinov11}
@@ -456,7 +456,7 @@ is unknown, we treat the observed photometric variability amplitude as an averag
 approximately, we rescale our
 derived AR lifetime scaling to the interval $0.1-2$---instead of $0-1$---to account for the varying levels of
 stellar activity up to a factor of two greater than the maximum value and down to a minimum value slightly greater
-than zero. We then use this scaling to rescale the injected activity in both the RVs and in the ancillary time-series. \\
+than zero. We then use this scaling to rescale the injected activity in both the RVs and in the ancillary time series. \\
 
 In general, our rescalings were optimized such that the root-mean-square (rms) of the injected RV activity is
 roughly consistent with the upper envelope of the RV activity rms observed with HARPS.
@@ -477,7 +477,7 @@ and GJ 436 \citep{lanotte14}.  \\
 
 We note that the comparison depicted in Fig.~\ref{BSfig:activityrms}
 is not one-to-one as RV activity is an intrinsically chromatic effect and our
-simulated time-series are computed at nIR wavelengths whereas the HARPS measurements are taken in the
+simulated time series are computed at nIR wavelengths whereas the HARPS measurements are taken in the
 visible. The effect of temperature contrast between ARs and the stellar photosphere on observed RV activity
 is known to decrease towards longer wavelengths. Conversely, activity from Zeeman broadening increases towards
 longer wavelengths and is known to be an important source of activity in the nIR \citep{hebrard14,moutou17}.
@@ -528,15 +528,15 @@ Lastly, we ignore flares in our activity model because their distinctive
 spectral signature allows them to be flagged and removed from the subsequent analysis
 \citep{schmidt12, angladaescude16}.
 However, the high occurrence rate of flaring events on many M dwarfs may prove costly when attempting to
-construct large time-series of uncontaminated RVs.
+construct large time series of uncontaminated RVs.
 
 
 \section{Simulated Survey} \label{BSsect:survey}
 In this study we conduct a detailed Monte-Carlo (MC) simulation of the SLS-PS for the purpose of
 predicting the SPIRou planet detection yield. To do so, we must construct a statistically significant
-number of unique RV time-series for each of the 100 stars that we target throughout the simulated SLS-PS.
-In practice we simulate 100 unique RV time-series for each star totalling $10^4$ realizations in the full
-simulated SLS-PS. Each RV time-series contains unique signals from planets, which are sampled from their
+number of unique RV time series for each of the 100 stars that we target throughout the simulated SLS-PS.
+In practice we simulate 100 unique RV time series for each star totalling $10^4$ realizations in the full
+simulated SLS-PS. Each RV time series contains unique signals from planets, which are sampled from their
 known occurrence rates around early M dwarfs (see Sect.~\ref{BSsect:planetsample}), from physical models
 of stellar activity (as described in Sect.~\ref{BSsect:activity}), and from instrumental noise.
 Each contribution is sampled
@@ -546,17 +546,17 @@ in accordance with the expected subset of SPIRou's time allocation that will be 
 discovery of new exoplanetary systems in the SLS-PS. We note however that at this time the exact number of available
 nights dedicated to the SLS-PS, nor the duration of the full SLS-PS, have been established absolutely. In addition
 to the RVs, we also derive various spectroscopic activity indicators arising from stellar activity
-which are contemporaneous with the RVs. One such ancillary time-series is the full width at half maximum
+which are contemporaneous with the RVs. One such ancillary time series is the full width at half maximum
 (FWHM) of the cross-correlation function which will be used to
 train non-parametric Gaussian process models of the RV activity based on its common covariance structure with
 the FWHM (see Sect.~\ref{BSsect:GP}). SPIRou is also unique in that it simultaneously operates its spectroscopic and
-polarimetry modes thus providing a contemporaneous diagnostic of the star's magnetic topology. Such time-series
+polarimetry modes thus providing a contemporaneous diagnostic of the star's magnetic topology. Such time series
 may also
 be used to model RV signals from magnetically ARs \citep{hebrard16} although we do not consider
-such time-series in this study. \\
+such time series in this study. \\
 
 In each
-simulated RV time-series we attempt to recover the injected planets to form an estimate of the expected
+simulated RV time series we attempt to recover the injected planets to form an estimate of the expected
 planet population that will be discovered with SPIRou. This is facilitated by the joint modelling of stellar
 activity and planetary signals. This allows for the self-consistent characterization of each RV signal and the
 detection of a subset of planets which are nominally hidden by their host star's intrinsic RV activity.
@@ -565,7 +565,7 @@ detection of a subset of planets which are nominally hidden by their host star's
 \subsection{Window Functions} \label{BSsect:wf}
 In each MC realization, the unique window function $\mathbf{t}$ is the vector of length \nobs{} containing
 the epochs of observation in barycentric julian dates (BJD). The window function describes the time sampling of
-our time-series. To derive a set of window functions for each star in the SPIRou input catalog
+our time series. To derive a set of window functions for each star in the SPIRou input catalog
 we run a separate MC simulation of stellar observing sequences for all targets taking into account
 when each
 star is visible from CFHT on Maunakea with an airmass of $<2.5$ based on its celestial coordinates.
@@ -660,7 +660,7 @@ was still assumed to be restricted to non-dark-time observations thus preserving
 orbital periods of $\sim 30$ days.
 
 
-\subsection{Radial Velocity Time-Series Construction} \label{BSsect:timeseries}
+\subsection{Radial Velocity Time Series Construction} \label{BSsect:timeseries}
 In each MC realization, 
 the RV contribution from $N_p$ injected planets in the simulated planetary system (see Sect.~\ref{BSsect:planetsample})
 is calculated via the superposition of $N_p$ Keplerian orbital solutions. Each Keplerian RV$_{kep}$ is parameterized by
@@ -689,8 +689,8 @@ and is best motivated by its ability to negate the
 need to perform costly numerical integrations of each sampled planetary system. However, we note that
 this approximation naturally excludes certain dynamical effects in multi-planet systems such as planet-planet
 interactions and mean-motion resonances which can affect the planet-induced periodicities within
-the RV time-series and therefore also affect our ability to detect those planets.
-Although the former effect is not accounted for in our simulated time-series, its amplitude in real
+the RV time series and therefore also affect our ability to detect those planets.
+Although the former effect is not accounted for in our simulated time series, its amplitude in real
 systems is typically small compared to the RV measurement uncertainty as a result of dynamical restrictions
 on multi-planetary systems making tightly-packed systems less stable over long time-scales and therefore
 rarely seen in nature.
@@ -733,15 +733,15 @@ due to the increased number of available spectral features and corresponding inc
   \centering
   \includegraphics[width=0.6\hsize]{figures/sigmaRV.png}%
   \caption[RV measurement uncertainty versus $J$-band magnitude and \vsini{.}]
-      {\small The median RV measurement uncertainty in each simulated RV time-series $\sigma_{\text{RV}}$
+      {\small The median RV measurement uncertainty in each simulated RV time series $\sigma_{\text{RV}}$
     as a function of the star's $J$-band magnitude and projected stellar rotation velocity \vsini{.} A noise floor is
     imposed at 1 \mps{.} The histogram shown in the right panel is in linear units.}
   \label{BSfig:sigmaRV}
 \end{figure}
 
-Similarly to the construction of the RV activity time-series at the epochs in $\mathbf{t}$, the FWHM and BIS
+Similarly to the construction of the RV activity time series at the epochs in $\mathbf{t}$, the FWHM and BIS
 ancillary times-series are constructed from our \texttt{SOAP 2.0} simulations (see Sect.~\ref{BSsect:soap}) 
-at the same epochs as the RVs. These contemporaneous time-series will be used in Sect.~\ref{BSsect:GP} to
+at the same epochs as the RVs. These contemporaneous time series will be used in Sect.~\ref{BSsect:GP} to
 model the RV activity and help to detect underlying planetary signals.
 
 
@@ -1016,7 +1016,7 @@ Proxima Centauri; \citealt{robertson16}) will deter our ability to detect new ex
 A number of correction techniques have been developed by various groups
 within the field to mitigate these effects and detect planets in RV \citep[see reviews in][]{fischer16, dumusque17}.
 One particularly promising method is the use of Gaussian process regression to model correlated noise (i.e. activity)
-in RV time-series. \\
+in RV time series. \\
 
 Gaussian processes (GP) belong to a class of \emph{non-parametric} regression models from the field of machine-learning
 \citep{rasmussen05}.
@@ -1024,8 +1024,8 @@ Being non-parametric, the functional form of the activity model is unspecified a
 data itself. In this way the GP activity model does not assume 
 any physical model of the underlying processes responsible for the observed activity. Instead the GP is
 used to model the covariance properties 
-of an input time-series according to a user-defined covariance function which itself is described by a small number
-of hyperparameters\footnote{`Small' compared to the size of the input time-series which would be required to fully
+of an input time series according to a user-defined covariance function which itself is described by a small number
+of hyperparameters\footnote{`Small' compared to the size of the input time series which would be required to fully
   describe the covariance properties of the input dataset.}.
 %Because of this, GP regression models are sometimes referred to as
 %\emph{semi-parametric}.
@@ -1046,7 +1046,7 @@ is computed from the vector of measurement uncertainties $\boldsymbol{\sigma}(\m
 the Kronecker delta function $\delta_{ij}$, and
 the user-defined covariance function $k(t_i,t_j)$ describing the covariance between two measurements taken at
 times $t_i$ and $t_j$ for $i,j \in [1,n_{\text{obs}}]$.
-Obtaining the GP model of an arbitrary input time-series $\mathbf{y}$ and uncertainty vector
+Obtaining the GP model of an arbitrary input time series $\mathbf{y}$ and uncertainty vector
 $\boldsymbol{\sigma}$ is done by maximizing the Gaussian logarithmic likelihood function
 
 \begin{equation}
@@ -1099,20 +1099,20 @@ $\boldsymbol{\sigma}(\mathbf{t}^*)$ must be set to zero in Eq.~\ref{BSeq:K}.
 
 
 \subsection{Modelling RV Activity with GP Regression} \label{BSsect:regression}
-As in nature, the RV time-series from our MC simulations contain contributions from both planetary companions
+As in nature, the RV time series from our MC simulations contain contributions from both planetary companions
 as well as activity from ARs. These sources of the RV activity signals also have manifestations in other
-spectroscopic time-series, albeit not strictly at the same rotation period \citep{hebrard16}. One example is the
+spectroscopic time series, albeit not strictly at the same rotation period \citep{hebrard16}. One example is the
 full width at half maximum (FWHM) of the CCF which we simulate along with the RV signals (see Sect.~\ref{BSsect:activity}).
 As is often the case when searching for small planets
 in RV, one cannot distinguish a-priori an RV signal from a planet or from activity. However the covariance
-properties in the FWHM time-series will be related to the covariance properties in RV residuals after the removal
-of planetary sources. We therefore use the FWHM time-series to train the hyperparameters of our quasi-periodic
+properties in the FWHM time series will be related to the covariance properties in RV residuals after the removal
+of planetary sources. We therefore use the FWHM time series to train the hyperparameters of our quasi-periodic
 GP prior distribution. In principle one could have chosen an alternative activity indicator such as the BIS or
 contrast of the CCF however recent HARPS observations have demonstrated that the strongest correlations between the RVs and
-an activity indicator often exist between the RV and FWHM time-series 
+an activity indicator often exist between the RV and FWHM time series 
 (e.g. \citealt{astudillodefru17a}, Bonfils et al. 2017b in prep). However
 this is not universal. Similarly, the contrast or depth of the CCF is not used in place
-of the FWHM because although the two time-series are highly correlated, the CCF contrast is known to be more strongly
+of the FWHM because although the two time series are highly correlated, the CCF contrast is known to be more strongly
 affected by instrumental noise in practice.
 Using a spectroscopic training set like the FWHM also has the benefit of being obtained contemporaneously with the
 RV measurements therefore probing the star's activity at the same epochs in which we are searching for planets.
@@ -1123,7 +1123,7 @@ To reduce computational wall time of our full MC simulation
 we do not compute a GP activity model in each MC realization of our simulated
 SLS-PS. The GP activity model is only computed when the rms of the injected RV activity exceeds the median RV measurement
 uncertainty. In such cases we run a Markov Chain Monte-Carlo
-(MCMC) on the FWHM time-series to obtain the marginalized posterior probability density functions (PDF)
+(MCMC) on the FWHM time series to obtain the marginalized posterior probability density functions (PDF)
 of the four GP hyperparameters: $a,\lambda,\Gamma$, and $P_{\text{GP}}$.
 To sample the posterior PDFs we use the \texttt{emcee} affine invariant
 MCMC ensemble sampler \citep{foremanmackey13} coupled with the fast GP package \texttt{george} 
@@ -1145,7 +1145,7 @@ bootstrapping with replacement using $10^4$ iterations and each LS periodogram i
 deviation. From the marginalized posterior PDFs of the GP hyperparameters, we adopt the \emph{maximum a-posteriori}
 (MAP) values of each hyperparameter to construct a unique covariance matrix $K$ and thus our mean GP model
 and its $1\sigma$ confidence interval from Eqs.~\ref{BSeq:GPmean} and~\ref{BSeq:GPvar}. Examples of resulting
-GP models of the FWHM time-series for a rapidly and a slowly rotating star are shown in the upper panels in
+GP models of the FWHM time series for a rapidly and a slowly rotating star are shown in the upper panels in
 Fig.~\ref{BSfig:GPexample}. \\
 
 
@@ -1165,10 +1165,10 @@ Fig.~\ref{BSfig:GPexample}. \\
   \caption[Examples of GP activity models in simulated SPIRou timeseries.]
       {\small Examples of our GP formalism used to mitigate RV activity and detect underlying planetary signals for two
     simulated systems with either a rapidly (\prot{} $=2.8$ days; \emph{left column}) or slowly (\prot{} $=83.1$ days;
-    \emph{right column}) rotating host star. \emph{Top panels}: the FWHM time-series used for training along with the
+    \emph{right column}) rotating host star. \emph{Top panels}: the FWHM time series used for training along with the
     \ToggleLayer{fig:GPon,fig:GPoff}{\protect\cdbox{mean GP regression model and its $1\sigma$ confidence interval}}
     shown in red. \emph{Middle panels}: the raw
-    RV time-series along with the mean GP activity model (in the absence of planets) and its $1\sigma$ confidence interval.
+    RV time series along with the mean GP activity model (in the absence of planets) and its $1\sigma$ confidence interval.
     \emph{Bottom panels}: the RV residuals after removal of the mean GP activity model shown in the middle panels.
     Each system contains 3 planets which contribute to the $O-C$ residuals albeit with semi-amplitudes which are all
     $\lesssim \sigma_{\text{RV}}$. The two upper rows report the MAP values of GP hyperparameters along with their
@@ -1176,7 +1176,7 @@ Fig.~\ref{BSfig:GPexample}. \\
   \label{BSfig:GPexample}
 \end{figure*}
 
-Following the training phase on the FWHM time-series
+Following the training phase on the FWHM time series
 we proceed with modelling the RVs simultaneously with a trained GP activity model plus Keplerian planetary
 signals. The marginalized posterior PDFs of the GP hyperparameters $\lambda$, $\Gamma$, and $P_{\text{GP}}$
 from training are used as informative priors in the joint RV analysis which treats the GP amplitude
@@ -1185,7 +1185,7 @@ Keplerian solutions, we compute the MAP GP activity model from the hyperparamete
 Assuming a zero mean function, the resulting mean GP activity models
 for the two stars shown in Fig.~\ref{BSfig:GPexample} are shown in the middle panels of the figure. The residuals
 following the removal of the mean GP activity model is also shown. In each case the stellar rotation period is
-detected in the LS periodogram of the FWHM time-series and therefore is used to constrain $P_{\text{GP}}$ during
+detected in the LS periodogram of the FWHM time series and therefore is used to constrain $P_{\text{GP}}$ during
 training. For the rapid rotator with \prot{} $=2.8$ days, the rms of the injected activity is 4.43 \mps{} and
 is reduced to 1.59 \mps{} after removing the mean GP activity model ($\chi_{\text{red}}^2 =1.4$ for four GP hyperparameters).
 This resulting RV rms is more comparable
@@ -1201,8 +1201,8 @@ Sect.~\ref{BSsect:detection}.
 As an overview of the performance of our GP activity modelling, we can compare the rms of the known
 injected RV activity with the rms of the residuals following the removal of our mean GP activity model. The residual
 rms should never exceed the rms of the injected activity otherwise our GP formalism would be adding additional noise
-into the RV time-series rather than modelling and reducing it as is its intended purpose. Similarly, optimal GP fits
-will result in a residual rms that is close to the median RV measurement uncertainty of the time-series. \\
+into the RV time series rather than modelling and reducing it as is its intended purpose. Similarly, optimal GP fits
+will result in a residual rms that is close to the median RV measurement uncertainty of the time series. \\
 
 Fig.~\ref{BSfig:compareGPres} compares the rms of the \emph{injected} RV activity to the rms of the \emph{residual} RV activity
 after removing the mean GP activity model computing assuming a zero planet model. Recall that we only compute a GP activity model
@@ -1211,7 +1211,7 @@ is always greater than or equal to unity in Fig.~\ref{BSfig:compareGPres}.
 We note that the residual activity rms never exceeds the injected activity rms as expected; i.e. the residual rms
 always lies beneath the line $y=x$ in Fig.~\ref{BSfig:compareGPres}. Secondly,
 there appears to be a positive correlation between \prot{} and the relative reduction of the activity rms,
-which is analogous to GP performance. That is that within our sample of RV time-series which are modelled with a GP activity
+which is analogous to GP performance. That is that within our sample of RV time series which are modelled with a GP activity
 model, the activity rms is maximally reduced in systems
 with the longest rotation periods. Conversely, the GP performance when applied to rapid rotators (\prot{} $\gtrsim 2$ days)
 is often marginal in comparison. The exact cause of these effects above may be related to the poor time-sampling of our
@@ -1238,10 +1238,10 @@ for a future study. \\
     {\small Comparison of the rms of the \emph{injected} RV activity to the rms of the \emph{residual} RV activity following
     the removal of the mean GP activity model which is
     computed in the absence of planets. Each rms value is normalized by the
-    RV measurement uncertainty $\sigma_{\text{RV}}$ of its time-series. The \emph{dashed line} $y=x$ is indicative of cases
-    wherein the GP activity model does not reduce rms due to activity. Time-series in which \prot{} is detected in the
-    FWHM time-series are depicted as 
-    \ToggleLayer{fig:deton,fig:detoff}{\protect\cdbox{\emph{circles}}}. Whereas time-series in which \prot{} is not detected in
+    RV measurement uncertainty $\sigma_{\text{RV}}$ of its time series. The \emph{dashed line} $y=x$ is indicative of cases
+    wherein the GP activity model does not reduce rms due to activity. time series in which \prot{} is detected in the
+    FWHM time series are depicted as 
+    \ToggleLayer{fig:deton,fig:detoff}{\protect\cdbox{\emph{circles}}}. Whereas time series in which \prot{} is not detected in
     the FWHM times-series are depicted as \ToggleLayer{fig:nondeton,fig:nondetoff}{\protect\cdbox{\emph{triangles}}}.}
   \label{BSfig:compareGPres}
 \end{figure}
@@ -1251,12 +1251,12 @@ cases the non-parametric GP is actually modelling the noise and not just the ste
 Unfortunately when the GP activity model is over-fitting the RV noise, planetary signals can be absorbed into the mean GP
 model and thus avoid detection. Furthermore,
 this apparent over-fitting is a common feature in many of our simulations and does not appear to depend on
-whether or not the stellar rotation period is detected a-priori in the FWHM time-series.
+whether or not the stellar rotation period is detected a-priori in the FWHM time series.
 However it is true that on average,
 the GP modelling out-performs cases in which \prot{} is known from the FWHM compared to cases in which \prot{} remains
 undetected thus providing very weak constraints on $P_{\text{GP}}$.
 This highlights the importance having a-priori knowledge of \prot{} from any of the
-ancillary spectroscopic times-series, polarimetric time-series \citep{hebrard16},
+ancillary spectroscopic times-series, polarimetric time series \citep{hebrard16},
 or from previously obtained long-baseline photometry \citep[e.g.][]{newton16a}.
 
 
@@ -1327,7 +1327,7 @@ at the orbital period of the innermost planet at $\sim 1.85$ days suggesting the
 planet. In these periodograms, and in all subsequent iterations, we claim a putative planet detection
 for periodicities with i) FAP $\leq 1$\% ii) is within 2\% of an injected planet's orbital period iii)
 is not associated with significant
-periodic signals seen in the FWHM time-series iv) is not an alias of the time-sampling (see example in
+periodic signals seen in the FWHM time series iv) is not an alias of the time-sampling (see example in
 Fig.~\ref{BSfig:wfs})
 and v) is $>2$\% away from the stellar rotation period and any of its first four harmonics. The signals
 at $\sim 1.85$ days in the second and third panels of Fig.~\ref{BSfig:periodograms} obey these criteria and
@@ -1341,7 +1341,7 @@ to secure planet detections \citep[e.g. Bayesian model comparison;][]{ford07}.
 Without a-priori knowledge of planet orbital periods, LS periodicities at high
 significance that obey all of the remaining aforementioned putative planet criteria, may represent false positive
 signals if not carefully modelled.
-In our simulations we find that on average our time-series generate $\sim 0.5$ such false positives in their LS
+In our simulations we find that on average our time series generate $\sim 0.5$ such false positives in their LS
 periodograms following the removal of planet models. Although
 a fraction of these false positive periodicities are likely to be aliases of each other making the above
 estimate an upper limit. Ideally the determination of these signals as false positives or as true planetary
@@ -1365,7 +1365,7 @@ corrected for activity and the superposition of the two maximum-likelihood plane
 residual periodicity has a FAP $>1$\% implying that our automated planet detection algorithm has ceased to
 detect planetary signals. Therefore in the example shown in Fig.~\ref{BSfig:periodograms}, the
 third injected planet at $\sim 14.66$ days remains undetected. An unsurprising result given the small RV
-semi-amplitude of the planet ($K_d=7$ cm s$^{-1}$) compared to the time-series' median RV measurement
+semi-amplitude of the planet ($K_d=7$ cm s$^{-1}$) compared to the time series' median RV measurement
 uncertainty $\sigma_{\text{RV}}=1.8$ \mps{.} In each MC realization we perform this iterative procedure
 until no putative planets are detected and up to
 a maximum of three planets despite many planetary systems having $>3$ injected planets
@@ -1381,20 +1381,20 @@ periodicities. However the robust detection of a planet with a particular set of
 must be favoured over competing models that lack such a planet. The proper diagnostic for model
 selection is the ratio of Bayesian model evidences which are
 notoriously difficult and time-consuming to calculate \citep{ford07}. 
-As an alternative model selection technique we turn to time-series
+As an alternative model selection technique we turn to time series
 cross-validation (CV). This technique is a specialized version of general K-fold CV
-and is suitable to data featuring strong correlations in time as is the case with RV time-series
+and is suitable to data featuring strong correlations in time as is the case with RV time series
 \citep{arlot10}. \\
 
 For MC realizations featuring at least one putative planetary detection
-we perform time-series CV 
+we perform time series CV 
 on models that contain an increasing number of planets, including the null hypothesis i.e. no planets.
 The latter model has zero Keplerian parameters whereas a model containing $N_p \ge 1$ planets
 contains $3N_p$ model parameters where the three parameters per planet are its orbital period,
 time of inferior conjunction, and RV semi-amplitude. For the purpose of model selection we
 will assume circular orbits for all planets to limit the size of the parameter space. \\
 
-The CV algorithm proceeds by first splitting the RV time-series $y_1,\dots,y_{n_{\text{obs}}}$ into training and
+The CV algorithm proceeds by first splitting the RV time series $y_1,\dots,y_{n_{\text{obs}}}$ into training and
 testing sets. For some $t>1$, each competing model is fit to the training set
 $y_1,\dots,y_t$ using a Levenberg-Marquardt optimization routine. The optimized model is then evaluated
 at the next epoch $t+1$ ($\mu_{t+1}$) and the ln likelihood of the testing set $y_{t+1}$ given the optimized
@@ -1414,7 +1414,7 @@ A consequence of our automated planet detection methodology is
 various non-deterministic effects which can result in planet detections that are highly unlikely to be
 favored by model comparison in the real SLS-PS, yet are marginally detected in our simulations.
 Such planets are commonly those whose RV semi-amplitude is
-close to the rms of the RV time-series. These planets would likely be rejected by any human
+close to the rms of the RV time series. These planets would likely be rejected by any human
 vetting which we do not conduct in our simulations. We therefore undergo a vetting procedure in an
 attempt to restrict the detected planet population to be maximally realistic. Our adopted vetting procedure
 is based on the methods of \cite{cumming08} from the Keck Planet Search. For vetting we define 
@@ -1423,11 +1423,11 @@ the condition that a bona fide planet detection must satisfy $K/\sigma_{\text{K}
   expected detection significance of $3\sigma$}. \\
 
 To estimate the expected uncertainty in the RV semi-amplitude $\sigma_{\text{K}}$ we compute the
-\emph{Fisher information matrix} $B$ which quantifies the information content in an observable time-series
+\emph{Fisher information matrix} $B$ which quantifies the information content in an observable time series
 $\mathbf{y}(\mathbf{t})$ regarding unknown model parameters $\boldsymbol{\theta}$. The model parameter
 covariance matrix is related to the Fisher information via $C=B^{-1}$. We can therefore
 use the Fisher information matrix to analytically predict the measurement uncertainty of the RV model
-parameters of interest given an input time-series with \nobs{} measurements $\mathbf{y}=(y_1,\dots,y_{n_{\text{obs}}})$
+parameters of interest given an input time series with \nobs{} measurements $\mathbf{y}=(y_1,\dots,y_{n_{\text{obs}}})$
 obtained at the epochs $\mathbf{t}=(t_1,\dots,t_N)$ and with measurement uncertainties
 $\boldsymbol{\sigma}=(\sigma_1,\dots,\sigma_N)$. \\
 
@@ -1464,7 +1464,7 @@ recall the three steps discussed throughout this section. Firstly we search for 
 planetary signals in the LS periodogram of either the raw RVs or the RVs corrected for activity using a
 zero-mean GP activity model. We are careful to ensure that significant periodicities have a
 planetary origin and are not associated with stellar activity signals or our time sampling. Secondly we
-compute model ln likelihoods using time-series cross-validation and compare models with and without the
+compute model ln likelihoods using time series cross-validation and compare models with and without the
 putative planet. We only retain planets which are favored by this model selection technique. The third and
 final step consists of vetting our planet detections by insisting that they must have an RV semi-amplitude
 detection significance greater than $3\sigma$ where the detection significance is estimated from the
@@ -1784,7 +1784,7 @@ shown in Fig.~\ref{BSfig:spiroudet} only depicts 4 Earth-like planet detections.
 \end{figure*}
 
 
-The stellar parameters, planetary parameters, and simulated time-series for each MC realization are made
+The stellar parameters, planetary parameters, and simulated time series for each MC realization are made
 available to the community on
 github\footnote{\href{https://github.com/r-cloutier/SLSPS\_Simulations}{https://github.com/r-cloutier/SLSPS\_Simulations}}
 in the form of \texttt{python pickles}.
@@ -2311,7 +2311,7 @@ obtained throughout the campaign. The loss in detection sensitivity---and hence 
 approximately as $\sqrt{n_{\text{obs}}}$ for all but the smallest, Earth-like planets. The loss in sensitivity
 for Earth-like planets is worsened by the small number of measured RVs in \emph{small}. The rough scaling of
 detection sensitivity with $\sqrt{n_{\text{obs}}}$ is the result of the use of our GP regression activity modelling
-to model non-white noise in active time-series and that that modelling performs well on the majority of applicable
+to model non-white noise in active time series and that that modelling performs well on the majority of applicable
 systems (see Fig.~\ref{BSfig:compareGPres}).
 
 \subsection{Degraded: a degraded RV measurement precision}
@@ -2359,7 +2359,7 @@ As discussed in Sect.~\ref{BSsect:vett}, we vet putative planet detections by in
 all bona fide planet detections have an RV semi-amplitude detection significance of at least
 $3\sigma$; $K/\sigma_{\text{K}} \geq 3$. 
 In order to estimate the precision with which a planet's semi-amplitude $K$ can be measured 
-in a given RV time-series $y_k=y(t_k)$ we must estimate the semi-amplitude measurement
+in a given RV time series $y_k=y(t_k)$ we must estimate the semi-amplitude measurement
 uncertainty $\sigma_{\text{K}}$ from the Fisher information matrix. The Fisher information matrix $B$
 encodes the amount of information about $K$ contained within the dataset $y_k$ and is computed
 analytically
@@ -2368,18 +2368,18 @@ we treat each detected planet in a given system individually thus restricting th
 model $\mu_k=\mu(t_k)$ to a fixed number of parameters describing a single Keplerian orbital
 solution. Secondly, we adopt the simplifying assumption that the planet is on a circular
 orbit such that only three model parameters (i.e. $\boldsymbol{\theta}=\{P,T_0,K\}$) need be
-constrained by the time-series. When considering planets individually we
+constrained by the time series. When considering planets individually we
 must absorb all noise sources from unmodelled RV activity and additional planets
 into an effective RV uncertainty $\sigma_{\text{eff}}$ equal to the rms of the RVs after the
 removal of the planet's Keplerian model. Lastly we assume that the noise properties of the
-time-series are Gaussian distributed such that we can write the ln likelihood as
+time series are Gaussian distributed such that we can write the ln likelihood as
 
 \begin{equation}
   \ln{\mathcal{L}} = -\frac{1}{2\sigma_{\text{eff}}^2} \sum_{k=1}^{n_{\text{obs}}} (y_k - \mu_k)^2 + c, \label{BSeq:ll2}
 \end{equation}
 
 \noindent where $c$ is a constant that is independent of the model parameters in $\boldsymbol{\theta}$
-and \nobs{} is the number of observations in the time-series.
+and \nobs{} is the number of observations in the time series.
 Recall that for a circularized planet the Keplerian orbital solution reduces to a simple sinusoid which
 we write as
 
